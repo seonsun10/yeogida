@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: '생활 서비스 디렉토리',
-    template: '%s | 생활 서비스 디렉토리',
+    default: '여기다',
+    template: '%s | 여기다',
   },
   description:
     '사람들이 몰라서 못 쓰는, 실제로 도움이 되는 생활 밀착형 서비스를 카테고리별로 정리한 큐레이션 디렉토리',

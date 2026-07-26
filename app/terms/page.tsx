@@ -13,7 +13,7 @@ export default function TermsPage() {
       <section className="flex flex-col gap-2">
         <h2 className="text-lg font-semibold text-zinc-900">1. 목적</h2>
         <p>
-          이 약관은 생활 서비스 디렉토리(이하 &quot;사이트&quot;)가 제공하는
+          이 약관은 여기다(이하 &quot;사이트&quot;)가 제공하는
           정보 서비스의 이용 조건 및 절차를 규정함을 목적으로 합니다.
         </p>
       </section>

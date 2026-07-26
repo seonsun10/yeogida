@@ -20,7 +20,7 @@ export function Footer() {
           </Link>
         </div>
         <p className="text-xs text-zinc-400">
-          © {new Date().getFullYear()} 생활 서비스 디렉토리
+          © {new Date().getFullYear()} 여기다
         </p>
       </div>
     </footer>

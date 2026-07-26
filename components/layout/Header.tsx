@@ -8,7 +8,7 @@ export function Header() {
     <header className="border-b bg-white">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4">
         <Link href="/" className="text-lg font-bold tracking-tight">
-          생활 서비스 디렉토리
+          여기다
         </Link>
         <nav className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-zinc-600">
           {categories.map((category) => (

@@ -81,3 +81,8 @@ Phase 3 완료 보고 전 코드 리뷰를 받은 결과, 실사용에 영향을
    - **재검증**: `npm run build && npm start`로 실제 프로덕션 서버를 띄운 뒤 `/category/family`에서 "무료만" 필터를 다시 클릭 — 유료 서비스(아이돌봄서비스)가 즉시 걸러지고 URL도 `?free=1`로 정상 반영되는 것을 확인. prod 환경에서도 문제없이 동작함.
 3. **sitemap.xml / robots.txt 실물 확인**: 빌드 로그의 라우트 목록만 보고 넘어갔던 것을 `curl`로 직접 응답을 확인 — `sitemap.xml`에 카테고리 6개 + 서비스 10개 + 정적 페이지(홈/submit/privacy/terms) 전부 포함, `robots.txt`도 `/api/` 차단 + sitemap 참조가 올바르게 생성됨을 확인.
 4. **품질 재확인**: 수정 후 `npm run lint` / `npx tsc --noEmit` / `npm run build` 모두 재통과.
+
+### Git 커밋
+
+- 사용자 확인 후, `create-next-app`의 최초 커밋(`119de0c`) 이후 Phase 0~3의 모든 변경사항(스캐폴딩, shadcn, prettier, 데이터, 페이지, 컴포넌트, 제보 폼, SEO 파일 등 45개 파일)을 커밋 `3a5e5f2`로 한 번에 커밋함.
+- 커밋 전 `git status`로 스테이징 대상을 확인 — 실제 비밀값이 담긴 `.env.local`은 목록에 없고(`.gitignore`로 제외됨) 값이 비어있는 `.env.local.example`만 포함된 것을 확인 후 진행.
