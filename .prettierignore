@@ -1,0 +1,8 @@
+node_modules
+.next
+public
+package-lock.json
+
+# 사용자 원본 기획 문서 — 자동 포맷팅 대상에서 제외
+PRD.md
+PROGRESS.md
