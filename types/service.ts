@@ -7,6 +7,7 @@ export type Service = {
   categorySlug: string;
   tags: string[];
   thumbnail: string;
+  images: string[];
   url: string;
   hours: string;
   cost: 'free' | 'paid';

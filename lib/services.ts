@@ -1,9 +1,8 @@
 import categoriesData from '@/data/categories.json';
-import servicesData from '@/data/services.json';
+import { readServices } from '@/lib/admin-data';
 import type { Category, Service } from '@/types/service';
 
 const categories = categoriesData as Category[];
-const services = servicesData as Service[];
 
 export function getAllCategories(): Category[] {
   return categories;
@@ -13,15 +12,21 @@ export function getCategoryBySlug(slug: string): Category | undefined {
   return categories.find((category) => category.slug === slug);
 }
 
-export function getAllServices(): Service[] {
-  return services;
+export async function getAllServices(): Promise<Service[]> {
+  return readServices();
 }
 
-export function getServicesByCategory(categorySlug: string): Service[] {
+export async function getServicesByCategory(
+  categorySlug: string,
+): Promise<Service[]> {
+  const services = await readServices();
   return services.filter((service) => service.categorySlug === categorySlug);
 }
 
-export function getServiceBySlug(slug: string): Service | undefined {
+export async function getServiceBySlug(
+  slug: string,
+): Promise<Service | undefined> {
+  const services = await readServices();
   return services.find((service) => service.slug === slug);
 }
 

@@ -9,7 +9,6 @@
 - [Next.js](https://nextjs.org) (App Router, Turbopack) + React + TypeScript
 - Tailwind CSS v4 + [shadcn/ui](https://ui.shadcn.com)
 - [Fuse.js](https://www.fusejs.io) — 클라이언트 사이드 검색
-- [Resend](https://resend.com) — 서비스 제보 폼 이메일 발송
 - 콘텐츠는 별도 DB 없이 저장소 내 JSON 파일(`data/`)로 관리
 
 ## 시작하기
@@ -23,20 +22,18 @@ npm run dev
 
 ### 환경변수
 
-제보 폼(`/submit`)과 사이트맵/OG 이미지 절대 경로 생성을 위해 환경변수가 필요합니다. `.env.local.example`을 복사해 `.env.local`을 만들고 값을 채워주세요.
+제보 페이지(`/submit`)에 표시할 이메일과 사이트맵/OG 이미지 절대 경로 생성을 위해 환경변수가 필요합니다. `.env.local.example`을 복사해 `.env.local`을 만들고 값을 채워주세요.
 
 ```bash
 cp .env.local.example .env.local
 ```
 
-| 변수                    | 설명                                          |
-| ----------------------- | --------------------------------------------- |
-| `RESEND_API_KEY`        | 제보 폼 발송용 Resend API 키                  |
-| `SUBMIT_FROM_EMAIL`     | 발신 이메일 (Resend에 검증된 도메인 필요)     |
-| `SUBMIT_TO_EMAIL`       | 제보를 받을 운영자 이메일                     |
-| `NEXT_PUBLIC_SITE_URL`  | 배포 도메인 (사이트맵/OG 절대 URL 생성용)     |
+| 변수                       | 설명                                       |
+| -------------------------- | ------------------------------------------ |
+| `NEXT_PUBLIC_SUBMIT_EMAIL` | `/submit` 페이지에 표시할 제보용 이메일    |
+| `NEXT_PUBLIC_SITE_URL`     | 배포 도메인 (사이트맵/OG 절대 URL 생성용)  |
 
-값이 없어도 로컬 개발은 가능하지만, `/submit` 제출은 500 에러가 발생합니다.
+값이 없어도 로컬 개발은 가능하지만, `/submit` 페이지에는 이메일이 표시되지 않습니다.
 
 ## 스크립트
 
@@ -56,8 +53,7 @@ app/
   page.tsx                  # 홈 (검색창 + 카테고리 하이라이트)
   category/[slug]/page.tsx  # 카테고리별 목록 + 필터
   service/[slug]/page.tsx   # 서비스 상세
-  submit/page.tsx           # 서비스 제보 폼
-  api/submit/route.ts       # 제보 폼 처리 (Resend 발송)
+  submit/page.tsx           # 서비스 제보 안내 (이메일로 직접 제보)
   privacy/, terms/          # 개인정보처리방침, 이용약관
   sitemap.ts, robots.ts     # SEO
 

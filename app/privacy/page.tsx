@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_SUBMIT_EMAIL ?? '';
+
 export const metadata: Metadata = {
   title: '개인정보처리방침',
 };
@@ -8,7 +10,13 @@ export default function PrivacyPage() {
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-16 text-sm leading-relaxed text-zinc-700">
       <h1 className="text-2xl font-bold text-zinc-900">개인정보처리방침</h1>
-      <p className="text-zinc-500">최종 수정일: 2026년 7월 25일</p>
+      <p className="text-zinc-500">최종 수정일: 2026년 7월 27일</p>
+
+      <p>
+        여기다(이하 &quot;사이트&quot;)는 사이트명과 이메일로만 운영자를 표기하는
+        개인 프로젝트입니다. 이 개인정보처리방침은 사이트를 이용하는 방문자의
+        정보를 어떻게 다루는지 설명합니다.
+      </p>
 
       <section className="flex flex-col gap-2">
         <h2 className="text-lg font-semibold text-zinc-900">
@@ -39,19 +47,67 @@ export default function PrivacyPage() {
       </section>
 
       <section className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold text-zinc-900">4. 쿠키 및 광고</h2>
+        <h2 className="text-lg font-semibold text-zinc-900">
+          4. 쿠키와 제3자 광고·분석 서비스
+        </h2>
         <p>
-          본 사이트는 방문 통계 분석 및 광고 게재를 위해 쿠키를 사용할 수
-          있습니다. 브라우저 설정을 통해 쿠키 저장을 거부할 수 있습니다.
+          본 사이트는 방문 통계 분석을 위해 Google Analytics를, 광고 게재를 위해
+          Google AdSense를 사용할 수 있습니다. Google을 포함한 제3자 광고 벤더는
+          쿠키를 사용해 사용자가 이 사이트 또는 다른 사이트를 방문한 기록을
+          바탕으로 광고를 게재할 수 있습니다.
+        </p>
+        <p>
+          Google이 광고 게재에 쿠키를 사용하는 방식은{' '}
+          <a
+            href="https://policies.google.com/technologies/ads"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+          >
+            Google 광고 정책
+          </a>
+          에서 확인할 수 있습니다. 맞춤 광고를 원하지 않는 경우{' '}
+          <a
+            href="https://adssettings.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+          >
+            Google 광고 설정
+          </a>{' '}
+          또는{' '}
+          <a
+            href="https://www.youronlinechoices.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+          >
+            Your Online Choices
+          </a>
+          에서 맞춤 광고를 거부할 수 있으며, 브라우저 설정을 통해 쿠키 저장 자체를
+          거부할 수도 있습니다.
         </p>
       </section>
 
       <section className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold text-zinc-900">5. 문의</h2>
+        <h2 className="text-lg font-semibold text-zinc-900">
+          5. 만 14세 미만 아동의 개인정보
+        </h2>
         <p>
-          개인정보 관련 문의는 서비스 제보 폼을 통해 남겨주시면 확인 후
-          답변드립니다.
+          본 사이트는 만 14세 미만 아동을 대상으로 하지 않으며, 아동으로부터
+          알면서 개인정보를 수집하지 않습니다.
         </p>
+      </section>
+
+      <section className="flex flex-col gap-2">
+        <h2 className="text-lg font-semibold text-zinc-900">6. 문의</h2>
+        <p>
+          개인정보 관련 문의는 서비스 제보 폼 또는 아래 이메일로 남겨주시면 확인
+          후 답변드립니다.
+        </p>
+        {CONTACT_EMAIL && (
+          <p className="font-medium text-zinc-900">{CONTACT_EMAIL}</p>
+        )}
       </section>
     </div>
   );

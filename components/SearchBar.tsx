@@ -6,14 +6,14 @@ import { Input } from '@/components/ui/input';
 import { searchServices } from '@/lib/search';
 import type { Service } from '@/types/service';
 
-const MAX_RESULTS = 6;
+const VISIBLE_RESULTS = 6;
 
 export function SearchBar({ services }: { services: Service[] }) {
   const [query, setQuery] = useState('');
 
   const results = useMemo(() => {
     if (!query.trim()) return [];
-    return searchServices(services, query).slice(0, MAX_RESULTS);
+    return searchServices(services, query);
   }, [services, query]);
 
   return (
@@ -28,7 +28,10 @@ export function SearchBar({ services }: { services: Service[] }) {
       {query.trim() && (
         <div className="absolute z-10 mt-2 w-full rounded-md border bg-white shadow-lg">
           {results.length > 0 ? (
-            <ul className="divide-y">
+            <ul
+              className="divide-y overflow-y-auto overscroll-contain"
+              style={{ maxHeight: `${VISIBLE_RESULTS * 3.75}rem` }}
+            >
               {results.map((service) => (
                 <li key={service.id}>
                   <Link

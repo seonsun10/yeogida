@@ -1,22 +1,41 @@
 import type { MetadataRoute } from 'next';
+import { getAllGuides } from '@/lib/guides';
 import { getAllCategories, getAllServices } from '@/lib/services';
+import { getSiteUrl } from '@/lib/site-url';
 
-// TODO: 브랜드/도메인 확정 후 실제 도메인으로 교체 (계획서 6장 보류사항)
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const siteUrl = getSiteUrl();
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/submit', '/privacy', '/terms'].map((path) => ({
-    url: `${SITE_URL}${path}`,
+  const staticRoutes = [
+    '',
+    '/about',
+    '/guides',
+    '/submit',
+    '/privacy',
+    '/terms',
+  ].map((path) => ({
+    url: `${siteUrl}${path}`,
   }));
 
   const categoryRoutes = getAllCategories().map((category) => ({
-    url: `${SITE_URL}/category/${category.slug}`,
+    url: `${siteUrl}/category/${category.slug}`,
   }));
 
-  const serviceRoutes = getAllServices().map((service) => ({
-    url: `${SITE_URL}/service/${service.slug}`,
+  const guideRoutes = getAllGuides().map((guide) => ({
+    url: `${siteUrl}/guides/${guide.slug}`,
+    lastModified: guide.publishedAt,
+  }));
+
+  const services = await getAllServices();
+  const serviceRoutes = services.map((service) => ({
+    url: `${siteUrl}/service/${service.slug}`,
     lastModified: service.lastVerified,
   }));
 
-  return [...staticRoutes, ...categoryRoutes, ...serviceRoutes];
+  return [
+    ...staticRoutes,
+    ...categoryRoutes,
+    ...guideRoutes,
+    ...serviceRoutes,
+  ];
 }

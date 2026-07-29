@@ -9,8 +9,14 @@ export function Footer() {
           여부는 방문 전 다시 확인하시기 바랍니다.
         </p>
         <div className="flex flex-wrap gap-4">
+          <Link href="/guides" className="hover:text-zinc-800">
+            가이드
+          </Link>
           <Link href="/submit" className="hover:text-zinc-800">
             서비스 제보하기
+          </Link>
+          <Link href="/about" className="hover:text-zinc-800">
+            소개
           </Link>
           <Link href="/privacy" className="hover:text-zinc-800">
             개인정보처리방침

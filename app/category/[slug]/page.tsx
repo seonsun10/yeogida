@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { AdSlot } from '@/components/AdSlot';
 import { FilterBar } from '@/components/FilterBar';
+import { SearchBar } from '@/components/SearchBar';
 import { ServiceCard } from '@/components/ServiceCard';
 import {
   filterServices,
@@ -44,7 +45,8 @@ export default async function CategoryPage({
   const category = getCategoryBySlug(slug);
   if (!category) notFound();
 
-  let services = getServicesByCategory(slug);
+  const categoryServices = await getServicesByCategory(slug);
+  let services = categoryServices;
   if (free === '1') {
     services = filterServices(services, { cost: 'free' });
   }
@@ -58,6 +60,8 @@ export default async function CategoryPage({
         <h1 className="text-2xl font-bold">{category.name}</h1>
         <p className="text-zinc-600">{category.description}</p>
       </div>
+
+      <SearchBar services={categoryServices} />
 
       <FilterBar />
 

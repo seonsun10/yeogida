@@ -28,5 +28,20 @@
     "slug": "life-admin-tips",
     "name": "생활행정 팁",
     "description": "정부24 활용법, 무료 심리검사, 무료 온라인 교육 등 알아두면 유용한 생활 행정 정보"
+  },
+  {
+    "slug": "housing",
+    "name": "주거/부동산",
+    "description": "청약홈, 전세보증금 반환보증, 등기부등본 발급, 실거래가 조회 등 내 집 마련과 임대차 생활에 필요한 부동산 행정 서비스"
+  },
+  {
+    "slug": "employment-startup",
+    "name": "취업/창업",
+    "description": "K-Startup, 소상공인 정책자금, 신용보증재단 등 취업과 창업을 준비하는 사람을 위한 지원 서비스"
+  },
+  {
+    "slug": "transport",
+    "name": "교통/자동차",
+    "description": "자동차 등록·이력 조회, 사고 과실비율 확인, 결함 리콜 신고 등 자동차 생활에 필요한 정보 서비스"
   }
 ]

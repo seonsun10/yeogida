@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
@@ -7,6 +8,17 @@ export function ServiceCard({ service }: { service: Service }) {
   return (
     <Link href={`/service/${service.slug}`} className="block h-full">
       <Card className="h-full transition-colors hover:border-zinc-400">
+        {service.thumbnail && (
+          <div className="relative aspect-video w-full overflow-hidden rounded-md">
+            <Image
+              src={service.thumbnail}
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+        )}
         <CardHeader>
           <div className="flex flex-wrap items-center gap-2">
             {service.badges.map((badge) => (

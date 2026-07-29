@@ -1,0 +1,48 @@
+<!-- Parent: ../AGENTS.md -->
+<!-- Generated: 2026-07-26 | Updated: 2026-07-26 -->
+
+# components
+
+## Purpose
+페이지 조합에 쓰이는 도메인 컴포넌트(카드, 검색, 필터, 상세, 광고 자리 등)와 shadcn/ui 프리미티브(`ui/`), 레이아웃 조각(`layout/`)을 모아둔다. 별도 barrel export(`index.ts`) 없이 각 페이지에서 개별 파일을 직접 import한다.
+
+## Key Files
+| File | Description |
+|------|-------------|
+| `ServiceCard.tsx` | 목록용 카드 — 썸네일, 배지, 요약, 운영시간. `/service/[slug]`로 링크 |
+| `ServiceDetail.tsx` | 상세 페이지 본문 — 배지, 이미지 갤러리, 설명, 정보 표(`dl`), 바로가기 버튼(`trackOutboundClick` 호출) |
+| `CategoryNav.tsx` | 홈에서 카테고리 카드 그리드 |
+| `SearchBar.tsx` | `'use client'`, Fuse.js 기반 실시간 검색 드롭다운 (`lib/search.ts`) |
+| `FilterBar.tsx` | `'use client'`, URL 쿼리 파라미터(`free`, `hours24`) 토글 필터 |
+| `Disclaimer.tsx` | 건강/법률 카테고리 상세 페이지에 표시하는 법적 고지 배너 |
+| `AdSlot.tsx` | 애드센스 승인 전 자리표시자 — 승인 후 실제 광고 스크립트로 교체 예정 |
+
+## Subdirectories
+| Directory | Purpose |
+|-----------|---------|
+| `layout/` | `Header`, `Footer` — 루트 레이아웃 전용 (see `layout/AGENTS.md`) |
+| `ui/` | shadcn/ui 생성 프리미티브 — badge, button, card, input, sheet (see `ui/AGENTS.md`) |
+
+## For AI Agents
+
+### Working In This Directory
+- 서버/클라이언트 경계에 주의: `SearchBar`, `FilterBar`는 `'use client'`가 필요(각각 상태·URL 훅 사용)하지만, `ServiceCard`, `CategoryNav`, `Disclaimer`, `AdSlot`은 서버 컴포넌트로 유지 가능하다. 새 컴포넌트를 만들 때 불필요하게 `'use client'`를 붙이지 않는다.
+- `AdSlot.tsx`은 애드센스 승인 전 임시 플레이스홀더임을 주석으로 명시하고 있다 — 승인 후 실제 스크립트 삽입이 예정된 작업이므로, 지금 단계에서 광고 로직을 채워 넣지 않는다.
+- 아이콘은 `lucide-react`, 클래스 조합은 `cn()`(`lib/utils.ts`) 사용.
+
+### Testing Requirements
+- 자동 테스트 없음. 컴포넌트 변경 시 해당 컴포넌트를 사용하는 페이지를 `npm run dev`로 직접 확인 (예: `ServiceCard` 변경 → 홈/카테고리 페이지 확인).
+
+### Common Patterns
+- 카드류 컴포넌트는 `components/ui/card`(`Card`, `CardHeader`, `CardContent`)를 조합해서 만든다.
+- 외부 링크 클릭 트래킹은 `lib/track.ts`의 `trackOutboundClick`을 `onClick`에서 호출하는 패턴(`ServiceDetail.tsx` 참고).
+
+## Dependencies
+
+### Internal
+- `components/ui/*`, `lib/services.ts`, `lib/search.ts`, `lib/track.ts`, `lib/utils.ts`, `types/service.ts`
+
+### External
+- `lucide-react`, `clsx`, `tailwind-merge`, `next/image`, `next/link`
+
+<!-- MANUAL: Any manually added notes below this line are preserved on regeneration -->
