@@ -699,7 +699,7 @@ export const guides: Guide[] = [
 ];
 
 export function getAllGuides(): Guide[] {
-  return guides;
+  return [...guides].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 }
 
 export function getGuideBySlug(slug: string): Guide | undefined {

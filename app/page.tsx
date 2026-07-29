@@ -5,10 +5,12 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { getAllGuides } from '@/lib/guides';
 import { getAllCategories, getAllServices } from '@/lib/services';
 
+const HOME_GUIDE_COUNT = 6;
+
 export default async function Home() {
   const categories = getAllCategories();
   const services = await getAllServices();
-  const guides = getAllGuides();
+  const guides = getAllGuides().slice(0, HOME_GUIDE_COUNT);
 
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-12 px-4 py-16">
@@ -23,7 +25,15 @@ export default async function Home() {
       </section>
 
       <section className="flex flex-col gap-4">
-        <h2 className="text-xl font-semibold">실전 가이드</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="text-xl font-semibold">실전 가이드</h2>
+          <Link
+            href="/guides"
+            className="text-sm text-zinc-500 hover:text-zinc-800"
+          >
+            전체 가이드 보기 →
+          </Link>
+        </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {guides.map((guide) => (
             <Link key={guide.slug} href={`/guides/${guide.slug}`}>
