@@ -9,7 +9,7 @@
 ## Key Files
 | File | Description |
 |------|-------------|
-| `categories.json` | 카테고리 정의 배열 — `Category` 타입(`slug`, `name`, `description`). 현재 6개: health, legal-admin, family, consumer, emergency, life-admin-tips |
+| `categories.json` | 카테고리 정의 배열 — `Category` 타입(`slug`, `name`, `description`, `color`). `color`는 카드/헤더 카테고리 메뉴의 상단 강조색(hex, `#RRGGBB`)이며 `/admin/categories`에서 수정 가능. 현재 9개: health, legal-admin, family, consumer, emergency, life-admin-tips, housing, employment-startup, transport |
 | `services.json` | 서비스 콘텐츠 배열 — `Service` 타입 전체 필드. `/admin`에서 등록·수정 시 이 파일이 직접 갱신된다 |
 
 ## For AI Agents

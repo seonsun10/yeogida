@@ -20,9 +20,17 @@ export default function AdminLayout({
         <Link href="/admin" className="text-lg font-bold">
           사이트 관리
         </Link>
-        <Link href="/" className="text-sm text-zinc-500 hover:text-zinc-900">
-          공개 사이트로 이동
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/admin/categories"
+            className="text-sm text-zinc-500 hover:text-zinc-900"
+          >
+            카테고리 색상
+          </Link>
+          <Link href="/" className="text-sm text-zinc-500 hover:text-zinc-900">
+            공개 사이트로 이동
+          </Link>
+        </div>
       </div>
       {children}
     </div>

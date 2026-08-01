@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-16 text-sm leading-relaxed text-zinc-700">
-      <h1 className="text-2xl font-bold text-zinc-900">개인정보처리방침</h1>
-      <p className="text-zinc-500">최종 수정일: 2026년 7월 27일</p>
+    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-16 text-sm leading-relaxed text-foreground/90">
+      <h1 className="text-2xl font-bold text-foreground">개인정보처리방침</h1>
+      <p className="text-muted-foreground">최종 수정일: 2026년 7월 27일</p>
 
       <p>
         여기다(이하 &quot;사이트&quot;)는 사이트명과 이메일로만 운영자를 표기하는
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
       </p>
 
       <section className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold text-zinc-900">
+        <h2 className="text-lg font-semibold text-foreground">
           1. 수집하는 개인정보 항목
         </h2>
         <p>
@@ -30,14 +30,14 @@ export default function PrivacyPage() {
       </section>
 
       <section className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold text-zinc-900">
+        <h2 className="text-lg font-semibold text-foreground">
           2. 개인정보의 수집 및 이용 목적
         </h2>
         <p>제보 내용 검토 및 필요 시 제보자와의 확인 연락을 위해 사용합니다.</p>
       </section>
 
       <section className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold text-zinc-900">
+        <h2 className="text-lg font-semibold text-foreground">
           3. 개인정보의 보유 및 이용 기간
         </h2>
         <p>
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
       </section>
 
       <section className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold text-zinc-900">
+        <h2 className="text-lg font-semibold text-foreground">
           4. 쿠키와 제3자 광고·분석 서비스
         </h2>
         <p>
@@ -90,7 +90,7 @@ export default function PrivacyPage() {
       </section>
 
       <section className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold text-zinc-900">
+        <h2 className="text-lg font-semibold text-foreground">
           5. 만 14세 미만 아동의 개인정보
         </h2>
         <p>
@@ -100,13 +100,13 @@ export default function PrivacyPage() {
       </section>
 
       <section className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold text-zinc-900">6. 문의</h2>
+        <h2 className="text-lg font-semibold text-foreground">6. 문의</h2>
         <p>
           개인정보 관련 문의는 서비스 제보 폼 또는 아래 이메일로 남겨주시면 확인
           후 답변드립니다.
         </p>
         {CONTACT_EMAIL && (
-          <p className="font-medium text-zinc-900">{CONTACT_EMAIL}</p>
+          <p className="font-medium text-foreground">{CONTACT_EMAIL}</p>
         )}
       </section>
     </div>

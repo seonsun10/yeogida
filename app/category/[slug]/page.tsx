@@ -5,6 +5,7 @@ import { AdSlot } from '@/components/AdSlot';
 import { FilterBar } from '@/components/FilterBar';
 import { SearchBar } from '@/components/SearchBar';
 import { ServiceCard } from '@/components/ServiceCard';
+import { ServiceGrid } from '@/components/ServiceGrid';
 import {
   filterServices,
   getAllCategories,
@@ -58,7 +59,7 @@ export default async function CategoryPage({
     <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-4 py-12">
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-bold">{category.name}</h1>
-        <p className="text-zinc-600">{category.description}</p>
+        <p className="text-muted-foreground">{category.description}</p>
       </div>
 
       <SearchBar services={categoryServices} />
@@ -66,18 +67,22 @@ export default async function CategoryPage({
       <FilterBar />
 
       {services.length > 0 ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
+        <ServiceGrid
+          key={`${free ?? ''}-${hours24 ?? ''}`}
+          storageKey={`service-grid:${slug}:${free ?? ''}:${hours24 ?? ''}`}
+          cards={services.map((service, index) => (
             <Fragment key={service.id}>
               <ServiceCard service={service} />
               {(index + 1) % IN_FEED_AD_INTERVAL === 0 && (
-                <AdSlot className="min-h-[120px] rounded-md border border-dashed border-zinc-200 sm:col-span-2 lg:col-span-3" />
+                <AdSlot className="min-h-[120px] rounded-md border border-dashed sm:col-span-2 lg:col-span-3" />
               )}
             </Fragment>
           ))}
-        </div>
+        />
       ) : (
-        <p className="text-zinc-500">조건에 맞는 서비스가 아직 없어요.</p>
+        <p className="text-muted-foreground">
+          조건에 맞는 서비스가 아직 없어요.
+        </p>
       )}
     </div>
   );

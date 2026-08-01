@@ -2,12 +2,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { DEFAULT_CATEGORY_COLOR, getCategoryStyle } from '@/lib/category-style';
+import { getCategoryBySlug } from '@/lib/services';
 import type { Service } from '@/types/service';
 
 export function ServiceCard({ service }: { service: Service }) {
+  const category = getCategoryBySlug(service.categorySlug);
+  const style = getCategoryStyle(service.categorySlug);
+
   return (
     <Link href={`/service/${service.slug}`} className="block h-full">
-      <Card className="h-full transition-colors hover:border-zinc-400">
+      <Card
+        className="h-full border-t-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+        style={{ borderTopColor: category?.color ?? DEFAULT_CATEGORY_COLOR }}
+      >
         {service.thumbnail && (
           <div className="relative aspect-video w-full overflow-hidden rounded-md">
             <Image
@@ -21,6 +29,13 @@ export function ServiceCard({ service }: { service: Service }) {
         )}
         <CardHeader>
           <div className="flex flex-wrap items-center gap-2">
+            {category && (
+              <span
+                className={`rounded-full px-2 py-0.5 text-xs font-medium ${style.badge}`}
+              >
+                {category.name}
+              </span>
+            )}
             {service.badges.map((badge) => (
               <Badge key={badge} variant="secondary">
                 {badge}
@@ -30,8 +45,10 @@ export function ServiceCard({ service }: { service: Service }) {
           <h3 className="text-base font-semibold">{service.name}</h3>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-zinc-600">{service.summary}</p>
-          <p className="mt-2 text-xs text-zinc-400">{service.hours}</p>
+          <p className="text-sm text-muted-foreground">{service.summary}</p>
+          <p className="mt-2 text-xs text-muted-foreground/70">
+            {service.hours}
+          </p>
         </CardContent>
       </Card>
     </Link>

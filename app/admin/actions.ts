@@ -4,14 +4,15 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
-import { readServices } from '@/lib/admin-data';
-import { writeServices } from '@/lib/admin-write';
+import { readCategories, readServices } from '@/lib/admin-data';
+import { writeCategories, writeServices } from '@/lib/admin-write';
 import { getAllCategories } from '@/lib/services';
 import type { Service } from '@/types/service';
 
 export type ActionState = { error?: string; message?: string } | undefined;
 
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const HEX_COLOR_PATTERN = /^#[0-9a-fA-F]{6}$/;
 const ALLOWED_IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.gif'];
 const MAX_IMAGE_SIZE_BYTES = 5 * 1024 * 1024;
 const MAX_IMAGE_SIZE_LABEL = '5MB';
@@ -302,4 +303,28 @@ export async function deleteServiceThumbnail(slug: string): Promise<void> {
   revalidatePath('/');
   revalidatePath(`/service/${slug}`);
   revalidatePath(`/category/${service.categorySlug}`);
+}
+
+export async function updateCategoryColor(
+  slug: string,
+  _prevState: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  ensureAdmin();
+
+  const color = readField(formData, 'color');
+  if (!HEX_COLOR_PATTERN.test(color)) {
+    return { error: '색상 코드는 #RRGGBB 형식으로 입력해주세요. (예: #fb7185)' };
+  }
+
+  const categories = await readCategories();
+  const category = categories.find((item) => item.slug === slug);
+  if (!category) return { error: '카테고리를 찾을 수 없습니다.' };
+
+  category.color = color;
+  await writeCategories(categories);
+
+  revalidatePath('/', 'layout');
+  revalidatePath('/admin/categories');
+  return { message: '색상이 저장되었습니다.' };
 }

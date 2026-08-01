@@ -28,19 +28,21 @@ export default function SubmitPage() {
     <div className="mx-auto flex w-full max-w-xl flex-1 flex-col gap-6 px-4 py-16">
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-bold">서비스 제보하기</h1>
-        <p className="text-zinc-600">
+        <p className="text-muted-foreground">
           몰라서 못 쓰는 유용한 생활 서비스를 알고 계신가요? 아래 이메일로
           알려주시면 검토 후 등록하겠습니다.
         </p>
       </div>
 
-      <div className="flex flex-col gap-3 rounded-md border border-zinc-200 bg-zinc-50 p-6">
-        <span className="text-sm font-medium text-zinc-500">제보 이메일</span>
+      <div className="flex flex-col gap-3 rounded-md border bg-muted/40 p-6">
+        <span className="text-sm font-medium text-muted-foreground">
+          제보 이메일
+        </span>
         {SUBMIT_EMAIL ? (
           <>
             <a
               href={mailtoHref}
-              className="text-lg font-semibold text-zinc-900 underline underline-offset-2"
+              className="text-lg font-semibold text-primary underline underline-offset-2"
             >
               {SUBMIT_EMAIL}
             </a>
@@ -49,14 +51,14 @@ export default function SubmitPage() {
             </div>
           </>
         ) : (
-          <span className="text-zinc-400">
+          <span className="text-muted-foreground/70">
             제보 이메일이 아직 설정되지 않았습니다. 잠시 후 다시 시도해주세요.
           </span>
         )}
       </div>
 
-      <div className="flex flex-col gap-2 text-sm text-zinc-600">
-        <p className="font-medium text-zinc-800">이런 내용을 포함해주세요</p>
+      <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+        <p className="font-medium text-foreground">이런 내용을 포함해주세요</p>
         <ul className="list-disc space-y-1 pl-5">
           <li>서비스명</li>
           <li>서비스 링크</li>

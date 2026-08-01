@@ -6,6 +6,7 @@ import { ServiceCard } from '@/components/ServiceCard';
 import { ServiceDetail } from '@/components/ServiceDetail';
 import {
   getAllServices,
+  getCategoryBySlug,
   getServiceBySlug,
   getServicesByCategory,
 } from '@/lib/services';
@@ -50,15 +51,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const relatedServices = categoryServices
     .filter((item) => item.slug !== service.slug)
     .slice(0, RELATED_SERVICE_LIMIT);
+  const category = getCategoryBySlug(service.categorySlug);
 
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 py-12">
       {DISCLAIMER_CATEGORIES.includes(service.categorySlug) && <Disclaimer />}
-      <ServiceDetail service={service} />
+      <ServiceDetail service={service} category={category} />
 
       {relatedServices.length > 0 && (
         <div className="flex flex-col gap-3 border-t pt-6">
-          <h2 className="text-sm font-medium text-zinc-500">
+          <h2 className="text-sm font-medium text-muted-foreground">
             같은 카테고리의 다른 서비스
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -69,7 +71,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       )}
 
-      <AdSlot className="min-h-[120px] rounded-md border border-dashed border-zinc-200" />
+      <AdSlot className="min-h-[120px] rounded-md border border-dashed" />
     </div>
   );
 }

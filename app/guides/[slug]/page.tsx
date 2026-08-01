@@ -50,18 +50,18 @@ export default async function GuidePage({ params }: GuidePageProps) {
     <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 py-12">
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-bold">{guide.title}</h1>
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-muted-foreground">
           작성일 {guide.publishedAt} · 여기다
         </p>
       </div>
 
-      <article className="flex flex-col gap-5 text-zinc-800">
+      <article className="flex flex-col gap-5 text-foreground">
         {resolvedBlocks.map((block, index) => (
           <Fragment key={index}>{renderBlock(block)}</Fragment>
         ))}
       </article>
 
-      <AdSlot className="min-h-[120px] rounded-md border border-dashed border-zinc-200" />
+      <AdSlot className="min-h-[120px] rounded-md border border-dashed" />
     </div>
   );
 }
@@ -73,7 +73,11 @@ type ResolvedBlock =
 function renderBlock(block: ResolvedBlock) {
   switch (block.type) {
     case 'heading':
-      return <h2 className="text-lg font-semibold text-zinc-900">{block.text}</h2>;
+      return (
+        <h2 className="text-lg font-semibold text-foreground">
+          {block.text}
+        </h2>
+      );
     case 'paragraph':
       return <p className="leading-relaxed">{block.text}</p>;
     case 'list':
@@ -88,7 +92,9 @@ function renderBlock(block: ResolvedBlock) {
       return (
         <div className="flex flex-col gap-3 border-t pt-5">
           {block.intro && (
-            <p className="text-sm font-medium text-zinc-500">{block.intro}</p>
+            <p className="text-sm font-medium text-muted-foreground">
+              {block.intro}
+            </p>
           )}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {block.services.map((service) => (

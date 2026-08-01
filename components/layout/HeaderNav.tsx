@@ -23,10 +23,10 @@ export function HeaderNav({ categories }: { categories: Category[] }) {
   return (
     <>
       {/* 데스크톱: 카테고리를 드롭다운으로 묶어서 상단 탭이 한 줄로 깔끔하게 보이도록 함 */}
-      <nav className="hidden items-center gap-1 text-sm text-zinc-600 md:flex">
+      <nav className="hidden items-center gap-1 text-sm text-muted-foreground md:flex">
         <Link
           href="/guides"
-          className="rounded-md px-3 py-2 hover:bg-zinc-100 hover:text-zinc-950"
+          className="rounded-md px-3 py-2 hover:bg-accent hover:text-accent-foreground"
         >
           가이드
         </Link>
@@ -35,7 +35,7 @@ export function HeaderNav({ categories }: { categories: Category[] }) {
             render={
               <button
                 type="button"
-                className="inline-flex items-center gap-1 rounded-md px-3 py-2 hover:bg-zinc-100 hover:text-zinc-950 data-popup-open:bg-zinc-100 data-popup-open:text-zinc-950"
+                className="inline-flex items-center gap-1 rounded-md px-3 py-2 hover:bg-accent hover:text-accent-foreground data-popup-open:bg-accent data-popup-open:text-accent-foreground"
               />
             }
           >
@@ -75,11 +75,11 @@ export function HeaderNav({ categories }: { categories: Category[] }) {
             <SheetClose
               render={<Link href="/guides" />}
               nativeButton={false}
-              className="rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100"
+              className="rounded-md px-3 py-2 text-foreground hover:bg-accent"
             >
               가이드
             </SheetClose>
-            <p className="px-3 pt-4 pb-1 text-xs font-medium text-zinc-400">
+            <p className="px-3 pt-4 pb-1 text-xs font-medium text-muted-foreground">
               카테고리
             </p>
             {categories.map((category) => (
@@ -87,7 +87,7 @@ export function HeaderNav({ categories }: { categories: Category[] }) {
                 key={category.slug}
                 render={<Link href={`/category/${category.slug}`} />}
                 nativeButton={false}
-                className="rounded-md px-3 py-2 text-zinc-700 hover:bg-zinc-100"
+                className="rounded-md px-3 py-2 text-foreground hover:bg-accent"
               >
                 {category.name}
               </SheetClose>
