@@ -240,21 +240,30 @@ function buildDiscordMessage(results, checkedAt) {
   return content;
 }
 
-// DISCORD_WEBHOOK_URL이 없으면(로컬 실행 등) 조용히 건너뛴다.
+// DISCORD_WEBHOOK_URL이 없으면(로컬 실행 등) 건너뛴다. 원인 진단이 어려웠던 적이 있어
+// "건너뛰는지/시도하는지/성공했는지"를 매 단계 명시적으로 로그에 남긴다.
 async function notifyDiscord(results, checkedAt) {
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
-  if (!webhookUrl) return;
-
-  const res = await fetch(webhookUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ content: buildDiscordMessage(results, checkedAt) }),
-  });
-  if (!res.ok) {
-    console.error(`Discord 알림 실패: ${res.status} ${await res.text()}`);
+  if (!webhookUrl) {
+    console.log('DISCORD_WEBHOOK_URL 미설정 — Discord 알림 건너뜀');
     return;
   }
-  console.log('Discord 알림 전송 완료');
+  console.log(`DISCORD_WEBHOOK_URL 감지됨(길이 ${webhookUrl.length}) — Discord 알림 전송 시도`);
+
+  try {
+    const res = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content: buildDiscordMessage(results, checkedAt) }),
+    });
+    if (!res.ok) {
+      console.error(`Discord 알림 실패: HTTP ${res.status} ${await res.text()}`);
+      return;
+    }
+    console.log('Discord 알림 전송 완료');
+  } catch (err) {
+    console.error('Discord 알림 요청 자체가 실패:', err instanceof Error ? err.message : err);
+  }
 }
 
 async function main() {
