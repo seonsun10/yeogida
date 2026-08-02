@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
+import { ShareButton } from '@/components/ShareButton';
 import { getCategoryStyle } from '@/lib/category-style';
 import { trackOutboundClick } from '@/lib/track';
 import type { Category, Service } from '@/types/service';
@@ -73,15 +74,18 @@ export function ServiceDetail({
         </div>
       </dl>
 
-      <a
-        href={service.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => trackOutboundClick(service)}
-        className={buttonVariants({ size: 'lg', className: 'w-fit' })}
-      >
-        바로가기
-      </a>
+      <div className="flex flex-wrap items-center gap-2">
+        <a
+          href={service.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackOutboundClick(service)}
+          className={buttonVariants({ size: 'lg', className: 'w-fit' })}
+        >
+          바로가기
+        </a>
+        <ShareButton title={service.name} text={service.summary} />
+      </div>
     </article>
   );
 }
