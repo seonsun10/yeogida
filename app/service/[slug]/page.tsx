@@ -4,12 +4,14 @@ import { AdSlot } from '@/components/AdSlot';
 import { Disclaimer } from '@/components/Disclaimer';
 import { ServiceCard } from '@/components/ServiceCard';
 import { ServiceDetail } from '@/components/ServiceDetail';
+import { breadcrumbList, jsonLdScriptProps } from '@/lib/json-ld';
 import {
   getAllServices,
   getCategoryBySlug,
   getServiceBySlug,
   getServicesByCategory,
 } from '@/lib/services';
+import { getSiteUrl } from '@/lib/site-url';
 
 const RELATED_SERVICE_LIMIT = 3;
 
@@ -53,8 +55,47 @@ export default async function ServicePage({ params }: ServicePageProps) {
     .slice(0, RELATED_SERVICE_LIMIT);
   const category = getCategoryBySlug(service.categorySlug);
 
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}/service/${service.slug}`;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        name: service.name,
+        description: service.summary,
+        url: pageUrl,
+        serviceType: category?.name,
+        areaServed: {
+          '@type': 'Country',
+          name: 'KR',
+        },
+        provider: {
+          '@type': 'Organization',
+          name: service.source,
+          url: service.url,
+        },
+        ...(service.cost === 'free' && {
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'KRW',
+          },
+        }),
+      },
+      breadcrumbList([
+        { name: '홈', url: siteUrl },
+        ...(category
+          ? [{ name: category.name, url: `${siteUrl}/category/${category.slug}` }]
+          : []),
+        { name: service.name, url: pageUrl },
+      ]),
+    ],
+  };
+
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 py-12">
+      <script {...jsonLdScriptProps(jsonLd)} />
       {DISCLAIMER_CATEGORIES.includes(service.categorySlug) && <Disclaimer />}
       <ServiceDetail service={service} category={category} />
 

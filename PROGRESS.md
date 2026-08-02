@@ -86,3 +86,26 @@ Phase 3 완료 보고 전 코드 리뷰를 받은 결과, 실사용에 영향을
 
 - 사용자 확인 후, `create-next-app`의 최초 커밋(`119de0c`) 이후 Phase 0~3의 모든 변경사항(스캐폴딩, shadcn, prettier, 데이터, 페이지, 컴포넌트, 제보 폼, SEO 파일 등 45개 파일)을 커밋 `3a5e5f2`로 한 번에 커밋함.
 - 커밋 전 `git status`로 스테이징 대상을 확인 — 실제 비밀값이 담긴 `.env.local`은 목록에 없고(`.gitignore`로 제외됨) 값이 비어있는 `.env.local.example`만 포함된 것을 확인 후 진행.
+
+## 2026-08-02
+
+### SEO 고도화 — JSON-LD 구조화 데이터 (완료)
+
+- `lib/json-ld.ts`: `<script type="application/ld+json">` 삽입용 공통 헬퍼(`jsonLdScriptProps` — XSS 방지용 `<` 이스케이프 포함, Next.js 공식 가이드 권장 방식) + `breadcrumbList` 빌더 작성.
+- `app/service/[slug]/page.tsx`: `Service`(제공기관/비용/지역) + `BreadcrumbList`(홈>카테고리>서비스) 스키마 추가.
+- `app/category/[slug]/page.tsx`: `BreadcrumbList` + 목록 전체를 담는 `ItemList` 스키마 추가.
+- **검증**: `npm run lint` / `npx tsc --noEmit` / `npm run build` 통과. `npm start`로 prod 서버 띄운 뒤 실제 응답 HTML에서 JSON-LD 스크립트를 파싱해 구조 확인(health 카테고리 19건 전부 ItemList에 포함되는 것 확인).
+- **후속 조치 필요(사용자)**: 배포 후 실제 도메인으로 [Rich Results Test](https://search.google.com/test/rich-results)에서 재검증 권장. 커스텀 도메인 연결 시 Vercel 환경변수 `NEXT_PUBLIC_SITE_URL`을 명시적으로 채워야 JSON-LD의 URL들이 로컬 fallback이 아닌 실제 도메인으로 고정됨.
+
+### 죽은 링크 자동 점검 (구현 완료, 실전 검증 1회 필요)
+
+- `scripts/check-links.mjs`: `data/services.json`의 모든 `url`에 GET 요청 → 정상/확인필요(403·429·타임아웃)/끊김(4xx·5xx)으로 분류. 실패 시 1회 재시도.
+  - **버그 발견 및 수정 1**: 국내 공공기관 사이트 다수가 legacy SSL 재협상을 쓰는데 Node 기본 OpenSSL이 이를 차단해 멀쩡한 사이트가 "네트워크 오류"로 오탐됨(`nip.kdca.go.kr` 등 첫 로컬 실행에서 8건 발견, curl은 통과하는데 Node `fetch`만 실패하는 것으로 원인 특정). `undici` Agent에 `SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION` 옵션을 줘서 해결, devDependency로 `undici` 추가.
+  - **버그 발견 및 수정 2(advisor 리뷰)**: 응답 body를 소비/취소하지 않아 undici가 커넥션을 계속 붙들고 있어 101건 순회가 느려짐 — `res.body?.cancel()` 추가.
+- **알림 방식**: 실패 건이 있을 때만 GitHub 이슈(`🔗 링크 점검 리포트`)를 생성/갱신, 전부 정상이면 열려있던 이슈를 코멘트 남기고 자동 종료. 사용자가 Slack/Discord 대신 "추가 설정 거의 없는 GitHub Issue"를 선택함.
+  - **버그 발견 및 수정 3(advisor 리뷰)**: 이슈가 이미 열려있는 상태에서 본문(body)만 PATCH하면 GitHub이 알림을 보내지 않아, 이슈 오픈 이후 새로 끊긴 링크는 사용자가 영영 모르게 되는 구조였음. 이슈 본문에 `<!-- link-check-slugs: [...] -->` 숨은 마커로 이전 점검의 문제 목록을 남기고, 다음 실행 때 이전 목록과 diff해서 "새로 생긴 문제"가 있을 때만 코멘트(알림 발생)하도록 수정. 문제 목록이 그대로거나 줄기만 했으면 본문만 조용히 갱신.
+  - 이슈 검색을 레이블이 아닌 제목 매칭으로 변경 — POST 시 존재하지 않는 레이블을 넘겼을 때의 자동 생성 여부가 GitHub 공식 문서상 불명확해(WebSearch로 확인, 문서/커뮤니티 의견이 갈림) 첫 이슈 생성이 실패할 리스크를 원천 차단.
+- `.github/workflows/check-links.yml`: 매주 월요일 09:00 KST(cron `0 0 * * 1`) 자동 실행 + `workflow_dispatch` 수동 실행. `permissions: contents: read, issues: write` 명시(권한 블록을 명시하면 나머지가 전부 `none`으로 리셋되므로 `contents: read`도 빠뜨리지 않고 포함).
+- `lastVerified`(서비스 데이터의 "사람이 내용까지 확인한 날짜" 필드)는 자동 갱신하지 않음 — URL 응답 여부와 내용 정확성은 다른 문제라 봇이 덮어쓰면 의미가 왜곡되기 때문. 실제 URL 수정은 관리자가 `/admin`에서 수동으로.
+- **검증 한계**: 101건 전체를 로컬에서 반복 실행하는 건 느리고(외부 요청 다수), 세션 환경의 자동 승인 정책이 대량 외부 요청을 차단해 매번 재현하지 못함. TLS 수정은 실제로 실패했던 도메인(`nip.kdca.go.kr`)에 대해 개별 재확인 완료. `npm run lint` / `node --check`는 통과했으나, **GitHub 이슈 생성/갱신 흐름 자체는 로컬에서 `GITHUB_TOKEN`이 없어 검증 불가** — 커밋 후 GitHub Actions 탭에서 `workflow_dispatch`로 수동 1회 실행해 이슈가 정상 생성되는지 확인 필요.
+- **알려진 제약**: GitHub의 스케줄 워크플로우는 저장소에 60일간 활동(커밋 등)이 없으면 자동으로 비활성화된다. 업데이트가 뜸해지는 시기가 있으면 점검이 조용히 멈출 수 있다는 점 인지 필요.

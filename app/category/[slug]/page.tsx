@@ -6,12 +6,14 @@ import { FilterBar } from '@/components/FilterBar';
 import { SearchBar } from '@/components/SearchBar';
 import { ServiceCard } from '@/components/ServiceCard';
 import { ServiceGrid } from '@/components/ServiceGrid';
+import { breadcrumbList, jsonLdScriptProps } from '@/lib/json-ld';
 import {
   filterServices,
   getAllCategories,
   getCategoryBySlug,
   getServicesByCategory,
 } from '@/lib/services';
+import { getSiteUrl } from '@/lib/site-url';
 
 const IN_FEED_AD_INTERVAL = 6;
 
@@ -55,8 +57,29 @@ export default async function CategoryPage({
     services = filterServices(services, { badge: '24시간' });
   }
 
+  const siteUrl = getSiteUrl();
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      breadcrumbList([
+        { name: '홈', url: siteUrl },
+        { name: category.name, url: `${siteUrl}/category/${category.slug}` },
+      ]),
+      {
+        '@type': 'ItemList',
+        itemListElement: services.map((service, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          url: `${siteUrl}/service/${service.slug}`,
+          name: service.name,
+        })),
+      },
+    ],
+  };
+
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-4 py-12">
+      <script {...jsonLdScriptProps(jsonLd)} />
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-bold">{category.name}</h1>
         <p className="text-muted-foreground">{category.description}</p>

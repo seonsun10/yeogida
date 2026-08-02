@@ -33,6 +33,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 | `lib/` | 데이터 조회/검색/유틸 함수 (see `lib/AGENTS.md`) |
 | `types/` | 공유 TypeScript 타입 정의 (see `types/AGENTS.md`) |
 | `public/` | 정적 파일 + 관리자 업로드 이미지 저장 위치 (`public/uploads`, `public/thumbnails`) |
+| `scripts/` | 앱 외부에서 실행하는 유지보수 스크립트 — 링크 점검 등 (see `scripts/AGENTS.md`) |
+| `.github/workflows/` | GitHub Actions 워크플로우 — `check-links.yml`(매주 링크 점검) |
 
 ## For AI Agents
 
