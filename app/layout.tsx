@@ -51,9 +51,10 @@ export const metadata: Metadata = {
     title: '여기다',
     description: SITE_DESCRIPTION,
   },
-  ...(ADSENSE_CLIENT_ID && {
-    other: { 'google-adsense-account': ADSENSE_CLIENT_ID },
-  }),
+  other: {
+    'naver-site-verification': 'bfdbd2f28fe6edec15b5a6ece122cb87d1a85ed1',
+    ...(ADSENSE_CLIENT_ID && { 'google-adsense-account': ADSENSE_CLIENT_ID }),
+  },
 };
 
 export default function RootLayout({
