@@ -212,6 +212,51 @@ async function reportToGitHub(results, checkedAt) {
   }
 }
 
+const DISCORD_CONTENT_LIMIT = 1900; // Discord 메시지 2000자 제한에 여유를 둔 값
+
+function buildDiscordMessage(results, checkedAt) {
+  const broken = results.filter((r) => r.status === 'broken');
+  const needsCheck = results.filter((r) => r.status === 'needs-check');
+  const okCount = results.length - broken.length - needsCheck.length;
+
+  if (broken.length === 0 && needsCheck.length === 0) {
+    return `🔗 **링크 점검 완료** (${checkedAt})\n전체 ${results.length}건 모두 정상 ✅`;
+  }
+
+  const lines = [
+    `🔗 **링크 점검 완료** (${checkedAt})`,
+    `정상 ${okCount} / 확인필요 ${needsCheck.length} / 끊김 ${broken.length}`,
+    '',
+  ];
+  for (const r of [...broken, ...needsCheck]) {
+    const icon = r.status === 'broken' ? '⛔' : '⚠️';
+    lines.push(`${icon} ${r.service.name} (\`${r.service.slug}\`) — ${r.detail}`);
+  }
+
+  let content = lines.join('\n');
+  if (content.length > DISCORD_CONTENT_LIMIT) {
+    content = `${content.slice(0, DISCORD_CONTENT_LIMIT)}\n… (내용이 길어 일부 생략)`;
+  }
+  return content;
+}
+
+// DISCORD_WEBHOOK_URL이 없으면(로컬 실행 등) 조용히 건너뛴다.
+async function notifyDiscord(results, checkedAt) {
+  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+  if (!webhookUrl) return;
+
+  const res = await fetch(webhookUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ content: buildDiscordMessage(results, checkedAt) }),
+  });
+  if (!res.ok) {
+    console.error(`Discord 알림 실패: ${res.status} ${await res.text()}`);
+    return;
+  }
+  console.log('Discord 알림 전송 완료');
+}
+
 async function main() {
   const services = await loadServices();
   const checkedAt = new Date().toISOString();
@@ -232,6 +277,8 @@ async function main() {
   } else {
     console.log('\n(GITHUB_TOKEN 없음 — 로컬 실행으로 간주, 이슈 생성/갱신 생략)');
   }
+
+  await notifyDiscord(results, checkedAt);
 }
 
 main().catch((err) => {
