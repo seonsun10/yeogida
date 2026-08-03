@@ -9,14 +9,18 @@
 ## Key Files
 | File | Description |
 |------|-------------|
-| `categories.json` | 카테고리 정의 배열 — `Category` 타입(`slug`, `name`, `description`, `color`). `color`는 카드/헤더 카테고리 메뉴의 상단 강조색(hex, `#RRGGBB`)이며 `/admin/categories`에서 수정 가능. 현재 9개: health, legal-admin, family, consumer, emergency, life-admin-tips, housing, employment-startup, transport |
+| `categories.json` | 카테고리 정의 배열 — `Category` 타입(`slug`, `name`, `description`, `color`). `color`는 카드/헤더 카테고리 메뉴의 상단 강조색(hex, `#RRGGBB`)이며 `/admin/categories`에서 수정 가능. 현재 12개: health, legal-admin, family, consumer, emergency, life-admin-tips, housing, employment-startup, transport, pet, tax-finance, senior-welfare |
 | `services.json` | 서비스 콘텐츠 배열 — `Service` 타입 전체 필드. `/admin`에서 등록·수정 시 이 파일이 직접 갱신된다 |
+| `link-check-status.json` | `scripts/check-links.mjs`가 매 실행 후 자동 생성/갱신하는 요약 상태(`checkedAt`/`total`/`ok`/`needsCheck`/`broken`) — 사람이 손으로 편집하지 않음. 사이트 푸터의 "마지막 전체 링크 점검" 표시에 쓰인다(`lib/link-check-status.ts`) |
 
 ## For AI Agents
 
 ### Working In This Directory
 - **이 파일들을 직접 손으로 편집하지 말 것.** `services.json`은 `lib/admin-write.ts`의 `writeServices()`가 Prettier로 포맷팅하며 저장하므로, 수동 편집 시 포맷이 어긋나거나 `/admin` 통해 저장할 때 diff가 커질 수 있다. 콘텐츠를 늘리거나 고칠 때는 가능하면 `/admin` UI(로컬 개발 서버)를 사용한다.
 - 정말 직접 편집해야 한다면(예: 대량 시드 데이터 추가) `Service` 타입(`types/service.ts`)의 모든 필드를 채우고, `slug`/`id`는 `^[a-z0-9]+(?:-[a-z0-9]+)*$` 패턴을 따르며 서로 유일해야 한다. `categorySlug`는 반드시 `categories.json`에 존재하는 slug여야 한다.
+- 새 카테고리를 추가할 때는 `categories.json`뿐 아니라 `lib/category-style.ts`의 `CATEGORY_STYLES`에도 아이콘/색상 항목을 추가해야 한다 — 안 하면 해당 카테고리는 `DEFAULT_STYLE`(무채색 Lightbulb 아이콘)로 조용히 폴백된다.
+- `badges`는 자유 텍스트가 아니라 사실상 필터 어휘다(`components/FilterBar.tsx` + `lib/services.ts`의 `filterServices`가 `무료`/`24시간` 값을 그대로 매칭). 새 항목을 추가할 때 기존 어휘(`무료`, `24시간`, `정부지원`, `공공기관`, `긴급`, `취약계층지원` 등)를 재사용하고, 새로운 뉘앙스는 `summary`/`description`에 담는다.
+- `link-check-status.json`은 `scripts/check-links.mjs`만 쓴다 — 직접 수정하지 말 것.
 - `thumbnail`/`images` 경로는 `/uploads/<slug>/...` 형태로 `public/uploads/` 아래 실제 파일과 짝을 이뤄야 한다 — 파일 없이 경로만 추가하면 깨진 이미지가 된다.
 - `lastVerified`는 `YYYY-MM-DD` 문자열이며 사이트맵의 `lastModified`로도 쓰인다(`app/sitemap.ts`).
 

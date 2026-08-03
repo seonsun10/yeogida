@@ -1,10 +1,13 @@
 import {
   Briefcase,
   Car,
+  HeartHandshake,
   HeartPulse,
   House,
+  Landmark,
   Lightbulb,
   type LucideIcon,
+  PawPrint,
   Scale,
   ShieldCheck,
   Siren,
@@ -72,6 +75,21 @@ const CATEGORY_STYLES: Record<string, CategoryStyle> = {
     icon: Car,
     chip: 'bg-sky-50 text-sky-600',
     badge: 'bg-sky-50 text-sky-700',
+  },
+  pet: {
+    icon: PawPrint,
+    chip: 'bg-pink-50 text-pink-600',
+    badge: 'bg-pink-50 text-pink-700',
+  },
+  'tax-finance': {
+    icon: Landmark,
+    chip: 'bg-indigo-50 text-indigo-600',
+    badge: 'bg-indigo-50 text-indigo-700',
+  },
+  'senior-welfare': {
+    icon: HeartHandshake,
+    chip: 'bg-lime-50 text-lime-600',
+    badge: 'bg-lime-50 text-lime-700',
   },
 };
 
