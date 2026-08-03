@@ -9,7 +9,7 @@ Next.js 앱 실행 경로 밖에서, `.github/workflows/`의 GitHub Actions가 �
 ## Key Files
 | File | Description |
 |------|-------------|
-| `check-links.mjs` | `data/services.json`의 모든 `url`에 요청을 보내 생존 여부를 점검하고, 문제(끊김/확인필요)가 있으면 GitHub 이슈를 생성·갱신한다. 매 실행마다(정상이어도) Discord 웹훅으로도 결과를 보낸다. `.github/workflows/check-links.yml`이 매주 일요일 21시(KST) 자동 실행하며, `npm run check-links`로 로컬 실행도 가능하다(이 경우 `GITHUB_TOKEN`/`DISCORD_WEBHOOK_URL`이 없어 콘솔 출력만 하고 이슈·알림 작업은 생략됨). |
+| `check-links.mjs` | `data/services.json`의 모든 `url`에 요청을 보내 생존 여부를 점검하고, 문제(끊김/확인필요)가 있으면 GitHub 이슈를 생성·갱신한다. 매 실행마다(정상이어도) Discord 웹훅으로도 결과를 보내고, `data/link-check-status.json`에 점검 시각·건수 요약을 써서 사이트 푸터의 "마지막 전체 링크 점검" 표시에 쓴다. `.github/workflows/check-links.yml`이 매주 일요일 21시(KST) 자동 실행하며, `npm run check-links`로 로컬 실행도 가능하다(이 경우 `GITHUB_TOKEN`/`DISCORD_WEBHOOK_URL`이 없어 콘솔 출력만 하고 이슈·알림 작업은 생략되지만 상태 파일은 그대로 갱신됨). |
 
 ## For AI Agents
 
@@ -19,6 +19,7 @@ Next.js 앱 실행 경로 밖에서, `.github/workflows/`의 GitHub Actions가 �
 - GitHub 이슈 본문 끝에 `<!-- link-check-slugs: [...] -->` 형태의 숨은 마커를 남겨, 다음 실행 때 "새로 생긴 문제"만 골라 코멘트(=알림 발생)하고 나머지는 조용히 본문만 갱신한다. 이 마커를 지우거나 형식을 바꾸면 매번 전체가 "신규 문제"로 취급되어 알림이 과도하게 발생한다.
 - `lastVerified`(서비스 데이터 필드, 사람이 내용까지 확인한 날짜)는 이 스크립트가 건드리지 않는다 — URL 응답 여부만으로 자동 덮어쓰면 의미가 왜곡되기 때문. 링크 문제 발견 시 실제 수정은 `/admin`에서 사람이 수동으로 한다.
 - Discord 알림(`notifyDiscord`)은 `DISCORD_WEBHOOK_URL` secret이 있을 때만 동작하며, GitHub 이슈 로직과 독립적이다 — 이슈는 "문제가 새로 생겼을 때만" 알리는 지속형 트래커, Discord는 "매 실행마다" 결과를 알리는 즉시 알림이라 역할이 다르다. 메시지는 Discord 2000자 제한 때문에 1900자에서 자른다.
+- `data/link-check-status.json`은 GitHub Actions 워크플로우(`.github/workflows/check-links.yml`)의 "점검 결과 커밋" 스텝이 `contents: write` 권한으로 매번 커밋·푸시한다 — 이 파일이 실제 배포(main 브랜치 push 트리거)에 반영되어야 사이트 푸터의 점검일 표시가 최신으로 갱신된다.
 
 ### Testing Requirements
 - `node --check scripts/check-links.mjs`로 문법 확인, `npm run lint`로 확인.

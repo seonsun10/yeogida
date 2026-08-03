@@ -3,7 +3,7 @@
  * data/services.json의 url이 살아있는지 점검하고, 문제가 있으면 GitHub 이슈를 생성/갱신한다.
  * GITHUB_TOKEN 환경변수가 없으면(로컬 실행) 콘솔에만 리포트를 출력하고 이슈 작업은 생략한다.
  */
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { constants as cryptoConstants } from 'node:crypto';
 import { Agent, fetch } from 'undici';
 
@@ -27,6 +27,22 @@ async function loadServices() {
   const url = new URL('../data/services.json', import.meta.url);
   const raw = await readFile(url, 'utf8');
   return JSON.parse(raw);
+}
+
+// 메인 페이지 하단에 "마지막 전체 점검일"을 표시하기 위한 요약 상태 파일.
+// GitHub Actions 워크플로우가 이 파일을 매 실행 후 커밋해 배포에 반영한다(README 참고).
+async function writeStatusFile(results, checkedAt) {
+  const broken = results.filter((r) => r.status === 'broken').length;
+  const needsCheck = results.filter((r) => r.status === 'needs-check').length;
+  const status = {
+    checkedAt,
+    total: results.length,
+    ok: results.length - broken - needsCheck,
+    needsCheck,
+    broken,
+  };
+  const url = new URL('../data/link-check-status.json', import.meta.url);
+  await writeFile(url, JSON.stringify(status, null, 2) + '\n', 'utf8');
 }
 
 async function fetchOnce(url) {
@@ -287,6 +303,7 @@ async function main() {
     console.log('\n(GITHUB_TOKEN 없음 — 로컬 실행으로 간주, 이슈 생성/갱신 생략)');
   }
 
+  await writeStatusFile(results, checkedAt);
   await notifyDiscord(results, checkedAt);
 }
 

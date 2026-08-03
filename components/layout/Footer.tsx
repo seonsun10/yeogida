@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import { getLinkCheckStatus } from '@/lib/link-check-status';
 
-export function Footer() {
+export async function Footer() {
+  const status = await getLinkCheckStatus();
+
   return (
     <footer className="border-t bg-muted/40">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 text-sm text-muted-foreground">
@@ -25,6 +28,11 @@ export function Footer() {
             이용약관
           </Link>
         </div>
+        {status && (
+          <p className="text-xs text-muted-foreground/70">
+            마지막 전체 링크 점검: {status.checkedAt.slice(0, 10)}
+          </p>
+        )}
         <p className="text-xs text-muted-foreground/70">
           © {new Date().getFullYear()} 여기다
         </p>
