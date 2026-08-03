@@ -70,7 +70,7 @@ export default function RootLayout({
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} ${notoSansKr.variable} h-full antialiased`}
     >
-      <head>
+      <body className="flex min-h-full flex-col">
         <Script id="gtm-script" strategy="beforeInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -80,8 +80,6 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','${GTM_ID}');
           `}
         </Script>
-      </head>
-      <body className="flex min-h-full flex-col">
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
