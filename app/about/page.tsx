@@ -5,6 +5,9 @@ const CONTACT_EMAIL = process.env.NEXT_PUBLIC_SUBMIT_EMAIL ?? '';
 export const metadata: Metadata = {
   title: '소개',
   description: '여기다가 무엇을 하는 사이트인지, 누가 운영하는지 소개합니다.',
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {

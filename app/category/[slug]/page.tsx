@@ -35,6 +35,14 @@ export async function generateMetadata({
   return {
     title: category.name,
     description: category.description,
+    keywords: [category.name, `${category.name} 서비스`, '여기다'],
+    alternates: {
+      canonical: `/category/${slug}`,
+    },
+    openGraph: {
+      title: category.name,
+      description: category.description,
+    },
   };
 }
 

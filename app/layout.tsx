@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Noto_Sans_KR } from 'next/font/google';
 import Script from 'next/script';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { jsonLdScriptProps } from '@/lib/json-ld';
+import { getAllCategories } from '@/lib/services';
 import { getSiteUrl } from '@/lib/site-url';
 import './globals.css';
 
@@ -25,12 +27,25 @@ const notoSansKr = Noto_Sans_KR({
 const SITE_DESCRIPTION =
   '사람들이 몰라서 못 쓰는, 실제로 도움이 되는 생활 밀착형 서비스를 카테고리별로 정리한 큐레이션 디렉토리';
 
+const SITE_KEYWORDS = [
+  '생활 서비스',
+  '생활 정보',
+  '무료 상담',
+  '정부 지원 서비스',
+  '복지 서비스',
+  '숨은 지원 서비스',
+  ...getAllCategories().map((category) => category.name),
+];
+
 // 애드센스 승인 후 발급받는 게시자 ID(예: ca-pub-1234567890123456)를 설정하면
 // 사이트 소유 확인 메타 태그와 광고 스크립트가 자동으로 활성화된다.
 const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 // Google Analytics 측정 ID(예: G-XXXXXXXXXX)를 설정하면 방문 통계 수집이 활성화된다.
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
+// Google Search Console "HTML 태그" 인증 방식에서 발급되는 소유 확인 코드.
+const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 // Google Tag Manager 컨테이너 ID
 const GTM_ID = 'GTM-P5VWZPKK';
@@ -42,6 +57,10 @@ export const metadata: Metadata = {
     template: '%s | 여기다',
   },
   description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
@@ -54,6 +73,9 @@ export const metadata: Metadata = {
     title: '여기다',
     description: SITE_DESCRIPTION,
   },
+  verification: {
+    ...(GOOGLE_SITE_VERIFICATION && { google: GOOGLE_SITE_VERIFICATION }),
+  },
   other: {
     'naver-site-verification': 'bfdbd2f28fe6edec15b5a6ece122cb87d1a85ed1',
     ...(ADSENSE_CLIENT_ID && { 'google-adsense-account': ADSENSE_CLIENT_ID }),
@@ -65,12 +87,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteUrl = getSiteUrl();
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        name: '여기다',
+        url: siteUrl,
+        description: SITE_DESCRIPTION,
+        inLanguage: 'ko-KR',
+      },
+      {
+        '@type': 'Organization',
+        name: '여기다',
+        url: siteUrl,
+      },
+    ],
+  };
+
   return (
     <html
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} ${notoSansKr.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <script {...jsonLdScriptProps(jsonLd)} />
         <Script id="gtm-script" strategy="beforeInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

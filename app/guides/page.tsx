@@ -6,6 +6,9 @@ import { getAllGuides } from '@/lib/guides';
 export const metadata: Metadata = {
   title: '가이드',
   description: '상황별로 어떤 서비스를 먼저 써야 하는지 정리한 여기다의 실전 가이드',
+  alternates: {
+    canonical: '/guides',
+  },
 };
 
 export default function GuidesPage() {

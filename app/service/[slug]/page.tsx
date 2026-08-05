@@ -33,9 +33,19 @@ export async function generateMetadata({
   const service = await getServiceBySlug(slug);
   if (!service) return {};
   const ogImage = service.thumbnail || service.images[0];
+  const category = getCategoryBySlug(service.categorySlug);
   return {
     title: service.name,
     description: service.summary,
+    keywords: [
+      service.name,
+      ...service.tags,
+      ...(category ? [category.name] : []),
+      '여기다',
+    ],
+    alternates: {
+      canonical: `/service/${slug}`,
+    },
     openGraph: {
       title: service.name,
       description: service.summary,
