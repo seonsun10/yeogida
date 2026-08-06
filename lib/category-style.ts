@@ -11,6 +11,7 @@ import {
   Scale,
   ShieldCheck,
   Siren,
+  Umbrella,
   Users,
 } from 'lucide-react';
 
@@ -90,6 +91,11 @@ const CATEGORY_STYLES: Record<string, CategoryStyle> = {
     icon: HeartHandshake,
     chip: 'bg-lime-50 text-lime-600',
     badge: 'bg-lime-50 text-lime-700',
+  },
+  insurance: {
+    icon: Umbrella,
+    chip: 'bg-cyan-50 text-cyan-600',
+    badge: 'bg-cyan-50 text-cyan-700',
   },
 };
 
