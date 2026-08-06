@@ -25,9 +25,12 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 const SITE_DESCRIPTION =
-  '사람들이 몰라서 못 쓰는, 실제로 도움이 되는 생활 밀착형 서비스를 카테고리별로 정리한 큐레이션 디렉토리';
+  '여기다(yeogida-life.com)는 사람들이 몰라서 못 쓰는, 실제로 도움이 되는 생활 밀착형 서비스를 카테고리별로 정리한 큐레이션 디렉토리입니다.';
 
 const SITE_KEYWORDS = [
+  '여기다',
+  'yeogida',
+  'yeogida-life',
   '생활 서비스',
   '생활 정보',
   '무료 상담',
@@ -64,6 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
+    url: getSiteUrl(),
     siteName: '여기다',
     title: '여기다',
     description: SITE_DESCRIPTION,
