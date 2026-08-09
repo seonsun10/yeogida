@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Noto_Sans_KR } from 'next/font/google';
 import Script from 'next/script';
+import { Suspense } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { RouteChangeTracker } from '@/components/RouteChangeTracker';
 import { jsonLdScriptProps } from '@/lib/json-ld';
 import { getAllCategories } from '@/lib/services';
 import { getSiteUrl } from '@/lib/site-url';
@@ -154,12 +156,15 @@ export default function RootLayout({
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}');
+                gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
                 window.gtag = gtag;
               `}
             </Script>
           </>
         )}
+        <Suspense fallback={null}>
+          <RouteChangeTracker />
+        </Suspense>
         <Header />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />
