@@ -32,6 +32,7 @@ export function FilterBar() {
         type="button"
         onClick={() => toggleParam(FREE_ONLY_PARAM, freeOnly)}
         aria-pressed={freeOnly}
+        className="rounded-4xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
       >
         <Badge variant={freeOnly ? 'default' : 'outline'}>무료만</Badge>
       </button>
@@ -39,6 +40,7 @@ export function FilterBar() {
         type="button"
         onClick={() => toggleParam(HOURS24_PARAM, hours24Only)}
         aria-pressed={hours24Only}
+        className="rounded-4xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
       >
         <Badge variant={hours24Only ? 'default' : 'outline'}>24시간만</Badge>
       </button>

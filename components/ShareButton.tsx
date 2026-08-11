@@ -28,6 +28,9 @@ export function ShareButton({ title, text }: { title: string; text?: string }) {
     <Button type="button" variant="outline" size="lg" onClick={handleShare}>
       {copied ? <Check /> : <Share2 />}
       {copied ? '링크 복사됨' : '공유하기'}
+      <span role="status" className="sr-only">
+        {copied && '링크가 복사되었습니다'}
+      </span>
     </Button>
   );
 }

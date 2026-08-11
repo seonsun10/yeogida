@@ -11,7 +11,10 @@ export function ServiceCard({ service }: { service: Service }) {
   const style = getCategoryStyle(service.categorySlug);
 
   return (
-    <Link href={`/service/${service.slug}`} className="block h-full">
+    <Link
+      href={`/service/${service.slug}`}
+      className="block h-full rounded-xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+    >
       <Card
         className="h-full border-t-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
         style={{ borderTopColor: category?.color ?? DEFAULT_CATEGORY_COLOR }}

@@ -8,6 +8,7 @@ export type Guide = {
   slug: string;
   title: string;
   summary: string;
+  categorySlug: string;
   publishedAt: string;
   blocks: GuideBlock[];
 };
@@ -15,6 +16,7 @@ export type Guide = {
 export const guides: Guide[] = [
   {
     slug: 'night-child-fever',
+    categorySlug: 'health',
     title: '밤에 아이가 갑자기 아프면: 아이안심톡 vs 달빛어린이병원, 뭘 먼저 써야 할까',
     summary:
       '늦은 밤 아이 열이 오를 때 무엇부터 확인해야 하는지, 상황별 판단 순서를 정리했다',
@@ -74,6 +76,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'jeonse-contract-checklist',
+    categorySlug: 'housing',
     title: '전세 계약 전 확인 순서: 등기부등본 → 실거래가 → HUG 보증',
     summary:
       '전세 사기를 피하려면 계약서에 도장 찍기 전에 어떤 순서로 무엇을 확인해야 하는지 정리했다',
@@ -137,6 +140,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'debt-relief-options',
+    categorySlug: 'tax-finance',
     title: '빚 감당이 안 될 때: 신용회복위원회 vs 개인회생 vs 서민금융진흥원',
     summary:
       '여러 곳에 진 빚을 갚기 어려워졌을 때, 상황별로 어디부터 문을 두드려야 하는지 정리했다',
@@ -160,7 +164,7 @@ export const guides: Guide[] = [
       },
       {
         type: 'paragraph',
-        text: '여러 금융회사에 진 빚을 정해진 날짜에 갚기 어려워졌다면 신용회복위원회의 개인워크아웃이나 사전채무조정(신속채무조정)을 상담받는다. 소송 없이 상환기간 연장, 분할상환, 이자율 인하, 원금 일부 감면까지 받을 수 있는 공적 절차다. 전화(1600-5500) 상담만으로도 내 상황에 맞는 제도를 안내받을 수 있다.',
+        text: '여러 금융회사에 진 빚을 정해진 날짜에 갚기 어려워졌다면 신용회복위원회의 채무조정을 상담받는다. 연체 전이거나 연체 30일 이하면 신속채무조정, 31~89일이면 사전채무조정(프리워크아웃), 90일 이상이면 개인워크아웃으로 나뉘며 연체 기간에 따라 이자 감면 폭과 분할상환 기간이 달라지고, 개인워크아웃부터는 원금 일부 감면도 가능하다. 소송 없이 진행되는 공적 절차이며, 전화(1600-5500) 상담만으로도 내 연체 상황에 맞는 제도를 안내받을 수 있다.',
       },
       {
         type: 'heading',
@@ -199,6 +203,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'unemployment-benefit-steps',
+    categorySlug: 'employment-startup',
     title: '퇴사 후 뭐부터: 실업급여 신청 순서와 놓치기 쉬운 함정',
     summary:
       '퇴사했다고 바로 실업급여가 나오는 게 아니다. 신청 전에 확인해야 할 순서와 조건을 정리했다',
@@ -249,6 +254,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'inheritance-procedure-steps',
+    categorySlug: 'legal-admin',
     title: '가족이 세상을 떠났을 때: 상속 재산 확인부터 신고까지 순서',
     summary:
       '슬픔 속에서도 놓치면 손해 보는 상속 관련 기한이 있다. 무엇을 먼저 확인해야 하는지 정리했다',
@@ -299,6 +305,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'car-accident-response-steps',
+    categorySlug: 'transport',
     title: '교통사고 났을 때: 현장 조치부터 과실비율 다툼까지 순서',
     summary:
       '사고 직후 당황해서 놓치기 쉬운 확인 순서와, 과실비율에 이견이 있을 때 무료로 다퉈볼 수 있는 방법을 정리했다',
@@ -322,7 +329,7 @@ export const guides: Guide[] = [
       },
       {
         type: 'paragraph',
-        text: '보험사가 제시한 과실비율에 동의하기 어렵다면 그대로 받아들이지 않아도 된다. 자동차사고 과실비율 분쟁심의위원회에 무료로 심의를 신청할 수 있고, 손해보험협회 산하 전문 심의위원들이 블랙박스·사진 등 증거를 바탕으로 다시 판단해준다. 소송까지 가지 않고도 재산정을 받아볼 수 있는 절차라는 걸 모르고 그냥 넘어가는 경우가 많다.',
+        text: '보험사가 제시한 과실비율에 동의하기 어렵다면 그대로 받아들이지 않아도 된다. 다만 사고 당사자가 직접 신청할 수는 없고, 가입한 보험사에 이의를 제기하며 재심의를 요청하면 보험사가 손해보험협회 산하 자동차사고 과실비율 분쟁심의위원회에 무료로 심의를 올려준다. 전문 심의위원들이 블랙박스·사진 등 증거를 바탕으로 다시 판단해주므로, 소송까지 가지 않고도 재산정을 받아볼 수 있는 절차라는 걸 모르고 그냥 넘어가는 경우가 많다.',
       },
       {
         type: 'heading',
@@ -333,14 +340,28 @@ export const guides: Guide[] = [
         text: '보험 처리나 법적 대응을 위해 교통사고 사실확인원이나 상대 차량의 법규 위반 이력이 필요하면 경찰청 교통민원24(이파인)에서 관련 민원을 처리할 수 있다. 사고 원인이 차량 결함으로 의심되는 경우에는 자동차리콜센터에서 해당 차종에 리콜 이력이 있는지도 확인해볼 수 있다.',
       },
       {
+        type: 'heading',
+        text: '4단계 — 가해자가 무보험이거나 뺑소니라면',
+      },
+      {
+        type: 'paragraph',
+        text: '가해 차량이 아예 보험에 가입돼 있지 않거나, 도주해서 누구인지도 모른다면 보험사에 청구할 대상 자체가 없다. 이런 경우를 위해 정부가 피해자에게 직접 최소한의 보상을 해주는 자동차손해배상 보장사업(정부보장사업)이 따로 있다. 뺑소니·무보험차 사고로 다쳤다면 이 제도부터 확인해야 치료비와 손해를 조금이라도 건질 수 있다.',
+      },
+      {
         type: 'services',
         intro: '이 글에서 언급한 서비스',
-        slugs: ['knia-fault-ratio', 'efine-traffic-portal', 'car-recall-center'],
+        slugs: [
+          'knia-fault-ratio',
+          'efine-traffic-portal',
+          'car-recall-center',
+          'auto-accident-gov-compensation',
+        ],
       },
     ],
   },
   {
     slug: 'mental-health-crisis-contacts',
+    categorySlug: 'health',
     title: '마음이 힘들 때 어디부터 연락해야 할까: 위기 상담 순서',
     summary:
       '지금 당장 위험한 상황인지, 꾸준한 상담이 필요한 상황인지에 따라 연락해야 할 곳이 다르다',
@@ -356,7 +377,7 @@ export const guides: Guide[] = [
       },
       {
         type: 'paragraph',
-        text: '자해나 극단적 선택 충동이 있거나, 당장 누군가와 이야기하지 않으면 안 될 것 같은 상태라면 정신건강 위기상담전화 109로 전화한다. 24시간 무료로 운영되며, 통화 즉시 상담이 연결되고 필요하면 응급 출동까지 연계된다.',
+        text: '자해나 극단적 선택 충동이 있거나, 당장 누군가와 이야기하지 않으면 안 될 것 같은 상태라면 자살예방상담전화 109로 전화한다. 24시간 무료로 운영되며, 통화 즉시 상담이 연결되고 필요하면 응급 출동까지 연계된다. 자살·자해 위기 상황이 아니라 정신건강 전반에 대한 상담이 필요하다면 정신건강상담전화(1577-0199)로 연결하면 된다.',
       },
       {
         type: 'heading',
@@ -396,6 +417,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'moving-admin-checklist',
+    categorySlug: 'housing',
     title: '이사 후 놓치기 쉬운 행정 처리: 전입신고부터 전월세신고까지',
     summary:
       '이사만 끝내고 행정 처리를 미루면 과태료를 물 수 있다. 이사 후 바로 처리해야 할 순서를 정리했다',
@@ -442,6 +464,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'online-shopping-scam-response',
+    categorySlug: 'consumer',
     title: '온라인 쇼핑 사기·환불 거부 당했을 때: 1372 상담센터부터 분쟁조정까지',
     summary:
       '결제는 됐는데 물건이 안 오거나 환불을 거부당했을 때, 어디에 어떤 순서로 도움을 요청해야 하는지 정리했다',
@@ -496,6 +519,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'voice-phishing-privacy-breach-response',
+    categorySlug: 'consumer',
     title: '보이스피싱·개인정보 유출 피해, 지금 뭐부터 해야 할까',
     summary:
       '이미 송금했거나 내 정보가 새어나간 것 같을 때, 우왕좌왕하지 않고 순서대로 대응하는 법을 정리했다',
@@ -538,6 +562,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'missing-child-emergency-response',
+    categorySlug: 'emergency',
     title: '아이가 갑자기 안 보일 때: 실종 대비와 즉시 대응 순서',
     summary:
       '아이를 잃어버렸을 때 당황하지 않고 밟아야 할 신고 순서와, 미리 해두면 대조 시간을 줄여주는 사전등록을 정리했다',
@@ -572,6 +597,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'school-violence-response-steps',
+    categorySlug: 'family',
     title: '학교폭력을 당했거나 목격했다면: 117 신고부터 법률지원까지',
     summary:
       '자녀가 학교폭력 피해를 입었을 때 신고와 법률 대응을 어떤 순서로 진행해야 하는지 정리했다',
@@ -614,6 +640,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'domestic-violence-support-steps',
+    categorySlug: 'emergency',
     title: '가정폭력·데이트폭력 피해를 입었다면: 1366부터 법률 지원까지',
     summary:
       '지금 당장 위험하거나 보호가 필요한 상황에서 연락해야 할 곳을 순서대로 정리했다',
@@ -656,6 +683,7 @@ export const guides: Guide[] = [
   },
   {
     slug: 'multicultural-family-support-guide',
+    categorySlug: 'family',
     title: '다문화가정이라면 알아둘 곳: 통역 상담부터 육아 지원까지',
     summary:
       '한국 생활이 낯선 다문화가정과 이민자가 언어 걱정 없이 상담받고 육아 지원까지 받을 수 있는 순서를 정리했다',
@@ -696,6 +724,793 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: 'childcare-government-support-by-stage',
+    categorySlug: 'family',
+    title: '임신부터 초등 입학 전까지, 정부 육아 지원 한눈에 정리',
+    summary:
+      '출산지원금·보육료·돌봄서비스는 부처마다 신청 창구가 다르다. 아이 나이·상황별로 지금 뭘 확인해야 하는지 순서대로 정리했다',
+    publishedAt: '2026-08-11',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '육아 지원은 종류도 많고 부처마다 신청 창구가 달라서, 하나를 신청하면 나머지는 자동으로 처리되는 줄 알고 놓치는 경우가 흔하다. 검색을 여러 번 하는 대신 아이 상황별로 지금 확인해야 할 것과 어디서 신청하는지를 순서대로 정리했다.',
+      },
+      {
+        type: 'heading',
+        text: '임신을 확인했다면 — 아이사랑 포털에 먼저 등록한다',
+      },
+      {
+        type: 'paragraph',
+        text: '보건복지부가 운영하는 임신육아종합포털 아이사랑에 임신 사실을 등록해두면 산전 검사비, 엽산제·철분제 지원 등 임신 기간 혜택 안내를 한 곳에서 받을 수 있다. 출산 후에는 같은 포털에서 어린이집을 검색하고 국민행복카드로 보육료를 결제하는 창구로도 계속 쓰게 되니, 미리 가입해두면 이후 단계가 수월해진다.',
+      },
+      {
+        type: 'heading',
+        text: '출산 직후 — 첫만남이용권·부모급여·아동수당은 따로 신청하지 않는다',
+      },
+      {
+        type: 'paragraph',
+        text: '출생신고를 하면 첫만남이용권(바우처), 부모급여, 아동수당을 각각 다른 곳에 따로 신청해야 할 것 같지만, 정부24의 행복출산 원스톱서비스에서 한 번에 신청할 수 있다. 출생신고와 동시에 처리되므로 주민센터를 여러 번 오갈 필요가 없다.',
+      },
+      {
+        type: 'heading',
+        text: '복직을 앞두고 있다면 — 육아휴직급여는 고용24에서 별도로 신청한다',
+      },
+      {
+        type: 'paragraph',
+        text: '앞의 지원금들과 달리 육아휴직급여는 보건복지부가 아니라 고용노동부 소관이라 신청 창구가 다르다. 고용보험에 가입된 근로자가 육아휴직을 쓰면 고용24에서 육아휴직급여를 별도로 신청해야 하며, 앞 단계의 출산지원금을 신청했다고 자동으로 처리되지 않는다는 점을 놓치기 쉽다.',
+      },
+      {
+        type: 'heading',
+        text: '아이를 맡길 곳이 필요하다면 — 나이와 상황에 따라 창구가 다르다',
+      },
+      {
+        type: 'list',
+        items: [
+          '어린이집을 알아보는 중이다 → 아이사랑 포털에서 입소 대기 신청까지 온라인으로',
+          '맞벌이·한부모라 집으로 돌보미가 왔으면 한다 → 아이돌봄서비스(정부 지원 돌보미 파견)',
+          '초등학생인데 방과 후 갈 곳이 마땅치 않다 → 다함께돌봄센터에서 지역 돌봄시설 확인',
+        ],
+      },
+      {
+        type: 'heading',
+        text: '다문화가정이라면 언어 걱정 없이 상담받을 곳이 따로 있다',
+      },
+      {
+        type: 'paragraph',
+        text: '위 서비스들은 대부분 한국어 기준으로 안내돼 있어 다문화가정은 신청 과정에서 막히는 경우가 많다. 여성가족부가 운영하는 다누리(1577-1366)로 전화하면 13개 언어로 통역 상담을 받으며 육아 지원 신청까지 안내받을 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '위에 없는 지원도 더 있는지 궁금하다면',
+      },
+      {
+        type: 'paragraph',
+        text: '육아 지원은 여기 나온 것 말고도 지자체별 추가 지원이 있는 경우가 많고 계속 새로 생긴다. 매번 따로 검색하기보다 보건복지부 복지로에서 가구 상황을 입력하면 받을 수 있는 복지서비스를 생애주기 기준으로 한 번에 찾아주니, 여기서 먼저 조회한 뒤 위 순서대로 실제 신청 창구를 찾아가는 게 헛걸음을 줄이는 방법이다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'childcare-portal',
+          'happy-birth-onestop',
+          'work24-portal',
+          'idolbom-childcare',
+          'dadol-childcare',
+          'danuri-portal',
+          'bokjiro-portal',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'pet-registration-and-vet-cost-guide',
+    categorySlug: 'pet',
+    title: '반려동물과 살 때 놓치기 쉬운 행정: 등록부터 병원비까지',
+    summary:
+      '동물등록은 됐는지, 진료비는 적정한지, 급할 때 어디를 확인해야 하는지 반려동물 생활에 필요한 행정을 순서대로 정리했다',
+    publishedAt: '2026-08-02',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '반려동물과 살면 챙겨야 할 행정이 은근히 많다. 등록을 미루면 과태료 대상이 되고, 병원비는 병원마다 차이가 커서 모르고 지나치기 쉽다. 반려동물 생활에서 놓치기 쉬운 것들을 순서대로 정리했다.',
+      },
+      {
+        type: 'heading',
+        text: '아직 동물등록을 안 했다면 가장 먼저 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '반려견은 동물등록이 의무이며 등록하지 않으면 과태료 대상이 될 수 있다. 국가동물보호정보시스템의 동물등록 정보 조회에서 등록번호나 소유자 정보로 이미 등록돼 있는지 먼저 확인하고, 아직이라면 동물등록 대행기관 조회에서 집 근처 동물병원 등 대행기관을 찾아 등록하면 된다.',
+      },
+      {
+        type: 'heading',
+        text: '병원비가 걱정된다면 진료비부터 비교한다',
+      },
+      {
+        type: 'paragraph',
+        text: '동물병원은 같은 진료 항목이라도 병원마다 비용 차이가 크다. 동물병원 진료비 현황 공개시스템에서 지역별로 주요 진료 항목의 최저·최고·평균 비용을 미리 확인하면, 병원을 옮기거나 견적을 비교할 때 기준으로 삼을 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '형편이 어렵다면 진료비 지원 여부를 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '기초생활수급자 등 취약계층이라면 진료비를 대폭 할인받을 수 있는 지원사업이 있는지 확인해본다. "우리동네 동물병원"은 서울시가 운영하는 취약계층 반려동물 진료비 지원사업의 명칭이며, 다른 지자체는 사업명과 지원 조건이 다를 수 있으니 거주 지역 보건소나 동물보호 담당 부서에 별도로 확인해야 한다.',
+      },
+      {
+        type: 'heading',
+        text: '반려동물이 무지개다리를 건넜다면',
+      },
+      {
+        type: 'paragraph',
+        text: '슬픔 속에서 급하게 업체를 고르다 보면 무허가 업체에 맡기는 경우가 있는데, 무허가 장묘업체는 불법이며 사후 처리를 신뢰하기 어렵다. 동물장묘업 등록업체 조회에서 정식 등록된 업체인지 미리 확인하고 맡기는 게 안전하다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'pet-registration-lookup',
+          'pet-registration-agency-lookup',
+          'pet-clinic-fee-lookup',
+          'our-neighborhood-animal-hospital',
+          'pet-funeral-business-lookup',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'insurance-checkup-and-claims-guide',
+    categorySlug: 'insurance',
+    title: '내 보험 제대로 챙기기: 가입내역 확인부터 숨은 보험금까지',
+    summary:
+      '내가 어떤 보험에 가입했는지도 모르고 지나치기 쉽다. 가입내역 확인부터 실손 청구, 잠들어 있는 보험금까지 순서대로 정리했다',
+    publishedAt: '2026-08-02',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '보험은 가입만 해두고 잊고 사는 경우가 많다. 어떤 보험에 가입돼 있는지조차 헷갈린다면 아래 순서로 확인하면 된다.',
+      },
+      {
+        type: 'heading',
+        text: '내가 가입한 보험부터 전부 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '여러 보험사에 흩어진 내 보험 가입 내역은 내 보험 가입내역 조회(크레딧포유)에서 본인인증 한 번으로 한눈에 확인할 수 있다. 몇 개 보험에 가입돼 있는지부터 파악하는 게 순서다.',
+      },
+      {
+        type: 'heading',
+        text: '잠들어 있는 보험금이 있는지 찾는다',
+      },
+      {
+        type: 'paragraph',
+        text: '만기가 지났는데 청구하지 않은 보험금이나 휴면보험금이 있을 수 있다. 내보험찾아줌에서 본인 명의로 찾아가지 않은 보험금이 있는지 한 번에 조회할 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '병원비를 실손으로 청구할 때',
+      },
+      {
+        type: 'paragraph',
+        text: '병원 진료를 받았다면 실손24로 영수증을 따로 발급받지 않고 스마트폰에서 바로 실손의료보험금을 청구할 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '새로 가입하거나 갈아타려면 비교부터',
+      },
+      {
+        type: 'paragraph',
+        text: '보험을 새로 들거나 기존 상품을 바꾸려 한다면 설계사 말만 듣기보다 보험다모아에서 여러 보험사 상품을 한 화면에서 비교해보는 게 먼저다.',
+      },
+      {
+        type: 'heading',
+        text: '보험사기가 의심된다면',
+      },
+      {
+        type: 'paragraph',
+        text: '허위·과다 진단이나 고의 사고처럼 보험사기가 의심되는 상황을 목격하거나 겪었다면 보험사기신고센터에 온라인으로 신고할 수 있다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'credit4u-insurance-inquiry',
+          'find-my-insurance',
+          'silson24',
+          'insurance-supermarket',
+          'insurance-fraud-report-center',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'parent-elderly-care-support-guide',
+    categorySlug: 'senior-welfare',
+    title: '부모님이 혼자 지내시기 힘들어졌다면: 확인해야 할 순서',
+    summary:
+      '거동이 불편해지시거나 혼자 사시는 부모님을 위해 어떤 지원부터 알아봐야 하는지 상황별로 정리했다',
+    publishedAt: '2026-08-03',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '부모님이 예전만큼 몸을 움직이기 힘들어하시거나 혼자 지내시는 게 걱정되기 시작하면, 무엇부터 알아봐야 할지 막막하다. 상황별로 확인할 순서를 정리했다.',
+      },
+      {
+        type: 'heading',
+        text: '거동이 불편해지셨다면 장기요양등급부터 신청한다',
+      },
+      {
+        type: 'paragraph',
+        text: '고령이나 노인성 질병으로 일상생활이 어려워지셨다면 노인장기요양보험에 등급 판정을 신청하는 게 첫 단계다. 등급을 받으면 재가급여(방문요양 등)나 시설 입소 비용을 사회보험으로 지원받을 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '최근 기억력이 부쩍 떨어지셨다면',
+      },
+      {
+        type: 'paragraph',
+        text: '건망증이 심해지거나 같은 말을 반복하시는 게 걱정된다면 전국 보건소의 치매안심센터에서 무료로 치매 선별검사를 받아볼 수 있다. 조기에 확인할수록 이후 관리 계획을 세우기 수월하다.',
+      },
+      {
+        type: 'heading',
+        text: '혼자 사시고 안부가 걱정된다면',
+      },
+      {
+        type: 'paragraph',
+        text: '노인맞춤돌봄서비스는 홀로 사는 어르신을 정기적으로 방문·안부확인하고 생활을 지원해준다. 화재나 낙상 같은 응급상황이 더 걱정된다면 독거노인·장애인 응급안전안심서비스로 집에 화재감지기·응급호출기를 무료로 설치해 24시간 원격 모니터링을 받을 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '학대가 의심된다면',
+      },
+      {
+        type: 'paragraph',
+        text: '부모님이 학대를 당하고 계신 것 같다면 망설이지 말고 노인학대 신고(1577-1389)로 전화한다. 국번 없이 연결되며 관할 노인보호전문기관이 즉시 대응한다.',
+      },
+      {
+        type: 'heading',
+        text: '무릎 수술비가 부담된다면',
+      },
+      {
+        type: 'paragraph',
+        text: '저소득 어르신이 무릎인공관절 수술을 받아야 하는데 비용이 부담된다면 노인 무릎인공관절 수술비 지원사업으로 지원받을 수 있는지 확인해본다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'long-term-care-insurance',
+          'dementia-safety-center',
+          'senior-customized-care-service',
+          'emergency-safety-service-elderly',
+          'elderly-abuse-report-1577-1389',
+          'knee-replacement-surgery-support-elderly',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'health-records-and-vaccination-guide',
+    categorySlug: 'health',
+    title: '내 건강기록 한 번에 확인하는 법: 예방접종부터 검진 이력까지',
+    summary:
+      '예방접종 기록, 건강검진 결과, 먹는 약 정보까지 흩어진 내 건강 정보를 어디서 확인하는지 정리했다',
+    publishedAt: '2026-08-03',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '예방접종 기록이나 예전 건강검진 결과가 갑자기 필요할 때, 어디서 찾아야 할지 몰라 헤매는 경우가 많다. 상황별로 확인할 곳을 정리했다.',
+      },
+      {
+        type: 'heading',
+        text: '예방접종 기록이 궁금하다면',
+      },
+      {
+        type: 'paragraph',
+        text: '본인이나 자녀의 평생 예방접종 기록은 예방접종도우미에서 조회할 수 있다. 다음 접종 일정 알림을 받거나 접종 증명서를 발급받는 것도 가능하다.',
+      },
+      {
+        type: 'heading',
+        text: '과거 건강검진·진료 내역을 보고 싶다면',
+      },
+      {
+        type: 'paragraph',
+        text: '국민건강보험 건강in에서 과거 건강검진 결과와 진료·투약 내역을 조회할 수 있고, 그 기록을 바탕으로 한 맞춤형 건강예측 리포트도 확인할 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '처방받은 약이 정확히 뭔지 헷갈린다면',
+      },
+      {
+        type: 'paragraph',
+        text: '알약만 보고 무슨 약인지 헷갈리거나 같이 먹으면 안 되는 약이 있는지 궁금하다면 의약품안전나라에서 약을 식별하고 병용금기 정보를 확인할 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '검증된 질환 정보가 필요하다면',
+      },
+      {
+        type: 'paragraph',
+        text: '인터넷에 떠도는 건강정보 대신 정확한 정보가 필요하다면 국가건강정보포털에서 질병관리청이 직접 검증한 질환·증상별 정보를 찾아볼 수 있다. 희귀질환이라면 희귀질환 헬프라인에서 산정특례 등록과 의료비 지원사업 안내까지 받을 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '보건증 등 보건소 민원이 필요하다면',
+      },
+      {
+        type: 'paragraph',
+        text: '보건증(건강진단결과서) 발급 같은 보건소 민원은 e보건소에서 온라인으로 처리할 수 있다. 단, 검사 결과가 "정상"인 경우에만 온라인 발급이 가능하고, 이상 소견이 있으면 검사를 받은 보건소를 직접 방문해야 발급받을 수 있다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'nip-kdca',
+          'nhis-healthin',
+          'nedrug-mfds',
+          'health-kdca',
+          'helpline-kdca',
+          'g-health',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'workplace-rights-violation-guide',
+    categorySlug: 'legal-admin',
+    title: '직장에서 임금체불·부당해고를 당했다면: 신고 순서',
+    summary:
+      '월급이 밀리거나 부당하게 해고당했을 때 어디에 먼저 연락해야 하는지, 비용 부담 없이 도움받는 법까지 정리했다',
+    publishedAt: '2026-08-04',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '임금체불이나 부당해고는 혼자 참고 넘기기 쉽지만, 정해진 절차대로 대응하면 실제로 해결되는 경우가 많다.',
+      },
+      {
+        type: 'heading',
+        text: '우선 1350에 상담부터 한다',
+      },
+      {
+        type: 'paragraph',
+        text: '임금체불, 부당해고 등 노동 문제가 생겼다면 고용노동부 고객상담센터(1350)로 전화해 상황을 설명하는 게 첫 단계다. 어느 절차를 밟아야 하는지, 관할 노동청이 어디인지부터 안내받을 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '일하다 다쳤다면',
+      },
+      {
+        type: 'paragraph',
+        text: '업무 중 다치거나 병을 얻었다면 근로복지공단(1588-0075)에서 산재보험 신청과 관련 증명원 발급을 상담·처리할 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '소송까지 가야 하는데 비용이 부담된다면',
+      },
+      {
+        type: 'paragraph',
+        text: '회사와의 다툼이 소송으로 번질 것 같은데 변호사 선임 비용이 부담스럽다면 대한법률구조공단(132)에서 소득 기준을 충족할 경우 무료로 법률상담과 소송 대리까지 지원받을 수 있다. 변호사를 만나기 어려운 지역이라면 마을변호사·법률홈닥터 제도로 전화·방문 상담을 받을 수도 있다.',
+      },
+      {
+        type: 'heading',
+        text: '회사가 정부 절차 자체를 무시한다면',
+      },
+      {
+        type: 'paragraph',
+        text: '노동청 시정 지시에도 회사가 응하지 않는 등 행정 처리 자체에 문제가 있다고 느껴진다면 국민신문고·국민콜110에 민원을 제기할 수 있다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'moel-labor-counsel-1350',
+          'comwel-labor-welfare',
+          'legal-aid-corporation-132',
+          'village-lawyer',
+          'epeople-110',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'first-home-buying-steps-guide',
+    categorySlug: 'housing',
+    title: '내 집 마련 첫걸음: 청약통장부터 대출까지 순서',
+    summary:
+      '막연히 청약통장만 갖고 있다면, 실제로 내 집을 마련하기까지 어떤 순서로 무엇을 확인해야 하는지 정리했다',
+    publishedAt: '2026-08-04',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '내 집 마련은 청약통장 하나로 끝나는 게 아니다. 자격을 확인하고, 청약을 넣고, 자금 계획까지 세워야 하는 여러 단계가 있다. 순서대로 정리했다.',
+      },
+      {
+        type: 'heading',
+        text: '청년이라면 청약통장부터 우대 조건으로 만든다',
+      },
+      {
+        type: 'paragraph',
+        text: '만 19~34세 무주택 청년이라면 청년 주택드림 청약통장으로 우대금리를 받으며 청약통장을 만드는 게 유리하다. 이후 청약에 당첨되면 저금리 주택드림대출로 이어진다.',
+      },
+      {
+        type: 'heading',
+        text: '청약을 넣을 준비가 됐다면',
+      },
+      {
+        type: 'paragraph',
+        text: '민간 아파트·오피스텔 청약은 청약홈에서 자격 확인부터 신청, 당첨자 발표까지 처리한다. 공공임대·분양(행복주택, 국민임대 등)에 관심이 있다면 LH청약플러스에서 별도로 확인해야 한다.',
+      },
+      {
+        type: 'heading',
+        text: '자금이 부족하다면 정책대출부터 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '시중은행 대출을 알아보기 전에 주택도시기금 기금e든든에서 디딤돌 내집마련 대출, 버팀목 전세자금 대출 같은 서민 정책대출 조건에 해당하는지부터 확인하는 게 순서다. 금리가 시중은행보다 낮은 경우가 많다.',
+      },
+      {
+        type: 'heading',
+        text: '소득이 낮다면 주거복지 혜택도 함께 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '청약이나 매매가 아직 부담스러운 상황이라면 마이홈포털에서 소득·자산 조건에 맞는 공공임대주택이나 주거급여 같은 주거복지 혜택을 먼저 찾아볼 수 있다. 계약 직전에 확인해야 할 등기부등본·실거래가 조회는 "전세 계약 전 확인 순서" 가이드에서 별도로 다뤘다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'youth-housing-dream-account',
+          'applyhome-portal',
+          'lh-apply-plus',
+          'nhuf-fund-loan',
+          'myhome-portal',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'small-business-startup-funding-guide',
+    categorySlug: 'employment-startup',
+    title: '소상공인 창업, 자금부터 순서대로 준비하기',
+    summary:
+      '창업 지원사업은 종류가 많아서 뭐부터 찾아야 할지 헷갈린다. 지원사업 검색부터 정책자금, 보증까지 순서대로 정리했다',
+    publishedAt: '2026-08-05',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '창업 지원은 부처와 기관마다 따로 운영돼서 하나하나 찾아다니면 시간이 오래 걸린다. 검색부터 자금 조달까지 순서대로 확인하면 헛수고를 줄일 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '어떤 지원사업이 있는지부터 검색한다',
+      },
+      {
+        type: 'paragraph',
+        text: '정부와 지자체가 시행하는 창업지원사업은 K-Startup 창업지원포털에서 한 번에 검색할 수 있다. 중소기업·소상공인 대상 지원사업까지 폭넓게 찾고 싶다면 기업마당도 함께 확인한다.',
+      },
+      {
+        type: 'heading',
+        text: '소상공인이라면 정책자금부터',
+      },
+      {
+        type: 'paragraph',
+        text: '소상공인 정책자금, 경영 컨설팅, 손실보전은 소상공인시장진흥공단(1357)에서 신청할 수 있다. 사업 단계가 더 성장한 중소기업이라면 중소벤처기업진흥공단 정책자금에서 단계별 저리 융자를 알아본다.',
+      },
+      {
+        type: 'heading',
+        text: '담보나 신용이 부족하다면 보증부터 받는다',
+      },
+      {
+        type: 'paragraph',
+        text: '대출을 받고 싶은데 담보나 신용이 부족하다면 신용보증재단중앙회를 통해 지역신용보증재단의 보증서를 받아 대출로 연결할 수 있다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'kstartup-portal',
+          'bizinfo-portal',
+          'semas-small-business',
+          'kosmes-policy-fund',
+          'sinbo-guarantee',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'yearend-tax-and-refund-guide',
+    categorySlug: 'tax-finance',
+    title: '연말정산과 놓친 환급금, 한 번에 챙기는 법',
+    summary:
+      '13월의 월급이라는 연말정산부터 몰랐던 세금·금융 환급금까지, 놓치지 않고 확인하는 순서를 정리했다',
+    publishedAt: '2026-08-05',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '연말정산은 매년 하는데도 매번 헷갈리고, 정작 내가 받을 수 있는 환급금은 따로 있는 경우도 많다. 순서대로 확인하면 놓치는 걸 줄일 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '연말정산 자료부터 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '홈택스 연말정산 간소화 서비스에서 소득·세액공제 증빙자료를 한 번에 조회·출력할 수 있다. 회사에 제출하기 전에 빠진 항목이 없는지 먼저 확인하는 게 순서다.',
+      },
+      {
+        type: 'heading',
+        text: '세금 관련 궁금한 게 있다면',
+      },
+      {
+        type: 'paragraph',
+        text: '공제 항목이 헷갈리거나 신고 방법이 궁금하다면 국세상담센터(126)로 전화해 물어보는 게 검색보다 빠르다.',
+      },
+      {
+        type: 'heading',
+        text: '놓친 세금 환급금이 있는지 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '환급이 결정됐는데 찾아가지 않은 국세가 있을 수 있다. 국세 미수령환급금 조회에서 내 이름으로 된 미수령 환급금이 있는지 확인해본다.',
+      },
+      {
+        type: 'heading',
+        text: '잊고 있던 금융자산도 함께 찾는다',
+      },
+      {
+        type: 'paragraph',
+        text: '세금뿐 아니라 여러 금융회사에 흩어진 휴면예금이나 미청구 보험금도 있을 수 있다. 파인 계좌통합관리서비스(내계좌 한눈에)에서 한 번에 조회할 수 있다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'hometax-yearend-tax-simplification',
+          'nts-counseling-126',
+          'national-tax-unclaimed-refund',
+          'fss-fine-account-search',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'car-license-inspection-maintenance-guide',
+    categorySlug: 'transport',
+    title: '운전면허 갱신부터 자동차검사까지, 놓치면 과태료',
+    summary:
+      '면허 갱신, 자동차검사, 하이패스 미납요금까지 시기를 놓치면 과태료로 이어지는 것들을 순서대로 정리했다',
+    publishedAt: '2026-08-06',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '자동차와 관련된 행정은 대부분 기한이 정해져 있어서, 바쁘다는 이유로 미루면 과태료로 돌아온다. 놓치기 쉬운 것들을 순서대로 정리했다.',
+      },
+      {
+        type: 'heading',
+        text: '면허 갱신·적성검사 시기를 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '운전면허 갱신이나 적성검사 시기를 놓치면 면허가 취소될 수 있다. 도로교통공단 안전운전 통합민원에서 갱신·적성검사 예약은 물론, 벌점 조회와 특별교통안전교육 신청까지 한 곳에서 처리할 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '자동차검사 기간이 다가온다면',
+      },
+      {
+        type: 'paragraph',
+        text: '정기검사·종합검사 기간을 놓치면 과태료가 부과된다. 한국교통안전공단 자동차검사 예약(사이버검사소)에서 미리 날짜와 시간을 예약해두면 현장 대기 없이 검사를 받을 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '하이패스 미납요금이 있는지 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '하이패스 단말기 오류나 잔액 부족으로 통행료가 미납 처리되는 경우가 있다. 한국도로공사 하이패스에서 미납요금을 조회하고 바로 납부할 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '대중교통을 자주 탄다면 환급까지 챙긴다',
+      },
+      {
+        type: 'paragraph',
+        text: '자동차 대신 대중교통을 월 15회 이상 이용한다면 K-패스로 지출 금액의 일부를 자동으로 돌려받을 수 있다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'koroad-safedriving',
+          'kotsa-inspection-reservation',
+          'ex-hipass',
+          'k-pass-transit-card',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'unclaimed-government-benefits-guide',
+    categorySlug: 'life-admin-tips',
+    title: '몰라서 못 받는 정부 지원금, 한 번에 확인하는 법',
+    summary:
+      '나이·상황에 따라 받을 수 있는 지원금은 계속 생기는데 몰라서 못 받는 경우가 많다. 놓친 혜택을 한 번에 찾는 창구를 정리했다',
+    publishedAt: '2026-08-06',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '정부·지자체 지원금은 매년 새로 생기고 조건도 자주 바뀌어서, 매번 검색해서 찾기보다 조건에 맞는 걸 자동으로 찾아주는 통합 창구부터 확인하는 게 낫다.',
+      },
+      {
+        type: 'heading',
+        text: '내가 놓친 지원금부터 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '보조금24(정부24 혜택알리미)는 내 상황(나이, 가구 형태, 소득 등)에 맞는 정부 지원금과 혜택을 몰라서 놓치지 않도록 한 번에 찾아준다.',
+      },
+      {
+        type: 'heading',
+        text: '생애주기별 복지서비스는 복지로에서',
+      },
+      {
+        type: 'paragraph',
+        text: '복지로에서는 임신·출산부터 노후까지 생애주기별 복지서비스를 검색하고 온라인으로 바로 신청할 수 있다. 나이나 가구 상황을 입력하면 조건에 맞는 서비스만 추려서 보여준다.',
+      },
+      {
+        type: 'heading',
+        text: '청년이라면 온통청년도 확인한다',
+      },
+      {
+        type: 'paragraph',
+        text: '청년 대상 지원금은 온통청년에서 전국 중앙·지자체 청년정책과 지원금을 조건에 맞게 검색할 수 있다. 대학생·대학원생이라면 한국장학재단 국가장학금에서 소득분위에 따른 등록금 지원과 학자금대출도 함께 확인한다.',
+      },
+      {
+        type: 'heading',
+        text: '카드포인트도 잊지 말고 챙긴다',
+      },
+      {
+        type: 'paragraph',
+        text: '지원금은 아니지만 여러 신용·체크카드에 흩어진 채 쓰지 않고 있는 카드포인트도 카드포인트 통합조회에서 한 번에 확인하고 1포인트부터 바로 현금으로 받을 수 있다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'subsidy24-benefit-portal',
+          'bokjiro-portal',
+          'youthcenter-portal',
+          'kosaf-scholarship',
+          'cardpoint-integrated',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'home-emergency-response-guide',
+    categorySlug: 'emergency',
+    title: '집에서 갑자기 정전·가스냄새·화재가 났다면',
+    summary:
+      '집 안에서 벌어지는 응급상황은 원인에 따라 신고할 곳이 다르다. 상황별로 연락해야 할 긴급전화를 정리했다',
+    publishedAt: '2026-08-07',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '집에서 갑자기 벌어지는 응급상황은 당황하면 어디에 연락해야 할지부터 헷갈린다. 원인별로 연락할 곳을 미리 알아두면 대응이 빨라진다.',
+      },
+      {
+        type: 'heading',
+        text: '화재나 구조·구급이 필요하다면 119',
+      },
+      {
+        type: 'paragraph',
+        text: '화재, 구조, 구급 등 모든 재난·응급상황은 119 안전신고로 연락한다. 소방청이 운영하는 대표 긴급전화로, 인명 피해가 우려되는 상황이라면 가장 먼저 눌러야 하는 번호다.',
+      },
+      {
+        type: 'heading',
+        text: '정전이나 누전이 의심된다면',
+      },
+      {
+        type: 'paragraph',
+        text: '갑자기 정전이 되거나 누전·감전 위험이 느껴진다면 한국전기안전공사 긴급출동(1588-7500)으로 전화한다. 24시간 무료로 응급조치를 요청할 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '가스 냄새가 난다면',
+      },
+      {
+        type: 'paragraph',
+        text: '가스 냄새가 나거나 가스 사고가 의심된다면 한국가스안전공사 긴급신고(1544-4500)로 즉시 전화한다. 전국 어디서나 가까운 지역본부로 자동 연결된다.',
+      },
+      {
+        type: 'heading',
+        text: '위험한 시설을 발견했다면',
+      },
+      {
+        type: 'paragraph',
+        text: '당장 사고는 아니지만 위험해 보이는 시설이나 상황을 발견했다면 안전신문고로 사진을 찍어 신고하면 관계기관이 처리해준다.',
+      },
+      {
+        type: 'heading',
+        text: '재난 상황 전반의 정보가 필요하다면',
+      },
+      {
+        type: 'paragraph',
+        text: '재난문자, 대피소·구호소 위치, 행동요령 등은 국민재난안전포털·안전디딤돌에서 한 번에 확인할 수 있다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          '119-safety-report',
+          'kesco-electric-emergency',
+          'kgs-gas-emergency',
+          'safety-report',
+          'safekorea-portal',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'crime-victim-support-guide',
+    categorySlug: 'emergency',
+    title: '범죄 피해를 입었다면: 신고부터 심리 지원까지',
+    summary:
+      '범죄 피해 직후에는 신고 외에도 생활과 마음을 챙길 지원이 함께 필요하다. 상황별로 연락할 곳을 정리했다',
+    publishedAt: '2026-08-07',
+    blocks: [
+      {
+        type: 'paragraph',
+        text: '범죄 피해를 당하면 신고만으로 끝나지 않는다. 당장의 생활이 막막해지거나 트라우마가 남는 경우도 많다. 상황별로 도움받을 수 있는 곳을 정리했다.',
+      },
+      {
+        type: 'heading',
+        text: '지금 위험한 상황이라면 112',
+      },
+      {
+        type: 'paragraph',
+        text: '범죄가 일어나고 있거나 방금 일어났다면 112 경찰 긴급신고로 즉시 연락한다. 위치 기반으로 가까운 순찰 인력이 출동한다.',
+      },
+      {
+        type: 'heading',
+        text: '성폭력·가정폭력·성매매 피해라면',
+      },
+      {
+        type: 'paragraph',
+        text: '상담부터 의료·수사·법률 지원까지 한 곳에서 받고 싶다면 해바라기센터를 찾는 게 좋다. 위기 상담과 보호시설 연계가 급하다면 여성긴급전화 1366으로 먼저 연락해도 된다.',
+      },
+      {
+        type: 'heading',
+        text: '피해로 생활이 갑자기 어려워졌다면',
+      },
+      {
+        type: 'paragraph',
+        text: '범죄 피해로 당장 생계가 막막해졌다면 보건복지상담센터 힘이되는 129(국번 없이 129)에서 긴급복지지원을 상담받을 수 있다.',
+      },
+      {
+        type: 'heading',
+        text: '강력범죄로 인한 트라우마가 남았다면',
+      },
+      {
+        type: 'paragraph',
+        text: '살인·강도·성폭력 등 강력범죄를 겪은 피해자와 가족은 스마일센터에서 심리치료를 무료로 지원받을 수 있다.',
+      },
+      {
+        type: 'services',
+        intro: '이 글에서 언급한 서비스',
+        slugs: [
+          'police-112',
+          'sunflower-center',
+          'women-hotline-1366',
+          'welfare-counseling-129',
+          'smile-center',
+        ],
+      },
+    ],
+  },
 ];
 
 export function getAllGuides(): Guide[] {
@@ -704,4 +1519,12 @@ export function getAllGuides(): Guide[] {
 
 export function getGuideBySlug(slug: string): Guide | undefined {
   return guides.find((guide) => guide.slug === slug);
+}
+
+export function getGuidesByServiceSlug(serviceSlug: string): Guide[] {
+  return getAllGuides().filter((guide) =>
+    guide.blocks.some(
+      (block) => block.type === 'services' && block.slugs.includes(serviceSlug),
+    ),
+  );
 }

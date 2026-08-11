@@ -10,7 +10,11 @@ export function CategoryNav({ categories }: { categories: Category[] }) {
         const style = getCategoryStyle(category.slug);
         const Icon = style.icon;
         return (
-          <Link key={category.slug} href={`/category/${category.slug}`}>
+          <Link
+            key={category.slug}
+            href={`/category/${category.slug}`}
+            className="block rounded-xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          >
             <Card
               className="h-full border-t-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
               style={{ borderTopColor: category.color }}

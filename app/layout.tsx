@@ -118,6 +118,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${notoSansKr.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <a
+          href="#main-content"
+          className="absolute top-2 left-2 z-50 -translate-y-16 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg transition-transform focus:translate-y-0"
+        >
+          본문으로 바로가기
+        </a>
         <script {...jsonLdScriptProps(jsonLd)} />
         <Script id="gtm-script" strategy="beforeInteractive">
           {`
@@ -166,7 +172,9 @@ export default function RootLayout({
           <RouteChangeTracker />
         </Suspense>
         <Header />
-        <main className="flex flex-1 flex-col">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

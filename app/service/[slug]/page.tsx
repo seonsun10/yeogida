@@ -1,9 +1,12 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { ArrowRight } from 'lucide-react';
 import { AdSlot } from '@/components/AdSlot';
 import { Disclaimer } from '@/components/Disclaimer';
 import { ServiceCard } from '@/components/ServiceCard';
 import { ServiceDetail } from '@/components/ServiceDetail';
+import { getGuidesByServiceSlug } from '@/lib/guides';
 import { breadcrumbList, jsonLdScriptProps } from '@/lib/json-ld';
 import {
   getAllServices,
@@ -64,6 +67,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
     .filter((item) => item.slug !== service.slug)
     .slice(0, RELATED_SERVICE_LIMIT);
   const category = getCategoryBySlug(service.categorySlug);
+  const relatedGuides = getGuidesByServiceSlug(service.slug);
 
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}/service/${service.slug}`;
@@ -108,6 +112,33 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <script {...jsonLdScriptProps(jsonLd)} />
       {DISCLAIMER_CATEGORIES.includes(service.categorySlug) && <Disclaimer />}
       <ServiceDetail service={service} category={category} />
+
+      {relatedGuides.length > 0 && (
+        <div className="flex flex-col gap-3 border-t pt-6">
+          <h2 className="text-sm font-medium text-muted-foreground">
+            이 서비스가 등장하는 가이드
+          </h2>
+          <div className="flex flex-col gap-2">
+            {relatedGuides.map((guide) => (
+              <Link
+                key={guide.slug}
+                href={`/guides/${guide.slug}`}
+                className="group flex items-start justify-between gap-4 rounded-lg border p-4 outline-none transition-colors hover:bg-muted/40 focus-visible:ring-3 focus-visible:ring-ring/50"
+              >
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-sm leading-snug font-medium text-foreground">
+                    {guide.title}
+                  </h3>
+                  <p className="line-clamp-1 text-sm text-muted-foreground">
+                    {guide.summary}
+                  </p>
+                </div>
+                <ArrowRight className="mt-1 size-3.5 shrink-0 text-muted-foreground/70 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {relatedServices.length > 0 && (
         <div className="flex flex-col gap-3 border-t pt-6">

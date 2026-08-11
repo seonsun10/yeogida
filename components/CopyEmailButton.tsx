@@ -17,6 +17,9 @@ export function CopyEmailButton({ email }: { email: string }) {
     <Button type="button" variant="outline" size="sm" onClick={handleCopy}>
       {copied ? <Check /> : <Copy />}
       {copied ? '복사됨' : '이메일 복사'}
+      <span role="status" className="sr-only">
+        {copied && '이메일 주소가 복사되었습니다'}
+      </span>
     </Button>
   );
 }
