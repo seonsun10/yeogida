@@ -7,6 +7,7 @@ import { revalidatePath } from 'next/cache';
 import { readCategories, readServices } from '@/lib/admin-data';
 import { writeCategories, writeServices } from '@/lib/admin-write';
 import { getAllCategories } from '@/lib/services';
+import { updateReportStatus } from '@/lib/reports';
 import type { Service } from '@/types/service';
 
 export type ActionState = { error?: string; message?: string } | undefined;
@@ -327,4 +328,16 @@ export async function updateCategoryColor(
   revalidatePath('/', 'layout');
   revalidatePath('/admin/categories');
   return { message: '색상이 저장되었습니다.' };
+}
+
+export async function resolveReport(id: number): Promise<void> {
+  ensureAdmin();
+  await updateReportStatus(id, 'resolved');
+  revalidatePath('/admin/reports');
+}
+
+export async function dismissReport(id: number): Promise<void> {
+  ensureAdmin();
+  await updateReportStatus(id, 'dismissed');
+  revalidatePath('/admin/reports');
 }

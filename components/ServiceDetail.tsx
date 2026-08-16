@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
+import { ReportButton } from '@/components/ReportButton';
 import { ShareButton } from '@/components/ShareButton';
 import { getCategoryStyle } from '@/lib/category-style';
 import { trackOutboundClick } from '@/lib/track';
@@ -122,6 +123,7 @@ export function ServiceDetail({
           바로가기
         </a>
         <ShareButton title={service.name} text={service.summary} />
+        <ReportButton serviceSlug={service.slug} />
       </div>
     </article>
   );

@@ -40,6 +40,14 @@ yarn-error.log*
 # oh-my-claudecode local state
 .omc
 
+# AI 코딩 도구 로컬 설정/상태 (앱과 무관)
+.agents/
+.claude/
+.codex/
+.cursor/
+.omd/
+skills-lock.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

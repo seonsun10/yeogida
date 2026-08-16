@@ -1,15 +1,16 @@
 <!-- Parent: ../AGENTS.md -->
-<!-- Generated: 2026-08-02 -->
+<!-- Generated: 2026-08-02 | Updated: 2026-08-13 -->
 
 # scripts
 
 ## Purpose
-Next.js 앱 실행 경로 밖에서, `.github/workflows/`의 GitHub Actions가 호출하는 유지보수 스크립트 모음.
+Next.js 앱 실행 경로 밖에서 실행하는 유지보수/일회성 스크립트 모음. `check-links.mjs`는 `.github/workflows/`의 GitHub Actions가 정기 호출하고, `db-init.mjs`는 사람이 필요할 때 수동으로 1회 실행한다.
 
 ## Key Files
 | File | Description |
 |------|-------------|
 | `check-links.mjs` | `data/services.json`의 모든 `url`에 요청을 보내 생존 여부를 점검하고, 문제(끊김/확인필요)가 있으면 GitHub 이슈를 생성·갱신한다. 매 실행마다(정상이어도) Discord 웹훅으로도 결과를 보내고, `data/link-check-status.json`에 점검 시각·건수 요약을 써서 사이트 푸터의 "마지막 전체 링크 점검" 표시에 쓴다. `.github/workflows/check-links.yml`이 매주 일요일 21시(KST) 자동 실행하며, `npm run check-links`로 로컬 실행도 가능하다(이 경우 `GITHUB_TOKEN`/`DISCORD_WEBHOOK_URL`이 없어 콘솔 출력만 하고 이슈·알림 작업은 생략되지만 상태 파일은 그대로 갱신됨). |
+| `db-init.mjs` | Neon Postgres `reports` 테이블(사용자 상호작용 데이터 — "잘못된 정보 신고")을 생성/갱신하는 마이그레이션 스크립트. `npm run db:init`으로 실행하며, 내부적으로 `node --env-file=.env.local scripts/db-init.mjs`를 호출한다 — 일반 `node scripts/db-init.mjs`로 직접 실행하면 `.env.local`의 `DATABASE_URL`을 못 읽어 즉시 실패한다. `CREATE TABLE IF NOT EXISTS` + `ALTER TABLE ... ADD COLUMN IF NOT EXISTS`(예: `reporter_ip`, IP 기반 중복 신고 차단용)라 여러 번 실행해도 안전 — 새 컬럼을 추가할 때는 `CREATE TABLE`의 컬럼 목록과 별도 `ALTER TABLE` 양쪽에 반영해야 신규 설치/기존 설치 모두 커버된다. 스키마를 바꿀 일이 생기면(테이블이 늘어나면) 이 파일에 `ALTER TABLE`/새 `CREATE TABLE`을 추가하는 방식으로 계속 단일 진입점을 유지할 것 — Drizzle 등 마이그레이션 프레임워크는 이 프로젝트 규모(신고 테이블 1개)에는 과함 |
 
 ## For AI Agents
 
@@ -29,5 +30,6 @@ Next.js 앱 실행 경로 밖에서, `.github/workflows/`의 GitHub Actions가 �
 
 ### External
 - **undici** — legacy TLS 재협상 허용 옵션을 쓰기 위해 devDependency로 명시 설치 (전역 `fetch`가 내부적으로 쓰는 것과 별개로 직접 import)
+- **@neondatabase/serverless** — `db-init.mjs`가 `lib/db.ts`를 거치지 않고 직접 `neon()`을 호출 (Next.js 런타임 밖의 독립 스크립트라 lazy-init 래퍼가 필요 없음)
 
 <!-- MANUAL: -->

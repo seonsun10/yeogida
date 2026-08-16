@@ -8,6 +8,7 @@ import { ServiceCard } from '@/components/ServiceCard';
 import { DEFAULT_CATEGORY_COLOR, getCategoryStyle } from '@/lib/category-style';
 import { getAllGuides, getGuideBySlug, type GuideBlock } from '@/lib/guides';
 import { getCategoryBySlug, getServiceBySlug } from '@/lib/services';
+import { cn } from '@/lib/utils';
 import type { Service } from '@/types/service';
 
 type GuidePageProps = {
@@ -61,8 +62,10 @@ export default async function GuidePage({ params }: GuidePageProps) {
     }),
   );
 
+  const sections = groupBlocksIntoSections(resolvedBlocks);
+
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 py-12">
+    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-4 py-12">
       <Link
         href="/guides"
         className="inline-flex w-fit items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -71,7 +74,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
         가이드 목록
       </Link>
 
-      <div className="flex flex-col gap-3 border-b pb-6">
+      <div className="flex flex-col gap-4 border-b pb-8">
         {category && (
           <span
             className={`inline-flex w-fit items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ${style.badge}`}
@@ -81,7 +84,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
           </span>
         )}
         <h1 className="text-2xl font-bold text-balance">{guide.title}</h1>
-        <p className="text-sm leading-relaxed text-muted-foreground">
+        <p className="text-base leading-relaxed text-muted-foreground">
           {guide.summary}
         </p>
         <p className="text-xs text-muted-foreground/70">
@@ -120,11 +123,21 @@ export default async function GuidePage({ params }: GuidePageProps) {
         </nav>
       )}
 
-      <article className="flex flex-col gap-4 text-foreground">
-        {resolvedBlocks.map((block, index) => (
-          <Fragment key={index}>
-            {renderBlock(block, index, headingIndexes.indexOf(index), accentColor)}
-          </Fragment>
+      <article className="flex flex-col text-foreground">
+        {sections.map((section, sectionIndex) => (
+          <section
+            key={sectionIndex}
+            className={cn(
+              'flex flex-col gap-3',
+              sectionIndex > 0 && 'mt-8 border-t pt-8 sm:mt-10 sm:pt-9',
+            )}
+          >
+            {section.map(({ block, index }) => (
+              <Fragment key={index}>
+                {renderBlock(block, index, headingIndexes.indexOf(index), accentColor)}
+              </Fragment>
+            ))}
+          </section>
         ))}
       </article>
 
@@ -137,6 +150,23 @@ type ResolvedBlock =
   | Exclude<GuideBlock, { type: 'services' }>
   | (Extract<GuideBlock, { type: 'services' }> & { services: Service[] });
 
+type BlockGroup = { block: ResolvedBlock; index: number };
+
+/**
+ * 헤딩이 나올 때마다 새 섹션으로 묶어, 섹션 사이는 넓게(hairline 구분),
+ * 같은 섹션 안 문단·목록은 촘촘하게 유지해서 글이 한 덩어리로 이어지지 않게 한다.
+ */
+function groupBlocksIntoSections(blocks: ResolvedBlock[]): BlockGroup[][] {
+  const sections: BlockGroup[][] = [];
+  blocks.forEach((block, index) => {
+    if (block.type === 'heading' || sections.length === 0) {
+      sections.push([]);
+    }
+    sections[sections.length - 1].push({ block, index });
+  });
+  return sections;
+}
+
 function renderBlock(
   block: ResolvedBlock,
   index: number,
@@ -148,7 +178,7 @@ function renderBlock(
       return (
         <h2
           id={`section-${index}`}
-          className="flex scroll-mt-20 items-center gap-2 pt-2 text-lg font-semibold text-foreground"
+          className="flex scroll-mt-20 items-center gap-2 text-lg font-semibold text-foreground"
         >
           {headingOrder >= 0 && (
             <span
@@ -163,16 +193,24 @@ function renderBlock(
       );
     case 'paragraph':
       return (
-        <p className="leading-[1.75] text-foreground/90">{block.text}</p>
+        <p
+          className={cn(
+            'leading-[1.75]',
+            index === 0 ? 'text-foreground' : 'text-foreground/90',
+          )}
+        >
+          {block.text}
+        </p>
       );
     case 'list':
       return (
-        <ul
-          className="flex flex-col gap-1.5 pl-5 leading-relaxed marker:font-semibold"
-          style={{ color: accentColor }}
-        >
+        <ul className="flex flex-col gap-2.5 pl-1">
           {block.items.map((item) => (
-            <li key={item} className="list-disc text-foreground/90">
+            <li key={item} className="flex items-start gap-2.5 leading-relaxed text-foreground/90">
+              <span
+                className="mt-2.5 size-1.5 shrink-0 rounded-full"
+                style={{ backgroundColor: accentColor }}
+              />
               {item}
             </li>
           ))}

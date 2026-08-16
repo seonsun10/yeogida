@@ -103,7 +103,7 @@ export default async function CategoryPage({
           storageKey={`service-grid:${slug}:${free ?? ''}:${hours24 ?? ''}`}
           cards={services.map((service, index) => (
             <Fragment key={service.id}>
-              <ServiceCard service={service} />
+              <ServiceCard service={service} hideCategoryBadge />
               {(index + 1) % IN_FEED_AD_INTERVAL === 0 && (
                 <AdSlot className="min-h-[120px] rounded-md border border-dashed sm:col-span-2 lg:col-span-3" />
               )}

@@ -22,6 +22,12 @@ export default function AdminLayout({
         </Link>
         <div className="flex items-center gap-4">
           <Link
+            href="/admin/reports"
+            className="text-sm text-zinc-500 hover:text-zinc-900"
+          >
+            신고 관리
+          </Link>
+          <Link
             href="/admin/categories"
             className="text-sm text-zinc-500 hover:text-zinc-900"
           >

@@ -1,5 +1,5 @@
 <!-- Parent: ../AGENTS.md -->
-<!-- Generated: 2026-07-26 | Updated: 2026-07-26 -->
+<!-- Generated: 2026-07-26 | Updated: 2026-08-13 -->
 
 # components
 
@@ -10,7 +10,8 @@
 | File | Description |
 |------|-------------|
 | `ServiceCard.tsx` | 목록용 카드 — 썸네일, 배지, 요약, 운영시간. `/service/[slug]`로 링크 |
-| `ServiceDetail.tsx` | 상세 페이지 본문 — 배지, 이미지 갤러리, 설명, 정보 표(`dl`), 바로가기 버튼(`trackOutboundClick` 호출) |
+| `ServiceDetail.tsx` | 상세 페이지 본문 — 배지, 이미지 갤러리, 설명, 정보 표(`dl`), 바로가기 버튼(`trackOutboundClick` 호출), `ShareButton`/`ReportButton` |
+| `ReportButton.tsx` | `'use client'` — "정보가 틀렸어요" 버튼. `Sheet`(하단 시트)에 신고 사유 라디오 + 상세 textarea, `app/service/[slug]/actions.ts`의 `submitReport` 서버 액션을 `useActionState`로 호출. 사유 옵션/길이 제한은 `lib/report-constants.ts`에서 가져옴(DB 의존 없는 순수 상수라 클라이언트에서 안전하게 import 가능) |
 | `CategoryNav.tsx` | 홈에서 카테고리 카드 그리드 |
 | `SearchBar.tsx` | `'use client'`, Fuse.js 기반 실시간 검색 드롭다운 (`lib/search.ts`) |
 | `FilterBar.tsx` | `'use client'`, URL 쿼리 파라미터(`free`, `hours24`) 토글 필터 |
@@ -26,7 +27,8 @@
 ## For AI Agents
 
 ### Working In This Directory
-- 서버/클라이언트 경계에 주의: `SearchBar`, `FilterBar`는 `'use client'`가 필요(각각 상태·URL 훅 사용)하지만, `ServiceCard`, `CategoryNav`, `Disclaimer`, `AdSlot`은 서버 컴포넌트로 유지 가능하다. 새 컴포넌트를 만들 때 불필요하게 `'use client'`를 붙이지 않는다.
+- 서버/클라이언트 경계에 주의: `SearchBar`, `FilterBar`, `ReportButton`은 `'use client'`가 필요(각각 상태·URL 훅·`useActionState` 사용)하지만, `ServiceCard`, `CategoryNav`, `Disclaimer`, `AdSlot`은 서버 컴포넌트로 유지 가능하다. 새 컴포넌트를 만들 때 불필요하게 `'use client'`를 붙이지 않는다.
+- `'use client'` 컴포넌트에서 `lib/db.ts`나 `lib/reports.ts`를 직접 import하지 말 것 — `@neondatabase/serverless`가 브라우저 번들에 끼어든다. `ReportButton.tsx`처럼 DB 호출은 서버 액션(`app/service/[slug]/actions.ts`)에 맡기고, 클라이언트는 공유 상수(`lib/report-constants.ts`)만 가져온다.
 - `AdSlot.tsx`은 애드센스 승인 전 임시 플레이스홀더임을 주석으로 명시하고 있다 — 승인 후 실제 스크립트 삽입이 예정된 작업이므로, 지금 단계에서 광고 로직을 채워 넣지 않는다.
 - 아이콘은 `lucide-react`, 클래스 조합은 `cn()`(`lib/utils.ts`) 사용.
 

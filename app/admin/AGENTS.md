@@ -1,17 +1,17 @@
 <!-- Parent: ../AGENTS.md -->
-<!-- Generated: 2026-07-26 | Updated: 2026-07-26 -->
+<!-- Generated: 2026-07-26 | Updated: 2026-08-13 -->
 
 # admin
 
 ## Purpose
-로컬 개발 환경에서만 열리는 콘텐츠 관리 화면. DB 없이 `data/services.json`을 직접 읽고 쓰며, 서비스 등록/수정/삭제, 이미지·썸네일 업로드/삭제 기능을 제공한다. `layout.tsx`에서 `NODE_ENV !== 'development'`이면 `notFound()`를 호출해 프로덕션에서는 완전히 비활성화된다.
+로컬 개발 환경에서만 열리는 콘텐츠 관리 화면. 콘텐츠(services/categories)는 DB 없이 `data/services.json`을 직접 읽고 쓰며, 서비스 등록/수정/삭제, 이미지·썸네일 업로드/삭제 기능을 제공한다. `reports/`는 예외적으로 Neon Postgres(`lib/reports.ts`)를 읽는다 — 사용자 상호작용 데이터라 JSON에 없기 때문. `layout.tsx`에서 `NODE_ENV !== 'development'`이면 `notFound()`를 호출해 프로덕션에서는 완전히 비활성화된다.
 
 ## Key Files
 | File | Description |
 |------|-------------|
-| `layout.tsx` | 관리자 레이아웃 — 프로덕션 접근 차단, 상단 네비게이션("사이트 관리" / "공개 사이트로 이동") |
+| `layout.tsx` | 관리자 레이아웃 — 프로덕션 접근 차단, 상단 네비게이션("사이트 관리" / "신고 관리" / "카테고리 색상" / "공개 사이트로 이동") |
 | `page.tsx` | 등록된 서비스 목록 테이블 (이름/카테고리/비용/이미지 수 + 수정 링크) |
-| `actions.ts` | 모든 Server Actions — `createService`, `updateService`, `deleteService`, `uploadServiceImages`, `deleteServiceImage`, `uploadServiceThumbnail`, `deleteServiceThumbnail`. 각 함수 최상단에서 `ensureAdmin()` 호출 |
+| `actions.ts` | 모든 Server Actions — `createService`, `updateService`, `deleteService`, `uploadServiceImages`, `deleteServiceImage`, `uploadServiceThumbnail`, `deleteServiceThumbnail`, `resolveReport`, `dismissReport`. 각 함수 최상단에서 `ensureAdmin()` 호출 |
 | `ServiceForm.tsx` | 생성/수정 공용 폼 (`'use client'`, `useActionState`로 서버 액션 결과 표시) |
 | `ImageUploadForm.tsx` | 상세페이지 이미지 다중 업로드 폼 (클라이언트 측 5MB/장, 20MB 합계 검증 후 서버 액션 호출) |
 | `ThumbnailUploadForm.tsx` | 목록/카드용 썸네일 단일 업로드 폼 (클라이언트 측 5MB 검증) |
@@ -22,6 +22,7 @@
 |-----------|---------|
 | `[slug]/` | 특정 서비스 수정 페이지 (see `[slug]/AGENTS.md`) |
 | `new/` | 신규 서비스 등록 페이지 (see `new/AGENTS.md`) |
+| `reports/` | "잘못된 정보 신고" 목록 (`page.tsx`, `lib/reports.ts`의 `getAllReports()` 호출). `export const dynamic = 'force-dynamic'`로 캐시를 막는다 — 빼면 처리완료/반려 후에도 목록이 갱신되지 않을 수 있다. DB 조회 실패(예: `DATABASE_URL` 미설정) 시 500 대신 안내 문구를 보여주도록 try/catch로 감싸져 있다 |
 
 ## For AI Agents
 
@@ -46,7 +47,9 @@
 - `lib/admin-data.ts` — `readServices`, `readServiceBySlug`
 - `lib/admin-write.ts` — `writeServices` (Prettier 포맷 후 JSON 저장)
 - `lib/services.ts` — `getAllCategories` (카테고리 select 옵션)
+- `lib/reports.ts` — `getAllReports`, `updateReportStatus` (`reports/page.tsx`, `actions.ts`의 `resolveReport`/`dismissReport`)
 - `types/service.ts` — `Service` 타입
+- `types/report.ts` — `Report`, `ReportStatus` 타입
 
 ### External
 - `next/cache`의 `revalidatePath`, `next/navigation`의 `redirect`/`notFound`
