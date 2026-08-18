@@ -13,7 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { submitReport } from '@/app/service/[slug]/actions';
+import { submitReport } from '@/app/(main)/service/[slug]/actions';
 import {
   REPORT_DETAIL_MAX_LENGTH,
   REPORT_REASON_OPTIONS,

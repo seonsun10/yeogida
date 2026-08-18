@@ -7,8 +7,8 @@ import { ReportButton } from '@/components/ReportButton';
 import { ShareButton } from '@/components/ShareButton';
 import { getCategoryStyle } from '@/lib/category-style';
 import { trackOutboundClick } from '@/lib/track';
-import { deleteServiceThumbnail } from '@/app/admin/actions';
-import { ThumbnailUploadForm } from '@/app/admin/ThumbnailUploadForm';
+import { deleteServiceThumbnail } from '@/app/(main)/admin/actions';
+import { ThumbnailUploadForm } from '@/app/(main)/admin/ThumbnailUploadForm';
 import type { Category, Service } from '@/types/service';
 
 const IS_LOCAL_DEV = process.env.NODE_ENV === 'development';

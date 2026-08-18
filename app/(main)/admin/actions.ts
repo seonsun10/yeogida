@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import { readCategories, readServices } from '@/lib/admin-data';
 import { writeCategories, writeServices } from '@/lib/admin-write';
+import { ensureAdmin } from '@/lib/admin-auth';
 import { getAllCategories } from '@/lib/services';
 import { updateReportStatus } from '@/lib/reports';
 import type { Service } from '@/types/service';
@@ -47,12 +48,6 @@ async function saveImageFile(
 
 async function removeUploadedFile(imagePath: string): Promise<void> {
   await fs.unlink(path.join(process.cwd(), 'public', imagePath)).catch(() => {});
-}
-
-function ensureAdmin() {
-  if (process.env.NODE_ENV !== 'development') {
-    throw new Error('관리자 화면은 로컬 개발 환경에서만 사용할 수 있습니다.');
-  }
 }
 
 function parseListField(value: FormDataEntryValue | null): string[] {

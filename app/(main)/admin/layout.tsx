@@ -33,6 +33,12 @@ export default function AdminLayout({
           >
             카테고리 색상
           </Link>
+          <Link
+            href="/admin/sites"
+            className="text-sm text-zinc-500 hover:text-zinc-900"
+          >
+            민간/일반 사이트
+          </Link>
           <Link href="/" className="text-sm text-zinc-500 hover:text-zinc-900">
             공개 사이트로 이동
           </Link>

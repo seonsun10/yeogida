@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllGuides } from '@/lib/guides';
 import { getAllCategories, getAllServices } from '@/lib/services';
+import { getAllSiteCategories, getAllSites } from '@/lib/sites';
 import { getSiteUrl } from '@/lib/site-url';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -13,6 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/submit',
     '/privacy',
     '/terms',
+    '/discover',
   ].map((path) => ({
     url: `${siteUrl}${path}`,
   }));
@@ -32,10 +34,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: service.lastVerified,
   }));
 
+  const discoverCategoryRoutes = getAllSiteCategories().map((category) => ({
+    url: `${siteUrl}/discover/${category.slug}`,
+  }));
+
+  const sites = await getAllSites();
+  const siteRoutes = sites.map((site) => ({
+    url: `${siteUrl}/discover/site/${site.slug}`,
+    lastModified: site.lastVerified,
+  }));
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
     ...guideRoutes,
     ...serviceRoutes,
+    ...discoverCategoryRoutes,
+    ...siteRoutes,
   ];
 }

@@ -2,10 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Noto_Sans_KR } from 'next/font/google';
 import Script from 'next/script';
 import { Suspense } from 'react';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import { RouteChangeTracker } from '@/components/RouteChangeTracker';
-import { jsonLdScriptProps } from '@/lib/json-ld';
 import { getAllCategories } from '@/lib/services';
 import { getSiteUrl } from '@/lib/site-url';
 import './globals.css';
@@ -93,25 +90,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const siteUrl = getSiteUrl();
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebSite',
-        name: '여기다',
-        url: siteUrl,
-        description: SITE_DESCRIPTION,
-        inLanguage: 'ko-KR',
-      },
-      {
-        '@type': 'Organization',
-        name: '여기다',
-        url: siteUrl,
-      },
-    ],
-  };
-
   return (
     <html
       lang="ko"
@@ -124,7 +102,6 @@ export default function RootLayout({
         >
           본문으로 바로가기
         </a>
-        <script {...jsonLdScriptProps(jsonLd)} />
         <Script id="gtm-script" strategy="beforeInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -171,11 +148,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <RouteChangeTracker />
         </Suspense>
-        <Header />
-        <main id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

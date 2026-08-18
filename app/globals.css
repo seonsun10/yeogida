@@ -120,6 +120,34 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/*
+ * /discover 섹션 전용 테마. `:root`와 같은 변수 이름을 재정의하므로
+ * components/ui/* shadcn 프리미티브가 코드 수정 없이 그대로 재스킨된다.
+ * 메인 사이트(정부·공공 서비스)와 시각적으로 구분하기 위한 것으로,
+ * (discover) 레이아웃의 최상위 wrapper에 data-theme="discover"를 지정해 스코프한다.
+ */
+[data-theme='discover'] {
+  --background: oklch(0.985 0.006 85);
+  --foreground: oklch(0.18 0.01 280);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.01 280);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.01 280);
+  --primary: oklch(0.47 0.19 300);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.96 0.01 300);
+  --secondary-foreground: oklch(0.25 0.02 300);
+  --muted: oklch(0.96 0.008 85);
+  --muted-foreground: oklch(0.5 0.01 280);
+  --accent: oklch(0.94 0.04 300);
+  --accent-foreground: oklch(0.32 0.15 300);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.9 0.01 280);
+  --input: oklch(0.9 0.01 280);
+  --ring: oklch(0.55 0.18 300);
+  --radius: 0.3rem;
+}
+
 @utility no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;

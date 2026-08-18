@@ -23,6 +23,7 @@
 | `[slug]/` | 특정 서비스 수정 페이지 (see `[slug]/AGENTS.md`) |
 | `new/` | 신규 서비스 등록 페이지 (see `new/AGENTS.md`) |
 | `reports/` | "잘못된 정보 신고" 목록 (`page.tsx`, `lib/reports.ts`의 `getAllReports()` 호출). `export const dynamic = 'force-dynamic'`로 캐시를 막는다 — 빼면 처리완료/반려 후에도 목록이 갱신되지 않을 수 있다. DB 조회 실패(예: `DATABASE_URL` 미설정) 시 500 대신 안내 문구를 보여주도록 try/catch로 감싸져 있다 |
+| `sites/` | `/discover`(민간·일반 사이트 모음) 콘텐츠 관리 — `data/sites.json`, `data/site-categories.json` 대상. 이 폴더의 모든 파일은 위 서비스 관리 패턴을 `Site`/`SiteCategory` 타입으로 그대로 미러링한 것(파일명도 `SiteForm.tsx`처럼 대응). 서비스와 달리 `hours`/`cost`/`affiliate` 필드가 없고, 카테고리가 사전 등록되어 있지 않아 `categories/page.tsx`에 새 카테고리 추가 폼(`NewSiteCategoryForm`)이 있다. 이미지 업로드 경로도 `public/uploads/sites/<slug>/`로 서비스와 분리해 슬러그 충돌을 방지한다 |
 
 ## For AI Agents
 

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { getAllReports } from '@/lib/reports';
-import { dismissReport, resolveReport } from '@/app/admin/actions';
+import { dismissReport, resolveReport } from '@/app/(main)/admin/actions';
 import type { Report, ReportStatus } from '@/types/report';
 
 export const dynamic = 'force-dynamic';
