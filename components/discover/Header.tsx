@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { DiscoverCategoryPills } from '@/components/discover/CategoryPills';
-import { DISCOVER_SITE_NAME } from '@/lib/discover-constants';
 import type { SiteCategory } from '@/types/site';
 
 export function DiscoverHeader({ categories }: { categories: SiteCategory[] }) {
@@ -10,15 +10,19 @@ export function DiscoverHeader({ categories }: { categories: SiteCategory[] }) {
         <div className="flex items-center justify-between gap-4">
           <Link
             href="/discover"
-            className="flex shrink-0 items-center gap-2 text-lg font-bold tracking-tight"
+            className="flex shrink-0 items-center gap-1.5 text-lg font-bold tracking-tight"
           >
-            <span
-              aria-hidden
-              className="flex size-7 items-center justify-center rounded-sm bg-gradient-to-br from-primary to-primary/70 text-xs font-black text-primary-foreground"
-            >
-              발
+            <Image
+              src="/discover-logo.png"
+              alt=""
+              width={512}
+              height={652}
+              priority
+              className="h-8 w-auto"
+            />
+            <span>
+              여기<span className="text-primary">다</span>
             </span>
-            <span>{DISCOVER_SITE_NAME}</span>
           </Link>
         </div>
         {categories.length > 0 && <DiscoverCategoryPills categories={categories} />}
