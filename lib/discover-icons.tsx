@@ -1,0 +1,52 @@
+import {
+  Blocks,
+  Briefcase,
+  Building2,
+  Car,
+  CarTaxiFront,
+  Clapperboard,
+  GraduationCap,
+  HeartPulse,
+  LayoutGrid,
+  PawPrint,
+  Palette,
+  PiggyBank,
+  Plane,
+  Repeat2,
+  Shirt,
+  ShoppingCart,
+  Sofa,
+  Sparkles,
+  Ticket,
+  TrendingUp,
+  UtensilsCrossed,
+  type LucideIcon,
+} from 'lucide-react';
+
+const CATEGORY_ICONS: Record<string, LucideIcon> = {
+  'fashion-beauty': Shirt,
+  'living-shopping': Sofa,
+  grocery: ShoppingCart,
+  'food-delivery': UtensilsCrossed,
+  secondhand: Repeat2,
+  mobility: CarTaxiFront,
+  finance: PiggyBank,
+  investment: TrendingUp,
+  hobby: Palette,
+  travel: Plane,
+  culture: Clapperboard,
+  ticket: Ticket,
+  productivity: LayoutGrid,
+  career: Briefcase,
+  edu: GraduationCap,
+  'living-service': Sparkles,
+  pet: PawPrint,
+  'real-estate': Building2,
+  auto: Car,
+  health: HeartPulse,
+  'figure-toy': Blocks,
+};
+
+export function getDiscoverCategoryIcon(categorySlug: string): LucideIcon {
+  return CATEGORY_ICONS[categorySlug] ?? Sparkles;
+}

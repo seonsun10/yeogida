@@ -15,6 +15,9 @@ export async function Footer() {
           <Link href="/guides" className="hover:text-foreground">
             가이드
           </Link>
+          <Link href="/board" className="hover:text-foreground">
+            게시판
+          </Link>
           <Link href="/submit" className="hover:text-foreground">
             서비스 제보하기
           </Link>

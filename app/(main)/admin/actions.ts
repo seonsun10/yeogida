@@ -9,6 +9,7 @@ import { writeCategories, writeServices } from '@/lib/admin-write';
 import { ensureAdmin } from '@/lib/admin-auth';
 import { getAllCategories } from '@/lib/services';
 import { updateReportStatus } from '@/lib/reports';
+import { deleteBoardPost, updateBoardPostStatus } from '@/lib/board';
 import type { Service } from '@/types/service';
 
 export type ActionState = { error?: string; message?: string } | undefined;
@@ -335,4 +336,16 @@ export async function dismissReport(id: number): Promise<void> {
   ensureAdmin();
   await updateReportStatus(id, 'dismissed');
   revalidatePath('/admin/reports');
+}
+
+export async function resolveBoardPost(id: number): Promise<void> {
+  ensureAdmin();
+  await updateBoardPostStatus(id, 'resolved');
+  revalidatePath('/admin/board');
+}
+
+export async function deleteBoardPostAction(id: number): Promise<void> {
+  ensureAdmin();
+  await deleteBoardPost(id);
+  revalidatePath('/admin/board');
 }

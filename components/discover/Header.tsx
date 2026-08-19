@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { DiscoverCategoryPills } from '@/components/discover/CategoryPills';
 import { DISCOVER_SITE_NAME } from '@/lib/discover-constants';
 import type { SiteCategory } from '@/types/site';
 
@@ -9,33 +10,18 @@ export function DiscoverHeader({ categories }: { categories: SiteCategory[] }) {
         <div className="flex items-center justify-between gap-4">
           <Link
             href="/discover"
-            className="flex shrink-0 items-center gap-1.5 text-lg font-bold tracking-tight"
+            className="flex shrink-0 items-center gap-2 text-lg font-bold tracking-tight"
           >
             <span
               aria-hidden
-              className="flex size-7 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground"
+              className="flex size-7 items-center justify-center rounded-sm bg-gradient-to-br from-primary to-primary/70 text-xs font-black text-primary-foreground"
             >
               발
             </span>
             <span>{DISCOVER_SITE_NAME}</span>
           </Link>
         </div>
-        {categories.length > 0 && (
-          <nav
-            aria-label="카테고리"
-            className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-1"
-          >
-            {categories.map((category) => (
-              <Link
-                key={category.slug}
-                href={`/discover/${category.slug}`}
-                className="shrink-0 rounded-sm border border-border px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground"
-              >
-                {category.name}
-              </Link>
-            ))}
-          </nav>
-        )}
+        {categories.length > 0 && <DiscoverCategoryPills categories={categories} />}
       </div>
     </header>
   );

@@ -35,3 +35,30 @@ await sql`
 `;
 
 console.log('reports 테이블 준비 완료.');
+
+// board_posts: 사이트 추가 요청 / 자유게시판 / 신고 게시판 공용 테이블.
+// site('main'|'discover')·board('site-request'|'free'|'report') 구분값으로
+// 여러 게시판을 한 테이블에서 나눠 관리한다(테이블을 board마다 늘리지 않음).
+await sql`
+  CREATE TABLE IF NOT EXISTS board_posts (
+    id SERIAL PRIMARY KEY,
+    site TEXT NOT NULL,
+    board TEXT NOT NULL,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    author_name TEXT NOT NULL DEFAULT '익명',
+    status TEXT NOT NULL DEFAULT 'open',
+    author_ip TEXT,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+  )
+`;
+
+await sql`
+  CREATE INDEX IF NOT EXISTS board_posts_site_board_idx ON board_posts (site, board, created_at DESC)
+`;
+
+await sql`
+  CREATE INDEX IF NOT EXISTS board_posts_author_ip_idx ON board_posts (author_ip, created_at)
+`;
+
+console.log('board_posts 테이블 준비 완료.');

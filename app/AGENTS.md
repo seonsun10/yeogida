@@ -18,14 +18,14 @@ Next.js App Router 루트. 두 개의 route group으로 나뉜다 — `(main)/`�
 ## Subdirectories
 | Directory | Purpose |
 |-----------|---------|
-| `(main)/` | 기존 공공서비스 디렉토리 전체 — 홈, `category/`, `service/`, `admin/`(서비스+사이트 관리 겸용), `guides/`, `about/`, `submit/`, `privacy/`, `terms/`. 각 하위 폴더의 `AGENTS.md` 참고 |
-| `(discover)/` | 민간/일반 사이트 모음 섹션. `layout.tsx`가 `DiscoverHeader`/`DiscoverFooter`와 discover 전용 metadata(제목 템플릿 등)를 정의하고, `data-theme="discover"`로 테마를 스코프한다. `discover/page.tsx`(홈), `discover/[categorySlug]/page.tsx`, `discover/site/[slug]/page.tsx` |
+| `(main)/` | 기존 공공서비스 디렉토리 전체 — 홈, `category/`, `service/`, `admin/`(서비스+사이트+신고+게시판 관리 겸용), `guides/`, `about/`, `submit/`, `board/`(서비스 추가 요청·자유게시판·신고, DB 기반), `privacy/`, `terms/`. 각 하위 폴더의 `AGENTS.md` 참고 |
+| `(discover)/` | 민간/일반 사이트 모음 섹션. `layout.tsx`가 `DiscoverHeader`/`DiscoverFooter`와 discover 전용 metadata(제목 템플릿 등)를 정의하고, `data-theme="discover"`로 테마를 스코프한다. `discover/page.tsx`(홈), `discover/[categorySlug]/page.tsx`, `discover/site/[slug]/page.tsx`, `discover/submit/page.tsx`(사이트 제보, `(main)/submit`과 동일하게 `NEXT_PUBLIC_SUBMIT_EMAIL` mailto 방식), `discover/board/`(사이트 추가 요청·자유게시판·신고, `(main)/board`와 같은 컴포넌트/DB 테이블을 쓰되 `site: 'discover'`로 구분), `discover/about/page.tsx`, `discover/privacy/page.tsx`, `discover/terms/page.tsx`(`(main)` 쪽과 내용은 유사하지만 두 섹션 간 상호 링크를 걸지 않기로 한 결정에 따라 완전히 별도 페이지로 존재) |
 
 ## For AI Agents
 
 ### Working In This Directory
 - 새 공개 라우트를 추가할 때 `(main)/layout.tsx` 또는 `(discover)/layout.tsx`가 이미 각자의 Header/Footer를 감싸므로 각 `page.tsx`는 콘텐츠만 채우면 된다. 두 그룹 중 어디에 넣을지 헷갈리면: 공공기관 콘텐츠는 `(main)`, 민간/일반 사이트 콘텐츠는 `(discover)`.
-- **route group 간 이동은 풀 페이지 리로드를 유발한다** (Next.js 공식 동작, `(main)`과 `(discover)`가 서로 다른 root-ish 레이아웃이기 때문). 지금은 두 섹션 간 상호 링크를 걸지 않기로 했으므로 문제 없지만, 나중에 링크를 추가한다면 이 점을 인지하고 있을 것.
+- **route group 간 이동은 풀 페이지 리로드를 유발한다** (Next.js 공식 동작, `(main)`과 `(discover)`가 서로 다른 root-ish 레이아웃이기 때문). 지금은 두 섹션 간 상호 링크를 걸지 않기로 했으므로 문제 없지만, 나중에 링크를 추가한다면 이 점을 인지하고 있을 것. `components/board/*` 공유 컴포넌트는 이 원칙 때문에 `basePath` prop(`/board` 또는 `/discover/board`)을 반드시 받아 그 안에서만 링크를 만든다 — 하드코딩된 절대경로를 넣으면 다른 섹션으로 새 나간다. (예외: `/admin/board`는 관리자 전용 내부 도구라 두 섹션 상세페이지로 가는 링크를 `target="_blank"`로 둔다 — 공개 페이지 간 상호 링크 금지 원칙과 무관.)
 - 동적 라우트(`[slug]`)는 Next.js 16 규약에 따라 `params`가 `Promise`이므로 반드시 `await params`로 풀어야 한다.
 - `@/app/(main)/...`, `@/app/(discover)/...`처럼 route group을 포함한 절대 경로로 import해야 한다 — 괄호가 있다고 경로가 달라지지 않으니 주의(예: `components/ServiceDetail.tsx`가 `@/app/(main)/admin/actions`를 import).
 - `privacy/`, `terms/`의 "최종 수정일"은 실제 내용 변경 시에만 갱신한다.
@@ -41,8 +41,9 @@ Next.js App Router 루트. 두 개의 route group으로 나뉜다 — `(main)/`�
 ## Dependencies
 
 ### Internal
-- `components/`, `components/discover/` — 페이지에서 사용하는 UI 조각
+- `components/`, `components/discover/`, `components/board/` — 페이지에서 사용하는 UI 조각
 - `lib/services.ts` / `lib/sites.ts` — 카테고리·서비스 / 사이트 조회
-- `types/service.ts` / `types/site.ts` — `Service`/`Category` / `Site`/`SiteCategory` 타입
+- `lib/board.ts` / `lib/board-submit.ts` / `lib/board-constants.ts` — 게시판 DB 조회·쓰기 / 서버 액션 공용 검증·등록 로직 / 라벨·상수
+- `types/service.ts` / `types/site.ts` / `types/board.ts` — `Service`/`Category` / `Site`/`SiteCategory` / `BoardPost` 등 타입
 
 <!-- MANUAL: Any manually added notes below this line are preserved on regeneration -->

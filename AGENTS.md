@@ -10,7 +10,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 # 여기다 (life-service-directory)
 
 ## Purpose
-사람들이 몰라서 못 쓰는, 실제로 도움이 되는 생활 밀착형 서비스(건강·법률/행정·가족·소비자·응급·생활팁)를 카테고리별로 정리해 검색·탐색할 수 있게 해주는 큐레이션 디렉토리 웹사이트. Next.js App Router 기반이며 콘텐츠(services/categories)는 별도 DB 없이 저장소 내 JSON 파일(`data/`)로 관리한다. **단, 사용자 상호작용 데이터("잘못된 정보 신고" 등)는 Vercel 프로덕션 파일시스템이 읽기 전용이라 JSON으로 저장할 수 없어 Neon Postgres에 저장한다** (`lib/db.ts`, `lib/reports.ts` 경유 — 자세한 배경/계획은 `NEON-PLAN.md` 참고). 자세한 기획 배경은 `PRD.md`, 개발 진행 기록은 `PROGRESS.md` 참고.
+사람들이 몰라서 못 쓰는, 실제로 도움이 되는 생활 밀착형 서비스(건강·법률/행정·가족·소비자·응급·생활팁)를 카테고리별로 정리해 검색·탐색할 수 있게 해주는 큐레이션 디렉토리 웹사이트. Next.js App Router 기반이며 콘텐츠(services/categories)는 별도 DB 없이 저장소 내 JSON 파일(`data/`)로 관리한다. **단, 사용자 상호작용 데이터("잘못된 정보 신고", 게시판 글 등)는 Vercel 프로덕션 파일시스템이 읽기 전용이라 JSON으로 저장할 수 없어 Neon Postgres에 저장한다** (`lib/db.ts`, `lib/reports.ts`, `lib/board.ts` 경유 — 자세한 배경/계획은 `NEON-PLAN.md` 참고). 이 패턴 덕분에 메인(`(main)`)·발견(`(discover)`) 두 사이트 모두에 게시판(사이트/서비스 추가 요청·자유게시판·신고)이 있다 — `board_posts` 테이블 하나를 `site`/`board` 구분값으로 나눠 쓰고 `/admin/board`에서 한 번에 관리한다. 자세한 기획 배경은 `PRD.md`, 개발 진행 기록은 `PROGRESS.md` 참고.
 
 ## Key Files
 | File | Description |
@@ -41,8 +41,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ### Working In This Directory
 - **콘텐츠(services/categories)는 DB 없이 JSON+git으로 관리한다.** `data/services.json`, `data/categories.json`에 저장되며 `lib/admin-data.ts`(읽기)와 `lib/admin-write.ts`(쓰기, Prettier로 포맷 후 저장)를 통해서만 접근한다.
-- **사용자 상호작용 데이터(신고 등)는 Neon Postgres에 저장한다.** `lib/db.ts`의 `getDb()`(lazy init)로 얻은 클라이언트를 `lib/reports.ts`에서 감싸 사용 — 새 상호작용 기능(좋아요, 즐겨찾기 등)을 추가할 때도 이 패턴을 따른다. DB 접근 코드는 서버 전용이므로 클라이언트 컴포넌트에서 직접 import하지 말 것(공유 상수는 `lib/report-constants.ts`처럼 별도 파일로 분리).
-- `/admin` 관리자 화면과 그 Server Actions(`app/admin/actions.ts`)는 `ensureAdmin()`으로 `NODE_ENV === 'development'`일 때만 동작하도록 막혀 있다 — 프로덕션에서 열리는 변경은 절대 하지 말 것. 신고 목록(`app/admin/reports/`)도 이 제약을 그대로 따르므로, 로컬 `DATABASE_URL`이 프로덕션과 다른 Neon 브랜치를 가리키면 실제 신고가 안 보일 수 있다 — 자세한 건 `NEON-PLAN.md` 참고.
+- **사용자 상호작용 데이터(신고, 게시판 글 등)는 Neon Postgres에 저장한다.** `lib/db.ts`의 `getDb()`(lazy init)로 얻은 클라이언트를 `lib/reports.ts`/`lib/board.ts`에서 감싸 사용 — 새 상호작용 기능(좋아요, 즐겨찾기 등)을 추가할 때도 이 패턴을 따른다. DB 접근 코드는 서버 전용이므로 클라이언트 컴포넌트에서 직접 import하지 말 것(공유 상수는 `lib/report-constants.ts`/`lib/board-constants.ts`처럼 별도 파일로 분리).
+- **게시판(사이트/서비스 추가 요청·자유게시판·신고)은 메인·발견 두 사이트 모두에 있고 `board_posts` 테이블 하나를 공유한다.** `site`('main'|'discover')와 `board`('site-request'|'free'|'report') 컬럼으로 구분하며, 작성자 수정/삭제 기능은 없고(관리자만 `/admin/board`에서 삭제) IP당 1시간에 3건까지만 등록 가능(전체 게시판·사이트 합산, `lib/board.ts`의 `hasReachedPostRateLimit`). 새 게시판 종류를 추가할 때는 테이블을 늘리지 말고 `board` 값을 추가하는 방식을 따른다.
+- `/admin` 관리자 화면과 그 Server Actions(`app/admin/actions.ts`)는 `ensureAdmin()`으로 `NODE_ENV === 'development'`일 때만 동작하도록 막혀 있다 — 프로덕션에서 열리는 변경은 절대 하지 말 것. 신고 목록(`app/admin/reports/`), 게시판 관리(`app/admin/board/`)도 이 제약을 그대로 따르므로, 로컬 `DATABASE_URL`이 프로덕션과 다른 Neon 브랜치를 가리키면 실제 신고/게시글이 안 보일 수 있다 — 자세한 건 `NEON-PLAN.md` 참고. 즉 프로덕션에 올라온 스팸/부적절한 게시글을 지우려면 로컬 `npm run dev`로 같은 Neon DB를 보는 `/admin/board`에 접속해야 한다(별도 프로덕션 관리 화면 없음).
 - 코드 내 문자열(에러 메시지, UI 텍스트)은 한글이 기본 컨벤션. 새 UI 텍스트도 한글로 작성한다.
 - Node.js 16.x 미만이 아니라 **Next.js 16.2.11**을 쓰는 최신 프로젝트다 — 오래된 Pages Router/구버전 API 패턴을 가정하지 말고, 필요하면 `node_modules/next/dist/docs/`를 확인한다.
 

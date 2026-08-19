@@ -1,1 +1,128 @@
-[]
+[
+  {
+    "slug": "fashion-beauty",
+    "name": "패션·뷰티",
+    "description": "온라인 패션 커머스와 뷰티 편집숍 등 옷차림과 꾸밈을 위한 서비스를 모았다.",
+    "color": "#ec4899"
+  },
+  {
+    "slug": "living-shopping",
+    "name": "리빙·홈 쇼핑",
+    "description": "가구, 인테리어 소품, 핸드메이드 제품 등 집을 꾸미는 데 필요한 쇼핑 서비스를 모았다.",
+    "color": "#d97706"
+  },
+  {
+    "slug": "grocery",
+    "name": "식품·마트",
+    "description": "신선식품과 생필품을 온라인으로 주문하는 마트·새벽배송 서비스를 모았다.",
+    "color": "#65a30d"
+  },
+  {
+    "slug": "food-delivery",
+    "name": "배달·외식",
+    "description": "음식 주문 배달 앱과 외식 관련 서비스를 모았다.",
+    "color": "#f97316"
+  },
+  {
+    "slug": "secondhand",
+    "name": "중고·리셀",
+    "description": "중고 물품 직거래부터 한정판 리셀까지, 소유물을 사고파는 서비스를 모았다.",
+    "color": "#0d9488"
+  },
+  {
+    "slug": "mobility",
+    "name": "모빌리티·카셰어링",
+    "description": "차량 공유, 택시 호출, 내비게이션 등 이동을 도와주는 서비스를 모았다.",
+    "color": "#0891b2"
+  },
+  {
+    "slug": "finance",
+    "name": "금융·간편결제",
+    "description": "계좌, 송금, 간편결제 등 일상적인 돈 관리를 도와주는 핀테크 서비스를 모았다.",
+    "color": "#16a34a"
+  },
+  {
+    "slug": "investment",
+    "name": "투자·자산관리",
+    "description": "주식, 가상자산 등 투자와 자산 증식을 위한 서비스를 모았다.",
+    "color": "#059669"
+  },
+  {
+    "slug": "hobby",
+    "name": "취미·원데이클래스",
+    "description": "온라인 클래스와 오프라인 모임으로 새로운 취미를 시작할 수 있는 서비스를 모았다.",
+    "color": "#db2777"
+  },
+  {
+    "slug": "travel",
+    "name": "여행·숙소",
+    "description": "숙소, 항공권, 여행 일정까지 준비할 수 있는 여행 서비스를 모았다.",
+    "color": "#0284c7"
+  },
+  {
+    "slug": "culture",
+    "name": "콘텐츠·구독",
+    "description": "영상, 음악, 책, 웹툰 등 취향대로 골라보는 콘텐츠 구독 서비스를 모았다.",
+    "color": "#7c3aed"
+  },
+  {
+    "slug": "ticket",
+    "name": "공연·티켓",
+    "description": "콘서트, 뮤지컬, 스포츠 경기 등 각종 행사 티켓을 예매할 수 있는 서비스를 모았다.",
+    "color": "#9333ea"
+  },
+  {
+    "slug": "productivity",
+    "name": "업무·생산성 도구",
+    "description": "협업, 디자인, 문서 작업 등 업무에 바로 쓸 수 있는 생산성 도구를 모았다.",
+    "color": "#4f46e5"
+  },
+  {
+    "slug": "career",
+    "name": "커리어·채용",
+    "description": "채용 정보 검색부터 이력 관리, 네트워킹까지 커리어 활동에 필요한 서비스를 모았다.",
+    "color": "#e11d48"
+  },
+  {
+    "slug": "edu",
+    "name": "교육·자기계발",
+    "description": "실무 역량 강화를 위한 온라인 강의와 부트캠프, 지식 콘텐츠 구독 서비스를 모았다.",
+    "color": "#2563eb"
+  },
+  {
+    "slug": "living-service",
+    "name": "생활 서비스·홈케어",
+    "description": "청소, 세탁, 인테리어 시공처럼 일상의 자잘한 일을 맡길 수 있는 생활 서비스를 모았다.",
+    "color": "#ca8a04"
+  },
+  {
+    "slug": "pet",
+    "name": "반려동물",
+    "description": "반려동물 용품 쇼핑부터 건강관리, 돌봄까지 아우르는 펫 서비스를 모았다.",
+    "color": "#a16207"
+  },
+  {
+    "slug": "real-estate",
+    "name": "부동산·인테리어",
+    "description": "매물 검색부터 시세 확인, 인테리어 시공까지 부동산 관련 서비스를 모았다.",
+    "color": "#78716c"
+  },
+  {
+    "slug": "auto",
+    "name": "자동차",
+    "description": "중고차 시세 조회와 거래, 차량 관리를 도와주는 자동차 서비스를 모았다.",
+    "color": "#475569"
+  },
+  {
+    "slug": "health",
+    "name": "건강·피트니스",
+    "description": "병원 예약, 건강관리, 운동 습관 형성을 돕는 헬스케어 서비스를 모았다.",
+    "color": "#dc2626"
+  },
+  {
+    "slug": "figure-toy",
+    "name": "피규어·아트토이",
+    "description": "블라인드박스, 아트토이, 스케일 피규어와 프라모델 등 수집 취미를 위한 쇼핑몰을 모았다.",
+    "color": "#c026d3"
+  }
+]

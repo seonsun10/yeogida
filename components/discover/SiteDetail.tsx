@@ -1,9 +1,12 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import { ChevronLeft } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 import { ShareButton } from '@/components/ShareButton';
+import { getDiscoverCategoryIcon } from '@/lib/discover-icons';
 import { trackOutboundClick } from '@/lib/track';
 import { deleteSiteThumbnail } from '@/app/(main)/admin/sites/actions';
 import { SiteThumbnailUploadForm } from '@/app/(main)/admin/sites/SiteThumbnailUploadForm';
@@ -18,8 +21,33 @@ export function SiteDetail({
   site: Site;
   category?: SiteCategory;
 }) {
+  const Icon = getDiscoverCategoryIcon(site.categorySlug);
+  const accentColor = category?.color ?? 'var(--primary)';
+
   return (
     <article className="flex flex-col gap-6">
+      {category && (
+        <Link
+          href={`/discover/${category.slug}`}
+          className="flex w-fit items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ChevronLeft aria-hidden className="size-4" />
+          {category.name}
+        </Link>
+      )}
+
+      {!site.thumbnail && (
+        <div
+          aria-hidden
+          className="relative flex aspect-[2.8/1] w-full items-center justify-center overflow-hidden rounded-sm sm:aspect-[3.6/1]"
+          style={{
+            backgroundImage: `linear-gradient(135deg, ${accentColor}33, ${accentColor}0d)`,
+          }}
+        >
+          <Icon className="size-12" style={{ color: accentColor }} strokeWidth={1.5} />
+        </div>
+      )}
+
       <div className="flex flex-col gap-3">
         <div className="flex flex-wrap items-center gap-2">
           {category && <Badge variant="secondary">{category.name}</Badge>}
@@ -29,7 +57,7 @@ export function SiteDetail({
             </Badge>
           ))}
         </div>
-        <h1 className="text-2xl font-bold">{site.name}</h1>
+        <h1 className="text-2xl font-bold sm:text-3xl">{site.name}</h1>
         <p className="text-muted-foreground">{site.summary}</p>
       </div>
 
@@ -87,10 +115,14 @@ export function SiteDetail({
 
       <p className="leading-relaxed text-foreground">{site.description}</p>
 
-      <dl className="grid grid-cols-1 gap-3 rounded-sm border border-border bg-muted/30 p-4 text-sm">
+      <dl className="grid grid-cols-2 gap-4 rounded-sm border border-border bg-muted/30 p-4 text-sm">
         <div>
           <dt className="text-muted-foreground">운영 주체</dt>
-          <dd>{site.source}</dd>
+          <dd className="mt-0.5 font-medium">{site.source}</dd>
+        </div>
+        <div>
+          <dt className="text-muted-foreground">최근 확인</dt>
+          <dd className="mt-0.5 font-medium">{site.lastVerified}</dd>
         </div>
       </dl>
 

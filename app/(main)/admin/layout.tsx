@@ -28,6 +28,12 @@ export default function AdminLayout({
             신고 관리
           </Link>
           <Link
+            href="/admin/board"
+            className="text-sm text-zinc-500 hover:text-zinc-900"
+          >
+            게시판 관리
+          </Link>
+          <Link
             href="/admin/categories"
             className="text-sm text-zinc-500 hover:text-zinc-900"
           >
