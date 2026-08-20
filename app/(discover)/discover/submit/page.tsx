@@ -7,7 +7,7 @@ const SUBMIT_EMAIL = process.env.NEXT_PUBLIC_SUBMIT_EMAIL ?? '';
 export const metadata: Metadata = {
   title: '사이트 제보하기',
   description:
-    '분야를 가리지 않고 소개하면 좋을 사이트를 알고 계신가요? 여기다 발견에 제보해주세요.',
+    '분야를 가리지 않고 소개하면 좋을 사이트를 알고 계신가요? 여기다에 제보해주세요.',
 };
 
 const MAIL_SUBJECT = `[${DISCOVER_SITE_NAME}] 사이트 제보`;

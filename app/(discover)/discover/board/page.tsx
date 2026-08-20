@@ -3,7 +3,7 @@ import { BoardIndexCards } from '@/components/board/BoardIndexCards';
 
 export const metadata: Metadata = {
   title: '게시판',
-  description: '여기다 발견 이용자들이 자유롭게 글을 남길 수 있는 게시판입니다.',
+  description: '여기다 이용자들이 자유롭게 글을 남길 수 있는 게시판입니다.',
 };
 
 export default function DiscoverBoardIndexPage() {

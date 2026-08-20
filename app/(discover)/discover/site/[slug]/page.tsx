@@ -71,7 +71,7 @@ export default async function DiscoverSitePage({
         url: site.url,
       },
       breadcrumbList([
-        { name: '여기다 발견', url: `${siteUrl}/discover` },
+        { name: '여기다', url: `${siteUrl}/discover` },
         ...(category
           ? [{ name: category.name, url: `${siteUrl}/discover/${category.slug}` }]
           : []),

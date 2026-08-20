@@ -40,7 +40,7 @@ export const BOARD_LABELS: Record<BoardSite, Record<BoardType, BoardCopy>> = {
   discover: {
     'site-request': {
       title: '사이트 추가 요청',
-      description: '여기다 발견에 등록되면 좋을 사이트를 추천해주세요.',
+      description: '여기다에 등록되면 좋을 사이트를 추천해주세요.',
       writeCta: '사이트 추천하기',
     },
     free: {

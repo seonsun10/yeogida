@@ -8,7 +8,7 @@ import { getAllSiteCategories, getAllSites } from '@/lib/sites';
 const FEATURED_SITE_COUNT = 6;
 
 // title.default를 layout에 두면 "가장 가까운 부모(root)"의 template로 감싸져
-// "여기다 발견 | 여기다"처럼 이중 접미사가 붙는다 (Next.js title 해석 규칙).
+// title.default를 두면 "여기다 | 여기다"처럼 이중 접미사가 붙는다 (Next.js title 해석 규칙).
 // 홈 페이지는 absolute로 명시해 상위 template을 모두 무시하도록 한다.
 export const metadata: Metadata = {
   title: { absolute: DISCOVER_SITE_NAME },
@@ -27,7 +27,7 @@ export default async function DiscoverHomePage() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <h1 className="sr-only">여기다 발견 — 분야를 가리지 않는 사이트 모음</h1>
+      <h1 className="sr-only">여기다 — 분야를 가리지 않는 사이트 모음</h1>
 
       <section className="relative overflow-hidden border-b border-border">
         <div
@@ -36,7 +36,7 @@ export default async function DiscoverHomePage() {
         />
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 py-16 text-center sm:py-24">
           <p className="text-sm font-medium tracking-wide text-primary uppercase">
-            여기다 발견
+            여기다
           </p>
           <p className="max-w-xl text-2xl font-bold text-balance sm:text-4xl">
             {DISCOVER_SITE_TAGLINE}

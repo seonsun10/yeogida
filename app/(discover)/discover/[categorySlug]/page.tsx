@@ -63,7 +63,7 @@ export default async function DiscoverCategoryPage({
     '@context': 'https://schema.org',
     '@graph': [
       breadcrumbList([
-        { name: '여기다 발견', url: `${siteUrl}/discover` },
+        { name: '여기다', url: `${siteUrl}/discover` },
         { name: category.name, url: `${siteUrl}/discover/${category.slug}` },
       ]),
       {
