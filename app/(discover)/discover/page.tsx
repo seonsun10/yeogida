@@ -32,21 +32,25 @@ export default async function DiscoverHomePage() {
       <section className="relative overflow-hidden border-b border-border">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,var(--primary)_0%,transparent_60%)] opacity-[0.09]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,var(--primary)_0%,transparent_60%)] opacity-[0.12]"
         />
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 py-16 text-center sm:py-24">
-          <p className="text-sm font-medium tracking-wide text-primary uppercase">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-7 px-4 py-20 text-center sm:py-28">
+          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-semibold text-primary">
             여기다
-          </p>
-          <p className="max-w-xl text-2xl font-bold text-balance sm:text-4xl">
+          </span>
+          <p className="max-w-xl text-3xl leading-tight font-bold text-balance break-keep sm:text-5xl">
             {DISCOVER_SITE_TAGLINE}
           </p>
           <DiscoverSearchBar sites={sites} />
           {sites.length > 0 && (
-            <p className="text-sm text-muted-foreground">
-              사이트 <span className="font-semibold text-foreground">{sites.length}</span>개
-              · 카테고리 <span className="font-semibold text-foreground">{categories.length}</span>개
-            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span className="rounded-full bg-muted px-3 py-1 text-sm text-muted-foreground">
+                사이트 <span className="font-semibold text-foreground">{sites.length}</span>개
+              </span>
+              <span className="rounded-full bg-muted px-3 py-1 text-sm text-muted-foreground">
+                카테고리 <span className="font-semibold text-foreground">{categories.length}</span>개
+              </span>
+            </div>
           )}
         </div>
       </section>

@@ -5,9 +5,12 @@ import {
   Car,
   CarTaxiFront,
   Clapperboard,
+  Code2,
   GraduationCap,
   HeartPulse,
   LayoutGrid,
+  MessagesSquare,
+  Newspaper,
   PawPrint,
   Palette,
   PiggyBank,
@@ -24,6 +27,8 @@ import {
 } from 'lucide-react';
 
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
+  dev: Code2,
+  community: MessagesSquare,
   'fashion-beauty': Shirt,
   'living-shopping': Sofa,
   grocery: ShoppingCart,
@@ -31,6 +36,7 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
   secondhand: Repeat2,
   mobility: CarTaxiFront,
   finance: PiggyBank,
+  'news-media': Newspaper,
   investment: TrendingUp,
   hobby: Palette,
   travel: Plane,

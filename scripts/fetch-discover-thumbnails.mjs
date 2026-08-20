@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 /**
- * data/sites.json에 등록된 각 사이트의 홈페이지에서 og:image(메인 화면 대표 이미지) 또는
- * 로고/파비콘을 실제로 가져와 public/uploads/sites/<slug>/thumbnail-auto.<ext>에 저장하고
- * thumbnail 필드를 채운다. thumbnail이 이미 채워진 사이트는 건너뛴다(재실행 안전).
+ * data/sites.json(발견 섹션) 또는 data/services.json(메인 섹션)에 등록된 각 사이트의
+ * 홈페이지에서 og:image(메인 화면 대표 이미지) 또는 로고/파비콘을 실제로 가져와
+ * public/uploads/(sites/)<slug>/thumbnail-auto.<ext>에 저장하고 thumbnail 필드를 채운다.
+ * thumbnail이 이미 채워진 항목은 건너뛴다(재실행 안전).
+ *
+ * 기본값은 발견 섹션(data/sites.json, /uploads/sites/<slug>/)이며, 메인 섹션에 쓰려면
+ * 인자로 대상 파일과 업로드 경로 접두사를 지정한다:
+ *   node scripts/fetch-discover-thumbnails.mjs --file=data/services.json --url-prefix=/uploads
  *
  * 우선순위: og:image > og:image:secure_url > twitter:image > apple-touch-icon > icon
  *          > Google 파비콘 서비스(마지막 폴백, 항상 PNG)
@@ -31,8 +36,19 @@ const CONTENT_TYPE_EXT = {
   'image/gif': '.gif',
 };
 
-const SITES_PATH = new URL('../data/sites.json', import.meta.url);
-const UPLOADS_ROOT = new URL('../public/uploads/sites/', import.meta.url);
+const args = Object.fromEntries(
+  process.argv.slice(2).map((arg) => {
+    const [key, value] = arg.replace(/^--/, '').split('=');
+    return [key, value ?? true];
+  }),
+);
+
+const DATA_FILE = args.file ?? 'data/sites.json';
+// 발견 섹션 사이트는 /uploads/sites/<slug>/, 메인 섹션 서비스는 /uploads/<slug>/ 아래 저장한다.
+const URL_PREFIX = args['url-prefix'] ?? '/uploads/sites';
+
+const SITES_PATH = new URL(`../${DATA_FILE}`, import.meta.url);
+const UPLOADS_ROOT = new URL(`../public${URL_PREFIX}/`, import.meta.url);
 
 // 국내 사이트 중 구버전 SSL 재협상을 쓰는 서버가 있어(check-links.mjs와 동일한 이유) 완화한다.
 const agent = new Agent({
@@ -48,7 +64,7 @@ async function loadSites() {
 
 async function saveSites(sites) {
   const formatted = await prettier.format(JSON.stringify(sites), {
-    filepath: 'sites.json',
+    filepath: DATA_FILE,
   });
   await writeFile(SITES_PATH, formatted, 'utf8');
 }
@@ -227,7 +243,7 @@ async function processSite(site) {
   const fileName = `thumbnail-auto${result.ext}`;
   await writeFile(new URL(fileName, dir), result.buffer);
 
-  site.thumbnail = `/uploads/sites/${site.slug}/${fileName}`;
+  site.thumbnail = `${URL_PREFIX}/${site.slug}/${fileName}`;
   console.log(
     `  [완료] ${site.name} (${site.slug}) — ${result.method === 'google-favicon' ? 'Google 파비콘 폴백' : '사이트 이미지'}: ${result.source}`,
   );
