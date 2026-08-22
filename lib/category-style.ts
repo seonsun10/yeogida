@@ -1,16 +1,21 @@
 import {
+  Accessibility,
   Briefcase,
   Car,
+  ClipboardCheck,
+  GraduationCap,
   HeartHandshake,
   HeartPulse,
   House,
   Landmark,
+  Leaf,
   Lightbulb,
   type LucideIcon,
   PawPrint,
   Scale,
   ShieldCheck,
   Siren,
+  Ticket,
   Umbrella,
   Users,
 } from 'lucide-react';
@@ -96,6 +101,31 @@ const CATEGORY_STYLES: Record<string, CategoryStyle> = {
     icon: Umbrella,
     chip: 'bg-cyan-50 text-cyan-600',
     badge: 'bg-cyan-50 text-cyan-700',
+  },
+  'env-energy': {
+    icon: Leaf,
+    chip: 'bg-green-50 text-green-600',
+    badge: 'bg-green-50 text-green-700',
+  },
+  'lifelong-edu': {
+    icon: GraduationCap,
+    chip: 'bg-yellow-50 text-yellow-600',
+    badge: 'bg-yellow-50 text-yellow-700',
+  },
+  'disability-welfare': {
+    icon: Accessibility,
+    chip: 'bg-purple-50 text-purple-600',
+    badge: 'bg-purple-50 text-purple-700',
+  },
+  'culture-leisure': {
+    icon: Ticket,
+    chip: 'bg-rose-50 text-rose-600',
+    badge: 'bg-rose-50 text-rose-700',
+  },
+  'safety-check': {
+    icon: ClipboardCheck,
+    chip: 'bg-amber-50 text-amber-600',
+    badge: 'bg-amber-50 text-amber-700',
   },
 };
 

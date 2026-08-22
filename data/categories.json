@@ -76,5 +76,35 @@
     "name": "취업/창업",
     "description": "K-Startup, 소상공인 정책자금, 신용보증재단 등 취업과 창업을 준비하는 사람을 위한 지원 서비스",
     "color": "#fb923c"
+  },
+  {
+    "slug": "env-energy",
+    "name": "환경/에너지",
+    "description": "무공해차 보조금, 에너지바우처, 탄소중립포인트 등 환경·에너지 생활에 필요한 지원 서비스",
+    "color": "#4ade80"
+  },
+  {
+    "slug": "lifelong-edu",
+    "name": "교육/평생학습",
+    "description": "국비 직업훈련, 학점은행제, K-MOOC 등 평생학습과 온라인 강좌 정보를 제공하는 서비스",
+    "color": "#facc15"
+  },
+  {
+    "slug": "disability-welfare",
+    "name": "장애인/복지",
+    "description": "장애인 고용, 보조기기 교부, 재활 정보 등 장애인의 생활을 지원하는 서비스",
+    "color": "#c084fc"
+  },
+  {
+    "slug": "culture-leisure",
+    "name": "문화/여가",
+    "description": "문화누리카드, 스포츠강좌이용권, 국내여행 정보 등 문화·여가 생활을 지원하는 공공 서비스",
+    "color": "#fb7185"
+  },
+  {
+    "slug": "safety-check",
+    "name": "안전점검",
+    "description": "승강기·놀이시설·가스·전기 등 생활 안전점검·안전정보를 제공하는 서비스",
+    "color": "#f59e0b"
   }
 ]

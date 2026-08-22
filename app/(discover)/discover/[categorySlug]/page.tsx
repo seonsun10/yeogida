@@ -110,6 +110,12 @@ export default async function DiscoverCategoryPage({
         </div>
       </div>
 
+      {category.intro && (
+        <p className="max-w-3xl rounded-sm border bg-muted/30 p-4 text-sm leading-relaxed text-foreground/90">
+          {category.intro}
+        </p>
+      )}
+
       <DiscoverSearchBar sites={sites} />
 
       {sites.length > 0 ? (
