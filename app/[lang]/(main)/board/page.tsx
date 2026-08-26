@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import { BoardIndexCards } from '@/components/board/BoardIndexCards';
+import { DEFAULT_LOCALE, isLocale, localeHref } from '@/lib/i18n';
 
 export const metadata: Metadata = {
   title: '게시판',
   description: '여기다 이용자들이 자유롭게 글을 남길 수 있는 게시판입니다.',
 };
 
-export default function MainBoardIndexPage() {
+export default async function MainBoardIndexPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang: rawLang } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
   return (
     <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 py-16">
       <div className="flex flex-col gap-2">
@@ -16,7 +23,7 @@ export default function MainBoardIndexPage() {
           남길 수 있습니다.
         </p>
       </div>
-      <BoardIndexCards site="main" basePath="/board" />
+      <BoardIndexCards site="main" basePath={localeHref(lang, '/board')} />
     </div>
   );
 }

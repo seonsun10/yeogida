@@ -6,6 +6,9 @@ import { buttonVariants } from '@/components/ui/button';
 import { ReportButton } from '@/components/ReportButton';
 import { ShareButton } from '@/components/ShareButton';
 import { getCategoryStyle } from '@/lib/category-style';
+import type { Dictionary } from '@/lib/dictionaries';
+import type { Locale } from '@/lib/i18n';
+import { getServiceLanguageName } from '@/lib/service-languages';
 import { trackOutboundClick } from '@/lib/track';
 import { deleteServiceThumbnail } from '@/app/[lang]/(main)/admin/actions';
 import { ThumbnailUploadForm } from '@/app/[lang]/(main)/admin/ThumbnailUploadForm';
@@ -16,9 +19,13 @@ const IS_LOCAL_DEV = process.env.NODE_ENV === 'development';
 export function ServiceDetail({
   service,
   category,
+  lang,
+  dict,
 }: {
   service: Service;
   category?: Category;
+  lang: Locale;
+  dict: Dictionary['service'];
 }) {
   const style = getCategoryStyle(service.categorySlug);
 
@@ -99,18 +106,39 @@ export function ServiceDetail({
 
       <dl className="grid grid-cols-1 gap-3 rounded-md border bg-muted/30 p-4 text-sm sm:grid-cols-2">
         <div>
-          <dt className="text-muted-foreground">운영시간</dt>
+          <dt className="text-muted-foreground">{dict.hours}</dt>
           <dd>{service.hours}</dd>
         </div>
         <div>
-          <dt className="text-muted-foreground">비용</dt>
-          <dd>{service.cost === 'free' ? '무료' : '유료'}</dd>
+          <dt className="text-muted-foreground">{dict.cost}</dt>
+          <dd>{service.cost === 'free' ? dict.costFree : dict.costPaid}</dd>
         </div>
         <div>
-          <dt className="text-muted-foreground">운영 주체</dt>
+          <dt className="text-muted-foreground">{dict.source}</dt>
           <dd>{service.source}</dd>
         </div>
       </dl>
+
+      {service.supportLanguages && service.supportLanguages.length > 0 && (
+        <div className="flex flex-col gap-1.5">
+          <span className="text-sm text-muted-foreground">
+            {dict.languageSupport}
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {service.supportLanguages.map((support) => (
+              <a
+                key={support.language}
+                href={support.evidenceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border px-2.5 py-0.5 text-xs font-medium text-muted-foreground outline-none transition-colors hover:border-primary/40 hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+              >
+                {getServiceLanguageName(support.language, lang)}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="flex flex-wrap items-center gap-2">
         <a
@@ -120,7 +148,7 @@ export function ServiceDetail({
           onClick={() => trackOutboundClick(service)}
           className={buttonVariants({ size: 'lg', className: 'w-fit' })}
         >
-          바로가기
+          {dict.visit}
         </a>
         <ShareButton title={service.name} text={service.summary} />
         <ReportButton serviceSlug={service.slug} />

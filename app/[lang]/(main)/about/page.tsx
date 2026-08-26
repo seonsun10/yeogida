@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { DEFAULT_LOCALE, isLocale, localeHref } from '@/lib/i18n';
 import { getAllCategories, getAllServices } from '@/lib/services';
 
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_SUBMIT_EMAIL ?? '';
@@ -12,7 +13,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang: rawLang } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
   const categories = getAllCategories();
   const services = await getAllServices();
 
@@ -66,7 +73,7 @@ export default async function AboutPage() {
         <p>
           여기다는 개인이 운영하는 프로젝트입니다. 오래되었거나 잘못된 정보를
           발견하셨거나, 새로 등록하면 좋을 서비스를 알고 계시다면{' '}
-          <Link href="/submit" className="underline underline-offset-2">
+          <Link href={localeHref(lang, '/submit')} className="underline underline-offset-2">
             서비스 제보 페이지
           </Link>
           나 아래 이메일로 알려주세요. 서비스명·링크·간단한 설명을 함께 보내주시면

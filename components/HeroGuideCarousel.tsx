@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { DEFAULT_CATEGORY_COLOR, getCategoryStyle } from '@/lib/category-style';
 import type { Guide } from '@/lib/guides';
+import { localeHref, type Locale } from '@/lib/i18n';
 import type { Category } from '@/types/service';
 
 const SETTLE_DELAY_MS = 120;
@@ -12,9 +13,11 @@ const SETTLE_DELAY_MS = 120;
 export function HeroGuideCarousel({
   guides,
   categories,
+  lang,
 }: {
   guides: Guide[];
   categories: Category[];
+  lang: Locale;
 }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const settleTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -83,7 +86,7 @@ export function HeroGuideCarousel({
             return (
               <Link
                 key={`${guide.slug}-${i}`}
-                href={`/guides/${guide.slug}`}
+                href={localeHref(lang, `/guides/${guide.slug}`)}
                 className="relative flex min-h-[320px] w-full shrink-0 snap-start flex-col items-center justify-center gap-3 px-6 py-12 text-center outline-none focus-visible:ring-3 focus-visible:ring-ring/50 sm:min-h-[380px] sm:px-10"
               >
                 <Icon

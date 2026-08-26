@@ -1,7 +1,7 @@
 # 영어 지원(i18n) 도입 방향
 
-- 작성일: 2026-08-25 / 갱신일: 2026-08-25
-- 상태: **1단계(라우팅 마이그레이션) 완료 및 검증됨.** `(main)`을 `app/[lang]/(main)`으로 이동, `proxy.ts` rewrite 추가. `lint`/`build`/`dev` 전부 통과, 기존 한국어 URL(`/`, `/service/[slug]`, `/category/[slug]`, `/admin`, `/discover`)이 원래 경로 그대로 200 응답하는 것과 `/ko/...` 직접 접근 시 308로 정규 URL로 리다이렉트되는 것, `/en/...`이 200으로 통과하는 것까지 로컬에서 확인 완료. 다음은 2단계(dictionary + 언어 스위처).
+- 작성일: 2026-08-25 / 갱신일: 2026-08-26
+- 상태: **3단계(서비스 스키마 `supportLanguages`/`i18n.en` + `/en/service/[slug]` 분기) 완료 및 검증됨.** 1단계(라우팅 마이그레이션), 2단계(dictionary + 언어 스위처)에 이어 서비스 스키마 확장과 그에 따른 라우팅 분기까지 도입했다. `lint`/`build`/`dev` 전부 통과, 아래 "3단계에서 처리한 것" 항목까지 로컬에서 확인 완료. 다음은 4단계(핵심 카테고리 서비스 몇 건에 `i18n.en` 실제 채우는 파일럿).
 - 관련 배경: 현재 `여기다`는 순수 한글 서비스로, i18n 관련 패키지(next-intl 등)나 `proxy.ts`(구 middleware)가 전혀 없는 상태에서 시작한다. 콘텐츠는 `data/services.json`(178개)·`data/categories.json`(18개)에 한국어로만 저장돼 있고, 그중 다수가 한국 정부/지자체의 전화상담 등 "한국어 화자 전용" 채널이다.
 
 ## 핵심 전제: 두 트랙을 분리한다
@@ -36,10 +36,33 @@
 5. 그다음 스키마 필드(`supportLanguages`, `i18n.en`).
 6. 콘텐츠 파일럿은 맨 마지막.
 
-### 1단계 완료 후 남은 known gap
+### 2단계에서 처리한 것
 
-- `<html lang>`이 여전히 `app/layout.tsx`(공유 루트, `[lang]` 위)에 `"ko"`로 고정돼 있다 — `/en/...` 페이지도 지금은 `lang="ko"`로 내려간다. `[lang]`이 `app/layout.tsx`보다 아래 세그먼트라 `params.lang`을 루트 레이아웃에서 직접 받을 수 없기 때문. 스크린리더 등 접근성에 영향이 있으므로 2단계(언어 스위처 도입 시점)에서 반드시 해결 — 후보: (a) `[lang]`을 진짜 root layout으로 승격하고 `(discover)`도 별도 root layout으로 분리("multiple root layouts" 패턴, `(discover)`에 GTM/폰트 보일러플레이트 중복 필요), (b) 클라이언트 컴포넌트에서 `document.documentElement.lang`을 동기화. (a)가 정석이지만 `(discover)`(이번 범위 밖)까지 건드리게 되는 트레이드오프가 있어 2단계 시작 시 다시 결정.
-- `<Link>` href는 아직 로케일 인지가 아니다 — `/en/...` 페이지에서 내부 링크를 클릭하면 접두사 없는(한국어) URL로 이동한다. 언어 스위처가 없는 현재는 사용자가 `/en/...`에 도달할 방법이 없어 무해하지만, 2단계에서 스위처를 추가하는 시점에 로케일 인지 href 헬퍼도 함께 도입해야 한다.
+- **`<html lang>` 고정 문제 해결.** 1단계 known gap의 (a)안(정석)을 그대로 채택 — `app/layout.tsx`(공유 루트)를 삭제하고 `app/[lang]/layout.tsx`와 `app/(discover)/layout.tsx`를 각각 독립된 root layout으로 승격했다(`<html lang>`·폰트·GTM/GA/AdSense 스크립트를 자체적으로 렌더링). 폰트(`lib/fonts.ts`)와 분석 스크립트(`app/AnalyticsScripts.tsx`)는 공유 모듈로 뽑아 두 root의 중복 유지 비용을 줄였다. `metadataBase`·네이버/애드센스 verification 메타 태그처럼 기존에 단일 루트에만 있던 항목은 두 root 모두에 명시적으로 복제했다(문서화 안 하면 조용히 깨지는 부분).
+  - **복수 root layout의 부작용을 발견하고 해결함**: `[lang]`이 top-level dynamic segment로 root layout이 되면서, 완전히 매칭되지 않는 URL(예: `/asdkjaskjd`)에 대해 Next.js가 어느 root로 404를 합성할지 알 수 없어 기존 `app/not-found.tsx`가 조용히 무시되고 Next의 최소 기본 404(스타일 없음, `<html lang>` 없음)로 대체되는 회귀를 로컬에서 직접 재현했다. Next 16 문서가 권장하는 `experimental.globalNotFound` + `app/global-not-found.tsx`(자체 완결된 `<html>`/`<body>` 문서)를 도입해 해결. 라우트 안에서 명시적으로 `notFound()`를 호출하는 케이스(존재하지 않는 service slug 등)는 기존처럼 각 세그먼트의 `not-found.tsx`(`app/[lang]/(main)/not-found.tsx`, `app/(discover)/not-found.tsx`)가 그대로 처리하는 것도 확인함 — 전역 404와 세그먼트 404는 독립적으로 잘 동작한다.
+- **로케일 인지 링크 헬퍼 도입 및 적용.** `lib/i18n.ts`의 `localeHref(lang, path)` — ko는 접두사 없음(rewrite 방식 유지), en은 `/en` 접두사. Header/Footer/HeaderNav/CategoryNav/ServiceCard/HeroGuideCarousel과 about·terms·guides·guides/[slug]·service/[slug]·category/[slug]·board 관련 페이지에 적용. `admin/*`(개발 전용, 번역 대상 아님)과 `(discover)/*`(이번 범위 밖) 컴포넌트는 의도적으로 제외.
+- **Dictionary + 언어 스위처.** `dictionaries/{ko,en}.json`은 헤더 내비/푸터 링크 라벨/스킵링크/사이트 설명 같은 순수 UI 텍스트만 담는다 — 카테고리명, 홈/about/가이드 등 페이지 본문 카피는 콘텐츠 트랙(3~4단계) 범위라 이번엔 그대로 한국어로 남겨뒀다. `components/layout/LangSwitcher.tsx`(클라이언트 컴포넌트, `usePathname()` 기반으로 현재 페이지를 유지한 채 반대 로케일 경로 계산)를 Header(데스크톱)와 모바일 시트 메뉴 양쪽에 배치.
+- **`/en` 색인 방지(중복 콘텐츠 신호 차단).** `/en` 트리 전체는 아직 UI 텍스트만 번역되고 본문 콘텐츠는 한국어 그대로라, `app/[lang]/layout.tsx`의 `generateMetadata`에서 `lang !== 'ko'`일 때 `robots: { index: false, follow: true }`를 내려보내고, `app/robots.ts`에도 `/en` disallow를 추가했다(메타 태그 + robots.txt 이중 방어). `sitemap.ts`는 원래도 접두사 없는 한국어 URL만 포함하고 있어 추가 변경 불필요.
+- **검색창 처리.** `lib/search.ts`가 한국어 인덱스만 지원하는 문제(계획서 원안) — en 카테고리 페이지에서는 `SearchBar`를 아예 렌더링하지 않고 대신 "Search currently only covers Korean-language content." 안내문을 보여준다(`dictionaries/en.json`의 `search.koOnlyNotice`).
+
+### 남은 known gap (3단계 이후로 이월)
+
+- `app/[lang]/(main)/not-found.tsx`(세그먼트 notFound() 케이스)는 `params`를 받지 않는 Next.js 파일 컨벤션이라 로케일 인지 링크를 못 만든다 — `/en/...`에서 존재하지 않는 slug에 접근하면 "홈으로"/"가이드 보기" 버튼이 한국어 URL로 이동한다. 엣지 케이스라 이번 단계에서는 보류.
+- 홈/about/가이드 목록 등 페이지 본문 카피(h1/h2/문단)는 여전히 한국어 고정 — 이건 처음부터 스코프 밖(UI 트랙은 헤더/푸터/메타데이터, 본문 카피는 콘텐츠 트랙).
+
+### 3단계에서 처리한 것
+
+- **`Service` 타입 확장** (`types/service.ts`): `supportLanguages?: { language, evidenceUrl }[]`(둘 다 필수 — 근거 URL 없는 항목은 타입 레벨에서부터 만들 수 없게 막음, [[절차 관련 내용 지어내기 금지]] 적용) / `i18n?: { en?: { name, summary, description, hours? } }`(`name`/`summary`/`description`은 필수 — 셋 중 하나라도 비면 얇은 중복 페이지가 생기므로). `tags`/`badges`는 의도적으로 번역 대상에서 제외(검색·필터가 한국어 인덱스 전용이라 번역해도 못 씀).
+- **언어 표시명 헬퍼** (`lib/service-languages.ts`): `getServiceLanguageName(code, lang)` — ISO 639-1 코드 → ko/en 표시명. 목록에 없는 코드는 추측 대신 코드를 그대로 반환.
+- **로케일별 표시용 서비스 해석** (`lib/services.ts`의 `resolveServiceForLocale(service, lang)`): en이고 `i18n.en`이 있을 때만 name/summary/description/hours를 대체, 없으면 원본(한국어) 그대로. `service/[slug]/page.tsx`가 `ServiceDetail`·`generateMetadata`·JSON-LD·관련 서비스 카드에 전부 이 함수의 결과를 넘기도록 정리해서 번역 분기가 한 곳에만 있다.
+- **`/en/service/[slug]`의 "얇은 중복 페이지 방지" 실제 적용**:
+  - `generateStaticParams`가 이제 `{ lang, slug }` 쌍을 직접 반환한다(기존엔 `{ slug }`만 반환해 부모 레이아웃의 `[{lang:'ko'},{lang:'en'}]`과 교차곱되어 모든 서비스가 `/en`에도 프리렌더되고 있었음) — ko는 전체 178건, en은 `i18n.en`이 있는 서비스만. Next 공식 문서의 "Generate params from the bottom up" 패턴(`node_modules/next/dist/docs/.../generate-static-params.md`)을 적용했고, **양방향으로 검증함**: (1) 무번역 상태 빌드에서 `.next/server/app/en/service`가 0건, `ko/service`는 178건 전부 생성됨을 확인. (2) 이것만으론 "자식이 부모의 교차곱을 대체한다"는 걸 증명하지 못한다는 지적을 받고(빈 배열 필터는 대체/병합 어느 쪽이든 결과가 같으므로) — `data/services.json`에 서비스 1건에 `i18n.en`+`supportLanguages`를 임시로 채워 넣고 다시 빌드해서 `.next/server/app/en/service/<slug>.html`이 실제로 생성되고 그 안에 번역된 name/summary/description/hours, 영어 라벨(Hours/Operated by/Visit site/Language support), `supportLanguages` pill의 근거 URL, `hreflang`(ko/en/x-default) 태그가 전부 들어있는 걸 확인한 뒤 `git checkout -- data/services.json`으로 되돌림.
+  - 번역 없는 서비스로 `/en/service/[slug]`에 접근하면(빌드에 없어 `dynamicParams` 기본값 `true`로 런타임 렌더 진입) 페이지 컴포넌트 안에서 `redirect()`(307, `permanentRedirect` 아님 — 나중에 번역이 채워지면 이 분기가 안 타야 하는데 308은 브라우저/캐시에 영구 저장돼버림)로 접두사 없는 한국어 원문 URL로 보낸다. `curl -D-`로 `/en/service/<미번역slug>` → `307` → `location: /service/<slug>`(`/ko/service/...`가 아님) 확인.
+  - `generateMetadata`의 `alternates.canonical`을 로케일 인지로 고치고(기존엔 `/en`에서도 한국어 URL을 canonical로 선언하고 있었음), `i18n.en`이 있을 때만 `alternates.languages`(ko/en/x-default 쌍, 계획 28행 "x-default는 한국어로")를 내려보낸다(계획 27행 "실제로 존재하는 페이지에만" 원칙 적용). 단, `app/robots.ts`가 `/en` 전체를 여전히 disallow 중이라 이 hreflang 쌍은 4단계에서 로봇 규칙을 페이지 단위로 풀기 전까지는 크롤러가 실제로 따라갈 수 없음 — "번역 채워지면 hreflang 자동으로 의미 생김"이 아니라 4단계의 robots 작업이 선행 조건.
+- **`ServiceDetail` 라벨 다국어화**: "운영시간/비용/무료·유료/운영 주체/바로가기"가 하드코딩 한글이었던 것을 `dictionaries/{ko,en}.json`의 신설 `service.*` 키로 교체(`ServiceDetail`은 클라이언트 컴포넌트라 `dict.service` 슬라이스를 props로 전달). 완전히 번역된 영어 페이지에서 이 라벨만 한글로 남는 걸 막기 위함 — 페이지 본문 카피(h2 섹션 제목 등)는 이번에도 스코프 밖으로 남겨둠.
+- **`supportLanguages` UI 노출**: 값이 있는 서비스는 상세 페이지에 "다국어 지원"(en: "Language support") pill을 렌더링하고, 각 pill이 근거 URL(`evidenceUrl`)로 바로 연결되도록 함(번역 없이도 즉시 가치를 준다는 계획의 우선순위 1번 원칙 그대로 구현). 현재 178개 서비스 전부 이 필드가 비어 있어 화면엔 아직 아무 것도 안 뜸(정상 — 근거 URL 확인 전엔 채우지 않음).
+- **JSON-LD 지역화**: `service/[slug]/page.tsx`의 breadcrumb `'홈'` 하드코딩을 `dict.home`으로, `Service.inLanguage`를 `dict.site.htmlLang`으로 채워 영어 페이지의 구조화 데이터가 한국어 리터럴을 안 갖도록 함. (같은 문제가 있는 `category/[slug]/page.tsx`는 이번 스코프 밖이라 손대지 않음 — 필요시 후속 작업.)
+- **admin 저장 경로 안전성 확인**: `updateService`가 `Object.assign(service, fields)`를 쓰는데 `fields`(`buildFieldsFromForm` 반환값)엔 `i18n`/`supportLanguages` 키가 없어서, `/admin/[slug]`에서 저장해도 두 필드는 그대로 보존됨을 코드로 확인(관리자 폼 자체는 이번 단계에서 확장하지 않음 — 4단계 파일럿에서 실제로 값을 채울 방법을 정할 때 같이 결정).
 
 ## UI 트랙에서 실제로 손대야 할 지점
 
@@ -70,7 +93,8 @@
 
 ## 다음 단계
 
-1. **라우팅 마이그레이션 단독 진행** (위 "순서" 섹션 1~3단계) — `[lang]` 세그먼트, `proxy.ts` rewrite, 로케일 인지 링크 헬퍼, hreflang 골격. 영어 콘텐츠 0건, 언어 스위처 숨김 상태로 `lint`/`build`/`dev` 검증까지 끝낸다.
-2. Dictionary(`dictionaries/{ko,en}.json`) + Header 언어 스위처.
-3. 서비스 스키마에 `supportLanguages`(근거 URL 포함), `i18n.en` 필드 추가 (옵셔널, 기존 178개 항목은 비워둠 → 점진적으로 채움).
-4. 핵심 카테고리(긴급상황·법률/행정 등 외국인 수요가 높은 곳) 몇 건부터 `i18n.en` 채워서 파일럿.
+1. ~~라우팅 마이그레이션~~ — 완료 (1단계).
+2. ~~Dictionary + Header 언어 스위처~~ — 완료 (2단계).
+3. ~~서비스 스키마에 `supportLanguages`(근거 URL 포함), `i18n.en` 필드 추가 + `/en/service/[slug]` `generateStaticParams`/redirect 분기~~ — 완료 (3단계).
+4. **핵심 카테고리(긴급상황·법률/행정 등 외국인 수요가 높은 곳) 몇 건부터 `supportLanguages`/`i18n.en` 실제로 채워서 파일럿.** 두 필드 다 관리자 폼(`ServiceForm.tsx`)에 입력 UI가 아직 없으므로, 파일럿 착수 시 (a) `data/services.json`을 직접 편집할지 (b) 폼에 필드를 추가할지부터 정한다. 번역이 채워지는 서비스부터 `/en/service/[slug]`의 `robots.index`를 페이지 단위로 해제(현재는 `app/robots.ts`가 `/en` 전체를 disallow하고 있어 페이지 단위 해제가 실효를 가지려면 그 disallow도 같이 손봐야 함 — 이번 3단계에서는 아직 손대지 않음).
+5. (선택, 낮은 우선순위) `category/[slug]/page.tsx`의 JSON-LD breadcrumb `'홈'` 하드코딩도 3단계에서 service 페이지에 적용한 것과 동일하게 `dict.home`으로 정리.

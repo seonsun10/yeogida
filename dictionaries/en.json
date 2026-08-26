@@ -1,0 +1,44 @@
+{
+  "skipToContent": "Skip to main content",
+  "home": "Home",
+  "site": {
+    "description": "Yeogida (yeogida-life.com) curates practical Korean government and public services that are useful but hard to find, organized by category.",
+    "ogLocale": "en_US",
+    "htmlLang": "en-US"
+  },
+  "nav": {
+    "guides": "Guides",
+    "categories": "Categories",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "discoverLinkFull": "Browse private/general site directory",
+    "discoverLinkShort": "Site directory"
+  },
+  "footer": {
+    "disclaimer": "This site is for informational purposes only. Please confirm each service's current availability directly with the operating agency before visiting.",
+    "navLabel": "Footer",
+    "guides": "Guides",
+    "board": "Board",
+    "submit": "Suggest a service",
+    "about": "About",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "lastChecked": "Last full link check",
+    "copyright": "Yeogida"
+  },
+  "languageSwitcher": {
+    "label": "Language"
+  },
+  "search": {
+    "koOnlyNotice": "Search currently only covers Korean-language content."
+  },
+  "service": {
+    "hours": "Hours",
+    "cost": "Cost",
+    "costFree": "Free",
+    "costPaid": "Paid",
+    "source": "Operated by",
+    "visit": "Visit site",
+    "languageSupport": "Language support"
+  }
+}

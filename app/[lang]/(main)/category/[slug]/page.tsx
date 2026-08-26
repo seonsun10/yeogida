@@ -6,6 +6,8 @@ import { FilterBar } from '@/components/FilterBar';
 import { SearchBar } from '@/components/SearchBar';
 import { ServiceCard } from '@/components/ServiceCard';
 import { ServiceGrid } from '@/components/ServiceGrid';
+import { getDictionary } from '@/lib/dictionaries';
+import { DEFAULT_LOCALE, isLocale } from '@/lib/i18n';
 import { breadcrumbList, jsonLdScriptProps } from '@/lib/json-ld';
 import {
   filterServices,
@@ -18,7 +20,7 @@ import { getSiteUrl } from '@/lib/site-url';
 const IN_FEED_AD_INTERVAL = 6;
 
 type CategoryPageProps = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ lang: string; slug: string }>;
   searchParams: Promise<{ free?: string; hours24?: string }>;
 };
 
@@ -50,7 +52,9 @@ export default async function CategoryPage({
   params,
   searchParams,
 }: CategoryPageProps) {
-  const { slug } = await params;
+  const { lang: rawLang, slug } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
+  const dict = await getDictionary(lang);
   const { free, hours24 } = await searchParams;
 
   const category = getCategoryBySlug(slug);
@@ -93,7 +97,11 @@ export default async function CategoryPage({
         <p className="text-muted-foreground">{category.description}</p>
       </div>
 
-      <SearchBar services={categoryServices} />
+      {lang === 'ko' ? (
+        <SearchBar services={categoryServices} />
+      ) : (
+        <p className="text-sm text-muted-foreground">{dict.search.koOnlyNotice}</p>
+      )}
 
       <FilterBar />
 
@@ -103,7 +111,7 @@ export default async function CategoryPage({
           storageKey={`service-grid:${slug}:${free ?? ''}:${hours24 ?? ''}`}
           cards={services.map((service, index) => (
             <Fragment key={service.id}>
-              <ServiceCard service={service} hideCategoryBadge />
+              <ServiceCard service={service} hideCategoryBadge lang={lang} />
               {(index + 1) % IN_FEED_AD_INTERVAL === 0 && (
                 <AdSlot className="min-h-[120px] rounded-md border border-dashed sm:col-span-2 lg:col-span-3" />
               )}

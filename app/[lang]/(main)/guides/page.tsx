@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight } from 'lucide-react';
 import { getCategoryStyle } from '@/lib/category-style';
+import { DEFAULT_LOCALE, isLocale, localeHref } from '@/lib/i18n';
 import { getAllCategories } from '@/lib/services';
 import { getAllGuides, type Guide } from '@/lib/guides';
 
@@ -13,7 +14,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GuidesPage() {
+export default async function GuidesPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang: rawLang } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
   const guides = getAllGuides();
 
   const guidesByCategory = new Map<string, Guide[]>();
@@ -88,7 +95,7 @@ export default function GuidesPage() {
                 {categoryGuides.map((guide) => (
                   <Link
                     key={guide.slug}
-                    href={`/guides/${guide.slug}`}
+                    href={localeHref(lang, `/guides/${guide.slug}`)}
                     className="group flex items-start justify-between gap-4 rounded-lg border p-4 outline-none transition-colors hover:bg-muted/40 focus-visible:ring-3 focus-visible:ring-ring/50"
                   >
                     <div className="flex flex-col gap-1">

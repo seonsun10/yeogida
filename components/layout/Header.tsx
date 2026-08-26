@@ -1,10 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
+import type { Dictionary } from '@/lib/dictionaries';
+import { localeHref, type Locale } from '@/lib/i18n';
 import { getAllCategories } from '@/lib/services';
 import { HeaderNav } from './HeaderNav';
+import { LangSwitcher } from './LangSwitcher';
 
-export function Header() {
+export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const categories = getAllCategories();
 
   return (
@@ -12,7 +15,7 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <div className="flex min-w-0 items-center gap-3">
           <Link
-            href="/"
+            href={localeHref(lang, '/')}
             className="flex shrink-0 items-center gap-1.5 text-lg font-bold tracking-tight"
           >
             <Image
@@ -31,12 +34,15 @@ export function Header() {
             href="/discover"
             className="inline-flex shrink-0 items-center gap-1 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground outline-none transition-colors hover:border-primary/40 hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
           >
-            <span className="hidden sm:inline">민간 사이트 모음 보러가기</span>
-            <span className="sm:hidden">민간 사이트</span>
+            <span className="hidden sm:inline">{dict.nav.discoverLinkFull}</span>
+            <span className="sm:hidden">{dict.nav.discoverLinkShort}</span>
             <ArrowRightIcon className="size-3.5" />
           </Link>
         </div>
-        <HeaderNav categories={categories} />
+        <div className="flex items-center gap-3">
+          <HeaderNav categories={categories} lang={lang} dict={dict} />
+          <LangSwitcher lang={lang} label={dict.languageSwitcher.label} className="hidden sm:flex" />
+        </div>
       </div>
     </header>
   );

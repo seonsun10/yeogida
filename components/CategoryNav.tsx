@@ -1,9 +1,16 @@
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { getCategoryStyle } from '@/lib/category-style';
+import { localeHref, type Locale } from '@/lib/i18n';
 import type { Category } from '@/types/service';
 
-export function CategoryNav({ categories }: { categories: Category[] }) {
+export function CategoryNav({
+  categories,
+  lang,
+}: {
+  categories: Category[];
+  lang: Locale;
+}) {
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {categories.map((category) => {
@@ -12,7 +19,7 @@ export function CategoryNav({ categories }: { categories: Category[] }) {
         return (
           <Link
             key={category.slug}
-            href={`/category/${category.slug}`}
+            href={localeHref(lang, `/category/${category.slug}`)}
             className="block h-full rounded-xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             <Card className="h-full flex-row items-center gap-3 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:ring-primary/30">

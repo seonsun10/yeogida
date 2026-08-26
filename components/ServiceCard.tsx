@@ -3,22 +3,25 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { getCategoryStyle } from '@/lib/category-style';
+import { DEFAULT_LOCALE, localeHref, type Locale } from '@/lib/i18n';
 import { getCategoryBySlug } from '@/lib/services';
 import type { Service } from '@/types/service';
 
 export function ServiceCard({
   service,
   hideCategoryBadge = false,
+  lang = DEFAULT_LOCALE,
 }: {
   service: Service;
   hideCategoryBadge?: boolean;
+  lang?: Locale;
 }) {
   const category = getCategoryBySlug(service.categorySlug);
   const style = getCategoryStyle(service.categorySlug);
 
   return (
     <Link
-      href={`/service/${service.slug}`}
+      href={localeHref(lang, `/service/${service.slug}`)}
       className="block h-full rounded-xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
     >
       <Card className="h-full transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:ring-primary/30">

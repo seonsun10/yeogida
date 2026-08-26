@@ -7,12 +7,13 @@ import { AdSlot } from '@/components/AdSlot';
 import { ServiceCard } from '@/components/ServiceCard';
 import { DEFAULT_CATEGORY_COLOR, getCategoryStyle } from '@/lib/category-style';
 import { getAllGuides, getGuideBySlug, type GuideBlock } from '@/lib/guides';
+import { DEFAULT_LOCALE, isLocale, localeHref, type Locale } from '@/lib/i18n';
 import { getCategoryBySlug, getServiceBySlug } from '@/lib/services';
 import { cn } from '@/lib/utils';
 import type { Service } from '@/types/service';
 
 type GuidePageProps = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ lang: string; slug: string }>;
 };
 
 export function generateStaticParams() {
@@ -36,7 +37,8 @@ export async function generateMetadata({
 }
 
 export default async function GuidePage({ params }: GuidePageProps) {
-  const { slug } = await params;
+  const { lang: rawLang, slug } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
   const guide = getGuideBySlug(slug);
   if (!guide) notFound();
 
@@ -67,7 +69,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-4 py-12">
       <Link
-        href="/guides"
+        href={localeHref(lang, '/guides')}
         className="inline-flex w-fit items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >
         <ChevronLeft className="size-4" />
@@ -134,7 +136,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
           >
             {section.map(({ block, index }) => (
               <Fragment key={index}>
-                {renderBlock(block, index, headingIndexes.indexOf(index), accentColor)}
+                {renderBlock(block, index, headingIndexes.indexOf(index), accentColor, lang)}
               </Fragment>
             ))}
           </section>
@@ -172,6 +174,7 @@ function renderBlock(
   index: number,
   headingOrder: number,
   accentColor: string,
+  lang: Locale,
 ) {
   switch (block.type) {
     case 'heading':
@@ -226,7 +229,7 @@ function renderBlock(
           )}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {block.services.map((service) => (
-              <ServiceCard key={service.id} service={service} />
+              <ServiceCard key={service.id} service={service} lang={lang} />
             ))}
           </div>
         </div>

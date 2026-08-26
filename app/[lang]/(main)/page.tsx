@@ -1,11 +1,18 @@
 import { CategoryNav } from '@/components/CategoryNav';
 import { HeroGuideCarousel } from '@/components/HeroGuideCarousel';
 import { getAllGuides } from '@/lib/guides';
+import { DEFAULT_LOCALE, isLocale } from '@/lib/i18n';
 import { getAllCategories } from '@/lib/services';
 
 const HERO_GUIDE_COUNT = 8;
 
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang: rawLang } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
   const categories = getAllCategories();
   const guides = getAllGuides().slice(0, HERO_GUIDE_COUNT);
 
@@ -17,7 +24,7 @@ export default async function Home() {
 
       <section className="border-b bg-gradient-to-b from-primary/10 via-primary/5 to-transparent">
         <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:py-12">
-          <HeroGuideCarousel guides={guides} categories={categories} />
+          <HeroGuideCarousel guides={guides} categories={categories} lang={lang} />
         </div>
       </section>
 
@@ -30,7 +37,7 @@ export default async function Home() {
               살펴보세요.
             </p>
           </div>
-          <CategoryNav categories={categories} />
+          <CategoryNav categories={categories} lang={lang} />
         </section>
       </div>
     </div>

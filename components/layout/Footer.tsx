@@ -1,43 +1,42 @@
 import Link from 'next/link';
+import type { Dictionary } from '@/lib/dictionaries';
+import { localeHref, type Locale } from '@/lib/i18n';
 import { getLinkCheckStatus } from '@/lib/link-check-status';
 
-export async function Footer() {
+export async function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const status = await getLinkCheckStatus();
 
   return (
     <footer className="border-t bg-muted/40">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 text-sm text-muted-foreground">
-        <p>
-          이 사이트는 정보 제공을 목적으로 하며, 등록된 서비스의 실제 운영
-          여부는 방문 전 다시 확인하시기 바랍니다.
-        </p>
-        <nav aria-label="바닥글" className="flex flex-wrap gap-4">
-          <Link href="/guides" className="hover:text-foreground">
-            가이드
+        <p>{dict.footer.disclaimer}</p>
+        <nav aria-label={dict.footer.navLabel} className="flex flex-wrap gap-4">
+          <Link href={localeHref(lang, '/guides')} className="hover:text-foreground">
+            {dict.footer.guides}
           </Link>
-          <Link href="/board" className="hover:text-foreground">
-            게시판
+          <Link href={localeHref(lang, '/board')} className="hover:text-foreground">
+            {dict.footer.board}
           </Link>
-          <Link href="/submit" className="hover:text-foreground">
-            서비스 제보하기
+          <Link href={localeHref(lang, '/submit')} className="hover:text-foreground">
+            {dict.footer.submit}
           </Link>
-          <Link href="/about" className="hover:text-foreground">
-            소개
+          <Link href={localeHref(lang, '/about')} className="hover:text-foreground">
+            {dict.footer.about}
           </Link>
-          <Link href="/privacy" className="hover:text-foreground">
-            개인정보처리방침
+          <Link href={localeHref(lang, '/privacy')} className="hover:text-foreground">
+            {dict.footer.privacy}
           </Link>
-          <Link href="/terms" className="hover:text-foreground">
-            이용약관
+          <Link href={localeHref(lang, '/terms')} className="hover:text-foreground">
+            {dict.footer.terms}
           </Link>
         </nav>
         {status && (
           <p className="text-xs text-muted-foreground/70">
-            마지막 전체 링크 점검: {status.checkedAt.slice(0, 10)}
+            {dict.footer.lastChecked}: {status.checkedAt.slice(0, 10)}
           </p>
         )}
         <p className="text-xs text-muted-foreground/70">
-          © {new Date().getFullYear()} 여기다
+          © {new Date().getFullYear()} {dict.footer.copyright}
         </p>
       </div>
     </footer>

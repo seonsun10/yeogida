@@ -1,11 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { DEFAULT_LOCALE, isLocale, localeHref } from '@/lib/i18n';
 
 export const metadata: Metadata = {
   title: '이용약관',
 };
 
-export default function TermsPage() {
+export default async function TermsPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang: rawLang } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-16 text-sm leading-relaxed text-foreground/90">
       <h1 className="text-2xl font-bold text-foreground">이용약관</h1>
@@ -57,7 +64,7 @@ export default function TermsPage() {
           운영 비용을 충당할 수 있습니다. 광고는 사이트가 직접 작성하거나
           검증한 콘텐츠가 아니며, 광고주의 상품·서비스에 대해 사이트가 어떠한
           보증도 하지 않습니다. 쿠키 및 광고 개인정보 처리에 대한 자세한 내용은{' '}
-          <Link href="/privacy" className="underline underline-offset-2">
+          <Link href={localeHref(lang, '/privacy')} className="underline underline-offset-2">
             개인정보처리방침
           </Link>
           을 참고하시기 바랍니다.

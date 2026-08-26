@@ -3,11 +3,12 @@ import { notFound } from 'next/navigation';
 import { BoardPostList } from '@/components/board/BoardPostList';
 import { BOARD_LABELS, isBoardType } from '@/lib/board-constants';
 import { getBoardPosts } from '@/lib/board';
+import { DEFAULT_LOCALE, isLocale, localeHref } from '@/lib/i18n';
 
 export const dynamic = 'force-dynamic';
 
 type PageProps = {
-  params: Promise<{ board: string }>;
+  params: Promise<{ lang: string; board: string }>;
   searchParams: Promise<{ page?: string }>;
 };
 
@@ -18,7 +19,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function MainBoardListPage({ params, searchParams }: PageProps) {
-  const { board } = await params;
+  const { lang: rawLang, board } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
   if (!isBoardType(board)) notFound();
 
   const { page: pageParam } = await searchParams;
@@ -47,7 +49,7 @@ export default async function MainBoardListPage({ params, searchParams }: PagePr
         <BoardPostList
           site="main"
           board={board}
-          basePath="/board"
+          basePath={localeHref(lang, '/board')}
           posts={posts}
           page={page}
           hasMore={hasMore}
