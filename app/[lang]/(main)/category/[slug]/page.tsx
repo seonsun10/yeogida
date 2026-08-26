@@ -7,13 +7,15 @@ import { SearchBar } from '@/components/SearchBar';
 import { ServiceCard } from '@/components/ServiceCard';
 import { ServiceGrid } from '@/components/ServiceGrid';
 import { getDictionary } from '@/lib/dictionaries';
-import { DEFAULT_LOCALE, isLocale } from '@/lib/i18n';
+import { DEFAULT_LOCALE, isLocale, localeHref } from '@/lib/i18n';
 import { breadcrumbList, jsonLdScriptProps } from '@/lib/json-ld';
 import {
   filterServices,
   getAllCategories,
   getCategoryBySlug,
   getServicesByCategory,
+  resolveCategoryForLocale,
+  resolveServiceForLocale,
 } from '@/lib/services';
 import { getSiteUrl } from '@/lib/site-url';
 
@@ -31,15 +33,17 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: CategoryPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const category = getCategoryBySlug(slug);
-  if (!category) return {};
+  const { lang: rawLang, slug } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
+  const rawCategory = getCategoryBySlug(slug);
+  if (!rawCategory) return {};
+  const category = resolveCategoryForLocale(rawCategory, lang);
   return {
     title: category.name,
     description: category.description,
     keywords: [category.name, `${category.name} 서비스`, '여기다'],
     alternates: {
-      canonical: `/category/${slug}`,
+      canonical: localeHref(lang, `/category/${slug}`),
     },
     openGraph: {
       title: category.name,
@@ -57,10 +61,13 @@ export default async function CategoryPage({
   const dict = await getDictionary(lang);
   const { free, hours24 } = await searchParams;
 
-  const category = getCategoryBySlug(slug);
-  if (!category) notFound();
+  const rawCategory = getCategoryBySlug(slug);
+  if (!rawCategory) notFound();
+  const category = resolveCategoryForLocale(rawCategory, lang);
 
-  const categoryServices = await getServicesByCategory(slug);
+  const categoryServices = (await getServicesByCategory(slug)).map((service) =>
+    resolveServiceForLocale(service, lang),
+  );
   let services = categoryServices;
   if (free === '1') {
     services = filterServices(services, { cost: 'free' });
@@ -70,19 +77,23 @@ export default async function CategoryPage({
   }
 
   const siteUrl = getSiteUrl();
+  const localizedSiteUrl = `${siteUrl}${localeHref(lang, '/')}`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       breadcrumbList([
-        { name: '홈', url: siteUrl },
-        { name: category.name, url: `${siteUrl}/category/${category.slug}` },
+        { name: dict.home, url: localizedSiteUrl },
+        {
+          name: category.name,
+          url: `${siteUrl}${localeHref(lang, `/category/${category.slug}`)}`,
+        },
       ]),
       {
         '@type': 'ItemList',
         itemListElement: services.map((service, index) => ({
           '@type': 'ListItem',
           position: index + 1,
-          url: `${siteUrl}/service/${service.slug}`,
+          url: `${siteUrl}${localeHref(lang, `/service/${service.slug}`)}`,
           name: service.name,
         })),
       },

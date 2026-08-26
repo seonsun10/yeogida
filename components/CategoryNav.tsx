@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { getCategoryStyle } from '@/lib/category-style';
 import { localeHref, type Locale } from '@/lib/i18n';
+import { resolveCategoryForLocale } from '@/lib/services';
 import type { Category } from '@/types/service';
 
 export function CategoryNav({
@@ -13,7 +14,8 @@ export function CategoryNav({
 }) {
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {categories.map((category) => {
+      {categories.map((rawCategory) => {
+        const category = resolveCategoryForLocale(rawCategory, lang);
         const style = getCategoryStyle(category.slug);
         const Icon = style.icon;
         return (

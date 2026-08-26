@@ -4,7 +4,7 @@ import { AnalyticsScripts } from '@/app/AnalyticsScripts';
 import { getDictionary } from '@/lib/dictionaries';
 import { fontVariables } from '@/lib/fonts';
 import { DEFAULT_LOCALE, LOCALES, type Locale, isLocale } from '@/lib/i18n';
-import { getAllCategories } from '@/lib/services';
+import { getAllCategories, resolveCategoryForLocale } from '@/lib/services';
 import { getSiteUrl } from '@/lib/site-url';
 import '../globals.css';
 
@@ -37,7 +37,10 @@ export async function generateMetadata({
   const lang: Locale = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
   const dict = await getDictionary(lang);
   const siteUrl = getSiteUrl();
-  const keywords = [...SITE_KEYWORDS_BASE, ...getAllCategories().map((c) => c.name)];
+  const keywords = [
+    ...SITE_KEYWORDS_BASE,
+    ...getAllCategories().map((c) => resolveCategoryForLocale(c, lang).name),
+  ];
 
   return {
     metadataBase: new URL(siteUrl),

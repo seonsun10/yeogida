@@ -1,7 +1,7 @@
 # 영어 지원(i18n) 도입 방향
 
 - 작성일: 2026-08-25 / 갱신일: 2026-08-26
-- 상태: **3단계(서비스 스키마 `supportLanguages`/`i18n.en` + `/en/service/[slug]` 분기) 완료 및 검증됨.** 1단계(라우팅 마이그레이션), 2단계(dictionary + 언어 스위처)에 이어 서비스 스키마 확장과 그에 따른 라우팅 분기까지 도입했다. `lint`/`build`/`dev` 전부 통과, 아래 "3단계에서 처리한 것" 항목까지 로컬에서 확인 완료. 다음은 4단계(핵심 카테고리 서비스 몇 건에 `i18n.en` 실제 채우는 파일럿).
+- 상태: **5단계(카테고리 18개 + 서비스 178개 전량 `i18n.en` 번역, 공식/비공식 출처 분리) 완료 및 검증됨.** 사용자가 "카테고리·서비스 내용도 이제 영어로 바꿔야 한다, 공식 영문 페이지가 없으면 뱃지로 표시하고 일단 번역해 알아들을 수 있게 하라"고 명시적으로 요청해 4단계의 "공식 출처만" 원칙을 완화했다. 대신 색인 허용 범위는 그대로 좁게 유지했다(아래 "5단계에서 처리한 것" 참고). `lint`/`build`/프로덕션 서버 기동까지 로컬에서 확인 완료.
 - 관련 배경: 현재 `여기다`는 순수 한글 서비스로, i18n 관련 패키지(next-intl 등)나 `proxy.ts`(구 middleware)가 전혀 없는 상태에서 시작한다. 콘텐츠는 `data/services.json`(178개)·`data/categories.json`(18개)에 한국어로만 저장돼 있고, 그중 다수가 한국 정부/지자체의 전화상담 등 "한국어 화자 전용" 채널이다.
 
 ## 핵심 전제: 두 트랙을 분리한다
@@ -91,10 +91,43 @@
 - **쓰기 기능(게시판/신고/사이트제안) 영어화는 보류.** v1은 읽기 전용(콘텐츠 열람+검색)으로 진행, 쓰기 폼은 계속 한국어만.
 - **번역 전략은 위 3번 원칙대로 진행**: `supportLanguages`(근거 URL 필수) 먼저 채우고, 번역은 공식 영어 페이지가 있는 소수 핵심 서비스부터 파일럿.
 
+### 4단계에서 처리한 것
+
+- **데이터 편집 방식 결정: (a) `data/services.json` 직접 편집.** `ServiceForm.tsx`에 `supportLanguages`/`i18n.en` 입력 UI를 새로 만드는 (b)안은 파일럿 2건 규모에는 과한 스코프라 보류 — 폼 UI는 파일럿이 몇 건 이상으로 늘어나 반복 편집 비용이 커질 때 다시 고려한다. 직접 편집 후 `npx prettier --write data/services.json`으로 포맷 정합성 확인(관리자 저장 시 재포맷 diff 방지).
+- **파일럿 대상 2건 선정 및 근거 조사.** 긴급상황·법률/행정 카테고리에서 외국인 수요가 높은 서비스 다수(112·119·여성긴급전화1366·고용노동부1350·보건복지상담센터129 등)를 조사했으나, "운영기관이 공식적으로 명시" 기준을 충족하는 안정적 근거 URL을 못 찾은 건은 이번엔 제외했다(예: 119는 "9개 외국어 지원 앱"·"영어 통역 가능" 등 출처가 엇갈리고 1차 출처를 못 찾아 보류, 여성긴급전화1366은 다누리콜센터(1577-1366, 다문화가족 대상)와 번호가 비슷해 혼동 위험이 있고 1366 자체의 다국어 근거를 못 찾아 보류, 1350/129도 언어 목록이 불명확해 보류). 최종 반영 2건:
+  - **`hikorea-immigration`**: `supportLanguages`(en, zh — hikorea.go.kr 자체 언어 선택 UI를 직접 fetch해 `lang_en`/`lang_ch` 존재 확인), `i18n.en`(name/summary/description/hours — hikorea.go.kr 영문판(`?locale=en`)에서 직접 확인한 문구·메뉴명 기반으로만 작성, 기계번역·절차 추정 없음).
+  - **`police-112`**: `supportLanguages`(en, zh — korea.net(문화체육관광부 산하 대한민국 정부 공식 영문 뉴스) 기사 "Interpretation service for 112 police hotline expanded to 24/7" 근거). `i18n.en`은 미채움 — 112 전용 공식 영문 안내 페이지 원문을 직접 확인하지 못해 번역 텍스트를 새로 작성하지 않음(향후 `police.go.kr/eng` 등에서 원문 확보 시 추가).
+- **robots.txt 페이지 단위 allow 전환.** `app/robots.ts`를 async로 바꿔 `getAllServices()`에서 `i18n.en`이 있는 서비스만 `/en/service/[slug]`를 개별 `allow`에 추가(크롤러는 가장 구체적인 규칙을 우선 적용하므로 `/en` 전체 `disallow`와 공존 가능). 나머지 `/en`은 여전히 disallow.
+- **`generateMetadata`의 `robots` 페이지 단위 override.** `app/[lang]/(main)/service/[slug]/page.tsx`에 `lang === 'en' && hasEnTranslation`일 때만 `robots: { index: true, follow: true }`를 반환하도록 추가 — Next.js 메타데이터는 세그먼트 간 얕은 병합이라 자식이 `robots`를 정의하면 부모(`app/[lang]/layout.tsx`)의 `index:false`를 완전히 대체한다(공식 문서 "Merging > Overwriting fields" 확인). 번역 없는 en 페이지는 그대로 부모의 `noindex` 유지.
+- **sitemap.ts에 번역 페이지 추가.** `i18n.en`이 있는 서비스의 `/en/service/[slug]`만 sitemap에 포함 — robots.txt allow 대상과 정확히 일치시켜 "색인 허용했는데 sitemap엔 없음" 불일치 방지.
+- **빌드 산출물로 실제 동작 검증**: `.next/server/app/en/service`에 `hikorea-immigration.html` 1건만 생성(ko는 178건 그대로), 해당 HTML의 `<meta name="robots">`가 `index, follow`이고 다른 en 페이지(`/en/about` 등)는 여전히 `noindex, follow`임을 확인. `hreflang`(ko/en/x-default) 태그 정상 확인. `robots.txt` 산출물이 `Allow: /en/service/hikorea-immigration`을 `Disallow: /en`과 함께 내보내는 것 확인. `sitemap.xml`에 해당 URL 1건 포함 확인. 프로덕션 서버(`npm run start`) 기동 후 `curl`로 `/en/service/hikorea-immigration` → 200, `/en/service/police-112`(미번역) → 307 → `/service/police-112`(ko 접두사 없음) 확인. `/service/police-112`(ko) 페이지에 112의 언어 지원 pill과 근거 링크(korea.net)가 렌더링되는 것도 확인(번역 없이도 즉시 가치를 준다는 우선순위 1번 원칙 적용 사례).
+- **⚠️ 이 변경은 크롤링 동작에 영향을 준다.** `/en/service/hikorea-immigration` 1개 URL이 이번에 처음으로 색인 허용 대상이 되며, 이미 서치콘솔·애드센스가 연결된 도메인이라는 점을 감안해 페이지 단위로만(전체 `/en` 해제 아님) 신중하게 넓혔다.
+
+### 5단계에서 처리한 것
+
+사용자 요청("내용들에 대해서도 이제 영어로 바꿔야해... 공식 영문 페이지가 없다면 없다고 별도의 뱃지같은걸로 표시를 해두면 되고")에 따라 4단계의 "공식 출처 있는 서비스만 번역" 원칙을 완화하고, 나머지 176개 서비스도 이 세션에서 직접(사람이) 한국어 원문을 영어로 옮겼다. 절차·사실 정보(전화번호, URL, 운영시간, 신청 절차 순서)는 원문에서 바꾸지 않았고, 존재하지 않는 정보를 새로 지어내지 않았다 — 이 점에서 [[절차 관련 내용 지어내기 금지]] 원칙과 충돌하지 않는다고 판단했다. 다만 자동 색인 확대라는 부작용을 advisor 상담으로 먼저 짚어내 별도로 차단했다.
+
+- **번역 출처를 `official` 플래그로 분리** (`types/service.ts`의 `ServiceTranslation.official?: boolean`). `hikorea-immigration`(4단계에서 공식 영문 페이지 기반으로 작성)만 `official: true`로 명시하고, 이번에 새로 채운 177건(police-112 포함)은 플래그를 넣지 않아 "비공식(사람이 옮긴 번역)"이 기본값이 되도록 했다.
+- **"번역 있음"과 "색인 허용"을 완전히 분리.** 필두 지적: `i18n.en` 존재 여부 하나로 프리렌더·robots·sitemap·hreflang을 전부 걸어버리면 177개 서비스가 한 번에 색인 허용 대상이 되어 버린다(4단계 경고문의 "1개 URL"이 조용히 177개가 됨) — 서치콘솔·애드센스가 붙은 도메인에서 얇은 콘텐츠 대량 노출 위험. 그래서:
+  - **번역 존재 여부**(`i18n.en` 있음)로 게이팅: `generateStaticParams`(프리렌더), `resolveServiceForLocale`(화면 표시), 미번역 리다이렉트 분기 — 즉 178개 서비스 모두 `/en/service/[slug]`가 실제로 렌더링되고 사람이 읽을 수 있다.
+  - **공식 출처 여부**(`i18n.en.official`)로 게이팅: `app/robots.ts`의 개별 `Allow`, `app/sitemap.ts` 포함 여부, `service/[slug]/page.tsx`의 `generateMetadata` robots 오버라이드, `alternates.languages`(hreflang) — 즉 여전히 `hikorea-immigration` 1건만 색인 허용·hreflang 대상이고 나머지 177건은 `noindex` 그대로 유지된다.
+  - 빌드 산출물로 검증: `/en/service/` 177건 모두 `.next` 프리렌더 목록에 포함, `robots.txt`의 `Allow`는 여전히 1줄, `sitemap.xml`의 en 서비스 URL도 1건.
+- **번역 신뢰도 뱃지 2종을 `ServiceDetail`에 추가** — 하나로 합치지 않고 조건을 분리:
+  1. `unofficialTranslationNotice`: `i18n.en`은 있지만 `official`이 아닐 때(177건) — "이 영문은 여기다가 직접 옮긴 참고용 번역이며 운영기관의 공식 자료가 아니다. 중요한 내용은 한국어 원문에서 다시 확인하라"는 안내.
+  2. `koreanOnlyContactNotice`: `supportLanguages`에 `en` 항목이 없을 때 — "이 서비스의 실제 전화·대면 상담이 영어로 되는지 확인된 바 없다"는 안내. `police-112`처럼 `supportLanguages`에 `en`이 있는 서비스는 이 문구가 안 뜬다. 두 조건 다 해당하면 두 문구가 함께 표시된다(예: `mental-health-crisis-109`). 번역이 실제 전화 응대 가능 언어를 보장하는 것으로 오인되지 않도록 하는 것이 목적 — `supportLanguages`(근거 URL 필수)는 이번에도 손대지 않았다.
+- **카테고리 18개도 `i18n.en`(name/description) 전량 번역.** `types/service.ts`에 `Category.i18n?.en` 추가, `lib/services.ts`에 `resolveCategoryForLocale()` 신설(서비스 쪽 `resolveServiceForLocale`과 동일 패턴). 카테고리명·설명은 사이트 자체 안내문(예: "법률/행정 상담 서비스 모음")이라 관공서 절차를 서술하는 게 아니므로 공식 출처 없이도 직접 번역해도 원칙 위반이 아니라고 판단, `official` 플래그 없이 전량 적용.
+- **카테고리 이름이 노출되는 모든 지점을 로케일 인지로 정리** — 이전엔 `service/[slug]`의 `generateMetadata` 번역 로직만 있었고, 카테고리명은 `ServiceCard`(서비스 카드 뱃지), `CategoryNav`(홈 화면 카테고리 목록), `Header`/`HeaderNav`(상단 카테고리 드롭다운·모바일 메뉴), `service/[slug]`의 `keywords`/JSON-LD `serviceType`·breadcrumb, `app/[lang]/layout.tsx`의 `SITE_KEYWORDS`, `category/[slug]` 페이지 자체(h1/설명/메타데이터/JSON-LD) 등 곳곳에 한국어로 하드코딩돼 있었다. 전부 `resolveCategoryForLocale()`을 거치도록 고쳐서 en 페이지에 한국어 카테고리명이 섞여 나오는 걸 막았다.
+- **`category/[slug]/page.tsx` 부수 수정**: (a) 이 페이지가 `getServicesByCategory()`가 반환한 원본(한국어) 서비스 배열을 그대로 `ServiceCard`에 넘기고 있어서, en 카테고리 목록 페이지에 번역된 서비스명이 아니라 한국어 원문이 그대로 노출되는 버그가 있었다 — `resolveServiceForLocale()`을 통과시키도록 수정. (b) `generateMetadata`가 `lang`을 아예 안 받고 있어 en 페이지의 canonical이 항상 한국어 URL(`/category/...`, `/en` 접두사 없음)을 가리키던 버그도 함께 고침(`localeHref` 적용). (c) JSON-LD breadcrumb의 `'홈'` 하드코딩을 `dict.home`으로 정리 — 3단계에서 service 페이지에 적용한 것과 동일한 정리라 4단계 문서의 "다음 단계 6번"에 있던 항목이 이걸로 완료됨.
+- **범위 밖으로 남긴 것(의도적)**: 가이드(`guides/[slug]`, `guides` 목록) 본문은 이번에도 번역하지 않았다 — 서비스 178개와 별개로 가이드 글 자체가 큰 콘텐츠 트랙이라 사용자가 요청한 "서비스 카테고리나 안에 내용들"의 범위로 보지 않았다. 가이드 페이지의 `generateStaticParams`도 여전히 `{slug}`만 반환해 3단계 이전 서비스 페이지와 같은 방식으로 모든 가이드가 en에도 크로스곱 프리렌더되는 상태이며(부모 layout의 `noindex`로 색인은 막혀 있음), 번역 없는 한국어 그대로 노출된다 — 후속 작업이 필요하면 별도로 다룬다.
+  - `lib/search.ts`가 한국어 인덱스 전용이라 en 카테고리 페이지의 검색창은 여전히 "한국어 콘텐츠만 검색합니다" 안내로 대체돼 있다(2단계 결정) — 이제 178개 서비스 모두 영문 name/summary가 있으니 이 안내가 다소 낡았지만, 검색 인덱스 다국어화는 이번 스코프 밖.
+
 ## 다음 단계
 
 1. ~~라우팅 마이그레이션~~ — 완료 (1단계).
 2. ~~Dictionary + Header 언어 스위처~~ — 완료 (2단계).
 3. ~~서비스 스키마에 `supportLanguages`(근거 URL 포함), `i18n.en` 필드 추가 + `/en/service/[slug]` `generateStaticParams`/redirect 분기~~ — 완료 (3단계).
-4. **핵심 카테고리(긴급상황·법률/행정 등 외국인 수요가 높은 곳) 몇 건부터 `supportLanguages`/`i18n.en` 실제로 채워서 파일럿.** 두 필드 다 관리자 폼(`ServiceForm.tsx`)에 입력 UI가 아직 없으므로, 파일럿 착수 시 (a) `data/services.json`을 직접 편집할지 (b) 폼에 필드를 추가할지부터 정한다. 번역이 채워지는 서비스부터 `/en/service/[slug]`의 `robots.index`를 페이지 단위로 해제(현재는 `app/robots.ts`가 `/en` 전체를 disallow하고 있어 페이지 단위 해제가 실효를 가지려면 그 disallow도 같이 손봐야 함 — 이번 3단계에서는 아직 손대지 않음).
-5. (선택, 낮은 우선순위) `category/[slug]/page.tsx`의 JSON-LD breadcrumb `'홈'` 하드코딩도 3단계에서 service 페이지에 적용한 것과 동일하게 `dict.home`으로 정리.
+4. ~~핵심 카테고리 서비스 2건(`hikorea-immigration`, `police-112`) `supportLanguages`/`i18n.en` 파일럿 + robots 페이지 단위 해제~~ — 완료 (4단계).
+5. ~~카테고리 18개 + 서비스 178개 전량 `i18n.en` 번역(공식/비공식 분리, 색인은 공식만 허용) + 카테고리명 로케일 인지 전면 적용~~ — 완료 (5단계).
+6. (선택) `lib/search.ts` 다국어 검색 인덱스 — en 페이지 검색창의 "한국어만 검색됩니다" 안내가 이제 178개 서비스 전부 영문명이 있는 상태와 안 맞음. Fuse.js 인덱스를 로케일별로 분리하거나 name/summary(en) 필드까지 포함하도록 확장 검토.
+7. (선택) 가이드(`guides/`) 콘텐츠 번역 — 서비스와 별개의 콘텐츠 트랙. 번역하기로 하면 `guides/[slug]/page.tsx`의 `generateStaticParams`를 서비스 3단계와 동일하게 `{lang, slug}` 쌍 반환 + 번역 없는 slug만 필터링하는 방식으로 먼저 고쳐야 한다(현재는 무조건 크로스곱 프리렌더).
+8. (선택) 이번에 채운 177건 중 실제로 공식 영문 자료를 찾을 수 있는 서비스는 조사해서 `official: true`로 승격하고 robots.ts/sitemap.ts 허용 대상에 추가 — 4단계 파일럿 확대의 연장선.

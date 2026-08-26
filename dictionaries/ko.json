@@ -39,6 +39,8 @@
     "costPaid": "유료",
     "source": "운영 주체",
     "visit": "바로가기",
-    "languageSupport": "다국어 지원"
+    "languageSupport": "다국어 지원",
+    "unofficialTranslationNotice": "",
+    "koreanOnlyContactNotice": ""
   }
 }

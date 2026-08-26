@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { getCategoryStyle } from '@/lib/category-style';
 import { DEFAULT_LOCALE, localeHref, type Locale } from '@/lib/i18n';
-import { getCategoryBySlug } from '@/lib/services';
+import { getCategoryBySlug, resolveCategoryForLocale } from '@/lib/services';
 import type { Service } from '@/types/service';
 
 export function ServiceCard({
@@ -16,7 +16,8 @@ export function ServiceCard({
   hideCategoryBadge?: boolean;
   lang?: Locale;
 }) {
-  const category = getCategoryBySlug(service.categorySlug);
+  const rawCategory = getCategoryBySlug(service.categorySlug);
+  const category = rawCategory ? resolveCategoryForLocale(rawCategory, lang) : undefined;
   const style = getCategoryStyle(service.categorySlug);
 
   return (

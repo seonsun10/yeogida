@@ -49,6 +49,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: service.lastVerified,
   }));
 
+  // i18n.en.official(공식 출처 번역)이라 robots.ts에서 개별 allow된 서비스만 포함(I18N-PLAN.md 참고).
+  const translatedServiceRoutes = services
+    .filter((service) => service.i18n?.en?.official)
+    .map((service) => ({
+      url: `${siteUrl}/en/service/${service.slug}`,
+      lastModified: service.lastVerified,
+    }));
+
   const discoverCategoryRoutes = getAllSiteCategories().map((category) => ({
     url: `${siteUrl}/discover/${category.slug}`,
   }));
@@ -64,6 +72,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...categoryRoutes,
     ...guideRoutes,
     ...serviceRoutes,
+    ...translatedServiceRoutes,
     ...discoverCategoryRoutes,
     ...siteRoutes,
   ];

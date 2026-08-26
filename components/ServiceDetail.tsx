@@ -28,6 +28,12 @@ export function ServiceDetail({
   dict: Dictionary['service'];
 }) {
   const style = getCategoryStyle(service.categorySlug);
+  const translation = service.i18n?.en;
+  const isUnofficialTranslation = lang === 'en' && Boolean(translation) && !translation?.official;
+  const hasConfirmedEnglishContact = service.supportLanguages?.some(
+    (support) => support.language === 'en',
+  );
+  const showKoreanOnlyNotice = lang === 'en' && Boolean(translation) && !hasConfirmedEnglishContact;
 
   return (
     <article className="flex flex-col gap-6">
@@ -48,6 +54,12 @@ export function ServiceDetail({
         </div>
         <h1 className="text-2xl font-bold">{service.name}</h1>
         <p className="text-muted-foreground">{service.summary}</p>
+        {(isUnofficialTranslation || showKoreanOnlyNotice) && (
+          <div className="flex flex-col gap-1 rounded-md border border-dashed border-amber-400/60 bg-amber-50 p-3 text-xs text-amber-800 dark:bg-amber-950/20 dark:text-amber-300">
+            {isUnofficialTranslation && <p>{dict.unofficialTranslationNotice}</p>}
+            {showKoreanOnlyNotice && <p>{dict.koreanOnlyContactNotice}</p>}
+          </div>
+        )}
       </div>
 
       {IS_LOCAL_DEV && (

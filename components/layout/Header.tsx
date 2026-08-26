@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 import type { Dictionary } from '@/lib/dictionaries';
 import { localeHref, type Locale } from '@/lib/i18n';
-import { getAllCategories } from '@/lib/services';
+import { getAllCategories, resolveCategoryForLocale } from '@/lib/services';
 import { HeaderNav } from './HeaderNav';
 import { LangSwitcher } from './LangSwitcher';
 
 export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
-  const categories = getAllCategories();
+  const categories = getAllCategories().map((c) => resolveCategoryForLocale(c, lang));
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">

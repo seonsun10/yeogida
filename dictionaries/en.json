@@ -39,6 +39,8 @@
     "costPaid": "Paid",
     "source": "Operated by",
     "visit": "Visit site",
-    "languageSupport": "Language support"
+    "languageSupport": "Language support",
+    "unofficialTranslationNotice": "This English text is a plain translation by Yeogida, not official material from the operating agency. Please verify important details on the original Korean page.",
+    "koreanOnlyContactNotice": "No confirmed English-language contact channel was found for this service — phone or in-person contact may only be handled in Korean."
   }
 }

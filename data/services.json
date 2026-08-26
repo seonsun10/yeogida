@@ -15,7 +15,15 @@
     "source": "보건복지부",
     "affiliate": false,
     "lastVerified": "2026-07-25",
-    "images": []
+    "images": [],
+    "i18n": {
+      "en": {
+        "name": "Mental Health Crisis Counseling Line (109)",
+        "summary": "A 24-hour free integrated counseling line covering everything from depression and anxiety to suicide-crisis counseling",
+        "description": "A toll-free integrated counseling line, with no area code, for anyone - yourself or someone you know - dealing with mental health concerns such as depression, anxiety, or stress, or facing a suicide crisis. Since January 2024, the former Mental Health Counseling Line (1577-0199) and the Suicide Prevention Counseling Line have been merged into this single number, 109. Calling connects you immediately to a counselor, who will refer you to local resources such as a mental health welfare center or psychiatric hospital if needed. The call is free, and it operates 24 hours a day, 365 days a year.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "e-gen-night-pharmacy",
@@ -33,7 +41,15 @@
     "source": "중앙응급의료센터",
     "affiliate": false,
     "lastVerified": "2026-07-25",
-    "images": []
+    "images": [],
+    "i18n": {
+      "en": {
+        "name": "E-Gen Emergency Medical Portal - Late-Night Pharmacy Finder",
+        "summary": "When you urgently need medicine late at night, instantly check which pharmacies are open right now on a map",
+        "description": "A government-run emergency medical information service that lets you look up, on a map, pharmacies currently open near your location when you urgently need medicine late at night or on a holiday. It provides information on both public late-night pharmacies that stay open through the night and 'Holiday Guardian' pharmacies open on Sundays and holidays. Just visit the website and set your location, or use the same feature in the mobile app. Information can be looked up anytime.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "legal-aid-corporation-132",
@@ -51,7 +67,15 @@
     "source": "대한법률구조공단(법무부 산하)",
     "affiliate": false,
     "lastVerified": "2026-07-25",
-    "images": []
+    "images": [],
+    "i18n": {
+      "en": {
+        "name": "Korea Legal Aid Corporation Free Legal Counseling (132)",
+        "summary": "A public organization offering free legal counseling and litigation support for people facing financial hardship",
+        "description": "A public organization under the Ministry of Justice for people who have a legal problem — such as unpaid wages, a landlord-tenant dispute, divorce, or inheritance — but find hiring a lawyer too costly. You can get an in-person consultation by phone (132, no area code) or by booking through the website, and if you meet the income criteria, the corporation will even provide free litigation representation. Phone wait times can be long, so the corporation itself recommends using the website consultation option. Phone counseling is available weekdays 09:00–18:00.",
+        "hours": "Weekdays 09:00–18:00 (phone); online consultation accepted anytime"
+      }
+    }
   },
   {
     "id": "moel-labor-counsel-1350",
@@ -69,7 +93,15 @@
     "source": "고용노동부",
     "affiliate": false,
     "lastVerified": "2026-07-25",
-    "images": []
+    "images": [],
+    "i18n": {
+      "en": {
+        "name": "Ministry of Employment and Labor Customer Counseling Center (1350)",
+        "summary": "The Ministry of Employment and Labor's main counseling line for free advice on labor issues such as unpaid wages and unfair dismissal",
+        "description": "The Ministry of Employment and Labor's official counseling channel for workers and employers dealing with labor issues such as unpaid wages, unfair dismissal, employment contracts, and the four major social insurances. Call 1350 (no area code) and follow the prompts to be connected with a labor counseling specialist. Online chat counseling is available 24 hours a day, while phone counseling runs weekdays 09:00–18:00. Besides counseling, you can also get guidance on how to file a complaint or report.",
+        "hours": "Phone weekdays 09:00–18:00, online chat 24 hours"
+      }
+    }
   },
   {
     "id": "idolbom-childcare",
@@ -87,7 +119,15 @@
     "source": "여성가족부",
     "affiliate": false,
     "lastVerified": "2026-07-25",
-    "images": []
+    "images": [],
+    "i18n": {
+      "en": {
+        "name": "Idolbom Childcare Service",
+        "summary": "A government-supported home-visit childcare service where a caregiver comes to look after children in dual-income or single-parent households, among others",
+        "description": "A Ministry of Gender Equality and Family program in which a childcare provider visits the home directly to look after children in households facing a care gap because of parents' work. The government subsidy rate varies by income level, and a co-payment may apply. To use it, sign up on the website and apply for the service, then get matched with a caregiver through your local service provider. Applications are accepted anytime, but it can take a matching period before care actually begins.",
+        "hours": "Applications accepted anytime; actual care hours vary by application"
+      }
+    }
   },
   {
     "id": "youth-counsel-1388",
@@ -105,7 +145,15 @@
     "source": "여성가족부",
     "affiliate": false,
     "lastVerified": "2026-07-25",
-    "images": []
+    "images": [],
+    "i18n": {
+      "en": {
+        "name": "Youth Counseling 1388",
+        "summary": "24-hour free counseling for youth aged 9-24 and their guardians dealing with issues such as running away, school violence, or emotional difficulties",
+        "description": "A nationwide counseling service for youth aged 9 to 24 and their guardians dealing with difficulties such as running away from home, school violence, or feelings of depression. You can get counseling by phone (1388, no area code), as well as through text message, KakaoTalk, and web chat — channels that are easy for young people to use. It operates 24 hours a day, 365 days a year, with dedicated professional counselors. If a situation is judged to be a crisis, you'll be connected to a local youth counseling and welfare center or protective agency.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "consumer-counsel-1372",
@@ -123,7 +171,15 @@
     "source": "한국소비자원",
     "affiliate": false,
     "lastVerified": "2026-07-25",
-    "images": []
+    "images": [],
+    "i18n": {
+      "en": {
+        "name": "1372 Consumer Counseling Center",
+        "summary": "A counseling and mediation channel under the Korea Fair Trade Commission for consumer damage related to online shopping and contracts",
+        "description": "A counseling channel under the Korea Fair Trade Commission, run by the Korea Consumer Agency, for when you've experienced consumer harm such as online shopping fraud, refusal of a refund, or an unfair contract. Calling 1372 (no area code) automatically connects you to your local consumer counseling center, and you can also submit a counseling or damage-relief request on the website. Phone counseling runs weekdays 09:00-18:00, and online applications are accepted anytime. Beyond simple counseling, it also supports dispute mediation with the business involved.",
+        "hours": "Phone weekdays 09:00-18:00, online anytime"
+      }
+    }
   },
   {
     "id": "safe182-missing-child",
@@ -141,7 +197,15 @@
     "source": "경찰청",
     "affiliate": false,
     "lastVerified": "2026-07-25",
-    "images": []
+    "images": [],
+    "i18n": {
+      "en": {
+        "name": "Safe Dream Missing Child Finder (182)",
+        "summary": "Pre-registration and reporting service to find missing children, people with dementia, and people with disabilities",
+        "description": "A Korean National Police Agency service that lets you pre-register a photo and physical details for a child, an older adult with dementia, or a person with an intellectual disability in case they go missing, or report a disappearance immediately when it happens. You can report by phone (182, no area code) right away, and pre-registering on the website or app can greatly reduce the time needed for matching if someone goes missing. Registering biometric information such as fingerprints is also supported. Reports can be filed 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "119-safety-report",
@@ -159,7 +223,15 @@
     "source": "소방청",
     "affiliate": false,
     "lastVerified": "2026-07-25",
-    "images": []
+    "images": [],
+    "i18n": {
+      "en": {
+        "name": "119 Emergency Report",
+        "summary": "The National Fire Agency's main emergency hotline for reporting fires, rescues, and medical emergencies",
+        "description": "The National Fire Agency's main emergency hotline for any situation requiring immediate rescue or emergency medical response, including fires, injuries, and medical emergencies. Call 119 (no area code) to report your location and situation, and the nearest fire station will dispatch help right away; a text-message reporting option is also available for situations where speaking is difficult. The website also provides first-aid guidance and reporting tips in advance. It operates 24 hours a day, year-round.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "gov24-portal",
@@ -177,7 +249,15 @@
     "source": "행정안전부",
     "affiliate": false,
     "lastVerified": "2026-07-25",
-    "images": []
+    "images": [],
+    "i18n": {
+      "en": {
+        "name": "Gov24",
+        "summary": "From issuing a resident registration copy to checking government benefits - the starting point for civil affairs with the Korean government",
+        "description": "The Korean government's main portal, where you can handle almost all online civil-affairs tasks in one place - issuing various certificates, filing civil petitions, and checking government support benefits (Subsidy24). You use it after signing up and verifying your identity, and you can search for the civil-affairs service you need and apply for or issue it directly. The online service is available 24 hours a day except during system maintenance windows. There are impersonation sites with similar-looking domains, so always confirm the address bar shows gov.kr.",
+        "hours": "24 hours (online civil affairs, except maintenance windows)"
+      }
+    }
   },
   {
     "id": "hira-non-benefit",
@@ -195,7 +275,15 @@
     "badges": ["무료", "공공기관"],
     "source": "https://www.hira.or.kr",
     "affiliate": false,
-    "lastVerified": "2026-07-26"
+    "lastVerified": "2026-07-26",
+    "i18n": {
+      "en": {
+        "name": "Health Insurance Review and Assessment Service - Non-Covered Treatment Cost Information",
+        "summary": "A service for comparing and looking up hospital costs for non-covered items (such as manual therapy, MRI, and implants)",
+        "description": "Lets you look up hospital costs for items not covered by national health insurance - manual therapy, MRI, dental implants, cataract surgery, and the like - and compare them against the average price at medical institutions of similar size in the same region, helping you avoid excessive charges before choosing a hospital. It's available on the PC website as well as the mobile app 'Health In,' and you can also check quality-evaluation ratings for hospitals by disease or procedure.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "nedrug-mfds",
@@ -213,7 +301,15 @@
     "badges": ["무료", "공공기관"],
     "source": "식품의약품안전처",
     "affiliate": false,
-    "lastVerified": "2026-07-26"
+    "lastVerified": "2026-07-26",
+    "i18n": {
+      "en": {
+        "name": "Drug Safety Korea (Nedrug)",
+        "summary": "A service for identifying an unknown pill, checking drug side effects, and looking up dangerous drug combinations",
+        "description": "Run by the Ministry of Food and Drug Safety, this lets you identify an unknown pill by its shape, color, score lines, and imprinted characters, and check dangerous drug combinations that shouldn't be taken together, as well as information on drugs subject to recall or disposal. If you're prescribed medication by multiple hospitals, checking for dangerous combinations in advance can help prevent side effects.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "foodsafetykorea",
@@ -231,7 +327,15 @@
     "badges": ["무료", "공공기관"],
     "source": "식품의약품안전처",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Food Safety Korea",
+        "summary": "A service for verifying whether a product is an officially recognized health functional food, and checking hazardous ingredients in overseas direct-purchase food products",
+        "description": "Lets you check the functional ingredients and precautions for health functional foods officially recognized by the Ministry of Food and Drug Safety, along with imported-food safety information. Before buying a diet supplement or health food through overseas direct purchase, it's safer to search the product or ingredient name in the 'Overseas Direct Purchase Hazardous Food Block List' to confirm it doesn't contain a hazardous ingredient blocked from customs clearance.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "g-health",
@@ -249,7 +353,15 @@
     "badges": ["무료", "공공기관", "민원발급"],
     "source": "보건복지부 / 한국보건의료정보원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "e-Health Center",
+        "summary": "A service integrating online civil-affairs issuance (such as health certificates) and support programs from public health centers nationwide",
+        "description": "Lets you get a health checkup certificate (health certificate) or vaccination certificate issued online, and apply for and check on pregnant-woman/infant public-health-center support programs, without visiting a public health center in person. Note that a health certificate can only be issued online if the test result is 'normal' - if there's an abnormal finding, you must visit the health center where you were tested in person to get it issued.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "nhis-healthin",
@@ -267,7 +379,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국민건강보험공단",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "National Health Insurance Service - Health In",
+        "summary": "A service providing your past health checkup results, treatment/medication history lookup, and a personalized health-prediction report",
+        "description": "Run by the National Health Insurance Service, this lets you look up your national health checkup results and hospital treatment/prescription medication history for the past 10 years all in one place, and provides a health-prediction report estimating your individual risk for factors like health age, diabetes, stroke, and heart attack. You can view it under the 'My Health Management' menu after logging in with a digital certificate.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "health-kdca",
@@ -285,7 +405,15 @@
     "badges": ["무료", "공공기관"],
     "source": "질병관리청",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "National Health Information Portal",
+        "summary": "A non-commercial medical encyclopedia of disease and symptom information directly verified by the Korea Disease Control and Prevention Agency",
+        "description": "Run directly by the Korea Disease Control and Prevention Agency, this is an official national medical encyclopedia providing disease information, symptom-based guidelines, and treatment guidance verified by medical-society experts, with no commercial advertising. It's a good place to check for reliable, evidence-based information instead of health information of unclear origin found through general web searches.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "helpline-kdca",
@@ -303,7 +431,15 @@
     "badges": ["무료", "공공기관", "의료비지원"],
     "source": "질병관리청",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Rare Disease Helpline",
+        "summary": "A service providing rare-disease information lookup, guidance on registering for the special calculation program, and medical-cost support programs",
+        "description": "Run by the Korea Disease Control and Prevention Agency, this lets you check the diagnostic criteria and details of state-designated rare diseases, get guidance on the special calculation program that reduces your treatment-cost burden, and apply online for medical-cost support programs for people with rare diseases. Checking in advance whether your diagnosed disease qualifies for the special calculation program can reduce your treatment costs going forward.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "nip-kdca",
@@ -321,7 +457,15 @@
     "badges": ["무료", "공공기관"],
     "source": "질병관리청",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Vaccination Helper",
+        "summary": "A service for looking up your and your children's lifetime vaccination records, getting vaccination-schedule reminders, and issuing certificates",
+        "description": "Run by the Korea Disease Control and Prevention Agency, this lets you manage your own and your children's national vaccination records in one place and receive reminders for upcoming vaccinations. Korean- and English-language vaccination certificates can be issued online for free; if you don't have a digital certificate or a printer, you can also get one issued by visiting your nearest public health center.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "mentalhealth",
@@ -339,7 +483,15 @@
     "badges": ["무료", "공공기관"],
     "source": "보건복지부 / 국립정신건강센터",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "National Mental Health Portal",
+        "summary": "A service offering validated mental-health self-assessment tools (for depression and more) and guidance to regional specialist counseling organizations",
+        "description": "Run by the Ministry of Health and Welfare and the National Center for Mental Health, this provides validated self-assessment tools for checking things like depression, stress, and anxiety disorders yourself, along with information on mental health welfare centers and specialist counseling organizations near where you live. A self-assessment does not replace a diagnosis, so if the result worries you, it's best to actually contact one of the listed counseling organizations.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "k-medi",
@@ -357,7 +509,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국의료분쟁조정중재원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Korea Medical Dispute Mediation and Arbitration Agency",
+        "summary": "A service offering free counseling and mediation/arbitration, without litigation, when a medical accident or dispute occurs",
+        "description": "A public institution established for medical-accident victim relief and dispute mediation, which carries out mediation/arbitration proceedings faster than litigation (typically 90 days, up to 120 days). The application fee starts at 22,000 won depending on the damages claimed, and is waived for basic livelihood recipients and persons of national merit. For accidents resulting in the patient's death, unconsciousness lasting a month or more, or a severe disability, the mediation process begins automatically without the hospital's consent.",
+        "hours": "24 hours (counseling line: weekdays 09:00-18:00)"
+      }
+    }
   },
   {
     "id": "nosmokeguide-1544",
@@ -375,7 +535,15 @@
     "badges": ["무료", "공공기관"],
     "source": "보건복지부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Smoking Cessation Counseling Line (1544-9030)",
+        "summary": "A Ministry of Health and Welfare smoking-cessation support service where professional counselors help you from your decision to quit through a year-long, step-by-step program",
+        "description": "A phone-based smoking-cessation counseling service available to anyone who wants to quit smoking. Calling 1544-9030 (no area code) gets you step-by-step counseling from a professional smoking-cessation counselor for up to a year, covering everything from confirming your resolve to quit, following through, and coping with withdrawal symptoms. Online, the Smoking Cessation Guide website also provides cessation information and details on smoking-cessation clinics and treatment clinics nationwide. It runs until 10 p.m. on weekdays, making it easy to get counseling after work.",
+        "hours": "Weekdays 09:00-22:00, weekends/holidays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "dementia-helpline-1899",
@@ -393,7 +561,15 @@
     "badges": ["24시간", "무료", "공공기관"],
     "source": "중앙치매센터",
     "affiliate": false,
-    "lastVerified": "2026-07-31"
+    "lastVerified": "2026-07-31",
+    "i18n": {
+      "en": {
+        "name": "Dementia Counseling Call Center (1899-9988)",
+        "summary": "A National Dementia Center counseling line where professional counselors answer, 24 hours a day, everything from how to care for a dementia patient to guidance on support programs",
+        "description": "A 24-hour phone counseling service available to family members caring for someone with dementia, or anyone concerned about dementia. Calling 1899-9988 (no area code) and pressing 1 connects you to care counseling - caregiving techniques and managing caregiver stress - while pressing 2 connects you to information counseling on the causes, symptoms, and treatment of dementia and government support programs. It's staffed by professional counselors with hands-on dementia experience, who will refer you to your nearest Dementia Relief Center if needed. It's available 24 hours a day, 365 days a year.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "epeople-110",
@@ -411,7 +587,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국민권익위원회",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "People's Voice (Epeople) / National Call Center 110",
+        "summary": "The Anti-Corruption and Civil Rights Commission's main civil-complaint channel for consulting or reporting complaints about government policy or administrative handling in one place",
+        "description": "A service run by the Anti-Corruption and Civil Rights Commission where you can ask questions about the work of any administrative body — central government, local government, or public institution — or file a grievance complaint about an unfair decision. Calling 110 (no area code) connects you to immediate guidance based on a real-time database, and you can check the status of an online complaint through the Epeople website. KakaoTalk counseling and video sign-language counseling are also supported. Phone counseling runs on weekday hours, while online submissions are accepted anytime.",
+        "hours": "Phone counseling weekdays 09:00–18:00, online submissions 24 hours"
+      }
+    }
   },
   {
     "id": "easylaw-portal",
@@ -429,7 +613,15 @@
     "badges": ["무료", "공공기관"],
     "source": "법제처",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Easy-to-Find Everyday Legal Information",
+        "summary": "A Ministry of Government Legislation portal that explains everyday legal topics — leases, divorce, inheritance, and more — in plain language",
+        "description": "A Ministry of Government Legislation service that reorganizes complex legal provisions into content that's easy for the public to understand. You can look up roughly 4,200 laws and 9,300 administrative rules organized by everyday topics such as leases, divorce and inheritance, traffic accidents, and starting a business, along with Q&A-style content and webtoon-format explainers to make it more accessible. Anyone can search and read it for free without signing up, and it's available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "housing-dispute-mediation",
@@ -447,7 +639,15 @@
     "badges": ["무료", "공공기관"],
     "source": "대한법률구조공단",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Housing Lease Dispute Mediation Committee",
+        "summary": "A committee run by the Korea Legal Aid Corporation that mediates jeonse/wolse lease disputes for free without going to court",
+        "description": "A committee that helps landlords and tenants resolve lease-related disputes — such as returning a deposit, terminating a contract, or who pays for repairs — without going to court. It operates within Korea Legal Aid Corporation branches, LH, and the Korea Real Estate Board, and you can submit a mediation application online through the website, or apply in person or by mail. If mediation succeeds, it carries the same legal effect as a court settlement, meaning it can be enforced without a separate lawsuit. Consultation and application intake run on weekdays.",
+        "hours": "Weekdays 09:00–18:00"
+      }
+    }
   },
   {
     "id": "village-lawyer",
@@ -465,7 +665,15 @@
     "badges": ["무료", "취약계층지원"],
     "source": "법무부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Village Lawyer / Legal Home Doctor",
+        "summary": "A Ministry of Justice program offering free legal counseling by phone or in person for residents in areas with little access to lawyers and for vulnerable groups",
+        "description": "This covers two related Ministry of Justice programs: the Village Lawyer program, which assigns a lawyer to residents of towns and townships without a local lawyer so they can consult by phone, fax, or email; and the Legal Home Doctor program, in which a lawyer is stationed at community support centers serving vulnerable groups such as basic livelihood recipients, people with disabilities, and older adults living alone. If litigation support is needed after counseling, cases can be referred on to the Korea Legal Aid Corporation and similar organizations. The assigned lawyer and consultation method vary by region, so it's best to check with your local town/township community service center.",
+        "hours": "Varies by region (check with your local community service center)"
+      }
+    }
   },
   {
     "id": "comwel-labor-welfare",
@@ -483,7 +691,15 @@
     "badges": ["무료", "공공기관"],
     "source": "근로복지공단",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Korea Workers' Compensation and Welfare Service (1588-0075)",
+        "summary": "The Korea Workers' Compensation and Welfare Service's main line for industrial-accident/employment insurance enrollment, workers' comp claims, and issuing certificates",
+        "description": "A public institution that supports workers' compensation insurance claims for workers injured or made ill on the job, employer enrollment in employment/industrial-accident insurance and premium reporting, and issuing certificates such as premium payment certificates. Calling the main line 1588-0075 lets you request 47 types of civil petitions — including enrollment certificates and resending notices — by fax as well, and online you can handle premium reporting, payment, and insurance benefit claims all in one place through the Employment/Industrial Accident Insurance Total Service (total.comwel.or.kr). The call center runs on weekdays, while the online service is available anytime.",
+        "hours": "Weekdays 09:00–18:00 (online service available anytime)"
+      }
+    }
   },
   {
     "id": "childcare-portal",
@@ -501,7 +717,15 @@
     "badges": ["무료", "공공기관"],
     "source": "보건복지부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Aisarang Pregnancy and Childcare Portal",
+        "summary": "A childcare information portal covering everything from pregnancy and birth counseling to daycare search and childcare-fee support",
+        "description": "The Ministry of Health and Welfare's main childcare portal, providing information needed throughout pregnancy, birth, and childrearing in one place. You can get counseling from pregnancy/birth/childcare specialists, search for daycare centers nationwide and apply for a waitlist spot, pay childcare fees using the Happiness Card, and apply for part-time daycare service, all online. Pregnancy/birth/childcare counseling runs on a separate line (1644-7373), and daycare-related counseling on another (1566-3232). Online services are available 24 hours a day.",
+        "hours": "Online 24 hours, phone counseling on weekdays"
+      }
+    }
   },
   {
     "id": "danuri-portal",
@@ -519,7 +743,15 @@
     "badges": ["24시간", "무료", "다국어지원"],
     "source": "여성가족부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Danuri Multicultural Family Support Portal (1577-1366)",
+        "summary": "A 24-hour call center providing everyday-life counseling, interpretation, and crisis support in 13 languages for multicultural families and immigrants",
+        "description": "A Ministry of Gender Equality and Family service that helps marriage immigrants and multicultural families living in Korea settle in stably, by providing comprehensive everyday-life information, three-way sequential interpretation, and emergency/crisis counseling. Calling 1577-1366 connects you with a specialist counselor in one of 13 languages, including Vietnamese, Chinese, and English, and online counseling is also available through the 1:1 counseling room on the Danuri Portal (liveinkorea.kr), along with in-person and outreach counseling. It operates 24 hours a day, 365 days a year.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "kdream-out-of-school-youth",
@@ -537,7 +769,15 @@
     "badges": ["무료", "공공기관"],
     "source": "여성가족부",
     "affiliate": false,
-    "lastVerified": "2026-07-31"
+    "lastVerified": "2026-07-31",
+    "i18n": {
+      "en": {
+        "name": "Kkumdream Out-of-School Youth Support Center",
+        "summary": "Integrated information on roughly 220 centers nationwide supporting the studies, career planning, and qualification-exam preparation of youth who have left school",
+        "description": "A Ministry of Gender Equality and Family program that helps youth aged 9 to 24 who have discontinued schooling or are outside the school system design their own path forward. Regional Kkumdream centers run counseling support, study support for the qualification exam (검정고시), and job-experience and employment support programs, and information on around 220 centers nationwide is available on the website. To use the service, contact your nearest center or call Youth Counseling 1388 for guidance. Operating hours vary by center, so check in advance.",
+        "hours": "Varies by center (inquire at 1388)"
+      }
+    }
   },
   {
     "id": "familynet-center",
@@ -555,7 +795,15 @@
     "badges": ["무료", "공공기관"],
     "source": "여성가족부·한국건강가정진흥원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Family Center (formerly Healthy Family Support Center)",
+        "summary": "A directory of Family Centers nationwide offering counseling, education, and care programs for diverse family types - single-parent, multicultural, single-person households, and more",
+        "description": "A service run by the Ministry of Gender Equality and Family and the Korea Institute for Healthy Family, offering counseling on family relationships and everyday concerns, and connecting people to family-support programs such as parent education and family care-sharing. You can search for the Family Center (formerly Healthy Family Support Center) in your area on the website, or call the main line (1577-9337) to be connected to your nearest center. Program participation requires advance booking, and operating hours and program schedules vary by center.",
+        "hours": "Varies by center (main line 1577-9337)"
+      }
+    }
   },
   {
     "id": "ecmc-dispute",
@@ -573,7 +821,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국인터넷진흥원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Electronic Commerce Dispute Mediation Committee",
+        "summary": "A committee under the Korea Internet & Security Agency that mediates e-commerce disputes - such as online shopping payment and refund issues - for free",
+        "description": "A committee run by the Korea Internet & Security Agency (KISA) that mediates disputes with businesses arising from online shopping, electronic payments, and electronic document use, without going to court. On the website you can use an automated dispute-counseling service or submit a mediation application online, and you can also apply by phone, in person, email, or fax. Submissions through Consumer24 (consumer.go.kr) are also supported. The counseling and intake desk operates on weekday mornings and afternoons.",
+        "hours": "Weekdays 10:00-12:00, 14:00-17:00"
+      }
+    }
   },
   {
     "id": "fine-fss-portal",
@@ -591,7 +847,15 @@
     "badges": ["무료", "공공기관"],
     "source": "금융감독원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "FINE Financial Consumer Information Portal",
+        "summary": "A Financial Supervisory Service portal covering everything from finding unclaimed financial assets to voice-phishing prevention and comparing financial products",
+        "description": "The Financial Supervisory Service's main consumer portal, where you can look up your accounts, insurance, loans, and unclaimed financial assets scattered across multiple financial companies in one place, and compare financial products such as deposits, savings accounts, and insurance. It also provides voice-phishing prevention information and guidance on each financial company's complaint and dispute procedures. Much of the information can be viewed without signing up, while looking up accounts or assets held in your own name requires identity verification. The online service is available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "privacy-breach-118",
@@ -609,7 +873,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국인터넷진흥원(KISA)",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Personal Information Infringement Report Center (118)",
+        "summary": "A Korea Internet & Security Agency (KISA) channel for reporting and getting counseling on personal-information leaks or misuse",
+        "description": "A Korea Internet & Security Agency (KISA) service for reporting and getting counseling when you've experienced a personal-information infringement, such as collection or use of your data without consent, or a data leak from hacking. Call 118 (no area code), or submit a report online through the website; submitted cases are reviewed for legal violations, and you'll be notified of corrective action and the outcome. If personal-information dispute mediation is needed, you'll be referred to the Personal Information Dispute Mediation Committee (1833-6972). Counseling runs on weekdays.",
+        "hours": "Weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "kcdrc-content-dispute",
@@ -627,7 +899,15 @@
     "badges": ["무료", "공공기관"],
     "source": "콘텐츠분쟁조정위원회(문화체육관광부)",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Content Dispute Mediation Committee",
+        "summary": "An organization under the Ministry of Culture, Sports and Tourism that mediates payment and refund disputes arising from games, webtoons, OTT services, and other content - for free",
+        "description": "A specialized mediation body under the Content Industry Promotion Act for resolving disputes with businesses over game item purchases, probability-based (loot box) items, and webtoon/music/other content use and purchases, without going to court. It is divided into four sections - games, edutainment, broadcasting/video, and publishing/music/performance - with mediators assigned by area of expertise. You can apply for mediation online through the website, or get counseling by calling the call center (1588-2594). Counseling and intake run on weekdays.",
+        "hours": "Weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "police-112",
@@ -645,7 +925,25 @@
     "badges": ["24시간", "무료", "긴급"],
     "source": "경찰청",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-08-26",
+    "supportLanguages": [
+      {
+        "language": "en",
+        "evidenceUrl": "https://www.korea.net/NewsFocus/policies/view?articleId=248494"
+      },
+      {
+        "language": "zh",
+        "evidenceUrl": "https://www.korea.net/NewsFocus/policies/view?articleId=248494"
+      }
+    ],
+    "i18n": {
+      "en": {
+        "name": "112 Police Emergency Report",
+        "summary": "The Korean National Police Agency's main emergency hotline and portal for reporting crimes and accidents and requesting a location-based dispatch",
+        "description": "The Korean National Police Agency's main emergency hotline for requesting a police dispatch when you witness a crime or are in a dangerous situation. Calling 112 (no area code) is the standard way to report; if speaking is difficult, the 'Visible 112' text-reporting service lets you send your location through a link so police can respond. The 112 reporting portal (112.go.kr) lets you check the status of a report and find 112-related notices and information on the police station with jurisdiction over your area. It operates 24 hours a day, year-round.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "women-hotline-1366",
@@ -663,7 +961,15 @@
     "badges": ["24시간", "무료", "긴급"],
     "source": "여성가족부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Women's Emergency Hotline 1366",
+        "summary": "A 24-hour emergency hotline offering counseling and connections to shelters for women affected by domestic violence, sexual violence, or prostitution",
+        "description": "A toll-free special hotline available to any woman who needs urgent rescue, protection, or counseling because of domestic violence, sexual violence, or prostitution. Calling 1366 connects you immediately to a counselor for crisis counseling, who will connect you to police, medical institutions, or shelters as needed. Regional centers (Seoul, Incheon, northern Gyeonggi, and others) each run their own website, and dialing 1366 from anywhere in the country connects you to the nearest center. It operates 24 hours a day, 365 days a year.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "school-violence-117",
@@ -681,7 +987,15 @@
     "badges": ["24시간", "무료", "긴급"],
     "source": "교육부·경찰청",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "School Violence Report Center 117",
+        "summary": "An integrated reporting center where school-violence victims can report 24 hours a day and immediately be connected to protection and legal support",
+        "description": "A reporting center jointly run by the Ministry of Education and the Korean National Police Agency for students and parents who have experienced or witnessed school violence. You can report 24 hours a day by phone (117, no area code), text message (#0117), or through the Safe Dream website and app; once a report is received, emergency rescue, investigation orders, legal counseling, and referrals to support organizations are all handled through a one-stop process. The reporter's identity is kept confidential. It operates 24 hours a day, year-round.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "safekorea-portal",
@@ -699,7 +1013,15 @@
     "badges": ["24시간", "무료", "공공기관"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Safe Korea Portal · Safety Stepping Stone",
+        "summary": "A Ministry of the Interior and Safety portal for checking disaster alerts, shelter locations, and safety guidance in one place",
+        "description": "The Ministry of the Interior and Safety's main disaster-safety portal, where you can check what to do during earthquakes, typhoons, heavy rain, and other disasters, find shelters and cooling centers, and view real-time disaster text alerts. Installing the mobile app 'Safety Stepping Stone (안전디딤돌)' lets you view offline guidance for what to do in different types of disasters even when communication networks are unstable, and it also connects to the Safety Report (안전신문고) service for reporting everyday safety hazards. Both the website and app are available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "bokjiro-portal",
@@ -717,7 +1039,15 @@
     "badges": ["무료", "공공기관"],
     "source": "보건복지부·한국사회보장정보원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Bokjiro (Welfare Portal)",
+        "summary": "The Ministry of Health and Welfare's main welfare portal for searching life-stage welfare services and applying online directly",
+        "description": "A portal run by the Ministry of Health and Welfare and the Korea Social Security Information Service that organizes welfare services offered by central government, local governments, and private organizations by life stage, household situation, and topic of interest. You can use a self-assessment tool to find welfare services that fit your situation, and a good number of services can be applied for entirely online without visiting in person. Registering for the Customized Benefits Guide (Welfare Membership) lets you get notified about newly created support programs. For usage questions, call the Ministry of Health and Welfare Call Center (129).",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "hometax-nts",
@@ -735,7 +1065,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국세청",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "National Tax Service Hometax",
+        "summary": "The National Tax Service's main online tax service, covering everything from year-end tax settlement and comprehensive income tax filing to cash receipt lookups",
+        "description": "A National Tax Service service that lets you handle most tax-related tasks online - looking up simplified year-end tax settlement data, filing comprehensive income tax and value-added tax returns, issuing cash receipts and electronic tax invoices, and issuing various national tax certificates. Because there are many look-alike sites, it's safer to type the address in directly rather than clicking a link. For questions about tax law or how to use the site, call the National Tax Counseling Center (126, no area code); the filing peak seasons in January and May get busy, so it's best to call with some time to spare. The online service is available 24 hours a day.",
+        "hours": "Online 24 hours, phone counseling (126) weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "work24-portal",
@@ -753,7 +1091,15 @@
     "badges": ["무료", "공공기관"],
     "source": "고용노동부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Work24 (Worknet / Unemployment Benefits)",
+        "summary": "The Ministry of Employment and Labor's main job-search portal, unifying job registration, unemployment benefit applications, and job-training search in one place",
+        "description": "A Ministry of Employment and Labor service that unifies job search, job-seeker registration, unemployment benefit eligibility checks and recognition applications, and searching government-funded job training, all in one place. Services that used to be split across Worknet, Employment Insurance, and HRD-Net are now merged into Work24. Since you need to complete job-seeker registration before applying for unemployment benefits, registering right after leaving your job speeds up the process. The online service is available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "law-go-kr",
@@ -771,7 +1117,15 @@
     "badges": ["무료", "공공기관"],
     "source": "법제처",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Korea Law Information Center",
+        "summary": "The Ministry of Government Legislation's official site for searching every law in Korea for free - from current statutes and enforcement decrees to court precedents",
+        "description": "The Ministry of Government Legislation's official service for searching all of Korea's legal information in one place - statutes, enforcement decrees and rules, administrative rules, local ordinances, court precedents, Constitutional Court decisions, and legal interpretations. You can look up a law article by article and view its amendment history and related precedents alongside it, which is useful when you need to check the actual provision behind a contract review or a dispute. It also supports use of the underlying public data through an open API. It's free to use, 24 hours a day, with no sign-up required.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "icaretok",
@@ -789,7 +1143,15 @@
     "badges": ["24시간", "무료", "공공기관"],
     "source": "국립중앙의료원 중앙응급의료센터",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "iCareTok",
+        "summary": "A pediatric specialist counseling center where you can ask a pediatric/emergency-medicine specialist online, 24 hours a day, when your child suddenly falls ill in the middle of the night",
+        "description": "A service run by the National Medical Center's National Emergency Medical Center where, when a child aged 12 or younger suddenly falls ill at night or on a holiday and it's unclear whether a hospital visit is needed, a pediatric/emergency-medicine specialist reviews the symptoms through chat and photo attachments. After you enter the symptoms on the website, an AI first triages the urgency, and you can then get counseling from pediatric specialists at hospitals such as Chilgok Kyungpook National University Hospital, Inha University Hospital, and CHA Bundang Medical Center through a 1:1 message board. You can also get guidance on home first aid, safe medication use, and what to do if symptoms worsen. It's available 24 hours a day, 365 days a year.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "moonlight-hospital",
@@ -807,7 +1169,15 @@
     "badges": ["무료", "공공기관"],
     "source": "중앙응급의료센터",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Moonlight Children's Hospital Finder",
+        "summary": "An emergency medical portal service that helps you instantly find a pediatric clinic open on a weeknight or weekend/holiday, by region",
+        "description": "When your child suddenly runs a fever or falls ill after regular pediatric clinic hours have ended, this service shows the locations and hours of 'Moonlight Children's Hospitals' - clinics that stay open at night and on holidays - on a map. Government-designated Moonlight Children's Hospitals provide pediatric care late into the evening on weekdays, and some also see patients on weekends and holidays. Selecting your region on the Emergency Medical Information Portal (E-Gen) website or app shows you which hospitals are currently available. The lookup is free; actual treatment costs are charged separately by each hospital.",
+        "hours": "24 hours (for information lookup); hours vary by hospital"
+      }
+    }
   },
   {
     "id": "safe-inheritance-onestop",
@@ -825,7 +1195,15 @@
     "badges": ["무료", "공공기관"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Safe Inheritance One-Stop Service",
+        "summary": "A service that lets you look up a deceased family member's financial assets, real estate, taxes, and pensions all at once with a single application",
+        "description": "A Gov24 service that lets an heir or guardian look up a deceased person's (or ward's) bank transaction history, land and vehicle ownership, unpaid or refundable national/local taxes, and enrollment in pensions such as the National Pension or Government Employees Pension — all with a single application, instead of visiting each institution separately. To apply online, a priority heir such as a direct descendant or spouse verifies their identity and fills out the 'Integrated Deceased Person's Asset Inquiry Application,' and results can be received by text message, online, or by mail. The application must be filed within 6 months of the last day of the month in which the death occurred.",
+        "hours": "Online anytime (in-person applications follow the local government office's hours)"
+      }
+    }
   },
   {
     "id": "ccrs-credit-recovery",
@@ -843,7 +1221,15 @@
     "badges": ["무료", "공공기관"],
     "source": "신용회복위원회",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Credit Counseling and Recovery Service (1600-5500)",
+        "summary": "A public debt-adjustment body where people struggling to repay debt on time can get counseling on extending repayment terms, installment repayment, and lower interest rates",
+        "description": "A public debt-adjustment body that helps people struggling with debt across multiple financial companies reduce their repayment burden — without going through litigation or personal rehabilitation — through options such as extending the repayment period, installment repayment, interest rate adjustment, and debt reduction. Through phone counseling (1600-5500) or an online application on the website, you can be guided to the program that fits your situation, such as an individual workout or pre-emptive (fast-track) debt adjustment. In-person counseling is also available at Regional Financial Welfare Centers nationwide. Counseling and applying for debt adjustment are both free.",
+        "hours": "Weekdays 09:00–18:00"
+      }
+    }
   },
   {
     "id": "kinfa-microfinance",
@@ -861,7 +1247,15 @@
     "badges": ["무료", "공공기관"],
     "source": "서민금융진흥원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Korea Inclusive Finance Agency",
+        "summary": "An agency that guides low-income people who struggle to get mainstream loans toward policy microfinance products like Sunshine Loan and Miso Finance, and debt-adjustment counseling",
+        "description": "An institution under the Financial Services Commission that guides low-income or low-credit individuals who struggle to get bank loans toward policy microfinance products — Sunshine Loan, Sunshine Loan Youth, Miso Finance, and Switch Loan — and checks their eligibility. You can check which product fits you on the website and book an online consultation, and Regional Financial Welfare Centers nationwide offer not just loan counseling but also job-placement referrals and debt-adjustment counseling. Counseling and information are free; whether a loan is actually issued depends on the screening result.",
+        "hours": "Weekdays 09:00–18:00 (online consultation booking anytime)"
+      }
+    }
   },
   {
     "id": "lawhome-family-law",
@@ -879,7 +1273,15 @@
     "badges": ["무료"],
     "source": "한국가정법률상담소",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Korea Legal Aid Center for Family Relations (1644-7077)",
+        "summary": "A private legal-welfare organization with more than 60 years of history that offers free counseling on family matters such as divorce, child support, and inheritance",
+        "description": "A nonprofit legal-welfare organization offering free counseling on legal issues that arise within a family — divorce, child support, division of property, and inheritance. It runs phone counseling (1644-7077) and internet counseling through its website, and also supports foreign-language counseling for multicultural families and outreach counseling at the Seoul Family Court. If a case turns out to need litigation, the center refers it on to the legal aid process. The cyber counseling room operates weekdays from 10 a.m. to 4 p.m.",
+        "hours": "Phone counseling on weekdays; cyber counseling weekdays 10:00–16:00"
+      }
+    }
   },
   {
     "id": "nps-pension-1355",
@@ -897,7 +1299,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국민연금공단",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "National Pension Service Customer Center (1355)",
+        "summary": "The National Pension Service's main counseling line, covering everything from checking your enrollment history and estimated payout to retirement planning",
+        "description": "A National Pension Service line where you can call 1355 (no area code) for counseling on checking your National Pension enrollment history, your estimated pension amount, voluntary enrollment or back-payment of contributions, unemployment credit, and other programs. Video sign-language counseling is also available for people who are deaf or have a speech impairment, and outside counseling hours you can book a callback at a time that suits you. On the website and the 'National Pension by My Side' mobile app, you can also check your estimated payout and issue various certificates. Phone counseling runs weekdays from 8 a.m. to 7 p.m.",
+        "hours": "Weekdays 08:00–19:00"
+      }
+    }
   },
   {
     "id": "dreamstart",
@@ -915,7 +1325,15 @@
     "badges": ["무료", "공공기관"],
     "source": "보건복지부",
     "affiliate": false,
-    "lastVerified": "2026-07-31"
+    "lastVerified": "2026-07-31",
+    "i18n": {
+      "en": {
+        "name": "Dream Start",
+        "summary": "A program that integrates health, welfare, and education support for pregnant women and children aged 12 and under in low-income households to help break the cycle of poverty",
+        "description": "A Ministry of Health and Welfare program that provides tailored health, welfare, and education services for pregnant women and children aged 12 and under who need support - including basic livelihood recipient households, single-parent and grandparent-headed households, and children who have experienced abuse or sexual violence. A local Dream Start caseworker visits the home to assess the child's care environment and development, then provides integrated services linked to local resources along with ongoing case management. To use the service, contact your local Dream Start center or the main line (02-6454-8500). It's available free of charge after eligibility is confirmed.",
+        "hours": "Varies by center (main inquiries 02-6454-8500)"
+      }
+    }
   },
   {
     "id": "dadol-childcare",
@@ -933,7 +1351,15 @@
     "badges": ["무료", "공공기관"],
     "source": "보건복지부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Dahamkke (All-Together) Care Center",
+        "summary": "A service that helps you find a local after-school care facility where elementary-school children - including those in dual-income households - can be safely looked after",
+        "description": "An after-school care facility run by local governments for elementary school children aged 6 to 12 who have no one to look after them once regular classes end. It offers both regular and drop-in care, along with culture/arts/sports programs, snacks, and care-related counseling. During the school term it runs weekdays from 1 p.m. to 8 p.m., and during vacations from 9 a.m. to 6 p.m., though hours can vary by center. You can search for a center in your area and apply to use it through the website.",
+        "hours": "During term, weekdays 13:00-20:00; during vacation, weekdays 09:00-18:00 (varies by center)"
+      }
+    }
   },
   {
     "id": "consumer24-portal",
@@ -951,7 +1377,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국소비자원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Consumer24",
+        "summary": "A Korea Consumer Agency portal covering everything from product recall/hazard information to price comparison and filing damage-relief requests",
+        "description": "The Korea Consumer Agency's integrated consumer portal, where you can search whether a product you plan to buy is subject to recall, has passed safety certification, or contains hazardous substances. It merges the former 'Smart Consumer' and 'Happy Dream Open Consumer Portal' services, letting you compare prices by item category, check hazard information and recall history, and file a damage-relief request online if you've suffered consumer harm. Phone counseling connects through 1372 (no area code). Online lookups are available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "smile-center",
@@ -969,7 +1403,15 @@
     "badges": ["24시간", "무료", "공공기관"],
     "source": "법무부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Smile Center",
+        "summary": "An integrated support organization that provides free trauma counseling and psychological treatment for victims and families affected by violent crimes such as murder, robbery, and sexual violence",
+        "description": "A crime-victim trauma support organization under the Ministry of Justice that provides counseling, psychological healing programs, and temporary housing when needed for victims and families whose daily lives have been disrupted by the psychological shock of a violent crime. You can be referred through the police (182), the prosecution service (1577-2584), or a crime victim support organization (1577-1295), or apply directly yourself. Phone intake and counseling are available 24 hours a day; in-person intake interviews and psychological treatment run on weekdays from 9 a.m. to 6 p.m., with night-time treatment available when needed. All services are free.",
+        "hours": "Phone counseling 24 hours; in-person counseling and psychological treatment weekdays 09:00–18:00"
+      }
+    }
   },
   {
     "id": "safety-report",
@@ -987,7 +1429,15 @@
     "badges": ["24시간", "무료", "공공기관"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Safety Report (안전신문고)",
+        "summary": "A Ministry of the Interior and Safety reporting service where you photograph a hazardous facility or situation and the responsible agency handles it",
+        "description": "A Ministry of the Interior and Safety service for reporting anything that threatens everyday, traffic, facility, or school safety — such as broken pavement, a dangerous construction site, or damaged playground equipment — by taking a photo or video along with the location. Reports made through the website or smartphone app are automatically forwarded to the agency with jurisdiction, and you can usually check the outcome in your account page within 7 days. Reporters may also receive a reward within the available budget. Reports can be submitted 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "wetax-portal",
@@ -1005,7 +1455,15 @@
     "badges": ["무료", "공공기관"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "WeTax",
+        "summary": "A portal jointly run by the Ministry of the Interior and Safety and local governments for looking up and paying local taxes such as property tax and vehicle tax without visiting in person",
+        "description": "A service jointly run by the Ministry of the Interior and Safety and local governments nationwide for looking up, filing, and paying every category of local tax - property tax, acquisition tax, vehicle tax, local income tax - as well as non-tax items like parking violation fines, all in one place. You can pay as a non-member just by entering the electronic payment number on your bill, no login required, and the site supports various payment methods including bank transfer, card, and KakaoPay. Payment service is available daily from 00:30 to 23:30, while lookups, filing, and other services run from 06:00 to 24:00.",
+        "hours": "Payment 00:30-23:30, lookup/filing 06:00-24:00"
+      }
+    }
   },
   {
     "id": "youthcenter-portal",
@@ -1023,7 +1481,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국무조정실 청년정책조정실",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "On-tong Youth (Youth Policy Platform)",
+        "summary": "An integrated youth-policy platform that searches nationwide central and local-government youth policies and support payments matched to your situation",
+        "description": "A government integrated platform that searches scattered central and local-government youth policies - rent support, youth employment incentives, startup support, asset-building products, and more - by age, region, and area of interest. You can check the eligibility conditions and application method for each policy, save policies you're interested in, and in many cases jump directly to the application. Information on Youth Centers and policy-participation channels is also provided. Search is available without signing up, 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "kosaf-scholarship",
@@ -1041,7 +1507,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국장학재단",
     "affiliate": false,
-    "lastVerified": "2026-07-31"
+    "lastVerified": "2026-07-31",
+    "i18n": {
+      "en": {
+        "name": "Korea Student Aid Foundation National Scholarship",
+        "summary": "The Korea Student Aid Foundation's official site for applying for the income-based National Scholarship for tuition support and student loans",
+        "description": "A Korea Student Aid Foundation service that handles, online, applications for the National Scholarship - which covers part or all of tuition based on a student's and household's income level - as well as post-graduation income-contingent student loans and work-study scholarships. Each semester, during a set application window, you register an application and household member information, and the amount and eligibility for support are decided after your income bracket is calculated. Missing the application period means you can't receive support for that semester, so it's important to check the semester's application schedule in advance. The counseling center (1599-2000) operates on weekdays.",
+        "hours": "Online 24 hours, counseling center (1599-2000) on weekdays"
+      }
+    }
   },
   {
     "id": "applyhome-portal",
@@ -1059,7 +1533,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국부동산원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Cheongyak Home",
+        "summary": "Korea Real Estate Board's official subscription portal handling everything from applying for apartment/officetel subscriptions to checking eligibility and announcing winners",
+        "description": "A service run by the Korea Real Estate Board where you can check pre-sale information for apartments, officetels, and urban living homes, and apply for a housing subscription online. The system automatically calculates your subscription eligibility - such as how long you've gone without owning a home, how long you've held a subscription savings account, and the number of dependents - reducing the risk of being disqualified by mistake. You can handle the entire subscription process on this one site, from checking the schedule to the winner announcement and contract information. For inquiries, call the Korea Real Estate Board customer center (1644-7445, weekdays 09:00-17:30).",
+        "hours": "Online anytime; customer center weekdays 09:00-17:30"
+      }
+    }
   },
   {
     "id": "hug-jeonse-guarantee",
@@ -1077,7 +1559,15 @@
     "badges": ["정부지원"],
     "source": "주택도시보증공사(HUG)",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "HUG Jeonse Deposit Return Guarantee",
+        "summary": "A guarantee product from the Korea Housing & Urban Guarantee Corporation that pays out your jeonse deposit on the landlord's behalf if they fail to return it, helping prevent jeonse fraud",
+        "description": "A guarantee product in which the Korea Housing & Urban Guarantee Corporation (HUG) pays the tenant's deposit first, then seeks reimbursement from the landlord, in case a landlord fails to return the deposit even after the lease has ended. You can sign up through non-face-to-face channels such as Naver Pay, KakaoPay, and Toss, or at major bank branches; there are conditions - such as needing to sign up before half of the contract term has passed - so it's worth checking in advance. The guarantee fee varies based on the deposit amount and housing type. Counseling is available on weekdays through the customer center (1566-9009).",
+        "hours": "Weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "real-transaction-price",
@@ -1095,7 +1585,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Ministry of Land, Infrastructure and Transport Real Transaction Price Disclosure System",
+        "summary": "A Ministry of Land, Infrastructure and Transport official system for freely looking up actual reported transaction prices for apartments, houses, and land by region",
+        "description": "A Ministry of Land, Infrastructure and Transport service for looking up reported real-estate transaction and lease prices by property type - apartments, row/multiplex housing, single/multi-family houses, officetels, land, and pre-sale rights. Specifying a region and time period lets you see the actual transaction amount, floor, floor area, and transaction date, which is useful for gauging sale or lease market prices. Anyone can use it for free without signing up, and the data can also be downloaded as open public data. For inquiries, call the call center (1533-2949).",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "iros-registry",
@@ -1113,7 +1611,15 @@
     "badges": ["공공기관"],
     "source": "대법원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Internet Registry Office",
+        "summary": "A Supreme Court official service for viewing and issuing real-estate and corporate registry certificates online without visiting in person",
+        "description": "A Supreme Court service for viewing and issuing a property registry certificate online - essential before a jeonse or sale contract for checking a landlord's mortgages, seizures, and similar liens. Issuing corporate registry certificates is also supported. Viewing costs 700 won per document and issuing costs 1,000 won per document; a registry certificate issued online carries the same legal effect as one issued at a registry office. It's available weekdays 07:00-23:00 and weekends/holidays 09:00-21:00.",
+        "hours": "Weekdays 07:00-23:00, weekends/holidays 09:00-21:00"
+      }
+    }
   },
   {
     "id": "myhome-portal",
@@ -1131,7 +1637,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부·한국토지주택공사",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "My Home Portal",
+        "summary": "An integrated portal that finds the public-housing and welfare benefits - such as public rental housing and housing benefit - that fit your income and asset level in one place",
+        "description": "A service run by the Ministry of Land, Infrastructure and Transport and LH where you can check public rental-housing recruitment announcements - such as Happy Housing and National Rental Housing - along with housing-welfare programs like housing benefit and jeonse rental housing, all in one place. A self-assessment feature that automatically finds programs you're eligible for based on income, assets, and household size entered is especially useful. Online application and booking a housing-welfare consultation are also available, and calling the housing-welfare call center (1600-1004) connects you with a caseworker. The online service is available 24 hours a day.",
+        "hours": "24 hours (call center 1600-1004)"
+      }
+    }
   },
   {
     "id": "kstartup-portal",
@@ -1149,7 +1663,15 @@
     "badges": ["무료", "공공기관"],
     "source": "중소벤처기업부·창업진흥원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "K-Startup Support Portal",
+        "summary": "An integrated startup platform for searching and applying to every startup support program run by the government and local governments in one place",
+        "description": "A portal run by the Korea Institute of Startup and Entrepreneurship Development, under the Ministry of SMEs and Startups, that gathers startup support program announcements from government, local governments, and public institutions for prospective founders and early-stage startups. You can search by support type - commercialization funding, facilities/space, mentoring, market access support - and by target group, and manage your application status in your account page. It also provides startup success stories and educational content useful from the preparation stage onward. The online service is available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "semas-small-business",
@@ -1167,7 +1689,15 @@
     "badges": ["무료", "공공기관"],
     "source": "중소벤처기업부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Small Enterprise and Market Service (SEMAS) (1357)",
+        "summary": "SEMAS is the main support agency for small business owners, covering everything from policy-fund loans to management consulting and loss compensation",
+        "description": "A public institution under the Ministry of SMEs and Startups that comprehensively guides small business owners and the self-employed through policy-fund loans, management consulting, online sales-channel support, and recovery support programs. Calling the integrated call center (1357, no area code) gets you guidance from policy-fund counseling to how to apply for various support programs, and in-person counseling is also available at Small Business Support Centers nationwide. Free management education is also offered through the Small Business Cyber Lifelong Education Center. Counseling runs on weekdays.",
+        "hours": "Weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "sinbo-guarantee",
@@ -1185,7 +1715,15 @@
     "badges": ["무료", "공공기관"],
     "source": "신용보증재단중앙회",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Korea Federation of Credit Guarantee Foundations",
+        "summary": "An organization that connects small business owners lacking collateral or credit to loans by having a regional credit guarantee foundation issue them a guarantee",
+        "description": "The central federation overseeing the system that lets regional Credit Guarantee Foundations issue guarantee certificates so small business owners with insufficient collateral for a bank loan can still get one. On the website you can find the credit guarantee foundation in your region and apply for a guarantee consultation, and get guidance on guarantee products for various purposes such as startup funds and working-capital stabilization funds. The actual guarantee screening and use happens through your local Credit Guarantee Foundation. Counseling runs on weekdays.",
+        "hours": "Weekdays 09:00-18:00 (varies by regional foundation)"
+      }
+    }
   },
   {
     "id": "car365-portal",
@@ -1203,7 +1741,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부·한국교통안전공단",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Car365",
+        "summary": "An integrated service for looking up a vehicle's entire lifecycle information in one place - registration, transfer, scrapping, and used-car history",
+        "description": "A service run by the Ministry of Land, Infrastructure and Transport and the Korea Transportation Safety Authority where you can check everything related to a vehicle in one place - from new-car purchase and registration to maintenance history, used-car sales, and scrapping. Besides your own vehicle, you can also look up the accident and maintenance history of a used car you're considering buying, which is useful in used-car transactions, and handle administrative tasks needed at each ownership stage - inspection, maintenance, taxes - online. Its distinguishing feature is bringing together vehicle information that used to be scattered across multiple agencies. The online service is available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "knia-fault-ratio",
@@ -1221,7 +1767,15 @@
     "badges": ["무료", "공공기관"],
     "source": "손해보험협회",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Motor Vehicle Accident Fault Ratio Dispute Review Committee",
+        "summary": "A service for searching a traffic-accident scenario to check the expected fault ratio, and getting a fault-ratio dispute with your insurer mediated for free",
+        "description": "A service run by the Korea Non-Life Insurance Association for when you're unsure of your fault ratio after a traffic accident, or find it hard to accept the fault ratio your insurer has proposed. Selecting the type of accident (a crosswalk with no signal, an intersection, etc.) immediately shows you the accepted fault-ratio standard based on similar precedents, and if you disagree with your insurer's ratio, you can request free dispute mediation. The case is reviewed by a committee made up of experts such as lawyers and loss adjusters. Case lookups are available 24 hours a day, while dispute-mediation counseling runs on weekdays.",
+        "hours": "Lookup 24 hours, counseling weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "car-recall-center",
@@ -1239,7 +1793,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부·한국교통안전공단",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Motor Vehicle Recall Center",
+        "summary": "A Ministry of Land, Infrastructure and Transport service for checking whether your car is subject to a recall, and reporting online right away if you suspect a defect",
+        "description": "A service run by the Ministry of Land, Infrastructure and Transport and the Korea Transportation Safety Authority where entering your license plate or vehicle identification number shows whether your vehicle is subject to an ongoing or completed recall. If you notice an abnormal symptom or suspect a defect while driving, you can report it through the website or the dedicated defect-report phone line (080-357-2500); submitted reports are used as evidence for manufacturing-defect investigations and can lead to a recall. Consumer satisfaction information related to new-car exchanges and refunds is also provided. Online lookups and reports are available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "bloodinfo-donation",
@@ -1257,7 +1819,15 @@
     "badges": ["무료", "공공기관"],
     "source": "대한적십자사 혈액관리본부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Blood Donation Center Booking (Korean Red Cross)",
+        "summary": "A Korean Red Cross service for finding your nearest blood donation center and booking a date and time in advance so you can donate without waiting",
+        "description": "A service run by the Korean Red Cross Blood Services Headquarters that lets you search for the nearest blood donation center or blood donation bus, and book your preferred date, time, and donation type (whole blood, plasma, platelets) in advance. You can also donate by walking in without a booking, but booking reduces your wait time. The same features are available through the 'Red Connect' mobile app, and group blood drives can also be arranged online. Donation intake closes 30 minutes to an hour and a half before each center's closing time.",
+        "hours": "Varies by center (check the website)"
+      }
+    }
   },
   {
     "id": "konos-organ-donation",
@@ -1275,7 +1845,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국립장기조직혈액관리원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Organ Donation Registration (KONOS)",
+        "summary": "A Korea National Organ, Tissue and Blood Management Agency official service for pre-registering your intent to donate organs in the event of brain death",
+        "description": "A system for pre-registering your intent to donate organs and tissue in the event of brain death; registering alone does not create a legal obligation, and actual donation still requires the family's consent. You can apply online through the website after identity verification, or submit an application by mail or fax. Registering issues an 'Organ Donation Intent Registration Certificate,' and if you wish, your intent to donate can also be noted when you renew or reissue your driver's license. For inquiries, call the Korea National Organ, Tissue and Blood Management Agency (02-2628-3602).",
+        "hours": "Online 24 hours"
+      }
+    }
   },
   {
     "id": "customs-call-center-125",
@@ -1293,7 +1871,15 @@
     "badges": ["무료", "공공기관"],
     "source": "관세청",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Korea Customs Service Contact Center (125)",
+        "summary": "The Korea Customs Service's main line for all customs-related questions — duties on overseas direct purchases, customs clearance delays, FTA tariff rates, and more",
+        "description": "A Korea Customs Service line covering the full range of customs topics — the taxable value and duty calculation for overseas direct-purchase items, why customs clearance is delayed, simplified clearance procedures for express/postal parcels, and whether FTA agreement tariff rates apply. Calling 125 (no area code) from anywhere in the country and following the prompts connects you to a specialist counselor, and smuggling reports are also taken at the same number. From overseas, you can call 82-2-3438-5199. Phone counseling runs weekdays 09:00–18:00; outside those hours and on holidays, you can leave your number for a callback on the next business day.",
+        "hours": "Weekdays 09:00–18:00"
+      }
+    }
   },
   {
     "id": "kipo-patent-counsel",
@@ -1311,7 +1897,15 @@
     "badges": ["24시간", "무료", "공공기관"],
     "source": "특허청",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Patent Customer Consultation Center (1544-8080)",
+        "summary": "The Korean Intellectual Property Office's main counseling line, available 24 hours a day, covering everything from patent, trademark, and design applications to IP disputes",
+        "description": "A Korean Intellectual Property Office service offering counseling on the full range of intellectual-property topics — how to file a patent application for an invention idea, trademark and design registration procedures, how to use the Patentnet electronic filing system, and international applications (PCT, Madrid, Hague). Besides phone counseling (1544-8080), KakaoTalk chat counseling and chatbot counseling are also available, and a notable feature is that phone counseling runs 24 hours a day, 365 days a year. It's especially helpful for first-time founders or individuals/small business owners who want to protect an invention but find the patent process confusing. Counseling is provided free of charge.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "copyright-counsel-center",
@@ -1329,7 +1923,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국저작권위원회",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Korea Copyright Commission Copyright Counseling Center (1800-5455)",
+        "summary": "A copyright specialist organization for counseling when your creative work has been used without permission, or when you're unsure whether you can use someone else's work",
+        "description": "An organization under the Ministry of Culture, Sports and Tourism offering counseling on how to respond when a creative work — such as a blog post, photo, video, or piece of music — has been used without permission, or on the scope in which you may quote or use someone else's copyrighted work. Calling 1800-5455 and selecting a topic — legal counseling, registration counseling, or contract counseling — connects you with the relevant specialist, and video or in-person counseling can also be booked. In-person legal counseling is also available at the head office in Jinju and the Seoul office. Phone counseling runs on weekdays.",
+        "hours": "Weekdays 09:00–18:00"
+      }
+    }
   },
   {
     "id": "ncrc-domestic-adoption",
@@ -1347,7 +1949,15 @@
     "badges": ["무료", "공공기관"],
     "source": "아동권리보장원",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "National Center for the Rights of the Child - Domestic Adoption Guidance",
+        "summary": "The National Center for the Rights of the Child's official channel guiding you through domestic-adoption eligibility, the application process, and post-adoption follow-up",
+        "description": "Following the Special Act on Domestic Adoption that took effect in July 2025, the National Center for the Rights of the Child now handles domestic adoption applications and intake, and this service guides prospective adoptive parents through eligibility requirements (age, criminal record, health, etc.), required documents, and procedures. Applications must be submitted by registered mail with the adoption application and required documents - there is no in-person intake. The website lays out the full process, from the local government's determination of a child's adoption eligibility, through the Ministry of Health and Welfare's screening and matching of prospective parents, to court approval of the adoption. Inquiries can be made through the counseling channel, which operates on weekdays.",
+        "hours": "Weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "cardpoint-integrated",
@@ -1365,7 +1975,15 @@
     "badges": ["무료", "공공기관"],
     "source": "여신금융협회",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Integrated Card Point Lookup",
+        "summary": "A service that lets you check reward points scattered across multiple credit/check cards in one place and cash out even a single point instantly",
+        "description": "A service run by the Credit Finance Association that lets you check reward points scattered across major card issuers - Shinhan, KB Kookmin, Samsung, Hyundai, Lotte, Hana, NH, and others - with a single identity verification, and deposit any points you choose directly into an account in your own name. You can verify your identity using a certified digital certificate, the PASS app, KakaoPay, or mobile-phone verification, and the entire process, from lookup to cashing out, is free. It's useful for recovering small amounts of points you may have long forgotten about. The online service is available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "insurance-supermarket",
@@ -1383,7 +2001,15 @@
     "badges": ["무료", "공공기관"],
     "source": "생명보험협회·손해보험협회",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Insurance Supermarket (Bohum Damoa)",
+        "summary": "An online insurance supermarket that compares products from every insurer - auto, travel, indemnity insurance, and more - on a single screen",
+        "description": "A service jointly run by the Korea Life Insurance Association and the General Insurance Association of Korea from a neutral standpoint (not favoring any particular insurer), letting you compare products from multiple insurers - auto insurance, travel insurance, driver's insurance, annuity insurance - side by side by premium and coverage. If you find a product you like after comparing, you're linked to that insurer's website to sign up right away. It works the same way on mobile web with no app install needed. For inquiries, call the main line (1833-5775).",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "find-my-insurance",
@@ -1401,7 +2027,15 @@
     "badges": ["무료", "공공기관"],
     "source": "생명보험협회·손해보험협회",
     "affiliate": false,
-    "lastVerified": "2026-07-31"
+    "lastVerified": "2026-07-31",
+    "i18n": {
+      "en": {
+        "name": "Find My Insurance (Nae Bohum Chajajum)",
+        "summary": "An integrated insurance-association lookup service that finds matured or dormant insurance money you may not even know is waiting for you",
+        "description": "A joint service from the Korea Life Insurance Association and the General Insurance Association of Korea that lets you check, with a single identity verification, insurance contracts you may have forgotten about after a move or job change, matured benefits you never claimed, and dormant insurance money left unclaimed for a long time. If money is found, you're guided on how to claim it directly from the relevant insurer. Make sure to use only the official site (cont.insure.or.kr) - be cautious of similarly named private apps or sites that ask for personal information. Online lookups are available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "kesco-electric-emergency",
@@ -1419,7 +2053,15 @@
     "badges": ["24시간", "무료", "공공기관"],
     "source": "한국전기안전공사",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Korea Electrical Safety Corporation Emergency Dispatch (1588-7500)",
+        "summary": "A free 24-hour phone line for requesting emergency response when a sudden power outage, electrical leakage, or shock hazard occurs at home or in a shop",
+        "description": "A Korea Electrical Safety Corporation service that lets you request emergency response with a single phone call when a sudden power outage, electrical leakage, sparking, or other electrical safety hazard occurs at a home or small business. Emergency reports and inquiries, which used to be split across 60 regional offices nationwide, are now unified under one number (1588-7500) that automatically routes you to the office nearest to where you're reporting from. Free emergency response is provided for minor electrical work; if full-scale repair work is needed, the corporation refers you to a licensed contractor. The call center operates 24 hours a day, year-round.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "kgs-gas-emergency",
@@ -1437,7 +2079,15 @@
     "badges": ["24시간", "무료", "공공기관"],
     "source": "한국가스안전공사",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "Korea Gas Safety Corporation Emergency Report (1544-4500)",
+        "summary": "An emergency reporting line that automatically connects you to the nearest regional office anywhere in the country when you smell gas or suspect a gas accident",
+        "description": "The Korea Gas Safety Corporation's main reporting line for when you smell gas or suspect a gas-related accident at a home or shop. Calling 1544-4500 from anywhere in the country, with no area code, automatically routes you to the regional headquarters or branch office nearest to your location, giving you 24-hour emergency dispatch service. Gas accidents can also be reported through 119 and will be handled the same way. Online, the Cyber Branch (cyber.kgs.or.kr) also handles various gas-safety-related civil petitions. Phone consultation itself runs weekdays 09:00–18:00, but emergency reports are accepted 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "animal-protection-system",
@@ -1455,7 +2105,15 @@
     "badges": ["무료", "공공기관"],
     "source": "농림축산식품부",
     "affiliate": false,
-    "lastVerified": "2026-07-27"
+    "lastVerified": "2026-07-27",
+    "i18n": {
+      "en": {
+        "name": "National Animal Protection Information System",
+        "summary": "A Ministry of Agriculture, Food and Rural Affairs animal-protection system covering pet registration, lookup of abandoned animals, and reporting a missing pet, all in one place",
+        "description": "A Ministry of Agriculture, Food and Rural Affairs service where you can look up and manage online the animal registration that becomes mandatory within 30 days of getting a dog, and search notices of abandoned or sheltered animals if you lose a pet. Registering your animal with an internal microchip, an external wireless ID device, or a registration tag assigns it a 15-digit unique number, which helps prevent loss or abandonment. It also offers a way to look up co-owner registration information and find an animal-registration agency. The online service is available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "efine-traffic-portal",
@@ -1473,7 +2131,15 @@
     "badges": ["무료", "공공기관"],
     "source": "경찰청",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Korean National Police Agency Traffic Civil Petition 24 (eFine)",
+        "summary": "The Korean National Police Agency's official service for checking traffic-violation enforcement records and driver's license penalty points, and looking up and paying fines/administrative fees online",
+        "description": "A service run by the Korean National Police Agency where you can look up records caught by unmanned enforcement cameras - such as speeding or signal violations - check whether a fine or administrative fee has been imposed and its amount, and pay it online right away. After identity verification, you can also check the accumulated penalty points that affect driver's license suspension or revocation, which is especially useful for drivers who need to manage their license. The same features are available through the mobile app. Online lookups and payments are available 24 hours a day; for inquiries, call the Traffic Civil Petition Counseling Center (182).",
+        "hours": "24 hours (counseling line 182)"
+      }
+    }
   },
   {
     "id": "koroad-safedriving",
@@ -1491,7 +2157,15 @@
     "badges": ["무료", "공공기관"],
     "source": "도로교통공단",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Korea Road Traffic Authority Safe Driving Integrated Civil Affairs",
+        "summary": "A Korea Road Traffic Authority official civil-affairs service covering everything from booking a driver's license renewal/aptitude test to checking penalty points and applying for special traffic-safety education",
+        "description": "A service run by the Korea Road Traffic Authority that lets you handle most driver's-license-related civil affairs online - applying for a periodic aptitude test or license renewal, reissuing a license, checking penalty points, and applying for special traffic-safety education required after offenses such as drunk driving. Regardless of where you live, you can check reservation availability at driver's license test centers nationwide and book whichever date suits you, cutting down on wait times before you visit. Online applications are available 24 hours a day; for inquiries, contact your regional driver's license test center.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "ex-hipass",
@@ -1509,7 +2183,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국도로공사",
     "affiliate": false,
-    "lastVerified": "2026-07-31"
+    "lastVerified": "2026-07-31",
+    "i18n": {
+      "en": {
+        "name": "Korea Expressway Corporation Hi-pass",
+        "summary": "A Korea Expressway Corporation official service covering everything from registering a Hi-pass device/card to checking toll history and confirming/paying unpaid tolls",
+        "description": "A service run by the Korea Expressway Corporation for registering and managing the Hi-pass device and card that automatically settles expressway tolls, and for checking usage history and toll amounts. If a toll goes unpaid because of an insufficient Hi-pass card balance or a device recognition error, you can check and pay it right away on the website, preventing late fees. Installing the 'Highway Toll' app gives you the same features on mobile. The online service is available 24 hours a day; for inquiries, call the customer center (1588-2504).",
+        "hours": "24 hours (customer center weekdays 09:00-18:00)"
+      }
+    }
   },
   {
     "id": "k-pass-transit-card",
@@ -1527,7 +2209,15 @@
     "badges": ["무료", "정부지원"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "K-pass",
+        "summary": "A Ministry of Land, Infrastructure and Transport public-transit fare refund program that automatically returns part of your spending if you use public transit 15 or more times a month",
+        "description": "A Ministry of Land, Infrastructure and Transport program where anyone who regularly uses public transit - buses, subways, and the like - 15 or more times a month can get a set percentage of their fares refunded the following month. General users get 20% back, young people (19-34) get 30%, and low-income users get up to 53%; existing users of the previous Alddeul Transit Card can switch over with just an in-app agreement, no reissue needed. Issuing and registering a K-pass card from your preferred card company on the dedicated website or app means your usage is automatically tallied afterward. Sign-up and refund applications are available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "tago-transit-info",
@@ -1545,7 +2235,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "TAGO National Public Transportation Information Center",
+        "summary": "A Ministry of Land, Infrastructure and Transport integrated service for looking up nationwide intercity/express bus, city bus, and rail timetables and real-time arrival information in one place",
+        "description": "A service run by the Ministry of Land, Infrastructure and Transport that lets you look up nationwide intercity and express bus routes and timetables, real-time bus-stop arrival information for city buses, and rail schedule information, across every region and mode of transport, in one place. Instead of checking multiple local-government or transport-operator websites individually, entering just a departure and destination point lets you compare available transport options and timetables at once. The data provided here is opened through the Public Data Portal and is also used by map services such as Naver and Kakao. Online lookups are available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "kotsa-inspection-reservation",
@@ -1563,7 +2261,15 @@
     "badges": ["공공기관"],
     "source": "한국교통안전공단",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Korea Transportation Safety Authority Vehicle Inspection Booking (Cyber Inspection Center)",
+        "summary": "A Korea Transportation Safety Authority online booking system that lets you book a regular or comprehensive vehicle inspection date and time in advance so you can get inspected without waiting",
+        "description": "A service run by the Korea Transportation Safety Authority that lets you book your preferred inspection center and date/time for a required regular or comprehensive vehicle inspection using just your license plate number and phone number, with no sign-up needed. Arriving at your booked time lets you go straight into the inspection line without check-in, greatly cutting down on wait time, and you can also pay the inspection fee online in advance. Fee reductions for socially disadvantaged groups, such as persons of national merit, can also be checked. Online booking is available 24 hours a day.",
+        "hours": "24 hours (for booking)"
+      }
+    }
   },
   {
     "id": "bizinfo-portal",
@@ -1581,7 +2287,15 @@
     "badges": ["무료", "공공기관"],
     "source": "중소벤처기업부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Bizinfo",
+        "summary": "An integrated portal run by the Ministry of SMEs and Startups that gathers support-program announcements for small and medium enterprises and small business owners from central government, local governments, and public institutions",
+        "description": "A portal run by the Ministry of SMEs and Startups that gathers government support-program announcements for small and medium enterprises and small business owners - scattered across areas like funding, technology, workforce, exports, and startups - in one place. Setting search filters such as industry, region, and business type lets you immediately see which support programs you can apply for, and you can also get notified about announcements you're interested in. It also provides information useful for running a business, such as policy-fund repayment information and policy news. The online service is available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "saeil-women-center",
@@ -1599,7 +2313,15 @@
     "badges": ["무료", "공공기관"],
     "source": "여성가족부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Women's New Job Center (Saeil Center)",
+        "summary": "A Ministry of Gender Equality and Family employment support organization that provides free vocational education, internships, and job placement for women whose careers were interrupted by marriage, childcare, and similar reasons",
+        "description": "A Ministry of Gender Equality and Family-run organization that supports women whose careers were interrupted by marriage, pregnancy, childbirth, or childcare with step-by-step re-employment help - from career counseling to vocational education and training, the Saeil Women's Internship program, job placement, and post-employment follow-up. On the website you can find your nearest Saeil Center and book an in-person consultation, and you can also apply for free training courses by occupation. Counseling for currently employed women aimed at preventing career interruption is also offered. For inquiries, call the main line (1544-1199).",
+        "hours": "Weekdays 09:00-18:00 (varies by center)"
+      }
+    }
   },
   {
     "id": "elifeplan-senior-center",
@@ -1617,7 +2339,15 @@
     "badges": ["무료", "공공기관"],
     "source": "노사발전재단(고용노동부)",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Middle-Aged and Senior Job Center",
+        "summary": "A Korea Labor and Management Development Foundation service that provides free lifetime career design, career-transition support, and re-employment support for employees and (soon-to-be) retirees aged 40 and older",
+        "description": "A Ministry of Employment and Labor-commissioned organization offering services tailored to each employment stage for middle-aged and older workers - lifetime career design counseling for employees 40 and older, career-transition support for those about to retire, and re-employment support for those who have already retired. You can get 1:1 career counseling and resume/interview consulting at centers nationwide, and prepare at your own pace and place using online learning content. Workplaces with many employees nearing retirement can also arrange group career-transition training through an employer application. Counseling runs on weekdays and is free of charge.",
+        "hours": "Weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "kosmes-policy-fund",
@@ -1635,7 +2365,15 @@
     "badges": ["정부지원"],
     "source": "중소벤처기업진흥공단",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Korea SMEs and Startups Agency (KOSMES) Policy Funds",
+        "summary": "KOSMES's policy-fund application service, offering low-interest loans for businesses at every stage from startup to growth-stage SME",
+        "description": "A service run by the Korea SMEs and Startups Agency (KOSMES) that lets you apply online for policy funds matched to a company's growth stage and situation - startup support funds, new-growth-foundation funds, and emergency management-stabilization funds. Where the Small Enterprise and Market Service (SEMAS) focuses on small business owners, KOSMES mainly targets small and medium/venture enterprises with larger revenue. Everything from booking a consultation within your region's application period, filling out the application, and - after the loan is issued - checking loan details and follow-up management can be handled in one place. Inquiries go to your regional headquarters or branch, and the online service is available 24 hours a day.",
+        "hours": "24 hours (regional headquarters counseling weekdays 09:00-18:00)"
+      }
+    }
   },
   {
     "id": "nhuf-fund-loan",
@@ -1653,7 +2391,15 @@
     "badges": ["정부지원"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Housing and Urban Fund e-Deun-deun",
+        "summary": "A Ministry of Land, Infrastructure and Transport official system for applying online, without visiting a bank, for low-income housing loans such as the Didimdol home-purchase loan and Beotimmok jeonse loan",
+        "description": "A Ministry of Land, Infrastructure and Transport system that lets you apply online, without visiting a bank, for Housing and Urban Fund loan products such as the Didimdol Loan, which helps homeless low-income households buy a home, and the Beotimmok Jeonse Fund Loan, which helps with a jeonse deposit. Entering conditions such as income, home price, and deposit size lets you check in advance which loan products and limits you're eligible for, which is useful for gauging your chances before visiting in person. Some document submission or screening steps may require visiting an entrusted bank (KB Kookmin, Woori, Shinhan, Hana, NH, and others). For inquiries, call the call center (1566-9009).",
+        "hours": "24 hours (call center weekdays 09:00-18:00)"
+      }
+    }
   },
   {
     "id": "lh-apply-plus",
@@ -1671,7 +2417,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국토지주택공사(LH)",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "LH Apply Plus",
+        "summary": "LH's (Korea Land and Housing Corporation) official portal for checking and applying online for public rental/pre-sale housing subscriptions such as Happy Housing and National Rental Housing",
+        "description": "A service run by LH (Korea Land and Housing Corporation) where you can check resident-recruitment announcements for public rental and pre-sale housing that LH supplies - Happy Housing, National Rental Housing, Permanent Rental Housing, and Newlywed Hope Towns - and apply for a subscription online. You can search by region, housing type, and recruitment-announcement status, and a self-assessment feature lets you check subscription eligibility and income/asset criteria in advance. While Cheongyak Home covers all subscriptions including private pre-sale housing, this service specializes in housing supplied directly by LH. The online service is available 24 hours a day; for inquiries, call the LH call center (1600-1004).",
+        "hours": "24 hours (call center 1600-1004)"
+      }
+    }
   },
   {
     "id": "rtms-lease-report",
@@ -1694,7 +2448,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Real Estate Transaction Management System (Lease Reporting)",
+        "summary": "A Ministry of Land, Infrastructure and Transport housing-lease reporting system for reporting online any jeonse/wolse lease contract with a deposit over 60 million won or monthly rent over 300,000 won",
+        "description": "In designated reporting areas - the greater Seoul metropolitan area, metropolitan cities, and Sejong City - a housing lease contract with a deposit over 60 million won or monthly rent over 300,000 won must be reported within 30 days of the contract date; this Ministry of Land, Infrastructure and Transport system lets you do that online. Completing the report automatically assigns a fixed date (확정일자), so there's no need to visit a community service center separately to get one. Offline, you can also report at the integrated civil affairs desk of your local town/township/neighborhood community service center. Online reporting is available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "irts-econtract",
@@ -1712,7 +2474,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-07-31"
+    "lastVerified": "2026-07-31",
+    "i18n": {
+      "en": {
+        "name": "Real Estate Transaction Electronic Contract System",
+        "summary": "A Ministry of Land, Infrastructure and Transport service for signing sale/lease contracts with an electronic signature - no paper or seal - with automatic real-transaction reporting",
+        "description": "A Ministry of Land, Infrastructure and Transport system that lets you sign a real-estate sale or lease contract with an electronic signature, without a paper contract or personal seal. Completing an electronic contract automatically handles the real-transaction report and assignment of a fixed date (확정일자), so you don't need to go through a separate reporting process, and it reduces the risk of a forged or altered contract. Contracts are securely stored in a certified document-storage center and can be viewed again when needed. To use it, proceed with your contract through a licensed real-estate agent registered on the system. For inquiries, call the customer center (1833-4662, weekdays 09:00-18:00).",
+        "hours": "24 hours (customer center weekdays 09:00-18:00)"
+      }
+    }
   },
   {
     "id": "realtyprice-notice",
@@ -1735,7 +2505,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Real Estate Officially Assessed Price Notice",
+        "summary": "A Ministry of Land, Infrastructure and Transport system for looking up, by address, the officially assessed price of apartments, single-family houses, and land - the basis for taxes such as property tax and comprehensive real estate tax",
+        "description": "A Ministry of Land, Infrastructure and Transport service where entering just an address lets you look up the officially assessed price by property type - multi-unit housing (apartments, row/multiplex housing), standard and individual single-family houses, and standard/individual officially assessed land prices. The assessed price is worth checking in advance because it's used as the basis not only for taxes like property tax, comprehensive real estate tax, and capital gains tax, but also for roughly 60 other administrative purposes such as calculating health insurance premiums and basic pension eligibility. If you disagree with the assessed price, you can also file an objection online during the viewing period. Lookups are free, 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "youth-housing-dream-account",
@@ -1753,7 +2531,15 @@
     "badges": ["무료", "정부지원"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Youth Housing Dream Subscription Savings Account",
+        "summary": "A preferential-rate subscription savings account that helps homeless young people aged 19-34 save toward a home, with subscription winners eligible for the low-interest Housing Dream Loan - a Ministry of Land, Infrastructure and Transport product",
+        "description": "A subscription savings account for homeless young people aged 19 to 34 with annual income of 50 million won or less, run by the Ministry of Land, Infrastructure and Transport, offering interest of up to 4.5% a year, tax-free interest income, and an income-tax deduction of 40% of deposits. Existing holders of the previous Youth Preferential Housing Subscription Savings account are automatically converted with no separate application needed, and their existing deposit period and amount carry over. If you win a subscription with this account, you can apply to link it to the Youth Housing Dream Loan, which lets you borrow up to 80% of the sale price at a low interest rate. You can open an account through a participating bank's app or branch, and deposit freely from 20,000 won up to 1,000,000 won a month.",
+        "hours": "24 hours (account opening during participating banks' business hours)"
+      }
+    }
   },
   {
     "id": "youth-monthly-rent-support",
@@ -1771,7 +2557,15 @@
     "badges": ["무료", "정부지원"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Special Rent Support for Young People",
+        "summary": "A Ministry of Land, Infrastructure and Transport program supporting homeless young people living apart from their parents with up to 200,000 won a month in rent for up to 24 months",
+        "description": "A Ministry of Land, Infrastructure and Transport program for homeless young people aged 19 to 34 living independently, where the youth household's income is at or below 60% of the median and their parents' (original household's) income is at or below 100% of the median, who can receive up to 200,000 won a month in rent support for up to 24 months, once in a lifetime. Apply online through the Bokjiro website or Gov24, or in person at the town/township/neighborhood community service center with jurisdiction over your address. Applications are only accepted during a set period each year, so it's worth checking the announcement schedule in advance. The support payment is deposited monthly into the applicant's own account, not the landlord's.",
+        "hours": "Online 24 hours (during the application period); in-person follows community service center hours"
+      }
+    }
   },
   {
     "id": "kua-employment-support",
@@ -1789,7 +2583,15 @@
     "badges": ["무료", "정부지원"],
     "source": "고용노동부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "National Employment Support Program",
+        "summary": "A Ministry of Employment and Labor employment-support program that provides low-income job seekers and young people with a job-seeking promotion allowance of up to 600,000 won a month, along with employment support services",
+        "description": "A Ministry of Employment and Labor employment-support program for job seekers who are outside the employment insurance system or too low-income to receive unemployment benefits, and for young people aged 15 to 34 who can apply even without work experience. If your income is at or below 120% of the median, you can receive a job-seeking promotion allowance of up to 600,000 won a month for up to 6 months, along with counseling and job training under an employment support plan. To apply, complete job-seeker registration on the National Employment Support Program website and fill out the employment support application; job-seeker registration on Worknet must be completed first. If you succeed in finding a job, recipients with income at or below 60% of the median can also receive an additional employment success allowance of up to 1.5 million won.",
+        "hours": "Online 24 hours"
+      }
+    }
   },
   {
     "id": "happy-birth-onestop",
@@ -1807,7 +2609,15 @@
     "badges": ["무료", "공공기관"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Happy Birth One-Stop Service",
+        "summary": "A Gov24 service that lets you apply for multiple birth-support payments - the First Meeting Voucher, parental allowance, child allowance, and more - in a single application after registering a birth",
+        "description": "An integrated service that lets you apply, in a single request through Gov24, for nationwide birth-support programs such as the First Meeting Voucher, parental allowance, child allowance, and childcare allowance, without visiting each agency separately after your child is born. You can also look up and apply for local-government programs such as birth incentive payments and postpartum care support at the same time, which is useful for newlywed and newborn households who might otherwise miss out on benefits. Apply online through the Gov24 website or app using simple authentication, or in person at the town/township/neighborhood community service center with jurisdiction over the child's registered residence. Applying within 60 days of birth applies the benefit retroactively to the birth month.",
+        "hours": "Online 24 hours; in-person follows community service center hours"
+      }
+    }
   },
   {
     "id": "youth-mental-health-voucher",
@@ -1825,7 +2635,15 @@
     "badges": ["정부지원"],
     "source": "보건복지부",
     "affiliate": false,
-    "lastVerified": "2026-07-28"
+    "lastVerified": "2026-07-28",
+    "i18n": {
+      "en": {
+        "name": "Youth Mental Health Voucher Support Program",
+        "summary": "A Ministry of Health and Welfare program that gives young people aged 19-34 up to 10 sessions of professional psychological counseling through a voucher, regardless of income",
+        "description": "A Ministry of Health and Welfare psychological-counseling support program open to young people aged 19 to 34 (extended up to 3 years for discharged veterans) dealing with psychological difficulties such as job-search stress, anxiety, or depression, regardless of income level. The voucher is issued on the Happiness Card, and you can receive up to 10 sessions of professional psychological counseling, about 50 minutes each, at a registered counseling organization; some local governments provide extra sessions. You can apply through the Bokjiro website or at the town/township/neighborhood community service center for your address; application periods and the number of spots are set by each local government and can fill up early. Depending on income, a partial co-payment may apply when using the counseling.",
+        "hours": "Online 24 hours (during the application period); in-person follows community service center hours"
+      }
+    }
   },
   {
     "id": "pet-registration-lookup",
@@ -1843,7 +2661,15 @@
     "badges": ["무료", "24시간", "공공기관"],
     "source": "농림축산검역본부(국가동물보호정보시스템)",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Animal Registration Information Lookup",
+        "summary": "A service for checking whether a pet is registered using its animal registration number and owner information",
+        "description": "On the National Animal Protection Information System, entering the animal registration number (or RFID) along with the owner's name and date of birth lets you look up the registration number, breed, whether the animal is neutered, and the registration date. It's useful when you've found a stray dog, when you want to confirm a pet is actually registered before a resale or adoption, or when you want to check that your own pet's registration information is accurate.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "pet-registration-agency-lookup",
@@ -1861,7 +2687,15 @@
     "badges": ["무료", "24시간", "공공기관"],
     "source": "농림축산검역본부(국가동물보호정보시스템)",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Animal Registration Agency Lookup",
+        "summary": "A service for searching, by region, agencies nationwide (such as veterinary clinics) that handle animal registration",
+        "description": "Lets a guardian who wants to newly register a dog search, by city/province, city/county/district, or business name, for nearby veterinary clinics actually designated to handle animal registration. Information and contact details for roughly 4,500 agencies nationwide are provided, which helps prevent an animal being left unregistered and incurring a fine (up to 600,000 won).",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "pet-funeral-business-lookup",
@@ -1879,7 +2713,15 @@
     "badges": ["무료", "24시간", "공공기관"],
     "source": "농림축산검역본부(국가동물보호정보시스템)",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Registered Pet Funeral Business Lookup",
+        "summary": "A service for checking officially registered pet funeral businesses nationwide (funeral, cremation, and interment services)",
+        "description": "When a pet dies, many people end up using an unlicensed, unregistered funeral business and suffer harm such as illegal burial or overcharging; this service lets you check only businesses officially registered with a local government. You can search by business type (funeral/cremation/interment), region, or business name, and it provides addresses and contact information.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "pet-clinic-fee-lookup",
@@ -1897,7 +2739,15 @@
     "badges": ["무료", "24시간", "공공기관"],
     "source": "농림축산식품부",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Veterinary Clinic Fee Disclosure System",
+        "summary": "A service disclosing the lowest, highest, and average cost of major veterinary treatment items by region",
+        "description": "Run by the Ministry of Agriculture, Food and Rural Affairs under the Veterinarians Act, this discloses nationwide, provincial, and city/county/district treatment-fee statistics for a total of 11 items, including examination/consultation, hospitalization, vaccination, and X-ray/complete blood count tests. It addresses the problem that treatment fees vary widely between clinics, making comparison difficult for consumers, and is useful for getting a rough sense of prices before visiting a clinic.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "our-neighborhood-animal-hospital",
@@ -1920,7 +2770,15 @@
     "badges": ["정부지원", "취약계층지원", "공공기관"],
     "source": "서울특별시(정원도시국 동물보호과)",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Our Neighborhood Animal Hospital (Pet Treatment Cost Support for Vulnerable Groups)",
+        "summary": "A Seoul city program that significantly discounts pet treatment costs for vulnerable groups, such as basic livelihood recipients",
+        "description": "When basic livelihood recipients, near-poverty households, or single-parent families get their pet treated at a participating veterinary clinic designated by the Seoul city government, they only pay up to 10,000 won per visit for essential treatment, and only the amount above 200,000 won for elective treatment. No separate application is needed - just bring your ID and proof documents, such as a recipient certificate, to a participating clinic. Support is limited to registered dogs and cats, once a year per household, for up to 2 pets.",
+        "hours": "Follows the participating clinic's hours (inquiries: 02-2133-7656, Dasan Call Center 120)"
+      }
+    }
   },
   {
     "id": "hometax-yearend-tax-simplification",
@@ -1938,7 +2796,15 @@
     "badges": ["무료", "24시간", "공공기관"],
     "source": "국세청",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Hometax Simplified Year-End Tax Settlement Service",
+        "summary": "A National Tax Service service for looking up and printing your year-end tax settlement income/tax-credit evidence documents in one place",
+        "description": "Lets you look up and download, all in one place on Hometax (including the mobile Sontax app), the income and tax-credit proof documents that banks, schools, hospitals, insurers, and others have submitted to the National Tax Service. Each year's data opens in mid-January, saving salaried workers the trouble of collecting receipts one by one. Note that the simplified data has not been verified to meet deduction requirements - the taxpayer must confirm eligibility themselves.",
+        "hours": "Online 24 hours (opens mid-January each year)"
+      }
+    }
   },
   {
     "id": "credit-counseling-workout",
@@ -1956,7 +2822,15 @@
     "badges": ["무료", "공공기관"],
     "source": "신용회복위원회",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Credit Counseling and Recovery Service Individual Workout (Debt Adjustment)",
+        "summary": "A Credit Counseling and Recovery Service debt-adjustment program that adjusts the repayment period, interest, and principal for people with excessive debt",
+        "description": "For debtors who cannot normally repay financial debt overdue by 90 days or more, this reduces overdue interest and interest based on repayment ability, reduces principal (by up to 70%), and offers installment repayment over as long as 8 to 35 years. Debt collection stops starting the day after you apply, which offers real relief in urgent collection situations. You can get counseling by phone (1600-5500) or after booking online.",
+        "hours": "Weekdays 09:00-18:00 (counseling line 1600-5500)"
+      }
+    }
   },
   {
     "id": "kinfa-counseling-center",
@@ -1974,7 +2848,15 @@
     "badges": ["무료", "공공기관"],
     "source": "서민금융진흥원",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Regional Financial Welfare Center (Financial Welfare Call Center 1397)",
+        "summary": "A Korea Inclusive Finance Agency counseling channel where you can get Miso Finance/Sunshine Loan and debt-adjustment counseling in one place",
+        "description": "Visiting a Regional Financial Welfare Center nationwide, or calling 1397 (no area code), gets you comprehensive counseling covering everything from Miso Finance/Sunshine Loan 15 funding to Credit Counseling and Recovery Service debt adjustment and referrals for personal rehabilitation/bankruptcy. It's useful for people who find it hard to access mainstream financial services because of low credit or low income, or who want to sort out multiple debts but don't know where to start.",
+        "hours": "Varies by center (call center 1397)"
+      }
+    }
   },
   {
     "id": "nts-counseling-126",
@@ -1992,7 +2874,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국세청",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "National Tax Counseling Center 126",
+        "summary": "A National Tax Service counseling line that answers tax-related questions with a single phone call",
+        "description": "Calling 126 (no area code) gets you free counseling on tax topics in general - how to use Hometax, year-end tax settlement and withholding tax, capital gains tax and comprehensive real estate tax, value-added tax, and issuing cash receipts. It's useful for individuals and small business owners who find visiting a tax office or consulting a tax accountant burdensome and want a quick answer to a simple tax question.",
+        "hours": "Weekdays 09:00-18:00 (tax evasion reports 24 hours)"
+      }
+    }
   },
   {
     "id": "national-tax-unclaimed-refund",
@@ -2010,7 +2900,15 @@
     "badges": ["무료", "24시간", "공공기관"],
     "source": "국세청",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "National Tax Unclaimed Refund Lookup",
+        "summary": "A service for checking national tax refunds that were approved but never claimed",
+        "description": "Entering just your resident registration number (or business registration number) and name lets you check whether a national tax refund was approved in your name but never claimed. It's common to miss a refund notice because of a move or a changed bank account; check whether one exists first, then apply to receive it through Hometax or your local tax office. Refunds revert to the national treasury 5 years after the approval date.",
+        "hours": "Online 24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "fss-fine-account-search",
@@ -2028,7 +2926,15 @@
     "badges": ["무료", "공공기관"],
     "source": "금융감독원",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "FINE Integrated Account Management Service (My Accounts at a Glance)",
+        "summary": "A service for finding, all at once, forgotten financial assets scattered across multiple financial companies - dormant deposits, unclaimed insurance money, and more",
+        "description": "Provided through the Financial Supervisory Service's financial consumer information portal FINE, this lets you look up, close, or transfer dormant deposits, long-inactive deposit/savings/trust accounts, and unclaimed insurance money scattered across banks, insurers, and securities firms, all in one place. It's useful for anyone who may have an old account or insurance policy they forgot about after a job change or move, and is provided for PC web browsers.",
+        "hours": "Online anytime (counseling inquiries: FSS call center 1332)"
+      }
+    }
   },
   {
     "id": "long-term-care-insurance",
@@ -2046,7 +2952,15 @@
     "badges": ["정부지원", "공공기관"],
     "source": "국민건강보험공단",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Long-Term Care Insurance for the Elderly",
+        "summary": "A social insurance program that assesses a care-need grade for older adults who have difficulty with daily life due to age or age-related illness, and supports in-home or facility care services",
+        "description": "Anyone aged 65 or older, or under 65 with an age-related illness such as dementia or cerebrovascular disease, can apply to the National Health Insurance Service for long-term care recognition. Once the Grading Committee assigns a care grade (Grade 1 to 5, or a cognitive support grade), a significant portion of the cost of in-home services - visiting care, visiting bathing, day/night care (in-home benefits) - or admission to a care facility (facility benefits) is covered. Families often only apply after a parent's mobility suddenly declines.",
+        "hours": "Online 24 hours (counseling line 1577-1000, weekdays 09:00-18:00)"
+      }
+    }
   },
   {
     "id": "dementia-safety-center",
@@ -2064,7 +2978,15 @@
     "badges": ["무료", "공공기관"],
     "source": "중앙치매센터",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Dementia Relief Center",
+        "summary": "A comprehensive dementia support organization set up at public health centers nationwide, offering free dementia screening tests, counseling, and case management",
+        "description": "256 Dementia Relief Centers nationwide, run as branches of local public health centers, provide free dementia screening tests, referrals for diagnostic testing, case management, and family counseling/education. It's a place you can go first, without worrying about hospital costs, if your memory has recently been declining or you're worried about a parent's dementia - but many people don't even know it exists.",
+        "hours": "Weekdays 09:00-18:00 (varies by center)"
+      }
+    }
   },
   {
     "id": "senior-customized-care-service",
@@ -2082,7 +3004,15 @@
     "badges": ["무료", "정부지원", "공공기관"],
     "source": "보건복지부",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Personalized Senior Care Service",
+        "summary": "A care service that regularly visits and checks on older adults living alone, providing safety and daily-life support",
+        "description": "Older adults aged 65 and older who are basic livelihood recipients, near-poverty households, or basic pension recipients - particularly those living alone or in grandparent-headed households who need care - are prioritized and selected using an assessment tool. Safety support (welfare checks), social participation, life-skills education, and daily-life support are provided through home visits or outpatient-style programs. The senior or a family member can apply at the town/township/neighborhood administrative welfare center for their registered address.",
+        "hours": "Applications at the town/township/neighborhood administrative welfare center, weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "elderly-abuse-report-1577-1389",
@@ -2100,7 +3030,15 @@
     "badges": ["무료", "24시간", "공공기관"],
     "source": "중앙노인보호전문기관",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Elder Abuse Report Line (1577-1389)",
+        "summary": "A 24-hour reporting and counseling service where a single toll-free call connects you to the regional Senior Protection Agency with jurisdiction over the case of elder abuse",
+        "description": "Regional Senior Protection Agencies nationwide run a report line at 1577-1389, staffed 24 hours a day, 365 days a year; calling automatically routes you to the agency covering the caller's region. If calling feels difficult, you can also report through a reporting app, attaching the location, timing, and details of the abuse along with any evidence. It can be used for both abuse within a home and suspected abuse within a care facility.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "emergency-safety-service-elderly",
@@ -2118,7 +3056,15 @@
     "badges": ["무료", "24시간", "공공기관"],
     "source": "보건복지부",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Emergency Safety Confirmation Service for Seniors and People with Disabilities Living Alone",
+        "summary": "A service that installs a fire detector and emergency call device free of charge in the home of a senior living alone, providing 24-hour remote monitoring for emergencies",
+        "description": "For seniors aged 65 and older living alone, two-senior households, and grandparent-headed households, a fire detection sensor, an activity sensor, and an emergency call button are installed free of charge, with an emergency management worker monitoring remotely 24 hours a day. If an emergency such as a fire or a fall is detected, it automatically connects to the fire department and the emergency management worker. There's no income requirement to apply, but the service is not well known and many eligible people miss out.",
+        "hours": "24 hours (applications at the town/township/neighborhood administrative welfare center, weekdays 09:00-18:00)"
+      }
+    }
   },
   {
     "id": "knee-replacement-surgery-support-elderly",
@@ -2136,7 +3082,15 @@
     "badges": ["정부지원", "공공기관"],
     "source": "노인의료나눔재단(보건복지부)",
     "affiliate": false,
-    "lastVerified": "2026-08-03"
+    "lastVerified": "2026-08-03",
+    "i18n": {
+      "en": {
+        "name": "Knee Replacement Surgery Cost Support for Seniors",
+        "summary": "A Ministry of Health and Welfare-commissioned program supporting knee replacement surgery costs for low-income seniors",
+        "description": "For patients aged 60 and older with knee osteoarthritis who are basic livelihood recipients, near-poverty households, or eligible under the Single-Parent Family Support Act, this covers the patient's out-of-pocket share of examination, treatment, and surgery costs, up to 1.2 million won per knee (2.4 million won for both). Seniors who have put off surgery for financial reasons can submit documents to a public health center before surgery, and the Korea Elderly Medical Sharing Foundation selects and supports recipients. Many eligible seniors give up on surgery simply because they don't know this program exists.",
+        "hours": "Applications at public health centers (inquiries: Korea Elderly Medical Sharing Foundation 1661-6595)"
+      }
+    }
   },
   {
     "id": "subsidy24-benefit-portal",
@@ -2154,7 +3108,15 @@
     "badges": ["무료", "정부지원", "공공기관"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-08-05"
+    "lastVerified": "2026-08-05",
+    "i18n": {
+      "en": {
+        "name": "Subsidy24 (Gov24 Benefit Finder)",
+        "summary": "A Gov24 service that finds government support payments and benefits you may have missed without knowing they existed, matched to your situation",
+        "description": "A Gov24 service that finds, in one search, government support payments and benefits you may be eligible for without realizing it. After logging in and agreeing to information linkage, it uses your resident registration number to connect eligibility information held by different administrative agencies and automatically finds and shows you the support and benefits you can receive. If online use is difficult, you can get the same guidance in person at any community service center nationwide through the 'Outreach Subsidy24' service. Beyond cash-type support, it also covers various everyday benefits such as culture, education, and care.",
+        "hours": "24 hours (for lookups)"
+      }
+    }
   },
   {
     "id": "youth-menstrual-product-support",
@@ -2172,7 +3134,15 @@
     "badges": ["무료", "정부지원", "취약계층지원"],
     "source": "성평등가족부",
     "affiliate": false,
-    "lastVerified": "2026-08-05"
+    "lastVerified": "2026-08-05",
+    "i18n": {
+      "en": {
+        "name": "Menstrual Product Support Program for Young Women",
+        "summary": "A government program that provides low-income young women with a monthly voucher to buy menstrual products",
+        "description": "A program that provides a monthly 14,000-won menstrual product voucher, loaded onto the Happiness Card (electronic voucher), to young women aged 9 to 24 who are recipients of livelihood, medical, housing, or education benefits under the National Basic Living Security Act, near-poverty households, or eligible under the Single-Parent Family Support Act. You can apply online through the Bokjiro website or mobile app, or in person at the town/township/neighborhood administrative welfare center with jurisdiction over the youth's registered address. For application and program questions, call 1566-3232.",
+        "hours": "Online applications anytime (in-person at community centers weekdays 9:00-18:00)"
+      }
+    }
   },
   {
     "id": "welfare-counseling-129",
@@ -2190,7 +3160,15 @@
     "badges": ["24시간", "무료", "긴급"],
     "source": "보건복지부",
     "affiliate": false,
-    "lastVerified": "2026-08-05"
+    "lastVerified": "2026-08-05",
+    "i18n": {
+      "en": {
+        "name": "Ministry of Health and Welfare Call Center 129",
+        "summary": "A 24-hour integrated welfare counseling line — dial 129, no area code — covering everything from emergency welfare support to reporting abuse",
+        "description": "When you're not sure who to contact because of sudden financial hardship from job loss or illness, because you've fallen into a gap in the welfare system, or because you suspect child or elder abuse, calling 129 (no area code) connects you to guidance on the welfare programs and responsible agencies that fit your situation. Emergency welfare support, identifying welfare blind spots, reporting child or elder abuse, and mental-health/suicide-prevention counseling are all available 24 hours a day; other general welfare counseling runs on weekdays from 9 a.m. to 6 p.m. Besides phone counseling, web chat, KakaoTalk counseling, and video sign-language counseling are also available.",
+        "hours": "Emergency counseling 24 hours (general counseling weekdays 9:00–18:00)"
+      }
+    }
   },
   {
     "id": "sunflower-center",
@@ -2208,7 +3186,15 @@
     "badges": ["24시간", "무료", "긴급"],
     "source": "성평등가족부",
     "affiliate": false,
-    "lastVerified": "2026-08-05"
+    "lastVerified": "2026-08-05",
+    "i18n": {
+      "en": {
+        "name": "Sunflower Center",
+        "summary": "An integrated support center that provides counseling, medical care, investigative, and legal support in one place for victims of sexual violence, domestic violence, and prostitution",
+        "description": "Sunflower Centers located throughout the country provide free counseling, medical care, investigative support, psychological support, and legal support, available 24 hours a day, 365 days a year, for victims of sexual violence, domestic violence, prostitution, dating violence, and stalking. If you don't know where your nearest center is, calling the Women's Emergency Hotline 1366 will connect you to the Sunflower Center that fits your region and situation. The website lets you look up the location and contact information of centers nationwide by region.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "silson24",
@@ -2226,7 +3212,15 @@
     "badges": ["무료", "공공기관"],
     "source": "보험개발원",
     "affiliate": false,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-06",
+    "i18n": {
+      "en": {
+        "name": "Silson24",
+        "summary": "An official Korea Insurance Development Institute service for easily claiming indemnity (silson) medical insurance from your smartphone, with no paper receipt needed",
+        "description": "A service run by the Korea Insurance Development Institute where, if you're treated at a participating hospital, the app sends your treatment-cost information directly to your insurer so you can claim indemnity medical insurance without personally obtaining and submitting a paper receipt or medical certificate. Besides claiming for yourself, it also supports claiming for a minor child or, with third-party authorization, for an adult child or parent, using public MyData to verify family relationships without extra paperwork. You can check claim status and history directly in the app; for hospitals or pharmacies that don't participate, you'll still need to prepare documents the traditional way and claim directly with your insurer. Online/app use is available 24 hours a day, with call center (1811-8888) and AI chatbot support also offered.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "credit4u-insurance-inquiry",
@@ -2244,7 +3238,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국신용정보원",
     "affiliate": false,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-06",
+    "i18n": {
+      "en": {
+        "name": "My Insurance Enrollment Lookup (Credit4U)",
+        "summary": "A Korea Credit Information Services lookup that shows your insurance policies scattered across multiple insurers in one view, with a single identity verification",
+        "description": "The insurance-credit-information menu within Credit4U, the personal credit information viewing service run by the Korea Credit Information Services, which lets you check your contract status across fixed-benefit and indemnity insurance, fire/specialty insurance, auto insurance, and savings-type insurance held with life and non-life insurers, on a single screen. It's useful for reviewing insurance contracts you may have forgotten about after a move or job change, or checking for duplicate coverage. Identity verification can be done via mobile phone, credit card, or a certified digital certificate, and counseling inquiries can be made at the main line (1544-1040). Be cautious of voice-phishing or text-phishing scams that impersonate 'Credit4U' and ask for a verification code or personal information. Online lookups are available 24 hours a day; phone counseling runs weekdays 09:00-17:30 (until 16:30 on Fridays).",
+        "hours": "24 hours (phone counseling weekdays 09:00-17:30, until 16:30 on Fridays)"
+      }
+    }
   },
   {
     "id": "insurance-fraud-report-center",
@@ -2262,7 +3264,15 @@
     "badges": ["무료", "공공기관"],
     "source": "금융감독원",
     "affiliate": false,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-06",
+    "i18n": {
+      "en": {
+        "name": "Insurance Fraud Report Center",
+        "summary": "The Financial Supervisory Service's official channel for reporting suspected insurance fraud online - false or inflated diagnoses, staged accidents, and more",
+        "description": "A service run by the Financial Supervisory Service where you can submit a report through an online form for suspected insurance fraud - such as issuing a false or inflated diagnosis, deliberately causing an accident, or colluding with a hospital. The reporter's identity and the content of the report are strictly protected under relevant law, and a reward may be paid depending on the investigation outcome. It also provides case examples by fraud type, prevention information, and guidance on insurance-fraud prevention work. Phone counseling is available at 1332 (no area code); general financial complaints unrelated to insurance fraud are directed to a separate complaint channel.",
+        "hours": "Online reports 24 hours, phone counseling (1332) weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "four-insurance-portal",
@@ -2280,7 +3290,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국민연금공단·국민건강보험공단·근로복지공단",
     "affiliate": false,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-06",
+    "i18n": {
+      "en": {
+        "name": "Four Major Social Insurance Information Linkage Center",
+        "summary": "An integrated portal for checking your enrollment records and premiums for all four major social insurances - National Pension, health insurance, employment insurance, and industrial accident insurance - in one place",
+        "description": "A service jointly run by the National Pension Service, National Health Insurance Service, and Korea Workers' Compensation and Welfare Service, letting you handle enrollment-record lookups, a premium simulation calculator, and issuing various certificates (enrollment confirmation, payment-completion certificate, etc.) for the four major social insurances - National Pension, health insurance, employment insurance, and industrial accident insurance - on one site. It's useful not only for workplace administrators handling reporting and eligibility tasks, but also for individual workers who want to check their own enrollment status and premium assessments directly. You log in with a certified digital certificate or simple authentication, and personal civil-petition applications and certificate issuance are also available on mobile. Online lookups and issuance are available 24 hours a day.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "auto-accident-gov-compensation",
@@ -2303,7 +3321,15 @@
     "badges": ["무료", "공공기관", "취약계층지원"],
     "source": "자동차손해배상진흥원",
     "affiliate": false,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-06",
+    "i18n": {
+      "en": {
+        "name": "Motor Vehicle Damage Compensation Guarantee Program (Government Guarantee Program)",
+        "summary": "A program in which the government compensates victims who have no way to be compensated by the at-fault party - such as in hit-and-run or uninsured-vehicle accidents",
+        "description": "A government guarantee program that compensates, on the state's behalf, traffic-accident victims who cannot get compensation from anywhere else - for example, when the at-fault vehicle in a hit-and-run cannot be identified, when the at-fault vehicle has no mandatory (liability) insurance, or when the accident involved a stolen or unauthorized-use vehicle. It is run by the Korea Motor Vehicle Damage Compensation Promotion Corporation under commission from the Ministry of Land, Infrastructure and Transport, and pays compensation within set limits based on the degree of death, aftereffect disability, or injury. You can file a compensation claim through the Government Guarantee Program menu on the website; for compensation-related counseling call 1544-0049 (press 1), and for the Victim Direct Claim Support Center call 1566-8129.",
+        "hours": "Counseling weekdays 09:00-18:00 (online submission 24 hours)"
+      }
+    }
   },
   {
     "id": "kosha-safety",
@@ -2321,7 +3347,15 @@
     "badges": ["무료", "공공기관"],
     "source": "안전보건공단",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea Occupational Safety and Health Agency (KOSHA)",
+        "summary": "A workplace safety and health organization that supports the prevention of industrial accidents and worker health",
+        "description": "A public institution that supports workplaces in preventing industrial accidents and managing worker health. It provides safety and health consulting, risk-assessment guidance, and a range of safety/health statistics and educational materials.",
+        "hours": "Weekdays 09:00–18:00 (website materials available 24 hours)"
+      }
+    }
   },
   {
     "id": "cpoint-carbon-neutral",
@@ -2339,7 +3373,15 @@
     "badges": ["무료", "공공기관"],
     "source": "환경부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Carbon Neutral Practice Point Program",
+        "summary": "A program that awards points for eco-friendly activities such as using a reusable tumbler or receiving an e-receipt",
+        "description": "A government program that awards points when you take part in everyday eco-friendly practices - using reusable containers, receiving e-receipts, or renting a zero-emission vehicle. The list of participating businesses and the points earned per activity can be checked on the website.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "nl-library",
@@ -2357,7 +3399,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국립중앙도서관",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "National Library of Korea",
+        "summary": "Search and reading service for Korea's largest national library collection",
+        "description": "Korea's national library, holding nearly every book and academic resource published domestically. Besides searching the collection, some material whose copyright has expired or that is covered by an agreement can be read online in full text.",
+        "hours": "Online 24 hours (reading room hours are separate)"
+      }
+    }
   },
   {
     "id": "ilovegohyang-hometown-tax",
@@ -2375,7 +3425,15 @@
     "badges": ["무료", "공공기관"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "I Love Hometown",
+        "summary": "The official portal for the Hometown Love Donation program, where you donate to your hometown or a local government of your choice and receive a tax credit and reciprocal gift",
+        "description": "The official portal for the Hometown Love Donation program, which lets you receive a tax credit and a local reciprocal gift by donating to a local government other than the one where you live. You can select the local government you'd like to donate to, make an online donation, and check the status of your donation.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "dasan-120-seoul",
@@ -2393,7 +3451,15 @@
     "badges": ["24시간", "무료", "공공기관"],
     "source": "서울특별시",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Seoul Dasan Call Center (120)",
+        "summary": "A comprehensive counseling center where a single call gets you guidance on Seoul city civil affairs and information",
+        "description": "Seoul's main counseling center, where a single phone call gets you guidance on Seoul-related civil affairs, administrative information, and questions about city policy. Foreign-language counseling is also supported so a wide range of users can ask questions.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "mpva-veterans-affairs",
@@ -2411,7 +3477,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국가보훈부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Ministry of Patriots and Veterans Affairs Counseling Center (1577-0606)",
+        "summary": "A counseling center guiding you through registration as a person of national merit and veterans' support programs",
+        "description": "A Ministry of Patriots and Veterans Affairs counseling channel that guides you through the registration process for persons of national merit and veterans' compensation recipients, and various veterans' benefit and medical support programs. Alongside phone counseling, the website lets you check support details by category of veteran status.",
+        "hours": "Weekdays 09:00-18:00"
+      }
+    }
   },
   {
     "id": "airkorea-air-quality",
@@ -2429,7 +3503,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국환경공단",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "AirKorea",
+        "summary": "An air-quality information service for checking nationwide fine-dust and air-quality information in real time",
+        "description": "An air-quality information service providing real-time fine-dust (PM10) and ultrafine-dust (PM2.5) concentrations and air-quality grades from monitoring stations nationwide. Regional forecasts and air-quality trends can be viewed on maps and graphs.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "weathernuri-kma",
@@ -2447,7 +3529,15 @@
     "badges": ["무료", "공공기관"],
     "source": "기상청",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea Meteorological Administration Weather Nuri",
+        "summary": "The Korea Meteorological Administration's official service for checking nationwide weather forecasts and weather advisories",
+        "description": "The Korea Meteorological Administration's official website providing weather forecasts, weather advisories, and climate statistics by region nationwide. Very-short-range forecasts and radar imagery let you check precipitation conditions in near real time.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "kipris-patent-search",
@@ -2465,7 +3555,15 @@
     "badges": ["무료", "공공기관"],
     "source": "특허청·한국특허정보원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "KIPRIS Patent Information Search Service",
+        "summary": "A free intellectual-property information service for searching domestic and international patent, trademark, and design information",
+        "description": "A service for freely searching domestic and international intellectual-property information - patents, utility models, designs, and trademarks. It's widely used to check in advance for similar patents or trademarks before starting a business or launching a new product.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "hikorea-immigration",
@@ -2483,7 +3581,26 @@
     "badges": ["무료", "공공기관"],
     "source": "법무부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-26",
+    "supportLanguages": [
+      {
+        "language": "en",
+        "evidenceUrl": "https://www.hikorea.go.kr"
+      },
+      {
+        "language": "zh",
+        "evidenceUrl": "https://www.hikorea.go.kr"
+      }
+    ],
+    "i18n": {
+      "en": {
+        "name": "HiKorea",
+        "summary": "Official Ministry of Justice portal for immigration and residence-related civil affairs for foreigners in Korea",
+        "description": "Operated by Korea's Ministry of Justice, HiKorea is the government's integrated portal for immigration and residence-related civil affairs for foreigners — including the Immigration/Stay Guide, visa issuance confirmation, and online applications such as automated immigration clearance registration. Foreign workers, international students, and their families mainly use it to check procedures. The 1345 Immigration Contact Center also provides general information for foreigners in multiple languages, including English and Chinese.",
+        "hours": "Online 24/7 (in-person visits to immigration offices vary by branch)",
+        "official": true
+      }
+    }
   },
   {
     "id": "safekids-child-safety",
@@ -2501,7 +3618,15 @@
     "badges": ["무료", "공공기관"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Children's Safety Net",
+        "summary": "A safety information portal providing information and educational materials for preventing child safety accidents",
+        "description": "A government safety information portal providing information on safety incidents involving children's products and facilities, along with age-appropriate safety education content. Statistics on child safety accidents and recall information are also available.",
+        "hours": "24 hours"
+      }
+    }
   },
   {
     "id": "passport-mofa",
@@ -2519,7 +3644,15 @@
     "badges": ["무료", "공공기관"],
     "source": "외교부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Passport Guide (Ministry of Foreign Affairs Passport Division)",
+        "summary": "The Ministry of Foreign Affairs' official information on the documents and procedures needed to issue or renew a passport",
+        "description": "The Ministry of Foreign Affairs' official information site guiding you through the documents and fees needed for a new passport, a renewal, or extending validity. It also provides an online renewal application and guidance on booking an in-person visit at each issuing office.",
+        "hours": "Online 24 hours (in-person hours vary by issuing office)"
+      }
+    }
   },
   {
     "id": "cancer-info-center",
@@ -2537,7 +3670,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국립암센터",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "National Cancer Information Center",
+        "summary": "Cancer prevention, screening, and treatment information and free counseling run by the National Cancer Center",
+        "description": "A cancer-specialist information portal run by the National Cancer Center, providing prevention, screening, and treatment information by cancer type, and offering counseling on cancer-related questions by phone (1577-8899) and online. It also provides psychological and financial support information for cancer survivors and their families.",
+        "hours": "Available anytime (phone counseling on weekdays)"
+      }
+    }
   },
   {
     "id": "kdca-infectious-disease-portal",
@@ -2555,7 +3696,15 @@
     "badges": ["무료", "공공기관"],
     "source": "질병관리청",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea Disease Control and Prevention Agency Infectious Disease Portal",
+        "summary": "An official national portal for checking domestic and international infectious-disease trends and prevention guidelines at a glance",
+        "description": "An infectious-disease specialist portal run by the Korea Disease Control and Prevention Agency, providing domestic and international infectious-disease statistics, the latest trends, and vaccination/prevention guideline information. Crisis alert levels and response guidance are also disclosed in real time during an outbreak.",
+        "hours": "Available anytime"
+      }
+    }
   },
   {
     "id": "redcross-first-aid-education",
@@ -2573,7 +3722,15 @@
     "badges": ["공공기관"],
     "source": "대한적십자사",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korean Red Cross First Aid Education",
+        "summary": "Sign up for Korean Red Cross online/in-person training to learn first aid such as CPR",
+        "description": "A registration site for Korean Red Cross training programs where you can learn first-aid skills such as CPR and how to use an AED (automated external defibrillator). It offers both in-person training at regional training centers and online course options.",
+        "hours": "Available anytime (training schedules vary by region)"
+      }
+    }
   },
   {
     "id": "khepi-health-promotion",
@@ -2591,7 +3748,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국건강증진개발원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea Health Promotion Institute",
+        "summary": "An institute site providing information on national health-promotion policy and healthy-living support programs such as smoking cessation and nutrition",
+        "description": "An institution under the Ministry of Health and Welfare, providing information on health-promotion policies funded by the National Health Promotion Fund, including healthy-living support, smoking-cessation support programs, and the Nutrition Plus program. Information connecting to regional Healthy Living Support Centers is also available.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "klac-pro-se-litigation",
@@ -2609,7 +3774,15 @@
     "badges": ["무료", "공공기관"],
     "source": "대한법률구조공단",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Self-Representation Litigation Support (Korea Legal Aid Corporation)",
+        "summary": "Forms and procedure guidance for people preparing to represent themselves in court without a lawyer",
+        "description": "A self-representation litigation support site run by the Korea Legal Aid Corporation for people who want to handle a lawsuit themselves without hiring a lawyer. It provides litigation forms such as complaints and answer briefs, sample entries, and procedure guidance. You can check whether you're eligible for legal aid by calling the Korea Legal Aid Corporation counseling line (132).",
+        "hours": "Available anytime"
+      }
+    }
   },
   {
     "id": "ekt-electronic-deposit",
@@ -2627,7 +3800,15 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "대법원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Electronic Court Deposit System",
+        "summary": "The Supreme Court's official service for filing a court deposit online without visiting a courthouse",
+        "description": "An online court-deposit filing system run by the Supreme Court that lets you file and check various types of court deposits — such as repayment deposits and enforcement deposits — without visiting a courthouse. After identity verification (such as with a certified digital certificate), you can fill out the application and submit attached documents entirely online.",
+        "hours": "24 hours (some processing follows weekday schedules)"
+      }
+    }
   },
   {
     "id": "koreanbar-lawyer-search",
@@ -2645,7 +3826,15 @@
     "badges": ["무료", "공공기관"],
     "source": "대한변호사협회",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korean Bar Association Find-a-Lawyer",
+        "summary": "A Korean Bar Association service for searching registered lawyers by specialty or region and requesting legal counseling",
+        "description": "An official service for searching lawyers registered with the Korean Bar Association by specialty, region, or name. Alongside lawyer information, it also guides you to the legal-counseling request channel run by the Korean Bar Association.",
+        "hours": "Available anytime"
+      }
+    }
   },
   {
     "id": "efamily-registration-system",
@@ -2663,7 +3852,15 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "대법원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Electronic Family Relations Registration System",
+        "summary": "A Supreme Court service for issuing family-relations certificates and similar documents online",
+        "description": "A Supreme Court-run family-registration computer system that lets you issue certificates - such as a family relations certificate, basic certificate, or marriage relations certificate - online without visiting in person. Some family-relations filings, such as birth, marriage, and divorce, can also be processed online.",
+        "hours": "24 hours (for information lookups)"
+      }
+    }
   },
   {
     "id": "korea1391-child-abuse-prevention",
@@ -2681,7 +3878,15 @@
     "badges": ["무료", "공공기관", "긴급"],
     "source": "아동권리보장원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Child Abuse Prevention (National Center for the Rights of the Child)",
+        "summary": "A National Center for the Rights of the Child site explaining how to report child abuse and providing information on support for affected children",
+        "description": "A child-abuse prevention information site run by the National Center for the Rights of the Child, explaining the signs of child abuse, how to report it, and the reporter-protection system. Child abuse is reported by calling 112 (no area code); this site explains the process that follows a report and the protection system for affected children.",
+        "hours": "Available anytime (the 112 report line is 24 hours)"
+      }
+    }
   },
   {
     "id": "k-apt",
@@ -2699,7 +3904,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부·한국부동산원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "K-apt (Apartment Management Information System)",
+        "summary": "A Ministry of Land, Infrastructure and Transport system for comparing apartment management fees against other complexes and disclosing public-housing management information",
+        "description": "A public-housing management information disclosure system run by the Ministry of Land, Infrastructure and Transport and the Korea Real Estate Board, where you can compare your apartment's management fees against other complexes in your area and check itemized management-fee breakdowns and long-term repair reserve fund balances.",
+        "hours": "Available anytime"
+      }
+    }
   },
   {
     "id": "adc-defect-dispute-mediation",
@@ -2717,7 +3930,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Defect Review and Dispute Mediation Committee",
+        "summary": "A committee under the Ministry of Land, Infrastructure and Transport that mediates disputes over defects in multi-unit housing for free",
+        "description": "A committee under the Ministry of Land, Infrastructure and Transport that reviews whether a defect exists in multi-unit housing and mediates, free of charge, disputes between residents and the developer/builder. You can submit a defect review or dispute mediation application online and check its progress.",
+        "hours": "Available anytime (applications); counseling on weekdays"
+      }
+    }
   },
   {
     "id": "qnet",
@@ -2735,7 +3956,15 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "한국산업인력공단",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Q-net (Human Resources Development Service of Korea)",
+        "summary": "The official site for handling everything from applying for national technical qualification exams to checking your results in one place",
+        "description": "An integrated national technical qualification service run by the Human Resources Development Service of Korea, letting you handle everything online - checking exam schedules, applying, checking your results, and issuing your certificate. Exam information and question guidelines by qualification are also provided.",
+        "hours": "24 hours (for information lookup and applications)"
+      }
+    }
   },
   {
     "id": "career-net",
@@ -2753,7 +3982,15 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "한국직업능력연구원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "CareerNet",
+        "summary": "A free career psychological testing and occupational information service provided by an organization under the Ministry of Education",
+        "description": "A career information network under the Ministry of Education, run by the Korea Research Institute for Vocational Education and Training, offering free career psychological tests for different age groups, from youth to adults. Occupation and major information and career counseling services are also provided.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "onbid",
@@ -2771,7 +4008,15 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "한국자산관리공사",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "OnBid (Korea Asset Management Corporation)",
+        "summary": "An integrated portal for checking public-auction and auction information for national and public-institution assets in one place",
+        "description": "An integrated portal for national and public-institution asset disposal run by the Korea Asset Management Corporation (KAMCO), where you can check bidding information for public auctions of seized property and the lease/sale of state property, and take part online.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "kdic-deposit-insurance",
@@ -2789,7 +4034,15 @@
     "badges": ["무료", "공공기관"],
     "source": "예금보험공사",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea Deposit Insurance Corporation",
+        "summary": "A public insurance institution for checking deposit-protection limits and information on failed financial institutions",
+        "description": "The official site run by the Korea Deposit Insurance Corporation, which explains deposit-protection limits and protected products by financial institution, and provides information on deposit payment procedures for financial institutions that have suspended operations or gone bankrupt.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "seniorro",
@@ -2807,7 +4060,15 @@
     "badges": ["무료", "공공기관", "취약계층지원"],
     "source": "한국노인인력개발원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Senior Job Here (Noin Iljari Yeogi)",
+        "summary": "A senior job and social-activity information portal run by the Korea Senior Human Resources Development Institute",
+        "description": "A senior-job information portal run by the Korea Senior Human Resources Development Institute, providing announcements of regional senior job programs, how to participate, and social-activity program information. You can also find information connecting to senior clubs and senior welfare centers in your area.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "ev-portal",
@@ -2825,7 +4086,15 @@
     "badges": ["무료", "공공기관", "정부지원"],
     "source": "환경부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Zero-Emission Vehicle Integrated Portal",
+        "summary": "A Ministry of Environment integrated service for checking electric/hydrogen vehicle subsidies and finding nearby charging stations",
+        "description": "An integrated information site for zero-emission vehicles (electric and hydrogen) run by the Ministry of Environment, where you can check regional purchase-subsidy availability, the application process, and the locations of charging stations nationwide on a map.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "energy-voucher",
@@ -2843,7 +4112,15 @@
     "badges": ["무료", "공공기관", "취약계층지원"],
     "source": "한국에너지공단",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Energy Voucher",
+        "summary": "A Korea Energy Agency service that helps reduce the cooling/heating cost burden for low-income households",
+        "description": "An application and lookup site run by the Korea Energy Agency for the Energy Voucher program, which guides low-income households, such as basic livelihood recipients, through eligibility requirements, the payment process, and participating merchant information so they can get support for summer cooling and winter heating costs.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "gir-greenhouse-gas",
@@ -2861,7 +4138,15 @@
     "badges": ["무료", "공공기관"],
     "source": "온실가스종합정보센터",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Greenhouse Gas Inventory and Research Center",
+        "summary": "An official body that discloses national greenhouse gas emission/absorption statistics and reduction-policy information",
+        "description": "A site run by the Greenhouse Gas Inventory and Research Center, disclosing national greenhouse gas inventory statistics, information related to the emissions trading scheme, and greenhouse gas reduction policy materials.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "keco",
@@ -2879,7 +4164,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국환경공단",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea Environment Corporation",
+        "summary": "An organization under the Ministry of Environment handling environmental policy/regulation information and support for operating environmental facilities",
+        "description": "The official site of the Korea Environment Corporation, an organization under the Ministry of Environment, providing information on air, water-quality, and waste regulations, support programs for installing and operating environmental facilities, and programs such as the Environmental Product Declaration.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "all-go-kr-lifelong-edu",
@@ -2897,7 +4190,15 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "교육부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "All-for-the-People Lifelong Learning Center (formerly Neulbaeum)",
+        "summary": "The national lifelong-learning portal for searching and applying to lifelong-learning courses nationwide",
+        "description": "The former Ministry of Education national lifelong-learning portal 'Neulbaeum' has been relaunched as the All-for-the-People Lifelong Learning Center, where you can search lifelong-learning courses from local governments and institutions nationwide in one place and apply to take them online.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "cb-credit-bank",
@@ -2915,7 +4216,15 @@
     "badges": ["무료", "공공기관"],
     "source": "국가평생교육진흥원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Academic Credit Bank System (National Institute for Lifelong Education)",
+        "summary": "A National Institute for Lifelong Education service for searching credit-recognized courses and getting guidance on the degree process",
+        "description": "A site run by the National Institute for Lifelong Education for the Academic Credit Bank System, where you can search courses at education/training institutions whose credits are officially recognized, and check the procedures and requirements for registering credits and earning a degree.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "hrd-net",
@@ -2933,7 +4242,15 @@
     "badges": ["무료", "공공기관", "정부지원"],
     "source": "고용노동부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Naeil Baeum Card (Ministry of Employment and Labor)",
+        "summary": "The Ministry of Employment and Labor's vocational training portal for searching and enrolling in government-funded vocational training courses",
+        "description": "A vocational training portal (HRD-Net) run by the Ministry of Employment and Labor, where you can get issued a Naeil Baeum (Tomorrow's Learning) Card and search for and enroll online in vocational training courses funded by the government.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "kmooc",
@@ -2951,7 +4268,15 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "교육부·국가평생교육진흥원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "K-MOOC",
+        "summary": "An online open-course platform where you can take regular university lectures for free",
+        "description": "An online open-course (MOOC) platform run by the Ministry of Education and the National Institute for Lifelong Education, letting you take regular, university-level lectures offered by leading Korean universities for free after signing up.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "edunet",
@@ -2969,7 +4294,15 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "한국교육학술정보원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Edunet - T-Clear",
+        "summary": "A Korea Education and Research Information Service portal providing educational content and learning materials for elementary, middle, and high school",
+        "description": "An educational content portal run by the Korea Education and Research Information Service (KERIS), providing free subject-specific learning materials, digital textbooks, and remote-class content for elementary, middle, and high school.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "worktogether",
@@ -2987,7 +4320,15 @@
     "badges": ["무료", "공공기관", "취약계층지원"],
     "source": "한국장애인고용공단",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "WorkTogether (Employment Portal for People with Disabilities)",
+        "summary": "A Korea Employment Agency for Persons with Disabilities portal providing job listings and employment-support programs for people with disabilities",
+        "description": "A specialized employment portal for people with disabilities, run by the Korea Employment Agency for Persons with Disabilities, providing job-listing search, resume registration, and information on employer-support programs such as employment incentive payments.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "nrc-disability-health",
@@ -3005,7 +4346,15 @@
     "badges": ["무료", "공공기관", "취약계층지원"],
     "source": "국립재활원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "National Rehabilitation Center Disability Health and Rehabilitation Information Portal",
+        "summary": "A National Rehabilitation Center service providing assistive-device and rehabilitation information by type of disability",
+        "description": "A disability health and rehabilitation information portal run by the National Rehabilitation Center, providing recommended assistive-device information by type of disability, along with rehabilitation treatment and health-management information.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "knat-assistive-device",
@@ -3023,7 +4372,15 @@
     "badges": ["무료", "공공기관", "취약계층지원"],
     "source": "보건복지부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea National Assistive Technology Center",
+        "summary": "A Ministry of Health and Welfare center guiding you through the assistive-device distribution program for low-income people with disabilities",
+        "description": "A site run by the Korea National Assistive Technology Center, under the Ministry of Health and Welfare, guiding you through how to apply for the assistive-device distribution program for low-income people with disabilities, and providing information on regional assistive-device centers.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "mohw-disability-policy",
@@ -3041,7 +4398,15 @@
     "badges": ["무료", "공공기관", "취약계층지원"],
     "source": "보건복지부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Ministry of Health and Welfare Disability Policy Guide",
+        "summary": "A Ministry of Health and Welfare page giving an overview of disability-related policies, including disability registration and activity support",
+        "description": "A disability policy guide page provided by the Ministry of Health and Welfare, where you can review, in one place, the disability registration procedure, personal assistance services for people with disabilities, and various welfare programs.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "mnuri-culture-card",
@@ -3059,7 +4424,15 @@
     "badges": ["무료", "공공기관", "취약계층지원"],
     "source": "한국문화예술위원회",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Culture Card (Munhwa Nuri Card)",
+        "summary": "A national culture-welfare card that gives basic livelihood recipients and near-poverty households vouchers for culture, travel, and sports",
+        "description": "The Culture Card site run by Arts Council Korea (ARKO), which loads an annual support amount as card points for basic livelihood recipients and near-poverty households, usable for performances, movies, exhibitions, domestic travel, and sports viewing.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "sports-voucher",
@@ -3077,7 +4450,15 @@
     "badges": ["무료", "공공기관", "취약계층지원"],
     "source": "국민체육진흥공단",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Sports Class Voucher",
+        "summary": "A Korea Sports Promotion Foundation service supporting sports-class tuition fees for low-income children and youth",
+        "description": "The Sports Class Voucher site run by the Korea Sports Promotion Foundation, which supports sports-class tuition costs, in the form of a monthly voucher, for low-income children, youth, and people with disabilities.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "visitkorea-gugurgu",
@@ -3095,7 +4476,15 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "한국관광공사",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Daehanminguk Gugurgu (Every Corner of Korea)",
+        "summary": "A domestic-travel information and tourist-spot recommendation portal run by the Korea Tourism Organization",
+        "description": "A domestic-travel information portal run by the Korea Tourism Organization, introducing regional tourist attractions, festivals, and lodging information, and recommending themed travel courses.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   },
   {
     "id": "arko",
@@ -3113,7 +4502,15 @@
     "badges": ["무료", "공공기관", "정부지원"],
     "source": "한국문화예술위원회",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Arts Council Korea (ARKO) Support Programs",
+        "summary": "A public arts-support organization providing information on creative grants and open calls for artists",
+        "description": "A site run by Arts Council Korea (ARKO), announcing creative grants and various open-call programs for artists and accepting applications online.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "arte",
@@ -3131,7 +4528,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국문화예술교육진흥원",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea Arts and Culture Education Service",
+        "summary": "A public institution providing arts-and-culture education program and instructor-support information",
+        "description": "A site run by the Korea Arts and Culture Education Service, providing information on school and community arts-and-culture education programs and guidance on the arts-instructor support program.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "koelsa",
@@ -3149,7 +4554,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국승강기안전공단",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea Elevator Safety Agency (KOELSA)",
+        "summary": "An elevator-safety specialist agency for checking inspection results and reporting accidents",
+        "description": "The official site of the Korea Elevator Safety Agency (KOELSA), where you can check regular elevator inspection results and report elevator accidents or malfunctions. It also provides elevator-safety education and awareness information.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "cpf-playground-safety",
@@ -3167,7 +4580,15 @@
     "badges": ["무료", "공공기관"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Children's Play Facility Safety Management System",
+        "summary": "A management system under the Ministry of the Interior and Safety for checking playground-equipment safety inspection results",
+        "description": "The Children's Play Facility Safety Management System under the Ministry of the Interior and Safety, where you can look up safety inspection results and installation-inspection history for playground facilities nationwide.",
+        "hours": "Available anytime (for information lookup)"
+      }
+    }
   },
   {
     "id": "kgs-facility-inspection",
@@ -3185,7 +4606,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국가스안전공사",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea Gas Safety Corporation Facility Inspection Booking",
+        "summary": "A Korea Gas Safety Corporation service for booking regular gas-facility inspections and safety checks online",
+        "description": "A site run by the Korea Gas Safety Corporation where you can book regular inspections and safety checks for gas facilities in homes and shops online. This is a separate booking channel for scheduled inspections, distinct from the gas emergency report line (1544-4500).",
+        "hours": "Available anytime (booking is online)"
+      }
+    }
   },
   {
     "id": "kesco-electric-inspection",
@@ -3203,7 +4632,15 @@
     "badges": ["무료", "공공기관"],
     "source": "한국전기안전공사",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Korea Electrical Safety Corporation Electrical Facility Inspection Booking",
+        "summary": "A Korea Electrical Safety Corporation service for booking regular electrical-facility inspections for homes and shops online",
+        "description": "A site run by the Korea Electrical Safety Corporation where you can book regular electrical-facility inspections for homes and shops online. This is a separate booking channel for scheduled inspections, distinct from the electrical emergency dispatch line (1588-7500).",
+        "hours": "Available anytime (booking is online)"
+      }
+    }
   },
   {
     "id": "safemap",
@@ -3221,6 +4658,14 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-20",
+    "i18n": {
+      "en": {
+        "name": "Everyday Safety Map",
+        "summary": "A Ministry of the Interior and Safety service showing safety information across 6 major categories - disaster, public safety, traffic, health, and more - on a map",
+        "description": "The Everyday Safety Map run by the Ministry of the Interior and Safety, displaying safety information across 6 major categories - disaster, public safety, traffic, health, everyday life, and facilities - on a regional map, so you can see your neighborhood's safety picture at a glance.",
+        "hours": "24 hours (for information lookup)"
+      }
+    }
   }
 ]

@@ -15,6 +15,7 @@ import {
   getCategoryBySlug,
   getServiceBySlug,
   getServicesByCategory,
+  resolveCategoryForLocale,
   resolveServiceForLocale,
 } from '@/lib/services';
 import { getSiteUrl } from '@/lib/site-url';
@@ -46,22 +47,25 @@ export async function generateMetadata({
   const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
   const service = await getServiceBySlug(slug);
   if (!service) return {};
-  const hasEnTranslation = Boolean(service.i18n?.en);
+  // 공식 출처 번역만 색인/hreflang 대상 — 사람이 옮긴(공식 아님) 번역은 페이지는 있지만
+  // noindex 유지 + hreflang 미제공(크롤러에 noindex 페이지를 정식 대응 언어로 알리지 않기 위함).
+  const isOfficialTranslation = Boolean(service.i18n?.en?.official);
   const resolved = resolveServiceForLocale(service, lang);
   const ogImage = resolved.thumbnail || resolved.images[0];
   const category = getCategoryBySlug(resolved.categorySlug);
+  const resolvedCategory = category ? resolveCategoryForLocale(category, lang) : undefined;
   return {
     title: resolved.name,
     description: resolved.summary,
     keywords: [
       resolved.name,
       ...resolved.tags,
-      ...(category ? [category.name] : []),
+      ...(resolvedCategory ? [resolvedCategory.name] : []),
       '여기다',
     ],
     alternates: {
       canonical: localeHref(lang, `/service/${slug}`),
-      ...(hasEnTranslation && {
+      ...(isOfficialTranslation && {
         languages: {
           ko: `/service/${slug}`,
           en: `/en/service/${slug}`,
@@ -69,6 +73,11 @@ export async function generateMetadata({
         },
       }),
     },
+    // 부모(app/[lang]/layout.tsx)가 lang !== 'ko'를 전부 noindex 처리하지만,
+    // 공식 출처 번역이 있는 페이지는 이 값으로 덮어써 색인을 허용한다(robots는 세그먼트 간
+    // 얕은 병합이라 자식이 정의하면 부모 값을 완전히 대체함 — Next.js 공식 문서
+    // "Merging > Overwriting fields" 참고). robots.ts도 같은 slug만 개별 allow 처리한다.
+    ...(lang === 'en' && isOfficialTranslation && { robots: { index: true, follow: true } }),
     openGraph: {
       title: resolved.name,
       description: resolved.summary,
@@ -100,6 +109,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
     .map((item) => resolveServiceForLocale(item, lang));
   const category = getCategoryBySlug(service.categorySlug);
   const relatedGuides = getGuidesByServiceSlug(service.slug);
+  const resolvedCategory = category ? resolveCategoryForLocale(category, lang) : undefined;
 
   const siteUrl = getSiteUrl();
   const localizedSiteUrl = `${siteUrl}${localeHref(lang, '/')}`;
@@ -113,7 +123,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         description: resolvedService.summary,
         url: pageUrl,
         inLanguage: dict.site.htmlLang,
-        serviceType: category?.name,
+        serviceType: resolvedCategory?.name,
         areaServed: {
           '@type': 'Country',
           name: 'KR',
@@ -133,11 +143,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
       },
       breadcrumbList([
         { name: dict.home, url: localizedSiteUrl },
-        ...(category
+        ...(resolvedCategory
           ? [
               {
-                name: category.name,
-                url: `${siteUrl}${localeHref(lang, `/category/${category.slug}`)}`,
+                name: resolvedCategory.name,
+                url: `${siteUrl}${localeHref(lang, `/category/${resolvedCategory.slug}`)}`,
               },
             ]
           : []),
@@ -152,7 +162,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       {DISCLAIMER_CATEGORIES.includes(service.categorySlug) && <Disclaimer />}
       <ServiceDetail
         service={resolvedService}
-        category={category}
+        category={resolvedCategory}
         lang={lang}
         dict={dict.service}
       />
