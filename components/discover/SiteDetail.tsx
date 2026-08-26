@@ -8,8 +8,8 @@ import { buttonVariants } from '@/components/ui/button';
 import { ShareButton } from '@/components/ShareButton';
 import { getDiscoverCategoryIcon } from '@/lib/discover-icons';
 import { trackOutboundClick } from '@/lib/track';
-import { deleteSiteThumbnail } from '@/app/(main)/admin/sites/actions';
-import { SiteThumbnailUploadForm } from '@/app/(main)/admin/sites/SiteThumbnailUploadForm';
+import { deleteSiteThumbnail } from '@/app/[lang]/(main)/admin/sites/actions';
+import { SiteThumbnailUploadForm } from '@/app/[lang]/(main)/admin/sites/SiteThumbnailUploadForm';
 import type { Site, SiteCategory } from '@/types/site';
 
 const IS_LOCAL_DEV = process.env.NODE_ENV === 'development';

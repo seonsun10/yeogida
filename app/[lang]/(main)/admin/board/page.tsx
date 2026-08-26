@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { getAllBoardPostsForAdmin } from '@/lib/board';
 import { BOARD_LABELS } from '@/lib/board-constants';
-import { deleteBoardPostAction, resolveBoardPost } from '@/app/(main)/admin/actions';
+import { deleteBoardPostAction, resolveBoardPost } from '@/app/[lang]/(main)/admin/actions';
 import type { BoardPost } from '@/types/board';
 
 export const dynamic = 'force-dynamic';

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { getAllCategories, getAllServices } from '@/lib/services';
 
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_SUBMIT_EMAIL ?? '';
@@ -65,9 +66,9 @@ export default async function AboutPage() {
         <p>
           여기다는 개인이 운영하는 프로젝트입니다. 오래되었거나 잘못된 정보를
           발견하셨거나, 새로 등록하면 좋을 서비스를 알고 계시다면{' '}
-          <a href="/submit" className="underline underline-offset-2">
+          <Link href="/submit" className="underline underline-offset-2">
             서비스 제보 페이지
-          </a>
+          </Link>
           나 아래 이메일로 알려주세요. 서비스명·링크·간단한 설명을 함께 보내주시면
           검토 후 등록하며, 등록 여부와 무관하게 모든 제보를 확인합니다.
         </p>

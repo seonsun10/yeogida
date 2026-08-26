@@ -4,7 +4,7 @@
 # app
 
 ## Purpose
-Next.js App Router 루트. 두 개의 route group으로 나뉜다 — `(main)/`은 기존 공공서비스 디렉토리(홈/카테고리/서비스 상세/제보/약관/관리자), `(discover)/`은 민간·일반 사이트 모음(`/discover`, 완전히 다른 헤더/푸터/테마). route group은 URL 세그먼트에 나타나지 않으므로 기존 URL(`/`, `/category/...` 등)은 그대로다. `layout.tsx`(루트)는 두 그룹이 공유하는 얇은 shell(html/body, 폰트, GTM/GA/AdSense 스크립트)만 담당하고, Header/Footer/JSON-LD는 각 그룹의 `layout.tsx`에 있다. SEO 파일(`sitemap.ts`, `robots.ts`)은 route group 밖, 앱 루트에 그대로 둔다(Next.js 규약).
+Next.js App Router 루트. `(main)/`(기존 공공서비스 디렉토리 — 홈/카테고리/서비스 상세/제보/약관/관리자)은 영어 지원(i18n) 도입을 위해 `[lang]/` 동적 세그먼트 아래로 이동했고(`app/[lang]/(main)/...`), `(discover)/`(민간·일반 사이트 모음, `/discover`, 완전히 다른 헤더/푸터/테마)는 이번 i18n 범위에서 제외되어 그대로 `app/(discover)/`에 남아 있다. `proxy.ts`(루트, Next.js 16 명칭 — 구 middleware)가 접두사 없는 요청을 내부적으로 `/ko`로 rewrite하고 `/en/...`은 `[lang]` 세그먼트가 그대로 처리하므로, 브라우저 주소창의 기존 한국어 URL(`/`, `/category/...` 등)은 전혀 바뀌지 않는다. 자세한 배경/단계별 계획은 `I18N-PLAN.md` 참고. `layout.tsx`(앱 최상위 루트)는 두 트리가 공유하는 얇은 shell(html/body, 폰트, GTM/GA/AdSense 스크립트)만 담당하고, `app/[lang]/layout.tsx`는 유효하지 않은 `lang` 값을 404 처리하는 역할만 한다. Header/Footer/JSON-LD는 각 그룹의 `layout.tsx`에 있다. SEO 파일(`sitemap.ts`, `robots.ts`)은 `[lang]`/route group 밖, 앱 루트에 그대로 둔다(Next.js 규약).
 
 ## Key Files
 | File | Description |
@@ -18,7 +18,7 @@ Next.js App Router 루트. 두 개의 route group으로 나뉜다 — `(main)/`�
 ## Subdirectories
 | Directory | Purpose |
 |-----------|---------|
-| `(main)/` | 기존 공공서비스 디렉토리 전체 — 홈, `category/`, `service/`, `admin/`(서비스+사이트+신고+게시판 관리 겸용), `guides/`, `about/`, `submit/`, `board/`(서비스 추가 요청·자유게시판·신고, DB 기반), `privacy/`, `terms/`. 각 하위 폴더의 `AGENTS.md` 참고 |
+| `[lang]/(main)/` | 기존 공공서비스 디렉토리 전체 — 홈, `category/`, `service/`, `admin/`(서비스+사이트+신고+게시판 관리 겸용), `guides/`, `about/`, `submit/`, `board/`(서비스 추가 요청·자유게시판·신고, DB 기반), `privacy/`, `terms/`. `[lang]/layout.tsx`가 `lang`을 `ko`/`en`으로 검증(`generateStaticParams`)하지만 실제 다국어 콘텐츠는 아직 없음(`I18N-PLAN.md` 1단계 라우팅 마이그레이션만 완료된 상태). 각 하위 폴더의 `AGENTS.md` 참고 |
 | `(discover)/` | 민간/일반 사이트 모음 섹션. `layout.tsx`가 `DiscoverHeader`/`DiscoverFooter`와 discover 전용 metadata(제목 템플릿 등)를 정의하고, `data-theme="discover"`로 테마를 스코프한다. `discover/page.tsx`(홈), `discover/[categorySlug]/page.tsx`, `discover/site/[slug]/page.tsx`, `discover/submit/page.tsx`(사이트 제보, `(main)/submit`과 동일하게 `NEXT_PUBLIC_SUBMIT_EMAIL` mailto 방식), `discover/board/`(사이트 추가 요청·자유게시판·신고, `(main)/board`와 같은 컴포넌트/DB 테이블을 쓰되 `site: 'discover'`로 구분), `discover/about/page.tsx`, `discover/privacy/page.tsx`, `discover/terms/page.tsx`(`(main)` 쪽과 내용은 유사하지만 두 섹션 간 상호 링크를 걸지 않기로 한 결정에 따라 완전히 별도 페이지로 존재) |
 
 ## For AI Agents
@@ -27,7 +27,7 @@ Next.js App Router 루트. 두 개의 route group으로 나뉜다 — `(main)/`�
 - 새 공개 라우트를 추가할 때 `(main)/layout.tsx` 또는 `(discover)/layout.tsx`가 이미 각자의 Header/Footer를 감싸므로 각 `page.tsx`는 콘텐츠만 채우면 된다. 두 그룹 중 어디에 넣을지 헷갈리면: 공공기관 콘텐츠는 `(main)`, 민간/일반 사이트 콘텐츠는 `(discover)`.
 - **route group 간 이동은 풀 페이지 리로드를 유발한다** (Next.js 공식 동작, `(main)`과 `(discover)`가 서로 다른 root-ish 레이아웃이기 때문). 지금은 두 섹션 간 상호 링크를 걸지 않기로 했으므로 문제 없지만, 나중에 링크를 추가한다면 이 점을 인지하고 있을 것. `components/board/*` 공유 컴포넌트는 이 원칙 때문에 `basePath` prop(`/board` 또는 `/discover/board`)을 반드시 받아 그 안에서만 링크를 만든다 — 하드코딩된 절대경로를 넣으면 다른 섹션으로 새 나간다. (예외: `/admin/board`는 관리자 전용 내부 도구라 두 섹션 상세페이지로 가는 링크를 `target="_blank"`로 둔다 — 공개 페이지 간 상호 링크 금지 원칙과 무관.)
 - 동적 라우트(`[slug]`)는 Next.js 16 규약에 따라 `params`가 `Promise`이므로 반드시 `await params`로 풀어야 한다.
-- `@/app/(main)/...`, `@/app/(discover)/...`처럼 route group을 포함한 절대 경로로 import해야 한다 — 괄호가 있다고 경로가 달라지지 않으니 주의(예: `components/ServiceDetail.tsx`가 `@/app/(main)/admin/actions`를 import).
+- `@/app/[lang]/(main)/...`, `@/app/(discover)/...`처럼 세그먼트/route group을 포함한 절대 경로로 import해야 한다 — 괄호·대괄호가 있다고 경로가 달라지지 않으니 주의(예: `components/ServiceDetail.tsx`가 `@/app/[lang]/(main)/admin/actions`를 import).
 - `privacy/`, `terms/`의 "최종 수정일"은 실제 내용 변경 시에만 갱신한다.
 
 ### Testing Requirements

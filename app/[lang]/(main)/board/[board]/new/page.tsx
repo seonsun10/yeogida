@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BoardPostForm } from '@/components/board/BoardPostForm';
 import { BOARD_LABELS, isBoardType } from '@/lib/board-constants';
-import { createMainBoardPost } from '@/app/(main)/board/actions';
+import { createMainBoardPost } from '@/app/[lang]/(main)/board/actions';
 
 type PageProps = {
   params: Promise<{ board: string }>;
