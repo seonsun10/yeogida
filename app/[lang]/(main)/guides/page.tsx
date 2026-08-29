@@ -2,26 +2,35 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight } from 'lucide-react';
 import { getCategoryStyle } from '@/lib/category-style';
+import { getDictionary } from '@/lib/dictionaries';
+import { getAllGuides, resolveGuideForLocale, type Guide } from '@/lib/guides';
 import { DEFAULT_LOCALE, isLocale, localeHref } from '@/lib/i18n';
-import { getAllCategories } from '@/lib/services';
-import { getAllGuides, type Guide } from '@/lib/guides';
+import { getAllCategories, resolveCategoryForLocale } from '@/lib/services';
 
-export const metadata: Metadata = {
-  title: '가이드',
-  description: '상황별로 어떤 서비스를 먼저 써야 하는지 정리한 여기다의 실전 가이드',
-  alternates: {
-    canonical: '/guides',
-  },
+type GuidesPageProps = {
+  params: Promise<{ lang: string }>;
 };
 
-export default async function GuidesPage({
+export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
+}: GuidesPageProps): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
-  const guides = getAllGuides();
+  const dict = await getDictionary(lang);
+  return {
+    title: dict.guides.metaTitle,
+    description: dict.guides.metaDescription,
+    alternates: {
+      canonical: localeHref(lang, '/guides'),
+    },
+  };
+}
+
+export default async function GuidesPage({ params }: GuidesPageProps) {
+  const { lang: rawLang } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
+  const dict = await getDictionary(lang);
+  const guides = getAllGuides().map((guide) => resolveGuideForLocale(guide, lang));
 
   const guidesByCategory = new Map<string, Guide[]>();
   for (const guide of guides) {
@@ -32,7 +41,7 @@ export default async function GuidesPage({
 
   const sections = getAllCategories()
     .map((category) => ({
-      category,
+      category: resolveCategoryForLocale(category, lang),
       guides: guidesByCategory.get(category.slug) ?? [],
     }))
     .filter((section) => section.guides.length > 0);
@@ -40,18 +49,15 @@ export default async function GuidesPage({
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-4 py-12">
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-bold">가이드</h1>
-        <p className="text-muted-foreground">
-          급한 상황에서 어떤 서비스부터 확인해야 하는지, 여기다가 등록한 서비스를
-          엮어서 순서대로 정리했습니다.
-        </p>
+        <h1 className="text-2xl font-bold">{dict.guides.heading}</h1>
+        <p className="text-muted-foreground">{dict.guides.description}</p>
         <p className="text-xs text-muted-foreground/70">
-          총 {guides.length}개 가이드
+          {dict.guides.totalCountTemplate.replace('{count}', String(guides.length))}
         </p>
       </div>
 
       <nav
-        aria-label="카테고리 바로가기"
+        aria-label={dict.guides.categoryNavLabel}
         className="flex flex-wrap gap-2 border-b pb-6"
       >
         {sections.map(({ category, guides: categoryGuides }) => (
@@ -87,7 +93,10 @@ export default async function GuidesPage({
                 </span>
                 <h2 className="text-base font-semibold">{category.name}</h2>
                 <span className="text-xs text-muted-foreground/70">
-                  {categoryGuides.length}개
+                  {dict.guides.countTemplate.replace(
+                    '{count}',
+                    String(categoryGuides.length),
+                  )}
                 </span>
               </div>
 

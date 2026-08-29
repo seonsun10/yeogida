@@ -32,6 +32,10 @@
   "search": {
     "koOnlyNotice": ""
   },
+  "filterBar": {
+    "freeOnly": "무료만",
+    "hours24Only": "24시간만"
+  },
   "service": {
     "hours": "운영시간",
     "cost": "비용",
@@ -41,6 +45,29 @@
     "visit": "바로가기",
     "languageSupport": "다국어 지원",
     "unofficialTranslationNotice": "",
-    "koreanOnlyContactNotice": ""
+    "koreanOnlyContactNotice": "",
+    "relatedGuidesHeading": "이 서비스가 등장하는 가이드",
+    "relatedServicesHeading": "같은 카테고리의 다른 서비스"
+  },
+  "homePage": {
+    "srHeading": "검색해도 잘 안 나오는, 진짜 도움되는 서비스 — 여기다",
+    "categoriesHeading": "카테고리별로 둘러보기",
+    "categoriesDescription": "건강부터 교통까지, 여기다가 정리한 서비스를 카테고리별로 한눈에 살펴보세요.",
+    "viewGuide": "자세히 보기 →",
+    "prevGuide": "이전 가이드",
+    "nextGuide": "다음 가이드",
+    "goToGuideTemplate": "{index}번째 가이드로 이동"
+  },
+  "guides": {
+    "metaTitle": "가이드",
+    "metaDescription": "상황별로 어떤 서비스를 먼저 써야 하는지 정리한 여기다의 실전 가이드",
+    "heading": "가이드",
+    "description": "급한 상황에서 어떤 서비스부터 확인해야 하는지, 여기다가 등록한 서비스를 엮어서 순서대로 정리했습니다.",
+    "totalCountTemplate": "총 {count}개 가이드",
+    "categoryNavLabel": "카테고리 바로가기",
+    "countTemplate": "{count}개",
+    "backToList": "가이드 목록",
+    "tableOfContents": "목차",
+    "publishedOnTemplate": "작성일 {date} · 여기다"
   }
 }

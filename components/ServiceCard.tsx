@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { getCategoryStyle } from '@/lib/category-style';
 import { DEFAULT_LOCALE, localeHref, type Locale } from '@/lib/i18n';
+import { getServiceBadgeName } from '@/lib/service-badges';
 import { getCategoryBySlug, resolveCategoryForLocale } from '@/lib/services';
 import type { Service } from '@/types/service';
 
@@ -48,7 +49,7 @@ export function ServiceCard({
             )}
             {service.badges.map((badge) => (
               <Badge key={badge} variant="secondary">
-                {badge}
+                {getServiceBadgeName(badge, lang)}
               </Badge>
             ))}
           </div>

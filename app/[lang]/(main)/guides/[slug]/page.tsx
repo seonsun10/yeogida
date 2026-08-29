@@ -1,14 +1,26 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ChevronLeft } from 'lucide-react';
 import { AdSlot } from '@/components/AdSlot';
 import { ServiceCard } from '@/components/ServiceCard';
 import { DEFAULT_CATEGORY_COLOR, getCategoryStyle } from '@/lib/category-style';
-import { getAllGuides, getGuideBySlug, type GuideBlock } from '@/lib/guides';
+import { getDictionary } from '@/lib/dictionaries';
+import {
+  getAllGuides,
+  getGuideBySlug,
+  getGuideTranslation,
+  resolveGuideForLocale,
+  type GuideBlock,
+} from '@/lib/guides';
 import { DEFAULT_LOCALE, isLocale, localeHref, type Locale } from '@/lib/i18n';
-import { getCategoryBySlug, getServiceBySlug } from '@/lib/services';
+import {
+  getCategoryBySlug,
+  getServiceBySlug,
+  resolveCategoryForLocale,
+  resolveServiceForLocale,
+} from '@/lib/services';
 import { cn } from '@/lib/utils';
 import type { Service } from '@/types/service';
 
@@ -17,22 +29,31 @@ type GuidePageProps = {
 };
 
 export function generateStaticParams() {
-  return getAllGuides().map((guide) => ({ slug: guide.slug }));
+  const guides = getAllGuides();
+  // 번역 없는 가이드는 /en/guides/[slug]를 프리렌더하지 않는다 — service 페이지와 동일한 패턴.
+  return [
+    ...guides.map((guide) => ({ lang: 'ko', slug: guide.slug })),
+    ...guides
+      .filter((guide) => getGuideTranslation(guide.slug))
+      .map((guide) => ({ lang: 'en', slug: guide.slug })),
+  ];
 }
 
 export async function generateMetadata({
   params,
 }: GuidePageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { lang: rawLang, slug } = await params;
+  const lang = isLocale(rawLang) ? rawLang : DEFAULT_LOCALE;
   const guide = getGuideBySlug(slug);
   if (!guide) return {};
+  const resolved = resolveGuideForLocale(guide, lang);
   return {
-    title: guide.title,
-    description: guide.summary,
+    title: resolved.title,
+    description: resolved.summary,
     alternates: {
-      canonical: `/guides/${slug}`,
+      canonical: localeHref(lang, `/guides/${slug}`),
     },
-    openGraph: { title: guide.title, description: guide.summary },
+    openGraph: { title: resolved.title, description: resolved.summary },
   };
 }
 
@@ -42,24 +63,35 @@ export default async function GuidePage({ params }: GuidePageProps) {
   const guide = getGuideBySlug(slug);
   if (!guide) notFound();
 
-  const category = getCategoryBySlug(guide.categorySlug);
+  // 번역 없는 가이드는 /en에서 얇은 한국어 그대로 노출 대신 원문 URL로 보낸다.
+  if (lang === 'en' && !getGuideTranslation(slug)) {
+    redirect(localeHref(DEFAULT_LOCALE, `/guides/${slug}`));
+  }
+
+  const resolvedGuide = resolveGuideForLocale(guide, lang);
+  const dict = await getDictionary(lang);
+
+  const rawCategory = getCategoryBySlug(guide.categorySlug);
+  const category = rawCategory ? resolveCategoryForLocale(rawCategory, lang) : undefined;
   const style = getCategoryStyle(guide.categorySlug);
   const Icon = style.icon;
   const accentColor = category?.color ?? DEFAULT_CATEGORY_COLOR;
 
-  const headingIndexes = guide.blocks
+  const headingIndexes = resolvedGuide.blocks
     .map((block, index) => (block.type === 'heading' ? index : -1))
     .filter((index) => index !== -1);
 
   const resolvedBlocks = await Promise.all(
-    guide.blocks.map(async (block) => {
+    resolvedGuide.blocks.map(async (block) => {
       if (block.type !== 'services') return block;
       const services = await Promise.all(
         block.slugs.map((serviceSlug) => getServiceBySlug(serviceSlug)),
       );
       return {
         ...block,
-        services: services.filter((service): service is Service => !!service),
+        services: services
+          .filter((service): service is Service => !!service)
+          .map((service) => resolveServiceForLocale(service, lang)),
       };
     }),
   );
@@ -73,7 +105,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
         className="inline-flex w-fit items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >
         <ChevronLeft className="size-4" />
-        가이드 목록
+        {dict.guides.backToList}
       </Link>
 
       <div className="flex flex-col gap-4 border-b pb-8">
@@ -85,24 +117,26 @@ export default async function GuidePage({ params }: GuidePageProps) {
             {category.name}
           </span>
         )}
-        <h1 className="text-2xl font-bold text-balance">{guide.title}</h1>
+        <h1 className="text-2xl font-bold text-balance">{resolvedGuide.title}</h1>
         <p className="text-base leading-relaxed text-muted-foreground">
-          {guide.summary}
+          {resolvedGuide.summary}
         </p>
         <p className="text-xs text-muted-foreground/70">
-          작성일 {guide.publishedAt} · 여기다
+          {dict.guides.publishedOnTemplate.replace('{date}', resolvedGuide.publishedAt)}
         </p>
       </div>
 
       {headingIndexes.length >= 3 && (
         <nav
-          aria-label="목차"
+          aria-label={dict.guides.tableOfContents}
           className="flex flex-col gap-2 rounded-lg border bg-muted/40 p-4"
         >
-          <p className="text-xs font-semibold text-muted-foreground">목차</p>
+          <p className="text-xs font-semibold text-muted-foreground">
+            {dict.guides.tableOfContents}
+          </p>
           <ol className="flex flex-col gap-1.5">
             {headingIndexes.map((blockIndex, order) => {
-              const block = guide.blocks[blockIndex];
+              const block = resolvedGuide.blocks[blockIndex];
               if (block.type !== 'heading') return null;
               return (
                 <li key={blockIndex} className="flex items-start gap-2 text-sm">

@@ -114,7 +114,7 @@ export default async function CategoryPage({
         <p className="text-sm text-muted-foreground">{dict.search.koOnlyNotice}</p>
       )}
 
-      <FilterBar />
+      <FilterBar dict={dict.filterBar} />
 
       {services.length > 0 ? (
         <ServiceGrid

@@ -32,6 +32,10 @@
   "search": {
     "koOnlyNotice": "Search currently only covers Korean-language content."
   },
+  "filterBar": {
+    "freeOnly": "Free only",
+    "hours24Only": "24/7 only"
+  },
   "service": {
     "hours": "Hours",
     "cost": "Cost",
@@ -41,6 +45,29 @@
     "visit": "Visit site",
     "languageSupport": "Language support",
     "unofficialTranslationNotice": "This English text is a plain translation by Yeogida, not official material from the operating agency. Please verify important details on the original Korean page.",
-    "koreanOnlyContactNotice": "No confirmed English-language contact channel was found for this service — phone or in-person contact may only be handled in Korean."
+    "koreanOnlyContactNotice": "No confirmed English-language contact channel was found for this service — phone or in-person contact may only be handled in Korean.",
+    "relatedGuidesHeading": "Guides that mention this service",
+    "relatedServicesHeading": "Other services in this category"
+  },
+  "homePage": {
+    "srHeading": "Practical services you can't find by searching — Yeogida",
+    "categoriesHeading": "Browse by category",
+    "categoriesDescription": "From health to transportation, browse every service Yeogida curates, organized by category.",
+    "viewGuide": "Read guide →",
+    "prevGuide": "Previous guide",
+    "nextGuide": "Next guide",
+    "goToGuideTemplate": "Go to guide {index}"
+  },
+  "guides": {
+    "metaTitle": "Guides",
+    "metaDescription": "Yeogida's practical guides on which service to use first, organized by situation",
+    "heading": "Guides",
+    "description": "Guides on which service to check first in urgent situations, built from the services Yeogida has curated, laid out step by step.",
+    "totalCountTemplate": "{count} guides in total",
+    "categoryNavLabel": "Jump to category",
+    "countTemplate": "{count}",
+    "backToList": "All guides",
+    "tableOfContents": "Contents",
+    "publishedOnTemplate": "Published {date} · Yeogida"
   }
 }

@@ -10,14 +10,23 @@ import type { Category } from '@/types/service';
 
 const SETTLE_DELAY_MS = 120;
 
+type HeroGuideCarouselDict = {
+  viewGuide: string;
+  prevGuide: string;
+  nextGuide: string;
+  goToGuideTemplate: string;
+};
+
 export function HeroGuideCarousel({
   guides,
   categories,
   lang,
+  dict,
 }: {
   guides: Guide[];
   categories: Category[];
   lang: Locale;
+  dict: HeroGuideCarouselDict;
 }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const settleTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -106,7 +115,7 @@ export function HeroGuideCarousel({
                   {guide.summary}
                 </p>
                 <span className="relative mt-2 inline-flex h-9 w-fit items-center gap-1 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors duration-200 hover:bg-primary/80">
-                  자세히 보기 →
+                  {dict.viewGuide}
                 </span>
               </Link>
             );
@@ -115,7 +124,7 @@ export function HeroGuideCarousel({
 
         <button
           type="button"
-          aria-label="이전 가이드"
+          aria-label={dict.prevGuide}
           onClick={() => scrollToExt(activeExtIndex - 1)}
           className="absolute top-1/2 left-0 hidden size-10 -translate-y-1/2 items-center justify-center rounded-full border bg-background/90 backdrop-blur transition-colors duration-200 hover:bg-accent sm:flex"
         >
@@ -123,7 +132,7 @@ export function HeroGuideCarousel({
         </button>
         <button
           type="button"
-          aria-label="다음 가이드"
+          aria-label={dict.nextGuide}
           onClick={() => scrollToExt(activeExtIndex + 1)}
           className="absolute top-1/2 right-0 hidden size-10 -translate-y-1/2 items-center justify-center rounded-full border bg-background/90 backdrop-blur transition-colors duration-200 hover:bg-accent sm:flex"
         >
@@ -136,7 +145,7 @@ export function HeroGuideCarousel({
           <button
             key={guide.slug}
             type="button"
-            aria-label={`${index + 1}번째 가이드로 이동`}
+            aria-label={dict.goToGuideTemplate.replace('{index}', String(index + 1))}
             aria-current={index === realIndex}
             onClick={() => scrollToExt(index + 1)}
             className={`h-1.5 rounded-full transition-all duration-200 ${

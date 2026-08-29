@@ -2,11 +2,12 @@
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
+import type { Dictionary } from '@/lib/dictionaries';
 
 const FREE_ONLY_PARAM = 'free';
 const HOURS24_PARAM = 'hours24';
 
-export function FilterBar() {
+export function FilterBar({ dict }: { dict: Dictionary['filterBar'] }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -34,7 +35,7 @@ export function FilterBar() {
         aria-pressed={freeOnly}
         className="rounded-4xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
       >
-        <Badge variant={freeOnly ? 'default' : 'outline'}>무료만</Badge>
+        <Badge variant={freeOnly ? 'default' : 'outline'}>{dict.freeOnly}</Badge>
       </button>
       <button
         type="button"
@@ -42,7 +43,7 @@ export function FilterBar() {
         aria-pressed={hours24Only}
         className="rounded-4xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
       >
-        <Badge variant={hours24Only ? 'default' : 'outline'}>24시간만</Badge>
+        <Badge variant={hours24Only ? 'default' : 'outline'}>{dict.hours24Only}</Badge>
       </button>
     </div>
   );

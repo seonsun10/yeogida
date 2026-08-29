@@ -7,7 +7,7 @@ import { Disclaimer } from '@/components/Disclaimer';
 import { ServiceCard } from '@/components/ServiceCard';
 import { ServiceDetail } from '@/components/ServiceDetail';
 import { getDictionary } from '@/lib/dictionaries';
-import { getGuidesByServiceSlug } from '@/lib/guides';
+import { getGuidesByServiceSlug, resolveGuideForLocale } from '@/lib/guides';
 import { DEFAULT_LOCALE, isLocale, localeHref } from '@/lib/i18n';
 import { breadcrumbList, jsonLdScriptProps } from '@/lib/json-ld';
 import {
@@ -108,7 +108,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
     .slice(0, RELATED_SERVICE_LIMIT)
     .map((item) => resolveServiceForLocale(item, lang));
   const category = getCategoryBySlug(service.categorySlug);
-  const relatedGuides = getGuidesByServiceSlug(service.slug);
+  const relatedGuides = getGuidesByServiceSlug(service.slug).map((guide) =>
+    resolveGuideForLocale(guide, lang),
+  );
   const resolvedCategory = category ? resolveCategoryForLocale(category, lang) : undefined;
 
   const siteUrl = getSiteUrl();
@@ -170,7 +172,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       {relatedGuides.length > 0 && (
         <div className="flex flex-col gap-3 border-t pt-6">
           <h2 className="text-sm font-medium text-muted-foreground">
-            이 서비스가 등장하는 가이드
+            {dict.service.relatedGuidesHeading}
           </h2>
           <div className="flex flex-col gap-2">
             {relatedGuides.map((guide) => (
@@ -197,7 +199,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       {relatedServices.length > 0 && (
         <div className="flex flex-col gap-3 border-t pt-6">
           <h2 className="text-sm font-medium text-muted-foreground">
-            같은 카테고리의 다른 서비스
+            {dict.service.relatedServicesHeading}
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {relatedServices.map((related) => (

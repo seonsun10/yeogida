@@ -52,7 +52,7 @@
 
 ### 3단계에서 처리한 것
 
-- **`Service` 타입 확장** (`types/service.ts`): `supportLanguages?: { language, evidenceUrl }[]`(둘 다 필수 — 근거 URL 없는 항목은 타입 레벨에서부터 만들 수 없게 막음, [[절차 관련 내용 지어내기 금지]] 적용) / `i18n?: { en?: { name, summary, description, hours? } }`(`name`/`summary`/`description`은 필수 — 셋 중 하나라도 비면 얇은 중복 페이지가 생기므로). `tags`/`badges`는 의도적으로 번역 대상에서 제외(검색·필터가 한국어 인덱스 전용이라 번역해도 못 씀).
+- **`Service` 타입 확장** (`types/service.ts`): `supportLanguages?: { language, evidenceUrl }[]`(둘 다 필수 — 근거 URL 없는 항목은 타입 레벨에서부터 만들 수 없게 막음, [[절차 관련 내용 지어내기 금지]] 적용) / `i18n?: { en?: { name, summary, description, hours? } }`(`name`/`summary`/`description`은 필수 — 셋 중 하나라도 비면 얇은 중복 페이지가 생기므로). `tags`/`badges`는 (3단계 당시) 의도적으로 번역 대상에서 제외했었음(검색·필터가 한국어 인덱스 전용이라 번역해도 못 씀). **단, 이후 사용자 요청으로 `badges`만 표시용 번역을 추가함** — `lib/service-badges.ts`의 `getServiceBadgeName(badge, lang)`이 9개 뱃지 값(24시간/공공기관/긴급/다국어지원/무료/민원발급/의료비지원/정부지원/취약계층지원)을 `getServiceLanguageName`과 동일한 패턴으로 화면 표시만 번역하고, 필터링(`lib/services.ts`의 `filterServices`)은 여전히 원본 한국어 값으로 매칭한다 — 데이터/필터 로직은 그대로 두고 `ServiceCard`/`ServiceDetail`에서만 번역된 라벨을 렌더링. `FilterBar`("무료만"/"24시간만")도 `dictionaries/*.json`의 `filterBar` 키로 옮겨 lang 인지하게 함. `tags`는 여전히 번역 대상 아님.
 - **언어 표시명 헬퍼** (`lib/service-languages.ts`): `getServiceLanguageName(code, lang)` — ISO 639-1 코드 → ko/en 표시명. 목록에 없는 코드는 추측 대신 코드를 그대로 반환.
 - **로케일별 표시용 서비스 해석** (`lib/services.ts`의 `resolveServiceForLocale(service, lang)`): en이고 `i18n.en`이 있을 때만 name/summary/description/hours를 대체, 없으면 원본(한국어) 그대로. `service/[slug]/page.tsx`가 `ServiceDetail`·`generateMetadata`·JSON-LD·관련 서비스 카드에 전부 이 함수의 결과를 넘기도록 정리해서 번역 분기가 한 곳에만 있다.
 - **`/en/service/[slug]`의 "얇은 중복 페이지 방지" 실제 적용**:

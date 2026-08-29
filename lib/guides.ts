@@ -1,3 +1,6 @@
+import { guideTranslationsEn } from '@/lib/guide-i18n';
+import type { Locale } from '@/lib/i18n';
+
 export type GuideBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'heading'; text: string }
@@ -10,6 +13,18 @@ export type Guide = {
   summary: string;
   categorySlug: string;
   publishedAt: string;
+  blocks: GuideBlock[];
+};
+
+/**
+ * 사람이 옮긴 영문 번역. 원문은 여기다가 직접 쓴 편집 콘텐츠라 서비스 번역과 달리
+ * "공식 자료" 개념이 없다 — 절차·수치(전화번호, 기한, 비율 등)는 원문과 동일하게
+ * 옮기고 표현만 자연스러운 영어로 다듬는다([[절차 관련 내용 지어내기 금지]]).
+ * 분량이 커서 슬러그별로 lib/guide-i18n/*.ts에 나눠 관리한다.
+ */
+export type GuideTranslation = {
+  title: string;
+  summary: string;
   blocks: GuideBlock[];
 };
 
@@ -1962,4 +1977,22 @@ export function getGuidesByServiceSlug(serviceSlug: string): Guide[] {
       (block) => block.type === 'services' && block.slugs.includes(serviceSlug),
     ),
   );
+}
+
+export function getGuideTranslation(slug: string): GuideTranslation | undefined {
+  return guideTranslationsEn[slug];
+}
+
+/** 로케일에 맞는 표시용 가이드 객체를 만든다 — resolveServiceForLocale과 동일한 패턴. */
+export function resolveGuideForLocale(guide: Guide, lang: Locale): Guide {
+  if (lang !== 'en') return guide;
+  const translation = guideTranslationsEn[guide.slug];
+  if (!translation) return guide;
+
+  return {
+    ...guide,
+    title: translation.title,
+    summary: translation.summary,
+    blocks: translation.blocks,
+  };
 }

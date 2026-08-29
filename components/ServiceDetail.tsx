@@ -8,6 +8,7 @@ import { ShareButton } from '@/components/ShareButton';
 import { getCategoryStyle } from '@/lib/category-style';
 import type { Dictionary } from '@/lib/dictionaries';
 import type { Locale } from '@/lib/i18n';
+import { getServiceBadgeName } from '@/lib/service-badges';
 import { getServiceLanguageName } from '@/lib/service-languages';
 import { trackOutboundClick } from '@/lib/track';
 import { deleteServiceThumbnail } from '@/app/[lang]/(main)/admin/actions';
@@ -48,7 +49,7 @@ export function ServiceDetail({
           )}
           {service.badges.map((badge) => (
             <Badge key={badge} variant="secondary">
-              {badge}
+              {getServiceBadgeName(badge, lang)}
             </Badge>
           ))}
         </div>
