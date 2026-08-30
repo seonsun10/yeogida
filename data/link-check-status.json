@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-08-23T12:04:37.655Z",
+  "checkedAt": "2026-08-30T12:06:12.343Z",
   "total": 178,
-  "ok": 92,
-  "needsCheck": 83,
-  "broken": 3
+  "ok": 161,
+  "needsCheck": 15,
+  "broken": 2
 }
