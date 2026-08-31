@@ -1,14 +1,9 @@
 import { CategoryNav } from '@/components/CategoryNav';
 import { HeroGuideCarousel } from '@/components/HeroGuideCarousel';
-import { SearchBar } from '@/components/SearchBar';
 import { getDictionary } from '@/lib/dictionaries';
 import { getAllGuides, resolveGuideForLocale } from '@/lib/guides';
 import { DEFAULT_LOCALE, isLocale } from '@/lib/i18n';
-import {
-  getAllCategories,
-  getAllServices,
-  resolveCategoryForLocale,
-} from '@/lib/services';
+import { getAllCategories, resolveCategoryForLocale } from '@/lib/services';
 
 const HERO_GUIDE_COUNT = 8;
 
@@ -27,28 +22,16 @@ export default async function Home({
   const guides = getAllGuides()
     .slice(0, HERO_GUIDE_COUNT)
     .map((guide) => resolveGuideForLocale(guide, lang));
-  const services = await getAllServices();
 
   return (
     <div className="flex flex-1 flex-col">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 pt-10 sm:pt-14">
-        <div className="flex flex-col gap-2 text-center">
-          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            {dict.homePage.heading}
-          </h1>
-          <p className="mx-auto max-w-2xl text-sm text-muted-foreground sm:text-base">
-            {dict.homePage.intro}
-          </p>
-        </div>
-        {lang === 'ko' ? (
-          <div className="mx-auto w-full max-w-xl">
-            <SearchBar services={services} />
-          </div>
-        ) : (
-          <p className="text-center text-sm text-muted-foreground">
-            {dict.search.koOnlyNotice}
-          </p>
-        )}
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 pt-10 text-center sm:pt-14">
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+          {dict.homePage.heading}
+        </h1>
+        <p className="mx-auto max-w-2xl text-sm text-muted-foreground sm:text-base">
+          {dict.homePage.intro}
+        </p>
       </div>
 
       <section className="border-b bg-gradient-to-b from-primary/10 via-primary/5 to-transparent">
