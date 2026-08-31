@@ -25,14 +25,7 @@ export default async function Home({
 
   return (
     <div className="flex flex-1 flex-col">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 pt-10 text-center sm:pt-14">
-        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-          {dict.homePage.heading}
-        </h1>
-        <p className="mx-auto max-w-2xl text-sm text-muted-foreground sm:text-base">
-          {dict.homePage.intro}
-        </p>
-      </div>
+      <h1 className="sr-only">{dict.homePage.heading}</h1>
 
       <section className="border-b bg-gradient-to-b from-primary/10 via-primary/5 to-transparent">
         <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:py-12">
