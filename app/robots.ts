@@ -18,7 +18,9 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
       allow: ['/', ...translatedServiceAllows],
       // /en은 아직 대부분 한국어 원문을 그대로 노출하는 중간 단계라 색인에서 제외한다.
       // 콘텐츠 번역이 채워지는 서비스부터 위 allow 목록에 페이지 단위로 추가한다(I18N-PLAN.md 참고).
-      disallow: ['/api/', '/admin', '/en', '/en/'],
+      // /discover는 이미 잘 알려진 민간 사이트를 짧게 소개하는 섹션이라 애드센스 심사에서
+      // "가치 없는 콘텐츠"로 오인될 위험이 있어, 콘텐츠를 더 보강할 때까지 색인에서 제외한다.
+      disallow: ['/api/', '/admin', '/en', '/en/', '/discover', '/discover/'],
     },
     sitemap: `${siteUrl}/sitemap.xml`,
   };

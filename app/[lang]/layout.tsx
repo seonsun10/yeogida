@@ -45,7 +45,7 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(siteUrl),
     title: {
-      default: '여기다',
+      default: '여기다 | 몰라서 못 쓰는 생활 서비스 모음',
       template: '%s | 여기다',
     },
     description: dict.site.description,
@@ -58,12 +58,12 @@ export async function generateMetadata({
       locale: dict.site.ogLocale,
       url: lang === DEFAULT_LOCALE ? siteUrl : `${siteUrl}/${lang}`,
       siteName: '여기다',
-      title: '여기다',
+      title: '여기다 | 몰라서 못 쓰는 생활 서비스 모음',
       description: dict.site.description,
     },
     twitter: {
       card: 'summary',
-      title: '여기다',
+      title: '여기다 | 몰라서 못 쓰는 생활 서비스 모음',
       description: dict.site.description,
     },
     // /en 콘텐츠 상당수가 아직 한국어 원문이라, 색인 대상은 v1에서는 ko만 허용한다.

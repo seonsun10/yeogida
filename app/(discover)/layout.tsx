@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/discover',
   },
+  // 이미 잘 알려진 민간 사이트를 짧게 소개하는 섹션이라 애드센스 심사에서
+  // "가치 없는 콘텐츠"로 오인될 위험이 있어, 콘텐츠를 더 보강할 때까지 검색 노출에서 제외한다.
+  // robots.txt의 /discover disallow와 함께 이중으로 막아둔다.
+  robots: { index: false, follow: true },
   openGraph: {
     type: 'website',
     locale: 'ko_KR',

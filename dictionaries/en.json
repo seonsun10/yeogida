@@ -11,6 +11,7 @@
     "categories": "Categories",
     "menu": "Menu",
     "openMenu": "Open menu",
+    "tagline": "Practical services you didn't know existed",
     "discoverLinkFull": "Browse private/general site directory",
     "discoverLinkShort": "Site directory"
   },
@@ -50,7 +51,8 @@
     "relatedServicesHeading": "Other services in this category"
   },
   "homePage": {
-    "srHeading": "Practical services you can't find by searching — Yeogida",
+    "heading": "Practical help you didn't know existed",
+    "intro": "Yeogida curates lesser-known but genuinely useful government and public services — health, legal & admin, family, consumer protection, emergencies, and more — organized by category.",
     "categoriesHeading": "Browse by category",
     "categoriesDescription": "From health to transportation, browse every service Yeogida curates, organized by category.",
     "viewGuide": "Read guide →",

@@ -30,6 +30,9 @@ export function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               여기<span className="text-primary">다</span>
             </span>
           </Link>
+          <span className="hidden shrink-0 truncate text-xs text-muted-foreground md:inline">
+            {dict.nav.tagline}
+          </span>
           <Link
             href="/discover"
             className="inline-flex shrink-0 items-center gap-1 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground outline-none transition-colors hover:border-primary/40 hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
