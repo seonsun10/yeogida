@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { AdSlot } from '@/components/AdSlot';
@@ -111,18 +112,38 @@ export default async function CategoryPage({
       {lang === 'ko' ? (
         <SearchBar services={categoryServices} />
       ) : (
-        <p className="text-sm text-muted-foreground">{dict.search.koOnlyNotice}</p>
+        <p className="text-muted-foreground text-sm">
+          {dict.search.koOnlyNotice}
+        </p>
       )}
 
-      <FilterBar dict={dict.filterBar} />
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <FilterBar dict={dict.filterBar} />
+        <p
+          className="text-muted-foreground text-sm"
+          role="status"
+          aria-live="polite"
+        >
+          {dict.categoryPage.serviceCountTemplate.replace(
+            '{count}',
+            String(services.length),
+          )}
+        </p>
+      </div>
 
       {services.length > 0 ? (
         <ServiceGrid
           key={`${free ?? ''}-${hours24 ?? ''}`}
           storageKey={`service-grid:${slug}:${free ?? ''}:${hours24 ?? ''}`}
+          paginationLabels={dict.pagination}
           cards={services.map((service, index) => (
             <Fragment key={service.id}>
-              <ServiceCard service={service} hideCategoryBadge lang={lang} />
+              <ServiceCard
+                service={service}
+                hideCategoryBadge
+                lang={lang}
+                dict={dict.service}
+              />
               {(index + 1) % IN_FEED_AD_INTERVAL === 0 && (
                 <AdSlot className="min-h-[120px] rounded-md border border-dashed sm:col-span-2 lg:col-span-3" />
               )}
@@ -130,9 +151,19 @@ export default async function CategoryPage({
           ))}
         />
       ) : (
-        <p className="text-muted-foreground">
-          조건에 맞는 서비스가 아직 없어요.
-        </p>
+        <div className="border-t py-8">
+          <p className="text-muted-foreground">
+            {dict.categoryPage.emptyFiltered}
+          </p>
+          {(free === '1' || hours24 === '1') && (
+            <Link
+              href={localeHref(lang, `/category/${slug}`)}
+              className="text-primary focus-visible:ring-ring mt-3 inline-flex min-h-11 items-center font-medium underline-offset-4 hover:underline focus-visible:rounded-sm focus-visible:ring-2"
+            >
+              {dict.categoryPage.clearFilters}
+            </Link>
+          )}
+        </div>
       )}
     </div>
   );

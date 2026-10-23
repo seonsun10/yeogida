@@ -7,6 +7,7 @@ import { AdSlot } from '@/components/AdSlot';
 import { ServiceCard } from '@/components/ServiceCard';
 import { DEFAULT_CATEGORY_COLOR, getCategoryStyle } from '@/lib/category-style';
 import { getDictionary } from '@/lib/dictionaries';
+import type { Dictionary } from '@/lib/dictionaries';
 import {
   getAllGuides,
   getGuideBySlug,
@@ -170,7 +171,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
           >
             {section.map(({ block, index }) => (
               <Fragment key={index}>
-                {renderBlock(block, index, headingIndexes.indexOf(index), accentColor, lang)}
+                {renderBlock(block, index, headingIndexes.indexOf(index), accentColor, lang, dict.service)}
               </Fragment>
             ))}
           </section>
@@ -209,6 +210,7 @@ function renderBlock(
   headingOrder: number,
   accentColor: string,
   lang: Locale,
+  serviceDict: Dictionary['service'],
 ) {
   switch (block.type) {
     case 'heading':
@@ -263,7 +265,7 @@ function renderBlock(
           )}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {block.services.map((service) => (
-              <ServiceCard key={service.id} service={service} lang={lang} />
+              <ServiceCard key={service.id} service={service} lang={lang} dict={serviceDict} />
             ))}
           </div>
         </div>

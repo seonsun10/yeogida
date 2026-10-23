@@ -36,6 +36,13 @@
     "freeOnly": "Free only",
     "hours24Only": "24/7 only"
   },
+  "pagination": {
+    "navigation": "Service list pages",
+    "previous": "Previous",
+    "next": "Next",
+    "pageLabelTemplate": "Page {page}",
+    "statusTemplate": "{current} of {total} pages"
+  },
   "service": {
     "hours": "Hours",
     "cost": "Cost",
@@ -50,13 +57,25 @@
     "relatedServicesHeading": "Other services in this category"
   },
   "homePage": {
-    "heading": "Practical help you didn't know existed",
+    "heading": "Find a public service for your situation",
+    "intro": "Browse practical government and public services for health, housing, legal help, welfare, and everyday life.",
+    "searchLabel": "Search services",
+    "totalServicesTemplate": "{count} services listed with their operating agencies.",
+    "serviceCountTemplate": "{count} services",
     "categoriesHeading": "Browse by category",
     "categoriesDescription": "From health to transportation, browse every service Yeogida curates, organized by category.",
+    "guidesHeading": "Guides for everyday situations",
+    "guidesDescription": "Learn when and how to use services that may help.",
+    "viewAllGuides": "Browse all guides",
     "viewGuide": "Read guide →",
     "prevGuide": "Previous guide",
     "nextGuide": "Next guide",
     "goToGuideTemplate": "Go to guide {index}"
+  },
+  "categoryPage": {
+    "serviceCountTemplate": "{count} services",
+    "emptyFiltered": "No services match these filters.",
+    "clearFilters": "Clear filters"
   },
   "guides": {
     "metaTitle": "Guides",

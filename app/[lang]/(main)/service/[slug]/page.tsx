@@ -22,7 +22,7 @@ import { getSiteUrl } from '@/lib/site-url';
 
 const RELATED_SERVICE_LIMIT = 3;
 
-const DISCLAIMER_CATEGORIES = ['health', 'legal-admin'];
+const DISCLAIMER_CATEGORIES = ['health', 'legal-admin', 'rights-remedy'];
 
 type ServicePageProps = {
   params: Promise<{ lang: string; slug: string }>;
@@ -53,7 +53,9 @@ export async function generateMetadata({
   const resolved = resolveServiceForLocale(service, lang);
   const ogImage = resolved.thumbnail || resolved.images[0];
   const category = getCategoryBySlug(resolved.categorySlug);
-  const resolvedCategory = category ? resolveCategoryForLocale(category, lang) : undefined;
+  const resolvedCategory = category
+    ? resolveCategoryForLocale(category, lang)
+    : undefined;
   return {
     title: resolved.name,
     description: resolved.summary,
@@ -77,7 +79,8 @@ export async function generateMetadata({
     // 공식 출처 번역이 있는 페이지는 이 값으로 덮어써 색인을 허용한다(robots는 세그먼트 간
     // 얕은 병합이라 자식이 정의하면 부모 값을 완전히 대체함 — Next.js 공식 문서
     // "Merging > Overwriting fields" 참고). robots.ts도 같은 slug만 개별 allow 처리한다.
-    ...(lang === 'en' && isOfficialTranslation && { robots: { index: true, follow: true } }),
+    ...(lang === 'en' &&
+      isOfficialTranslation && { robots: { index: true, follow: true } }),
     openGraph: {
       title: resolved.name,
       description: resolved.summary,
@@ -111,7 +114,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const relatedGuides = getGuidesByServiceSlug(service.slug).map((guide) =>
     resolveGuideForLocale(guide, lang),
   );
-  const resolvedCategory = category ? resolveCategoryForLocale(category, lang) : undefined;
+  const resolvedCategory = category
+    ? resolveCategoryForLocale(category, lang)
+    : undefined;
 
   const siteUrl = getSiteUrl();
   const localizedSiteUrl = `${siteUrl}${localeHref(lang, '/')}`;
@@ -171,7 +176,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       {relatedGuides.length > 0 && (
         <div className="flex flex-col gap-3 border-t pt-6">
-          <h2 className="text-sm font-medium text-muted-foreground">
+          <h2 className="text-muted-foreground text-sm font-medium">
             {dict.service.relatedGuidesHeading}
           </h2>
           <div className="flex flex-col gap-2">
@@ -179,17 +184,17 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <Link
                 key={guide.slug}
                 href={localeHref(lang, `/guides/${guide.slug}`)}
-                className="group flex items-start justify-between gap-4 rounded-lg border p-4 outline-none transition-colors hover:bg-muted/40 focus-visible:ring-3 focus-visible:ring-ring/50"
+                className="group hover:bg-muted/40 focus-visible:ring-ring/50 flex items-start justify-between gap-4 rounded-lg border p-4 transition-colors outline-none focus-visible:ring-3"
               >
                 <div className="flex flex-col gap-1">
-                  <h3 className="text-sm leading-snug font-medium text-foreground">
+                  <h3 className="text-foreground text-sm leading-snug font-medium">
                     {guide.title}
                   </h3>
-                  <p className="line-clamp-1 text-sm text-muted-foreground">
+                  <p className="text-muted-foreground line-clamp-1 text-sm">
                     {guide.summary}
                   </p>
                 </div>
-                <ArrowRight className="mt-1 size-3.5 shrink-0 text-muted-foreground/70 transition-transform group-hover:translate-x-0.5" />
+                <ArrowRight className="text-muted-foreground/70 mt-1 size-3.5 shrink-0 transition-transform group-hover:translate-x-0.5" />
               </Link>
             ))}
           </div>
@@ -198,12 +203,17 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       {relatedServices.length > 0 && (
         <div className="flex flex-col gap-3 border-t pt-6">
-          <h2 className="text-sm font-medium text-muted-foreground">
+          <h2 className="text-muted-foreground text-sm font-medium">
             {dict.service.relatedServicesHeading}
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {relatedServices.map((related) => (
-              <ServiceCard key={related.id} service={related} lang={lang} />
+              <ServiceCard
+                key={related.id}
+                service={related}
+                lang={lang}
+                dict={dict.service}
+              />
             ))}
           </div>
         </div>

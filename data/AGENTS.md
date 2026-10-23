@@ -9,7 +9,7 @@
 ## Key Files
 | File | Description |
 |------|-------------|
-| `categories.json` | 카테고리 정의 배열 — `Category` 타입(`slug`, `name`, `description`, `color`). `color`는 카드/헤더 카테고리 메뉴의 상단 강조색(hex, `#RRGGBB`)이며 `/admin/categories`에서 수정 가능. 현재 12개: health, legal-admin, family, consumer, emergency, life-admin-tips, housing, employment-startup, transport, pet, tax-finance, senior-welfare |
+| `categories.json` | 카테고리 정의 배열 — `Category` 타입(`slug`, `name`, `description`, `color`). `color`는 카드/헤더 카테고리 메뉴의 상단 강조색(hex, `#RRGGBB`)이며 `/admin/categories`에서 수정 가능. 현재 23개: health, transport, emergency, pet, legal-admin, insurance, life-admin-tips, tax-finance, consumer, senior-welfare, family, housing, employment-startup, env-energy, lifelong-edu, disability-welfare, culture-leisure, safety-check, immigration, agriculture-rural, public-data, veterans, rights-remedy |
 | `services.json` | 서비스 콘텐츠 배열 — `Service` 타입 전체 필드. `/admin`에서 등록·수정 시 이 파일이 직접 갱신된다 |
 | `link-check-status.json` | `scripts/check-links.mjs`가 매 실행 후 자동 생성/갱신하는 요약 상태(`checkedAt`/`total`/`ok`/`needsCheck`/`broken`) — 사람이 손으로 편집하지 않음. 사이트 푸터의 "마지막 전체 링크 점검" 표시에 쓰인다(`lib/link-check-status.ts`) |
 

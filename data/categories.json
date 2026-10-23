@@ -214,5 +214,65 @@
         "description": "Services providing everyday safety inspections and information — elevators, playground equipment, gas, and electricity."
       }
     }
+  },
+  {
+    "slug": "immigration",
+    "name": "외국인/출입국",
+    "description": "출입국·체류 민원, 다국어 생활 안내, 사회통합 교육 등 국내 체류 외국인과 이민 희망자를 위한 공공 서비스",
+    "color": "#0ea5e9",
+    "i18n": {
+      "en": {
+        "name": "Immigration & Support for Foreign Residents",
+        "description": "Public services for foreign residents and people preparing to live in Korea, including immigration matters, multilingual guidance, and integration programs."
+      }
+    }
+  },
+  {
+    "slug": "agriculture-rural",
+    "name": "농업/귀농·귀촌·귀어",
+    "description": "농업경영 지원, 귀농·귀촌·귀어 준비, 농지·농업교육 등 농촌 정착과 영농을 돕는 공공 서비스",
+    "color": "#84cc16",
+    "i18n": {
+      "en": {
+        "name": "Agriculture & Rural Settlement",
+        "description": "Public services for farming and rural life, including agricultural programs, farmland, training, and preparation for moving to rural or fishing communities."
+      }
+    }
+  },
+  {
+    "slug": "public-data",
+    "name": "공공데이터/통계",
+    "description": "정부·공공기관 데이터, 국가통계, 지역별 통계를 검색하고 활용할 수 있는 공공 포털",
+    "color": "#6366f1",
+    "i18n": {
+      "en": {
+        "name": "Public Data & Statistics",
+        "description": "Public portals for finding and using government data, national statistics, and regional statistics."
+      }
+    }
+  },
+  {
+    "slug": "veterans",
+    "name": "보훈/국가유공자",
+    "description": "국가유공자·보훈가족·제대군인의 예우, 지원, 국립묘지 신청 등에 필요한 공공 서비스",
+    "color": "#b45309",
+    "i18n": {
+      "en": {
+        "name": "Veterans & National Merit",
+        "description": "Public services for veterans, their families, and former service members, including benefits, employment support, and national cemetery applications."
+      }
+    }
+  },
+  {
+    "slug": "rights-remedy",
+    "name": "인권/권리구제",
+    "description": "인권침해·차별 상담과 진정, 군 인권 진정, 행정기관 처분에 대한 행정심판 등 권리구제 창구",
+    "color": "#f97316",
+    "i18n": {
+      "en": {
+        "name": "Human Rights & Remedies",
+        "description": "Official channels for human-rights counseling and petitions, military rights complaints, and administrative appeals."
+      }
+    }
   }
 ]

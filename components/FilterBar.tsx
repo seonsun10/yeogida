@@ -1,7 +1,6 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { Badge } from '@/components/ui/badge';
 import type { Dictionary } from '@/lib/dictionaries';
 
 const FREE_ONLY_PARAM = 'free';
@@ -33,17 +32,17 @@ export function FilterBar({ dict }: { dict: Dictionary['filterBar'] }) {
         type="button"
         onClick={() => toggleParam(FREE_ONLY_PARAM, freeOnly)}
         aria-pressed={freeOnly}
-        className="rounded-4xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+        className={`focus-visible:ring-ring inline-flex min-h-11 items-center rounded-lg border px-3 text-sm transition-colors outline-none focus-visible:ring-2 ${freeOnly ? 'border-primary bg-primary text-primary-foreground' : 'hover:bg-muted'}`}
       >
-        <Badge variant={freeOnly ? 'default' : 'outline'}>{dict.freeOnly}</Badge>
+        {dict.freeOnly}
       </button>
       <button
         type="button"
         onClick={() => toggleParam(HOURS24_PARAM, hours24Only)}
         aria-pressed={hours24Only}
-        className="rounded-4xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+        className={`focus-visible:ring-ring inline-flex min-h-11 items-center rounded-lg border px-3 text-sm transition-colors outline-none focus-visible:ring-2 ${hours24Only ? 'border-primary bg-primary text-primary-foreground' : 'hover:bg-muted'}`}
       >
-        <Badge variant={hours24Only ? 'default' : 'outline'}>{dict.hours24Only}</Badge>
+        {dict.hours24Only}
       </button>
     </div>
   );

@@ -10,9 +10,16 @@ import type { Service } from '@/types/service';
 
 const VISIBLE_RESULTS = 6;
 
-export function SearchBar({ services }: { services: Service[] }) {
+export function SearchBar({
+  services,
+  label,
+}: {
+  services: Service[];
+  label?: string;
+}) {
   const router = useRouter();
   const listboxId = useId();
+  const inputId = useId();
   const [query, setQuery] = useState('');
   const [activeIndex, setActiveIndex] = useState(-1);
 
@@ -36,18 +43,19 @@ export function SearchBar({ services }: { services: Service[] }) {
   }, [activeOptionId]);
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
-    if (!isOpen || results.length === 0) return;
+    if (!isOpen) return;
 
-    if (event.key === 'ArrowDown') {
+    if (event.key === 'ArrowDown' && results.length > 0) {
       event.preventDefault();
       setActiveIndex((index) => (index + 1) % results.length);
-    } else if (event.key === 'ArrowUp') {
+    } else if (event.key === 'ArrowUp' && results.length > 0) {
       event.preventDefault();
       setActiveIndex((index) => (index <= 0 ? results.length - 1 : index - 1));
     } else if (event.key === 'Enter') {
-      if (activeIndex >= 0) {
+      const selectedIndex = activeIndex >= 0 ? activeIndex : 0;
+      if (results[selectedIndex]) {
         event.preventDefault();
-        router.push(`/service/${results[activeIndex].slug}`);
+        router.push(`/service/${results[selectedIndex].slug}`);
       }
     } else if (event.key === 'Escape') {
       setQuery('');
@@ -56,26 +64,34 @@ export function SearchBar({ services }: { services: Service[] }) {
   }
 
   return (
-    <div className="relative w-full max-w-xl">
-      <SearchIcon className="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-muted-foreground" />
-      <Input
-        type="search"
-        placeholder="찾는 서비스를 검색해보세요 (예: 야간 소아상담, 임대차 분쟁)"
-        value={query}
-        onChange={(event) => {
-          setQuery(event.target.value);
-          setActiveIndex(-1);
-        }}
-        onKeyDown={handleKeyDown}
-        aria-label="서비스 검색"
-        role="combobox"
-        aria-expanded={isOpen}
-        aria-controls={listboxId}
-        aria-autocomplete="list"
-        aria-activedescendant={activeOptionId}
-        autoComplete="off"
-        className="h-13 rounded-full border-none bg-card pl-11 text-base shadow-lg shadow-primary/10 focus-visible:ring-3"
-      />
+    <div className="relative z-10 w-full max-w-2xl">
+      {label && (
+        <label htmlFor={inputId} className="mb-2 block text-sm font-medium">
+          {label}
+        </label>
+      )}
+      <div className="relative">
+        <SearchIcon className="text-muted-foreground pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2" />
+        <Input
+          id={inputId}
+          type="search"
+          placeholder="예: 야간 약국, 법률 상담, 월세 지원"
+          value={query}
+          onChange={(event) => {
+            setQuery(event.target.value);
+            setActiveIndex(-1);
+          }}
+          onKeyDown={handleKeyDown}
+          aria-label={label ?? '서비스 검색'}
+          role="combobox"
+          aria-expanded={isOpen}
+          aria-controls={results.length > 0 ? listboxId : undefined}
+          aria-autocomplete="list"
+          aria-activedescendant={activeOptionId}
+          autoComplete="off"
+          className="bg-background h-12 rounded-lg border pl-11 text-base shadow-none focus-visible:ring-2"
+        />
+      </div>
       <p role="status" className="sr-only">
         {isOpen &&
           (results.length > 0
@@ -83,7 +99,7 @@ export function SearchBar({ services }: { services: Service[] }) {
             : '검색 결과가 없어요')}
       </p>
       {isOpen && (
-        <div className="absolute z-10 mt-2 w-full rounded-xl border bg-popover shadow-lg">
+        <div className="bg-popover absolute mt-2 w-full rounded-lg border shadow-md">
           {results.length > 0 ? (
             <ul
               id={listboxId}
@@ -100,12 +116,12 @@ export function SearchBar({ services }: { services: Service[] }) {
                     aria-selected={index === activeIndex}
                     href={`/service/${service.slug}`}
                     tabIndex={-1}
-                    className={`block px-4 py-3 hover:bg-accent ${
+                    className={`hover:bg-accent block px-4 py-3 ${
                       index === activeIndex ? 'bg-accent' : ''
                     }`}
                   >
                     <p className="text-sm font-medium">{service.name}</p>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-muted-foreground text-xs">
                       {service.summary}
                     </p>
                   </Link>
@@ -113,7 +129,7 @@ export function SearchBar({ services }: { services: Service[] }) {
               ))}
             </ul>
           ) : (
-            <p className="px-4 py-3 text-sm text-muted-foreground">
+            <p className="text-muted-foreground px-4 py-3 text-sm">
               검색 결과가 없어요. 다른 검색어로 시도해보세요.
             </p>
           )}

@@ -40,7 +40,7 @@
     "badges": ["24시간", "무료"],
     "source": "중앙응급의료센터",
     "affiliate": false,
-    "lastVerified": "2026-07-25",
+    "lastVerified": "2026-10-23",
     "images": [],
     "i18n": {
       "en": {
@@ -66,7 +66,7 @@
     "badges": ["무료"],
     "source": "대한법률구조공단(법무부 산하)",
     "affiliate": false,
-    "lastVerified": "2026-07-25",
+    "lastVerified": "2026-10-23",
     "images": [],
     "i18n": {
       "en": {
@@ -639,7 +639,7 @@
     "badges": ["무료", "공공기관"],
     "source": "대한법률구조공단",
     "affiliate": false,
-    "lastVerified": "2026-07-27",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Housing Lease Dispute Mediation Committee",
@@ -665,7 +665,7 @@
     "badges": ["무료", "취약계층지원"],
     "source": "법무부",
     "affiliate": false,
-    "lastVerified": "2026-07-27",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Village Lawyer / Legal Home Doctor",
@@ -691,7 +691,7 @@
     "badges": ["무료", "공공기관"],
     "source": "근로복지공단",
     "affiliate": false,
-    "lastVerified": "2026-07-27",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Korea Workers' Compensation and Welfare Service (1588-0075)",
@@ -763,13 +763,13 @@
     "description": "학업을 중단했거나 학교 밖에 있는 만 9~24세 청소년이 스스로 진로를 설계하도록 돕는 여성가족부 지원 사업이다. 상담 지원, 검정고시 학습 지원, 직업체험 및 취업 지원 프로그램을 지역별 꿈드림센터에서 운영하며, 전국 220여 개 센터 정보를 홈페이지에서 확인할 수 있다. 이용을 원하면 가까운 센터에 문의하거나 청소년상담 1388로 연결해 안내받을 수 있다. 센터별 운영시간은 다르므로 사전 확인이 필요하다.",
     "categorySlug": "family",
     "tags": ["학교밖청소년", "꿈드림", "검정고시", "진로지원"],
-    "url": "https://www.kyci.or.kr/userSite/dreamLocalManagement/list.asp?basicNum=1",
+    "url": "https://www.1388.go.kr/occ/YTOSP_SC_OID_01",
     "hours": "센터별 상이(문의 1388)",
     "cost": "free",
     "badges": ["무료", "공공기관"],
     "source": "여성가족부",
     "affiliate": false,
-    "lastVerified": "2026-07-31",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Kkumdream Out-of-School Youth Support Center",
@@ -867,13 +867,13 @@
     "description": "본인 동의 없는 개인정보 수집·이용, 해킹으로 인한 정보 유출 등 개인정보 침해 피해를 겪었을 때 신고·상담할 수 있는 한국인터넷진흥원(KISA) 서비스다. 국번 없이 118로 전화하거나 홈페이지에서 온라인으로 신고서를 접수할 수 있으며, 접수된 사안은 법 위반 여부를 검토해 시정 조치와 결과를 통보해준다. 개인정보 분쟁조정이 필요한 경우 개인정보보호위원회 분쟁조정위원회(1833-6972)로 연계 안내한다. 상담은 평일 운영된다.",
     "categorySlug": "consumer",
     "tags": ["개인정보침해", "118", "정보유출신고", "KISA"],
-    "url": "https://privacy.kisa.or.kr",
+    "url": "https://privacy.kisa.or.kr/main.do",
     "hours": "평일 09:00~18:00",
     "cost": "free",
     "badges": ["무료", "공공기관"],
     "source": "한국인터넷진흥원(KISA)",
     "affiliate": false,
-    "lastVerified": "2026-07-27",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Personal Information Infringement Report Center (118)",
@@ -1169,7 +1169,7 @@
     "badges": ["무료", "공공기관"],
     "source": "중앙응급의료센터",
     "affiliate": false,
-    "lastVerified": "2026-07-27",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Moonlight Children's Hospital Finder",
@@ -1215,13 +1215,13 @@
     "description": "여러 금융회사에 진 빚을 갚기 힘든 사람이 소송이나 개인회생 절차 없이 상환기간 연장, 분할상환, 이자율 조정, 채무감면 등을 통해 상환 부담을 줄이도록 돕는 공적 채무조정기구다. 전화(1600-5500) 상담 또는 홈페이지 온라인 신청으로 개인워크아웃, 사전채무조정(신속채무조정) 등 본인 상황에 맞는 제도를 안내받을 수 있다. 전국 서민금융통합지원센터에서 방문 상담도 가능하다. 상담과 채무조정 신청 자체는 무료다.",
     "categorySlug": "legal-admin",
     "tags": ["채무조정", "개인워크아웃", "신용회복", "서민금융"],
-    "url": "https://www.ccrs.or.kr",
+    "url": "https://edu.ccrs.or.kr/main.do",
     "hours": "평일 09:00~18:00",
     "cost": "free",
     "badges": ["무료", "공공기관"],
     "source": "신용회복위원회",
     "affiliate": false,
-    "lastVerified": "2026-07-27",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Credit Counseling and Recovery Service (1600-5500)",
@@ -1247,7 +1247,7 @@
     "badges": ["무료", "공공기관"],
     "source": "서민금융진흥원",
     "affiliate": false,
-    "lastVerified": "2026-07-27",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Korea Inclusive Finance Agency",
@@ -1637,7 +1637,7 @@
     "badges": ["무료", "공공기관"],
     "source": "국토교통부·한국토지주택공사",
     "affiliate": false,
-    "lastVerified": "2026-07-27",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "My Home Portal",
@@ -1969,13 +1969,13 @@
     "description": "신한, 국민, 삼성, 현대, 롯데, 하나, NH 등 주요 카드사에 흩어져 있는 카드 포인트를 본인인증 한 번으로 모두 조회하고, 원하는 포인트를 본인 명의 계좌로 즉시 입금받을 수 있는 여신금융협회 운영 서비스다. 공동인증서, PASS 앱, 카카오페이, 휴대폰 인증 등으로 본인 확인 후 이용할 수 있으며, 조회부터 현금화까지 전 과정이 무료다. 오랫동안 잊고 있던 소액 포인트까지 찾아낼 수 있어 유용하다. 온라인 서비스는 24시간 이용 가능하다.",
     "categorySlug": "consumer",
     "tags": ["카드포인트", "포인트현금화", "여신금융협회", "숨은자산찾기"],
-    "url": "https://www.cardpoint.or.kr",
+    "url": "https://www.cardpoint.or.kr/main",
     "hours": "24시간",
     "cost": "free",
     "badges": ["무료", "공공기관"],
     "source": "여신금융협회",
     "affiliate": false,
-    "lastVerified": "2026-07-27",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Integrated Card Point Lookup",
@@ -2001,7 +2001,7 @@
     "badges": ["무료", "공공기관"],
     "source": "생명보험협회·손해보험협회",
     "affiliate": false,
-    "lastVerified": "2026-07-27",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Insurance Supermarket (Bohum Damoa)",
@@ -2125,13 +2125,13 @@
     "description": "과속·신호위반 등 무인단속 카메라에 찍힌 내역, 범칙금·과태료 부과 여부와 금액을 조회하고 온라인으로 바로 납부할 수 있는 경찰청 운영 서비스다. 본인 인증을 거치면 운전면허 정지·취소에 영향을 주는 벌점 누적 현황도 함께 확인할 수 있어, 면허 관리가 필요한 운전자에게 특히 유용하다. 모바일 앱으로도 동일한 기능을 이용할 수 있다. 온라인 조회·납부는 24시간 가능하며, 문의는 교통민원 상담센터(182)로 하면 된다.",
     "categorySlug": "transport",
     "tags": ["이파인", "범칙금조회", "운전면허벌점", "교통민원24"],
-    "url": "https://www.efine.go.kr",
+    "url": "https://efine.go.kr/",
     "hours": "24시간(상담전화 182)",
     "cost": "free",
     "badges": ["무료", "공공기관"],
     "source": "경찰청",
     "affiliate": false,
-    "lastVerified": "2026-07-28",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Korean National Police Agency Traffic Civil Petition 24 (eFine)",
@@ -2177,13 +2177,13 @@
     "description": "고속도로 통행료를 자동으로 정산해주는 하이패스 단말기와 카드를 등록·관리하고, 이용 내역과 통행료를 조회할 수 있는 한국도로공사 운영 서비스다. 하이패스 카드 잔액이 부족하거나 단말기 인식 오류로 통행료가 미납된 경우 홈페이지에서 확인 후 바로 납부할 수 있어 연체료 발생을 막을 수 있다. '고속도로 통행료' 앱을 설치하면 모바일에서도 동일한 기능을 이용할 수 있다. 온라인 서비스는 24시간 이용 가능하며, 문의는 고객센터(1588-2504)로 하면 된다.",
     "categorySlug": "transport",
     "tags": ["하이패스", "고속도로통행료", "미납통행료", "한국도로공사"],
-    "url": "https://www.hipass.co.kr",
+    "url": "https://hipass.co.kr",
     "hours": "24시간(고객센터 평일 09:00~18:00)",
     "cost": "free",
     "badges": ["무료", "공공기관"],
     "source": "한국도로공사",
     "affiliate": false,
-    "lastVerified": "2026-07-31",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Korea Expressway Corporation Hi-pass",
@@ -2198,23 +2198,23 @@
     "slug": "k-pass-transit-card",
     "images": [],
     "thumbnail": "/uploads/k-pass-transit-card/thumbnail-1785402160045-koi8ea.jpg",
-    "name": "K-패스",
-    "summary": "대중교통을 월 15회 이상 이용하면 지출 금액의 일부를 자동으로 돌려받는 국토교통부 대중교통비 환급 제도",
-    "description": "버스·지하철 등 대중교통을 월 15회 이상 정기적으로 이용하는 사람이라면 누구나 이용 요금의 일정 비율을 다음 달에 돌려받을 수 있는 국토교통부 운영 제도다. 일반인은 20%, 청년(19~34세)은 30%, 저소득층은 최대 53%까지 환급되며, 기존 알뜰교통카드 이용자는 별도 재발급 없이 앱 동의만으로 전환할 수 있다. 전용 홈페이지나 앱에서 원하는 카드사의 K-패스 카드를 발급받아 등록하면 이후 이용 실적이 자동으로 집계된다. 회원가입과 환급 신청은 24시간 가능하다.",
+    "name": "모두의카드 (K-패스)",
+    "summary": "월 15회 이상 대중교통 이용 시 비율 환급과 기준금액 초과분 환급 중 더 유리한 혜택을 자동 적용하는 교통비 지원 제도",
+    "description": "국토교통부 대도시권광역교통위원회의 대중교통비 환급 제도다. 2026년부터 기존 K-패스에 정액 환급 방식이 더해져 모두의카드로 운영된다. 전용 교통카드를 발급받아 홈페이지나 앱에 등록하고 월 15회 이상 대중교통을 이용하면, 이용 유형과 지역에 따라 비율 환급 또는 기준금액 초과분 환급 중 더 큰 혜택이 자동 적용된다. 카드 발급과 회원 등록, 연령·가구 유형별 환급 조건은 공식 안내에서 확인할 수 있다.",
     "categorySlug": "transport",
     "tags": ["K패스", "대중교통비환급", "교통카드", "알뜰교통카드"],
     "url": "https://korea-pass.kr",
     "hours": "24시간",
     "cost": "free",
     "badges": ["무료", "정부지원"],
-    "source": "국토교통부",
+    "source": "국토교통부 대도시권광역교통위원회",
     "affiliate": false,
-    "lastVerified": "2026-07-28",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
-        "name": "K-pass",
-        "summary": "A Ministry of Land, Infrastructure and Transport public-transit fare refund program that automatically returns part of your spending if you use public transit 15 or more times a month",
-        "description": "A Ministry of Land, Infrastructure and Transport program where anyone who regularly uses public transit - buses, subways, and the like - 15 or more times a month can get a set percentage of their fares refunded the following month. General users get 20% back, young people (19-34) get 30%, and low-income users get up to 53%; existing users of the previous Alddeul Transit Card can switch over with just an in-app agreement, no reissue needed. Issuing and registering a K-pass card from your preferred card company on the dedicated website or app means your usage is automatically tallied afterward. Sign-up and refund applications are available 24 hours a day.",
+        "name": "Modu's Card (K-Pass)",
+        "summary": "A Korean government transit-fare refund program that automatically applies the better of a percentage refund or a refund above a regional spending threshold",
+        "description": "This public-transit fare refund program is run by the Ministry of Land, Infrastructure and Transport's Metropolitan Area Transport Committee. In 2026, the existing K-Pass added a flat-rate refund option and began operating as Modu's Card. After getting a dedicated transit card and registering it on the website or app, riders who use public transit at least 15 times a month receive the more favorable percentage or regional-threshold refund for their usage type and location. Check the official guidance for card registration and eligibility by age or household type.",
         "hours": "24 hours"
       }
     }
@@ -2525,13 +2525,13 @@
     "description": "만 19~34세, 연소득 5천만원 이하 무주택 청년이 가입할 수 있는 청약통장으로, 최고 연 4.5% 금리와 이자소득 비과세, 납입액의 40% 소득공제 혜택을 받을 수 있는 국토교통부 운영 상품이다. 기존 청년우대형 주택청약종합저축 가입자는 별도 신청 없이 자동 전환되며 기존 납입 기간과 금액도 그대로 인정된다. 이 통장으로 청약에 당첨되면 분양가의 최대 80%까지 저금리로 빌릴 수 있는 청년주택드림대출로 연계 신청할 수 있다. 가입은 취급 은행 앱이나 창구에서 가능하며, 월 2만원부터 100만원까지 자유롭게 납입할 수 있다.",
     "categorySlug": "housing",
     "tags": ["청년주택드림", "청약통장", "청년우대금리", "무주택청년"],
-    "url": "https://www.molit.go.kr/2024dreamaccount/main.jsp",
+    "url": "https://nhuf.molit.go.kr/FP/FP07/FP0701/FP07010301.jsp",
     "hours": "24시간(가입은 취급은행 영업시간 내)",
     "cost": "free",
     "badges": ["무료", "정부지원"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-07-28",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Youth Housing Dream Subscription Savings Account",
@@ -2822,7 +2822,7 @@
     "badges": ["무료", "공공기관"],
     "source": "신용회복위원회",
     "affiliate": false,
-    "lastVerified": "2026-08-03",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Credit Counseling and Recovery Service Individual Workout (Debt Adjustment)",
@@ -2848,7 +2848,7 @@
     "badges": ["무료", "공공기관"],
     "source": "서민금융진흥원",
     "affiliate": false,
-    "lastVerified": "2026-08-03",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Regional Financial Welfare Center (Financial Welfare Call Center 1397)",
@@ -3445,13 +3445,13 @@
     "tags": ["서울시", "생활민원", "상담전화"],
     "thumbnail": "",
     "images": [],
-    "url": "https://dasan.seoul.go.kr",
+    "url": "https://www.120dasan.or.kr/dsnc/main/main.do",
     "hours": "24시간",
     "cost": "free",
     "badges": ["24시간", "무료", "공공기관"],
     "source": "서울특별시",
     "affiliate": false,
-    "lastVerified": "2026-08-20",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Seoul Dasan Call Center (120)",
@@ -3467,7 +3467,7 @@
     "name": "국가보훈부 보훈상담센터(1577-0606)",
     "summary": "국가유공자 등록과 보훈 지원 제도를 안내하는 상담센터",
     "description": "국가유공자·보훈보상대상자 등록 절차와 각종 보훈 급여·의료 지원 제도를 안내하는 국가보훈부 상담 창구다. 전화 상담과 함께 누리집에서 보훈 대상별 지원 내용을 확인할 수 있다.",
-    "categorySlug": "life-admin-tips",
+    "categorySlug": "veterans",
     "tags": ["국가유공자", "보훈", "상담센터"],
     "thumbnail": "/uploads/mpva-veterans-affairs/thumbnail-auto.png",
     "images": [],
@@ -3571,7 +3571,7 @@
     "name": "하이코리아(Hi Korea)",
     "summary": "외국인 체류·출입국 관련 민원을 안내하는 정부 통합 서비스",
     "description": "외국인 등록, 비자 연장, 체류 자격 변경 등 출입국 관련 민원 안내와 온라인 신청을 지원하는 법무부 통합 서비스다. 외국인 근로자나 유학생, 그 가족이 절차를 확인할 때 주로 이용한다.",
-    "categorySlug": "legal-admin",
+    "categorySlug": "immigration",
     "tags": ["출입국", "외국인등록", "체류비자"],
     "thumbnail": "/uploads/hikorea-immigration/thumbnail-auto.jpg",
     "images": [],
@@ -3583,14 +3583,8 @@
     "affiliate": false,
     "lastVerified": "2026-08-26",
     "supportLanguages": [
-      {
-        "language": "en",
-        "evidenceUrl": "https://www.hikorea.go.kr"
-      },
-      {
-        "language": "zh",
-        "evidenceUrl": "https://www.hikorea.go.kr"
-      }
+      { "language": "en", "evidenceUrl": "https://www.hikorea.go.kr" },
+      { "language": "zh", "evidenceUrl": "https://www.hikorea.go.kr" }
     ],
     "i18n": {
       "en": {
@@ -3618,7 +3612,7 @@
     "badges": ["무료", "공공기관"],
     "source": "행정안전부",
     "affiliate": false,
-    "lastVerified": "2026-08-20",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Children's Safety Net",
@@ -3768,13 +3762,13 @@
     "tags": ["나홀로소송", "소송서식", "법률구조"],
     "thumbnail": "/uploads/klac-pro-se-litigation/thumbnail-auto.png",
     "images": [],
-    "url": "https://support.klac.or.kr",
+    "url": "https://support.klac.or.kr/front/main.do",
     "hours": "상시",
     "cost": "free",
     "badges": ["무료", "공공기관"],
     "source": "대한법률구조공단",
     "affiliate": false,
-    "lastVerified": "2026-08-20",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Self-Representation Litigation Support (Korea Legal Aid Corporation)",
@@ -3872,13 +3866,13 @@
     "tags": ["아동학대", "아동보호", "신고안내"],
     "thumbnail": "",
     "images": [],
-    "url": "http://www.korea1391.go.kr",
+    "url": "https://echildabuse.ncrc.or.kr/ncrc/cm/cntnts/cntntsView.do?cntntsId=1484&mi=1030",
     "hours": "상시(신고전화 112는 24시간)",
     "cost": "free",
     "badges": ["무료", "공공기관", "긴급"],
     "source": "아동권리보장원",
     "affiliate": false,
-    "lastVerified": "2026-08-20",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Child Abuse Prevention (National Center for the Rights of the Child)",
@@ -3924,13 +3918,13 @@
     "tags": ["하자분쟁", "공동주택", "분쟁조정"],
     "thumbnail": "",
     "images": [],
-    "url": "https://adc.go.kr",
+    "url": "https://www.adc.go.kr",
     "hours": "상시(신청), 상담은 평일 운영",
     "cost": "free",
     "badges": ["무료", "공공기관"],
     "source": "국토교통부",
     "affiliate": false,
-    "lastVerified": "2026-08-20",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "Defect Review and Dispute Mediation Committee",
@@ -4008,7 +4002,7 @@
     "badges": ["무료", "공공기관", "24시간"],
     "source": "한국자산관리공사",
     "affiliate": false,
-    "lastVerified": "2026-08-20",
+    "lastVerified": "2026-10-23",
     "i18n": {
       "en": {
         "name": "OnBid (Korea Asset Management Corporation)",
@@ -4665,6 +4659,535 @@
         "summary": "A Ministry of the Interior and Safety service showing safety information across 6 major categories - disaster, public safety, traffic, health, and more - on a map",
         "description": "The Everyday Safety Map run by the Ministry of the Interior and Safety, displaying safety information across 6 major categories - disaster, public safety, traffic, health, everyday life, and facilities - on a regional map, so you can see your neighborhood's safety picture at a glance.",
         "hours": "24 hours (for information lookup)"
+      }
+    }
+  },
+  {
+    "id": "immigration-1345",
+    "slug": "immigration-1345",
+    "name": "외국인종합안내센터(1345)",
+    "summary": "출입국·체류 민원과 한국 생활 정보를 20개 언어로 안내하는 법무부 상담 창구",
+    "description": "대한민국에 체류하는 외국인과 동포가 비자·체류·출입국 민원과 생활 정보를 문의할 수 있는 법무부 다국어 상담 창구다. 1345로 전화하면 한국어·영어·중국어 등 20개 언어로 안내받고, 필요한 공공기관이나 법률 지원과 연결될 수 있다. 공식 안내 기준 상담은 평일 09:00~22:00이며, 18:00 이후에는 한국어·영어·중국어 상담을 운영한다. 통화료가 발생할 수 있으므로 이용 중인 요금제를 확인해야 한다.",
+    "categorySlug": "immigration",
+    "tags": ["외국인", "출입국", "비자", "다국어상담", "1345"],
+    "url": "https://www.immigration.go.kr/moj/196/subview.do",
+    "hours": "평일 09:00~22:00(18:00 이후 한국어·영어·중국어)",
+    "cost": "paid",
+    "badges": ["공공기관"],
+    "source": "법무부 출입국·외국인정책본부",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "supportLanguages": [
+      {
+        "language": "en",
+        "evidenceUrl": "https://www.immigration.go.kr/moj/196/subview.do"
+      },
+      {
+        "language": "zh",
+        "evidenceUrl": "https://www.immigration.go.kr/moj/196/subview.do"
+      }
+    ],
+    "i18n": {
+      "en": {
+        "name": "Foreign National Information Center (1345)",
+        "summary": "A Ministry of Justice hotline offering immigration guidance and everyday information in 20 languages",
+        "description": "This multilingual Ministry of Justice counseling service helps foreign residents and overseas Koreans with visa, stay, immigration, and everyday questions. Calling 1345 connects callers to guidance in 20 languages, including Korean, English, and Chinese, and can direct them to relevant public agencies or legal support. The official schedule is weekdays from 09:00 to 22:00; after 18:00, counseling is available in Korean, English, and Chinese. Call charges may apply.",
+        "hours": "Weekdays 09:00–22:00; Korean, English, and Chinese after 18:00",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "socinet-social-integration",
+    "slug": "socinet-social-integration",
+    "name": "사회통합정보망(SOCINET)",
+    "summary": "사회통합프로그램의 교육과정·평가를 확인하고 신청하는 법무부 포털",
+    "description": "국내 체류 외국인과 귀화자가 한국어·한국문화, 한국사회 이해 등을 배우는 법무부 사회통합프로그램의 공식 포털이다. 교육과정과 운영기관을 찾아 과정·평가 신청을 할 수 있으며, 이수 결과는 체류·영주·귀화 관련 제도와 연결될 수 있다. 교육비와 신청 일정은 과정·대상에 따라 달라질 수 있으므로 해당 공지와 자격 요건을 확인해야 한다.",
+    "categorySlug": "immigration",
+    "tags": ["사회통합프로그램", "한국어교육", "외국인", "귀화", "법무부"],
+    "url": "https://www.socinet.go.kr/",
+    "hours": "온라인 신청(교육·평가 일정은 과정별 상이)",
+    "cost": "paid",
+    "badges": ["공공기관"],
+    "source": "법무부",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Social Integration Network (SOCINET)",
+        "summary": "The Ministry of Justice portal for finding and applying to social integration classes and assessments",
+        "description": "This is the official portal for the Ministry of Justice Social Integration Program, which offers Korean-language, Korean-culture, and Korean-society courses for foreign residents and naturalized citizens. Users can find courses and providers and apply for classes or assessments. Completion may be relevant to some stay, permanent-residency, or naturalization requirements. Fees and application dates vary by course and applicant, so check the current notice and eligibility rules.",
+        "hours": "Online applications; class and assessment schedules vary",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "eps-foreigner-support-centers",
+    "slug": "eps-foreigner-support-centers",
+    "name": "외국인력지원센터 안내(EPS)",
+    "summary": "외국인근로자 지원센터 위치와 상담·교육 정보를 확인하는 고용허가제 포털",
+    "description": "고용허가제를 통해 일하는 외국인근로자가 이용할 수 있는 지역 외국인력지원센터의 정보를 안내한다. 센터에서는 고충상담과 한국어·생활법률·한국문화 교육, 행사 등을 제공하며, 이용 가능한 내용과 운영시간은 센터별로 확인할 수 있다.",
+    "categorySlug": "immigration",
+    "tags": ["외국인근로자", "고용허가제", "노동상담", "지원센터", "EPS"],
+    "url": "https://eps.hrdkorea.or.kr/e9/user/intro/intro.do?method=workerCenterApp",
+    "hours": "포털 안내 상시 이용(센터별 상담·교육시간 상이)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "한국산업인력공단",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "EPS Foreign Worker Support Centers",
+        "summary": "A portal for locating support centers and services for foreign workers in Korea",
+        "description": "This Employment Permit System page lists regional support centers for foreign workers. The centers provide counseling and may offer Korean-language, everyday legal-information, and Korean-culture programs. Available services and opening hours differ by center, so contact the local center before visiting.",
+        "hours": "Portal information is available online; center hours vary",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "agrix-farming-programs",
+    "slug": "agrix-farming-programs",
+    "name": "농림사업정보시스템(AgriX)",
+    "summary": "농업경영체 등록 현황과 농림축산식품 분야 지원사업을 확인하는 시스템",
+    "description": "농업경영체 등록 관련 정보와 농림축산식품 분야의 여러 지원사업 업무를 연결하는 정부 시스템이다. 청년농 영농정착지원, 후계농업경영인, 농업경영체 현황 조회 등 사업별 안내와 신청 창구를 확인할 수 있다. 신청 자격과 접수 기간은 사업마다 다르므로 해당 사업 공고를 확인해야 한다.",
+    "categorySlug": "agriculture-rural",
+    "tags": ["농업", "농업경영체", "농림사업", "영농지원", "청년농"],
+    "url": "https://uni.agrix.go.kr/",
+    "hours": "온라인 정보조회·신청(사업별 접수기간 상이)",
+    "cost": "free",
+    "badges": ["무료", "공공기관", "정부지원"],
+    "source": "농림축산식품부·농림수산식품교육문화정보원",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "AgriX Agricultural Program Information System",
+        "summary": "A government system for agricultural business registration information and farming support programs",
+        "description": "AgriX connects users with agricultural business registration information and support programs in the agriculture and food sector. It includes information and application channels for programs such as young-farmer settlement support and successor-farmer development, as well as agricultural business registration lookup. Eligibility and application periods vary by program; check each official notice.",
+        "hours": "Online information and applications; program periods vary",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "greendaero-rural-settlement",
+    "slug": "greendaero-rural-settlement",
+    "name": "그린대로 귀농귀촌 종합 플랫폼",
+    "summary": "귀농·귀촌 준비에 필요한 정책·교육·상담·농촌체험 정보를 모은 플랫폼",
+    "description": "농촌으로 이주하려는 사람에게 귀농·귀촌 단계별 정책과 교육, 상담·자문, 농촌체험 및 지역 정보를 제공하는 통합 플랫폼이다. 준비 단계와 희망 지역에 맞는 정보를 찾아볼 수 있으며, 교육·지원사업의 신청 자격과 비용은 과정·사업별 공고에서 확인해야 한다.",
+    "categorySlug": "agriculture-rural",
+    "tags": ["귀농", "귀촌", "농촌정착", "농촌체험", "농업교육"],
+    "url": "https://www.greendaero.go.kr/",
+    "hours": "온라인 정보조회(상담·교육 일정은 프로그램별 상이)",
+    "cost": "free",
+    "badges": ["무료", "공공기관", "정부지원"],
+    "source": "농림수산식품교육문화정보원",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Greendaero Rural Settlement Platform",
+        "summary": "A platform with policy, training, counseling, and rural-experience information for people considering a move to the countryside",
+        "description": "This integrated platform provides step-by-step policy and training information, counseling, mentoring, rural experiences, and local information for people preparing to move to a rural community. Users can explore resources by their plans and preferred area. Eligibility and any fees for training or support programs depend on the individual notice.",
+        "hours": "Online information; counseling and training schedules vary",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "farmland-bank-portal",
+    "slug": "farmland-bank-portal",
+    "name": "농지은행 통합포털",
+    "summary": "농지 매입·임차 정보와 농지연금 등 한국농어촌공사 사업을 확인하는 포털",
+    "description": "한국농어촌공사가 운영하는 농지 정보·사업 포털이다. 농지 구하기와 내놓기, 임대·매입 관련 사업, 농지연금 및 농지이양은퇴직불 정보를 확인하고 신청할 수 있다. 실제 임대·매입 조건과 비용, 지원 자격은 사업과 농지별로 다르므로 신청 전에 상세 안내를 확인해야 한다.",
+    "categorySlug": "agriculture-rural",
+    "tags": ["농지", "농지임대", "귀농", "농지연금", "농어촌공사"],
+    "url": "https://www.fbo.or.kr/index.do",
+    "hours": "온라인 정보조회·신청(상담 및 사업별 일정 확인)",
+    "cost": "paid",
+    "badges": ["공공기관", "정부지원"],
+    "source": "한국농어촌공사",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Farmland Bank Portal",
+        "summary": "A Korea Rural Community Corporation portal for farmland information, rental and purchase programs, and farmland pensions",
+        "description": "This portal provides farmland information and programs run by the Korea Rural Community Corporation. Users can look for farmland, list land, review rental and purchase programs, and find information on farmland pensions and retirement support. Transaction terms, costs, and eligibility depend on the program and property; review the details before applying.",
+        "hours": "Online information and applications; check each program for details",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "agriedu-farming-education",
+    "slug": "agriedu-farming-education",
+    "name": "농업교육포털(AgriEDU)",
+    "summary": "농업기술·경영과 귀농 준비를 위한 온·오프라인 교육을 찾고 신청하는 포털",
+    "description": "농업인과 귀농 희망자가 영농기술, 농업경영, 창업·정착 관련 교육과정을 찾아 신청하고 온라인 강의를 수강할 수 있는 교육 포털이다. 과정별 교육 대상·일정·수강료가 다를 수 있으므로 신청 전 과정 안내를 확인해야 한다.",
+    "categorySlug": "agriculture-rural",
+    "tags": ["농업교육", "영농기술", "농업경영", "귀농교육", "온라인강의"],
+    "url": "https://agriedu.net/",
+    "hours": "온라인 과정 수강(교육 일정·접수기간은 과정별 상이)",
+    "cost": "paid",
+    "badges": ["공공기관"],
+    "source": "농림수산식품교육문화정보원",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Agricultural Education Portal (AgriEDU)",
+        "summary": "A portal for finding and applying to online and in-person agricultural training",
+        "description": "Farmers and people preparing to enter agriculture can find courses in farming techniques, farm management, business startup, and rural settlement, apply, and take online classes. Eligibility, schedules, and tuition vary by course, so review the course information before applying.",
+        "hours": "Online courses; schedules and application periods vary",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "agrion-farming-knowledge",
+    "slug": "agrion-farming-knowledge",
+    "name": "농업ON 농식품지식정보서비스",
+    "summary": "영농 의사결정과 농업경영에 필요한 농식품 지식·지역 정보를 제공",
+    "description": "농업인과 영농을 준비하는 사람이 농식품 정보와 지역별 농업 관련 자료를 찾아볼 수 있는 정보 서비스다. 영농 의사결정 지원 자료와 농업경영 기록 기능 등을 제공하며, 일부 통계·토양 정보는 원천 자료와 갱신 시점이 다를 수 있어 참고용으로 확인해야 한다.",
+    "categorySlug": "agriculture-rural",
+    "tags": ["농업정보", "농식품", "영농", "농업경영", "농업통계"],
+    "url": "https://www.agrion.kr/",
+    "hours": "온라인 정보조회(일부 자료는 원천기관 갱신 시점 기준)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "농림수산식품교육문화정보원",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Agriculture ON Food and Farming Knowledge Service",
+        "summary": "Agricultural knowledge and local information to support farm decisions and management",
+        "description": "This information service helps farmers and people preparing to farm find food and agriculture information and local data. It includes decision-support information and farm-management record tools. Some statistics or soil data may reflect the source agency’s update schedule and should be treated as reference information.",
+        "hours": "Online information; some data follows the source agency’s update schedule",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "sealife-return-fishing",
+    "slug": "sealife-return-fishing",
+    "name": "귀어귀촌 종합센터",
+    "summary": "귀어·귀촌 준비를 위한 어촌생활·교육·정착지원 정보를 제공",
+    "description": "어촌으로 이주해 어업이나 어촌 생활을 시작하려는 사람을 위한 종합 안내 서비스다. 귀어 준비 정보, 교육, 창업·주거 지원, 어촌 정착 상담과 멘토링 등을 제공하며, 상담은 공식 안내 기준 평일 09:00~18:00에 운영된다. 사업 자격과 교육 비용은 과정별 안내를 확인해야 한다.",
+    "categorySlug": "agriculture-rural",
+    "tags": ["귀어", "귀촌", "어촌", "어업창업", "어촌정착"],
+    "url": "https://www.sealife.go.kr/index.do",
+    "hours": "상담 평일 09:00~18:00(온라인 정보조회 가능)",
+    "cost": "free",
+    "badges": ["무료", "공공기관", "정부지원"],
+    "source": "한국어촌어항공단",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Return-to-Fishing Support Center",
+        "summary": "Information, training, and settlement support for people preparing to move to a fishing community",
+        "description": "This center helps people planning to move to a fishing community find information on preparation, training, startup and housing support, counseling, and mentoring. The official counseling schedule is weekdays from 09:00 to 18:00. Eligibility and training costs vary by program; check the individual notice.",
+        "hours": "Counseling weekdays 09:00–18:00; information available online",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "public-data-portal",
+    "slug": "public-data-portal",
+    "name": "공공데이터포털",
+    "summary": "정부·공공기관의 파일데이터와 OpenAPI를 검색하고 활용 신청하는 포털",
+    "description": "행정안전부가 운영하는 공공데이터 개방 창구다. 중앙부처·지자체·공공기관이 공개한 데이터를 검색하고 파일이나 OpenAPI로 활용할 수 있으며, 제공 신청과 분쟁조정 관련 안내도 확인할 수 있다. 데이터별 이용 조건과 비용은 다를 수 있으므로 개별 데이터 상세페이지의 라이선스와 비용 표시를 확인해야 한다.",
+    "categorySlug": "public-data",
+    "tags": ["공공데이터", "OpenAPI", "데이터다운로드", "행정안전부"],
+    "url": "https://www.data.go.kr/",
+    "hours": "온라인 검색·신청(콜센터 평일 09:00~18:00)",
+    "cost": "paid",
+    "badges": ["공공기관"],
+    "source": "행정안전부",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Public Data Portal",
+        "summary": "A portal for searching and using government and public-agency datasets and Open APIs",
+        "description": "The Ministry of the Interior and Safety’s public-data portal lets users search datasets published by ministries, local governments, and public agencies, and access files or Open APIs. It also provides information on data requests and dispute resolution. Licensing and fees vary by dataset; check each dataset’s details before use.",
+        "hours": "Online search and requests; call center weekdays 09:00–18:00",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "kosis-national-statistics",
+    "slug": "kosis-national-statistics",
+    "name": "국가통계포털(KOSIS)",
+    "summary": "경제·사회·환경 등 국내·국제·북한 통계를 한곳에서 찾는 국가 통계 포털",
+    "description": "국가데이터처가 제공하는 원스톱 통계 서비스다. 400여 개 통계작성기관의 국내 통계와 국제·북한 통계를 주제별로 검색하고, 통계표·시각화 자료와 설명을 확인할 수 있다. 통계 정보 이용은 무료이며, 원자료의 기준시점과 작성기관을 함께 살펴보면 해석에 도움이 된다.",
+    "categorySlug": "public-data",
+    "tags": ["국가통계", "통계표", "경제통계", "사회통계", "KOSIS"],
+    "url": "https://kosis.kr/",
+    "hours": "온라인 통계 검색·조회",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "국가데이터처",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Korean Statistical Information Service (KOSIS)",
+        "summary": "A national portal for finding Korean, international, and North Korean statistics across many topics",
+        "description": "KOSIS is a one-stop statistics service provided by the National Data Agency. It brings together domestic statistics from more than 400 statistical agencies, as well as international and North Korean statistics. Users can search by topic and view tables, visualizations, and explanatory notes. Statistical information is free to use; check the reference period and source agency when interpreting figures.",
+        "hours": "Online statistics search and lookup",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "sgis-statistical-geographic-service",
+    "slug": "sgis-statistical-geographic-service",
+    "name": "통계지리정보서비스(SGIS)",
+    "summary": "인구·주택·사업체 등 통계를 지도에서 지역 단위로 살펴보는 서비스",
+    "description": "국가데이터처의 통계지리정보서비스로, 인구·주택·사업체 등 통계를 지도 위에서 지역별로 확인하고 비교할 수 있다. 통계주제도, 대화형 통계지도, 분석지도와 자료 제공 기능을 제공한다. 통계의 기준연도와 공간 단위를 확인한 뒤 비교하는 것이 좋다.",
+    "categorySlug": "public-data",
+    "tags": ["통계지도", "지역통계", "인구통계", "공간정보", "SGIS"],
+    "url": "https://sgis.mods.go.kr/",
+    "hours": "온라인 지도·통계 조회",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "국가데이터처",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Statistical Geographic Information Service (SGIS)",
+        "summary": "A map-based service for exploring population, housing, and business statistics by area",
+        "description": "SGIS, provided by the National Data Agency, lets users view and compare population, housing, and business statistics on maps. It includes statistical theme maps, interactive statistical maps, analysis maps, and data-download features. Check each dataset’s reference year and geographic unit before comparing areas.",
+        "hours": "Online map and statistics lookup",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "indicator-nuri-national-indicators",
+    "slug": "indicator-nuri-national-indicators",
+    "name": "지표누리(e-나라지표)",
+    "summary": "국정 운영과 사회 변화를 보여주는 주요 국가 지표를 검색하는 포털",
+    "description": "국가데이터처가 운영하는 지표 포털이다. e-나라지표와 국가발전지표, 국민 삶의 질 지표 등 여러 지표 체계를 한곳에서 검색하고 통계표·그래프·지표 설명을 확인할 수 있다. 지표별 작성기관과 갱신 시점이 다르므로 세부 설명을 함께 확인해야 한다.",
+    "categorySlug": "public-data",
+    "tags": ["국가지표", "e-나라지표", "삶의질", "통계", "지표누리"],
+    "url": "https://www.index.go.kr/unity/potal/main.do",
+    "hours": "온라인 지표 검색·조회",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "국가데이터처",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Indicator NURI (e-Nara Indicators)",
+        "summary": "A portal for searching national indicators on government performance and social change",
+        "description": "Indicator NURI, operated by the National Data Agency, brings together several indicator systems, including e-Nara Indicators, National Development Indicators, and Quality of Life Indicators. Users can search indicators and view tables, charts, and explanatory notes. Check each indicator’s source agency and update date.",
+        "hours": "Online indicator search and lookup",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "vnet-veterans-support",
+    "slug": "vnet-veterans-support",
+    "name": "제대군인지원센터(VNET)",
+    "summary": "전역 후 취업·교육·창업과 생활 지원 정보를 확인하는 국가보훈부 서비스",
+    "description": "전역을 앞두었거나 전역한 군인이 사회에 안정적으로 복귀할 수 있도록 취업 상담, 직업교육훈련, 창업, 주택·대부 등 관련 지원 정보를 제공한다. 지역별 제대군인지원센터와 상담을 연결하며, 지원 자격과 신청 시기는 프로그램별로 다르다. 공식 안내 기준 상담은 평일 09:00~18:00이다.",
+    "categorySlug": "veterans",
+    "tags": ["제대군인", "취업지원", "직업교육", "창업", "보훈"],
+    "url": "https://www.vnet.go.kr/",
+    "hours": "상담 평일 09:00~18:00(온라인 정보조회 가능)",
+    "cost": "free",
+    "badges": ["무료", "공공기관", "정부지원"],
+    "source": "국가보훈부",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Veterans Employment and Support Center (VNET)",
+        "summary": "A Ministry of Patriots and Veterans Affairs service for employment, training, and transition support after military service",
+        "description": "VNET provides information on employment counseling, vocational training, startup support, housing, and loans for service members preparing to leave or returning to civilian life. It connects users with regional veterans support centers. Eligibility and application dates vary by program. The official counseling schedule is weekdays from 09:00 to 18:00.",
+        "hours": "Counseling weekdays 09:00–18:00; information available online",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "national-cemetery-application",
+    "slug": "national-cemetery-application",
+    "name": "국립묘지 안장 신청시스템",
+    "summary": "국립묘지 안장·이장·위패봉안 신청과 대상 여부를 확인하는 시스템",
+    "description": "국가보훈부가 제공하는 국립묘지 안장 신청 창구다. 대상자는 국립묘지 안장·이장, 위패봉안, 배우자 합장과 생전 안장대상 결정 등을 온라인으로 신청하고 처리 정보를 확인할 수 있다. 대상 요건과 필요 서류는 대상자 유형과 묘지별로 다르므로 신청 전 공식 안내를 확인해야 한다.",
+    "categorySlug": "veterans",
+    "tags": ["국립묘지", "안장신청", "이장", "위패봉안", "국가유공자"],
+    "url": "https://www.ncms.go.kr/NationalCemetery/",
+    "hours": "온라인 신청·조회(심사·처리 일정은 신청별 상이)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "국가보훈부",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "National Cemetery Application System",
+        "summary": "An online system for national cemetery burial, transfer, memorial tablet, and spouse interment applications",
+        "description": "The Ministry of Patriots and Veterans Affairs provides this system for eligible applicants to request burial, transfer, memorial tablet placement, spouse interment, or a pre-death eligibility decision at a national cemetery. Eligibility and required documents vary by applicant and cemetery; review the official guidance before applying.",
+        "hours": "Online applications and lookup; review and processing schedules vary",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "mpva-my-veterans-portal",
+    "slug": "mpva-my-veterans-portal",
+    "name": "국가보훈부 나만의 예우",
+    "summary": "본인 인증 후 받을 수 있는 보훈 지원과 민원 정보를 확인하는 맞춤형 포털",
+    "description": "국가유공자와 보훈대상자가 본인 인증 후 개인별 보훈 지원 내용과 민원 정보를 조회할 수 있는 국가보훈부 맞춤형 포털이다. 보훈번호와 지원 현황 등 개인정보가 포함된 정보는 본인 확인이 필요하며, 실제 지원 자격과 신청 절차는 해당 서비스 안내에서 확인해야 한다.",
+    "categorySlug": "veterans",
+    "tags": [
+      "나만의 예우",
+      "보훈대상자",
+      "보훈급여",
+      "국가유공자",
+      "맞춤형서비스"
+    ],
+    "url": "https://pmp.mpva.go.kr/",
+    "hours": "온라인 본인인증 후 조회(상담은 보훈상담센터 운영시간 기준)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "국가보훈부",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "My Veterans Affairs Portal",
+        "summary": "A personalized portal for eligible veterans to check benefits and services after identity verification",
+        "description": "This personalized Ministry of Patriots and Veterans Affairs portal lets eligible veterans and beneficiaries check their support information and related civil services after identity verification. Personal information such as a veterans registration number requires authentication. Confirm eligibility and application steps on the relevant service page.",
+        "hours": "Online lookup after identity verification; counseling follows center hours",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "nhrc-human-rights-petition",
+    "slug": "nhrc-human-rights-petition",
+    "name": "국가인권위원회 인권e 진정 접수",
+    "summary": "인권침해나 차별 문제에 대해 국가인권위원회에 온라인 진정을 접수",
+    "description": "국가인권위원회의 공식 온라인 진정 접수 창구다. 국가기관 등에 의한 인권침해나 고용·교육·재화·용역 이용 과정에서의 차별 등을 겪은 사람이 진정을 신청할 수 있다. 진정 대상과 조사 범위에는 제한이 있으므로 접수 전에 제도 안내를 확인하고, 상담이 필요하면 인권상담 1331을 이용할 수 있다.",
+    "categorySlug": "rights-remedy",
+    "tags": ["인권침해", "차별", "인권진정", "국가인권위원회", "1331"],
+    "url": "https://case.humanrights.go.kr/rprsntStep/regStep00.do",
+    "hours": "온라인 접수(상담전화 평일 09:00~18:00)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "국가인권위원회",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "National Human Rights Commission Petition Portal",
+        "summary": "An official online channel for filing petitions about human-rights violations or discrimination",
+        "description": "This is the National Human Rights Commission of Korea’s online petition channel. People may file petitions about human-rights violations by public authorities and discrimination in areas such as employment, education, or access to goods and services. The Commission’s jurisdiction and investigation scope have limits; review the official guidance before filing. For counseling, call 1331.",
+        "hours": "Online filing; counseling line weekdays 09:00–18:00",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "online-administrative-appeals",
+    "slug": "online-administrative-appeals",
+    "name": "온라인행정심판",
+    "summary": "행정기관의 위법·부당한 처분에 대해 온라인으로 행정심판을 청구",
+    "description": "행정기관의 처분이나 부작위로 권리·이익을 침해받았다고 생각하는 사람이 행정심판을 온라인으로 청구하고 진행 상황과 재결 결과를 확인할 수 있는 공식 시스템이다. 행정심판위원회와 사건 유형에 따라 제출 서류와 절차가 다를 수 있다. 일반적인 온라인 행정심판은 무료이며, 일부 심판 유형에는 별도 수수료가 적용될 수 있다.",
+    "categorySlug": "rights-remedy",
+    "tags": ["행정심판", "행정처분", "권리구제", "국민권익위원회"],
+    "url": "https://simpan.go.kr/",
+    "hours": "온라인 청구·진행 조회(사건 처리기간은 유형별 상이)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "중앙행정심판위원회·국민권익위원회",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Online Administrative Appeals",
+        "summary": "An official system for filing administrative appeals and checking case progress online",
+        "description": "People who believe an administrative agency’s action or failure to act has harmed their rights or interests can file an administrative appeal and check case progress and decisions online. Required documents and procedures vary by committee and case type. General online administrative appeals are free, although some specialized appeal types may charge a fee.",
+        "hours": "Online filing and case lookup; processing time varies by case",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "mnd-human-rights-petition",
+    "slug": "mnd-human-rights-petition",
+    "name": "국방부 인권진정 신청",
+    "summary": "군 복무나 군 업무 중 발생한 인권침해·차별을 국방부에 진정",
+    "description": "군 복무나 국방 업무 과정에서 발생한 인권침해와 차별행위에 대해 진정을 접수하는 국방부 공식 창구다. 피해자뿐 아니라 제3자도 진정할 수 있으며, 홈페이지·방문·우편 등 접수 방법과 조사 절차를 안내한다. 접수 대상과 처리 범위를 확인한 뒤 신청해야 한다.",
+    "categorySlug": "rights-remedy",
+    "tags": ["군인권", "인권진정", "국방부", "군복무", "차별"],
+    "url": "https://hrkeeper.mnd.go.kr/mbshome/mbs/mhriis/subview.jsp?id=mhriis_010200000000",
+    "hours": "온라인 진정 접수(방문·상담 일정은 국방부 안내 확인)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "국방부",
+    "thumbnail": "",
+    "images": [],
+    "affiliate": false,
+    "lastVerified": "2026-10-22",
+    "i18n": {
+      "en": {
+        "name": "Ministry of National Defense Human Rights Petition",
+        "summary": "An official channel for reporting human-rights violations or discrimination connected with military service",
+        "description": "This Ministry of National Defense channel accepts petitions about human-rights violations or discrimination arising during military service or defense-related work. Both affected people and third parties may submit a petition. The site explains online, in-person, and postal filing options and the investigation process. Check the scope and procedure before filing.",
+        "hours": "Online petitions; check Ministry guidance for in-person service hours",
+        "official": false
       }
     }
   }

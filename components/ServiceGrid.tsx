@@ -2,6 +2,7 @@
 
 import {
   useEffect,
+  useId,
   useLayoutEffect,
   useRef,
   useState,
@@ -12,8 +13,24 @@ import {
 const PAGE_SIZE = 12;
 
 type StoredGridState = {
-  visibleCount: number;
+  page: number;
   scrollY: number;
+};
+
+type PaginationLabels = {
+  navigation: string;
+  previous: string;
+  next: string;
+  pageLabelTemplate: string;
+  statusTemplate: string;
+};
+
+const DEFAULT_PAGINATION_LABELS: PaginationLabels = {
+  navigation: '목록 페이지',
+  previous: '이전',
+  next: '다음',
+  pageLabelTemplate: '{page}페이지',
+  statusTemplate: '{current} / {total}페이지',
 };
 
 function readStoredState(storageKey: string): StoredGridState | null {
@@ -21,11 +38,22 @@ function readStoredState(storageKey: string): StoredGridState | null {
     const raw = sessionStorage.getItem(storageKey);
     if (!raw) return null;
     const parsed = JSON.parse(raw);
+
     if (
-      typeof parsed?.visibleCount === 'number' &&
+      Number.isInteger(parsed?.page) &&
+      parsed.page > 0 &&
       typeof parsed?.scrollY === 'number'
     ) {
-      return parsed;
+      return { page: parsed.page, scrollY: parsed.scrollY };
+    }
+
+    // 이전 무한 스크롤 버전에서 저장한 위치가 있으면 해당 페이지를 열되,
+    // 예전 긴 목록의 스크롤 위치는 복원하지 않는다.
+    if (Number.isInteger(parsed?.visibleCount) && parsed.visibleCount > 0) {
+      return {
+        page: Math.ceil(parsed.visibleCount / PAGE_SIZE),
+        scrollY: 0,
+      };
     }
   } catch {
     // sessionStorage 접근 불가 또는 손상된 값 → 무시
@@ -38,80 +66,165 @@ function subscribeNoop() {
 }
 
 function getServerSnapshot() {
-  return 0;
+  return 1;
+}
+
+function getPageItems(currentPage: number, totalPages: number) {
+  if (totalPages <= 7) {
+    return Array.from({ length: totalPages }, (_, index) => index + 1);
+  }
+
+  const pages = new Set([1, totalPages]);
+  for (let page = currentPage - 1; page <= currentPage + 1; page += 1) {
+    if (page > 1 && page < totalPages) pages.add(page);
+  }
+
+  return [...pages].sort((a, b) => a - b);
 }
 
 export function ServiceGrid({
   cards,
   storageKey,
+  paginationLabels = DEFAULT_PAGINATION_LABELS,
 }: {
   cards: ReactNode[];
   storageKey: string;
+  paginationLabels?: PaginationLabels;
 }) {
-  // 상세 페이지에서 돌아왔을 때 이전에 불러온 개수를 세션 스토리지에서 읽어온다.
-  // getServerSnapshot은 서버 렌더링 결과와 동일하게 0을 반환해 하이드레이션 안전성을 지킨다.
-  const storedVisibleCount = useSyncExternalStore(
+  const storedPage = useSyncExternalStore(
     subscribeNoop,
-    () => readStoredState(storageKey)?.visibleCount ?? 0,
+    () => readStoredState(storageKey)?.page ?? 1,
     getServerSnapshot,
   );
+  const [selectedPage, setSelectedPage] = useState<number | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const gridId = useId();
+  const totalPages = Math.max(1, Math.ceil(cards.length / PAGE_SIZE));
+  const page = Math.min(selectedPage ?? storedPage, totalPages);
+  const pageItems = getPageItems(page, totalPages);
 
-  const [visibleCount, setVisibleCount] = useState(() =>
-    Math.min(PAGE_SIZE, cards.length),
-  );
-  const displayCount = Math.min(
-    Math.max(visibleCount, storedVisibleCount),
-    cards.length,
-  );
-
-  const sentinelRef = useRef<HTMLDivElement>(null);
-
-  // 카테고리 페이지로 돌아왔을 때 저장해둔 스크롤 위치를 한 번만 복원한다.
-  // displayCount가 같은 렌더에서 이미 복원된 개수를 반영하므로 DOM 높이가 충분한 상태에서 실행된다.
   useLayoutEffect(() => {
     const stored = readStoredState(storageKey);
-    if (stored) window.scrollTo(0, stored.scrollY);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (!stored) return;
+
+    window.scrollTo(0, stored.scrollY);
+  }, [storageKey]);
 
   useEffect(() => {
-    const sentinel = sentinelRef.current;
-    if (!sentinel) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0]?.isIntersecting) {
-          setVisibleCount((count) => Math.min(count + PAGE_SIZE, cards.length));
-        }
-      },
-      { rootMargin: '400px' },
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, [cards.length]);
-
-  // 상세 페이지 등 다른 곳으로 이동할 때 현재 표시 개수와 스크롤 위치를 저장해 둔다.
-  useEffect(() => {
-    return () => {
+    const saveState = () => {
       try {
         sessionStorage.setItem(
           storageKey,
-          JSON.stringify({ visibleCount: displayCount, scrollY: window.scrollY }),
+          JSON.stringify({ page, scrollY: window.scrollY }),
         );
       } catch {
         // sessionStorage 접근 불가 시 조용히 무시
       }
     };
-  }, [storageKey, displayCount]);
 
-  const hasMore = displayCount < cards.length;
+    saveState();
+    return saveState;
+  }, [storageKey, page]);
+
+  const goToPage = (nextPage: number) => {
+    const targetPage = Math.min(Math.max(nextPage, 1), totalPages);
+    setSelectedPage(targetPage);
+    requestAnimationFrame(() => {
+      gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      try {
+        sessionStorage.setItem(
+          storageKey,
+          JSON.stringify({ page: targetPage, scrollY: 0 }),
+        );
+      } catch {
+        // sessionStorage 접근 불가 시 페이지 이동은 계속 가능
+      }
+    });
+  };
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {cards.slice(0, displayCount)}
+      <div
+        id={gridId}
+        ref={gridRef}
+        className="grid scroll-mt-24 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        {cards.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)}
       </div>
-      {hasMore && <div ref={sentinelRef} aria-hidden className="h-1" />}
+
+      {totalPages > 1 && (
+        <nav
+          aria-label={paginationLabels.navigation}
+          className="flex flex-col items-center gap-3"
+        >
+          <div className="flex flex-wrap items-center justify-center gap-1.5">
+            <button
+              type="button"
+              aria-controls={gridId}
+              onClick={() => goToPage(page - 1)}
+              disabled={page === 1}
+              className="focus-visible:ring-ring hover:bg-muted inline-flex min-h-10 items-center rounded-md border px-3 text-sm transition-colors outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-40"
+            >
+              {paginationLabels.previous}
+            </button>
+
+            {pageItems.map((pageNumber, index) => {
+              const previousPage = pageItems[index - 1];
+              const hasGap =
+                previousPage !== undefined && pageNumber - previousPage > 1;
+
+              return (
+                <span key={pageNumber} className="contents">
+                  {hasGap && (
+                    <span
+                      aria-hidden="true"
+                      className="text-muted-foreground px-1"
+                    >
+                      …
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    aria-label={paginationLabels.pageLabelTemplate.replace(
+                      '{page}',
+                      String(pageNumber),
+                    )}
+                    aria-current={page === pageNumber ? 'page' : undefined}
+                    aria-controls={gridId}
+                    onClick={() => goToPage(pageNumber)}
+                    className={`focus-visible:ring-ring inline-flex size-10 items-center justify-center rounded-md border text-sm transition-colors outline-none focus-visible:ring-2 ${
+                      page === pageNumber
+                        ? 'border-primary bg-primary text-primary-foreground'
+                        : 'hover:bg-muted'
+                    }`}
+                  >
+                    {pageNumber}
+                  </button>
+                </span>
+              );
+            })}
+
+            <button
+              type="button"
+              aria-controls={gridId}
+              onClick={() => goToPage(page + 1)}
+              disabled={page === totalPages}
+              className="focus-visible:ring-ring hover:bg-muted inline-flex min-h-10 items-center rounded-md border px-3 text-sm transition-colors outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-40"
+            >
+              {paginationLabels.next}
+            </button>
+          </div>
+          <p
+            className="text-muted-foreground text-sm"
+            role="status"
+            aria-live="polite"
+          >
+            {paginationLabels.statusTemplate
+              .replace('{current}', String(page))
+              .replace('{total}', String(totalPages))}
+          </p>
+        </nav>
+      )}
     </div>
   );
 }

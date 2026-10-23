@@ -1,8 +1,11 @@
 import {
   Accessibility,
+  Award,
   Briefcase,
   Car,
   ClipboardCheck,
+  Database,
+  Globe,
   GraduationCap,
   HeartHandshake,
   HeartPulse,
@@ -126,6 +129,31 @@ const CATEGORY_STYLES: Record<string, CategoryStyle> = {
     icon: ClipboardCheck,
     chip: 'bg-amber-50 text-amber-600',
     badge: 'bg-amber-50 text-amber-700',
+  },
+  immigration: {
+    icon: Globe,
+    chip: 'bg-sky-50 text-sky-600',
+    badge: 'bg-sky-50 text-sky-700',
+  },
+  'agriculture-rural': {
+    icon: Leaf,
+    chip: 'bg-lime-50 text-lime-600',
+    badge: 'bg-lime-50 text-lime-700',
+  },
+  'public-data': {
+    icon: Database,
+    chip: 'bg-indigo-50 text-indigo-600',
+    badge: 'bg-indigo-50 text-indigo-700',
+  },
+  veterans: {
+    icon: Award,
+    chip: 'bg-amber-50 text-amber-700',
+    badge: 'bg-amber-50 text-amber-800',
+  },
+  'rights-remedy': {
+    icon: Scale,
+    chip: 'bg-orange-50 text-orange-600',
+    badge: 'bg-orange-50 text-orange-700',
   },
 };
 

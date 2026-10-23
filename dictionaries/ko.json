@@ -30,11 +30,18 @@
     "label": "언어 선택"
   },
   "search": {
-    "koOnlyNotice": ""
+    "koOnlyNotice": "서비스 검색은 한국어로 이용할 수 있어요."
   },
   "filterBar": {
     "freeOnly": "무료만",
     "hours24Only": "24시간만"
+  },
+  "pagination": {
+    "navigation": "서비스 목록 페이지",
+    "previous": "이전",
+    "next": "다음",
+    "pageLabelTemplate": "{page}페이지",
+    "statusTemplate": "{current} / {total}페이지"
   },
   "service": {
     "hours": "운영시간",
@@ -50,13 +57,25 @@
     "relatedServicesHeading": "같은 카테고리의 다른 서비스"
   },
   "homePage": {
-    "heading": "몰라서 못 쓰는, 진짜 도움되는 생활 서비스",
+    "heading": "필요한 생활 서비스를 찾아보세요",
+    "intro": "건강·주거·법률·복지 등 생활에 필요한 공공서비스와 이용 정보를 모았어요.",
+    "searchLabel": "서비스 검색",
+    "totalServicesTemplate": "{count}개 서비스를 운영 기관과 함께 정리했어요.",
+    "serviceCountTemplate": "{count}개 서비스",
     "categoriesHeading": "카테고리별로 둘러보기",
     "categoriesDescription": "건강부터 교통까지, 여기다가 정리한 서비스를 카테고리별로 한눈에 살펴보세요.",
+    "guidesHeading": "상황별 이용 안내",
+    "guidesDescription": "서비스를 언제, 어떻게 이용하면 좋을지 정리했어요.",
+    "viewAllGuides": "가이드 전체 보기",
     "viewGuide": "자세히 보기 →",
     "prevGuide": "이전 가이드",
     "nextGuide": "다음 가이드",
     "goToGuideTemplate": "{index}번째 가이드로 이동"
+  },
+  "categoryPage": {
+    "serviceCountTemplate": "서비스 {count}개",
+    "emptyFiltered": "선택한 조건에 맞는 서비스가 없어요.",
+    "clearFilters": "필터 초기화"
   },
   "guides": {
     "metaTitle": "가이드",
