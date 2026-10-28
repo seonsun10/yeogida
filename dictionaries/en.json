@@ -78,15 +78,16 @@
     "clearFilters": "Clear filters"
   },
   "guides": {
-    "metaTitle": "Guides",
-    "metaDescription": "Yeogida's practical guides on which service to use first, organized by situation",
-    "heading": "Guides",
-    "description": "Guides on which service to check first in urgent situations, built from the services Yeogida has curated, laid out step by step.",
+    "metaTitle": "Everyday Guides to Korean Public Services",
+    "metaDescription": "Step-by-step guides to Korean public services for housing, employment, consumer issues, health, family support, and everyday administration.",
+    "heading": "Everyday Guides to Korean Public Services",
+    "description": "Find what to do first and which official service to use for housing, employment, government benefits, consumer issues, health, and family support.",
     "totalCountTemplate": "{count} guides in total",
     "categoryNavLabel": "Jump to category",
     "countTemplate": "{count}",
     "backToList": "All guides",
     "tableOfContents": "Contents",
-    "publishedOnTemplate": "Published {date} · Yeogida"
+    "publishedOnTemplate": "Published {date} · Yeogida",
+    "updatedOnTemplate": "Updated {date}"
   }
 }

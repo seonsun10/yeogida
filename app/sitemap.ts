@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const guideRoutes = getAllGuides().map((guide) => ({
     url: `${siteUrl}/guides/${guide.slug}`,
-    lastModified: guide.publishedAt,
+    lastModified: guide.updatedAt ?? guide.publishedAt,
   }));
 
   const services = await getAllServices();

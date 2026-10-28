@@ -117,7 +117,7 @@ export default async function GuidesPage({ params }: GuidesPageProps) {
                     </div>
                     <div className="flex shrink-0 items-center gap-2 pt-0.5 text-xs text-muted-foreground/70">
                       <span className="hidden sm:inline">
-                        {guide.publishedAt}
+                        {guide.updatedAt ?? guide.publishedAt}
                       </span>
                       <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                     </div>

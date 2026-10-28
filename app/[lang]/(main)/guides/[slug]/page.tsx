@@ -124,6 +124,9 @@ export default async function GuidePage({ params }: GuidePageProps) {
         </p>
         <p className="text-xs text-muted-foreground/70">
           {dict.guides.publishedOnTemplate.replace('{date}', resolvedGuide.publishedAt)}
+          {resolvedGuide.updatedAt && (
+            <> · {dict.guides.updatedOnTemplate.replace('{date}', resolvedGuide.updatedAt)}</>
+          )}
         </p>
       </div>
 

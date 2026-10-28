@@ -5190,5 +5190,849 @@
         "official": false
       }
     }
+  },
+  {
+    "id": "waste-appliance-free-pickup",
+    "slug": "waste-appliance-free-pickup",
+    "name": "폐가전 무상방문수거",
+    "summary": "폐가전 무상수거 예약 방법과 대형 가전 방문수거 품목·신청 조건을 확인하세요.",
+    "description": "폐가전 무상방문수거는 냉장고·세탁기·TV 등 버리기 어려운 폐가전을 집에서 무료로 배출할 수 있도록 돕는 서비스입니다. E-순환거버넌스 폐가전 배출예약시스템에서 품목과 주소를 입력해 방문수거를 예약하거나 콜센터(1599-0903)를 이용할 수 있습니다. 대형 가전은 단일 품목부터 예약할 수 있지만, 소형 가전만 신청할 때는 수량 기준이 적용됩니다. 에어컨·벽걸이 TV처럼 설치된 제품은 미리 철거해야 하며, 수거 불가 품목과 지역별 수거일을 예약 전에 공식 안내에서 확인하세요.",
+    "categorySlug": "env-energy",
+    "tags": ["폐가전", "무상수거", "대형폐기물", "재활용", "방문수거"],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.15990903.or.kr/portal/main/main.do",
+    "hours": "온라인 예약 가능(콜센터 평일 08:00~18:00, 수거일은 지역별 상이)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "E-순환거버넌스",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Free Home Collection for Discarded Appliances",
+        "summary": "Check how to book free home collection for discarded appliances, including eligible items and pickup rules.",
+        "description": "This service helps households dispose of unwanted appliances such as refrigerators, washing machines, and TVs through free home collection. Use E-Cycle Governance's reservation system or call 1599-0903 to book a pickup. A single large appliance can be booked, while minimum quantity rules apply to small appliances requested alone. Installed items such as air conditioners and wall-mounted TVs must be dismantled before pickup. Check the official list of eligible items and local schedules before booking.",
+        "hours": "Online booking available; call center weekdays 08:00–18:00; pickup days vary by area",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "safe-driving-integrated-civil-service",
+    "slug": "safe-driving-integrated-civil-service",
+    "name": "안전운전 통합민원(운전면허 갱신·적성검사)",
+    "summary": "운전면허 갱신 기간과 1종 적성검사, 2종 갱신 신청 방법을 확인하세요.",
+    "description": "안전운전 통합민원은 한국도로교통공단의 운전면허 온라인 민원 사이트입니다. 운전면허 적성검사 및 갱신 기간을 확인하고, 1종 면허 적성검사와 2종 면허 갱신 안내, 사진 등록, 신청서 출력 및 온라인 신청을 이용할 수 있습니다. 면허 종류와 신청 조건에 따라 온라인 신청 가능 여부와 시험장·경찰서 방문 필요 여부가 다릅니다. 갱신 기간을 놓치지 않도록 본인의 대상 여부, 준비물, 수수료와 방문 절차를 공식 사이트에서 확인하세요.",
+    "categorySlug": "transport",
+    "tags": ["운전면허", "면허갱신", "적성검사", "교통", "한국도로교통공단"],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.safedriving.or.kr/",
+    "hours": "온라인 안내·민원(시험장·경찰서 방문 시간은 기관별 확인)",
+    "cost": "paid",
+    "badges": ["공공기관"],
+    "source": "한국도로교통공단",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Safe Driving Integrated Civil Service Portal",
+        "summary": "Check Korean driver's license renewal deadlines, Class 1 fitness tests, and Class 2 renewal options.",
+        "description": "The Safe Driving Integrated Civil Service portal is operated by the Korea Road Traffic Authority. It provides Korean driver's license renewal and fitness-test information, including Class 1 fitness tests and Class 2 renewals. Eligible users can register a photo, print forms, or apply online. Online eligibility and in-person requirements vary by license and applicant; confirm your deadline, required documents, fees, and testing-office procedures on the official site.",
+        "hours": "Online guidance and services; check individual offices for in-person hours",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "national-notification-assistant",
+    "slug": "national-notification-assistant",
+    "name": "국민비서 구삐",
+    "summary": "국민비서 구삐에서 과태료·건강검진·세금 등 생활 행정 알림을 신청하세요.",
+    "description": "국민비서 구삐는 행정안전부의 맞춤형 행정정보 알림 서비스입니다. 교통 과태료·범칙금 납부 안내, 국가건강검진 안내, 세금과 생활 민원 등 필요한 알림을 신청하고 카카오톡·네이버 등 제공 채널에서 받을 수 있습니다. 정부 알림을 놓치지 않도록 국민비서 누리집에서 이용 가능한 알림 항목과 수신 앱을 확인하고 신청하세요. 개인별 알림 설정과 일부 서비스에는 본인 인증이 필요할 수 있습니다.",
+    "categorySlug": "life-admin-tips",
+    "tags": ["행정알림", "국민비서", "건강검진", "과태료", "정부서비스"],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.ips.go.kr/",
+    "hours": "온라인 신청·조회",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "행정안전부",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Korea's National Notification Assistant (Guppi)",
+        "summary": "Sign up for Korean government reminders about traffic fines, health checkups, taxes, and civil services.",
+        "description": "Guppi is the Korean Ministry of the Interior and Safety's personalized government notification service. Users can subscribe to reminders about traffic fines, national health checkups, taxes, and other everyday government services, then receive alerts through supported apps and channels. Check the official National Notification Assistant site for current alert topics and enrollment steps. Identity verification may be required for some services.",
+        "hours": "Online enrollment and lookup",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "k-pass-transit-benefit",
+    "slug": "k-pass-transit-benefit",
+    "name": "K-패스 대중교통비 환급",
+    "summary": "K-패스 교통비 환급 대상과 카드 등록 방법을 확인하고 대중교통비 혜택을 신청하세요.",
+    "description": "K-패스는 대중교통을 이용하는 국민의 교통비 부담을 덜기 위한 환급 서비스입니다. 참여 카드사에서 K-패스 카드를 발급받고 공식 누리집에서 회원가입·카드 등록을 마친 뒤, 등록한 카드로 버스·지하철 등 대상 교통수단을 이용하면 이용 실적과 자격 기준에 따라 환급을 받을 수 있습니다. K-패스 신청 방법, 환급 기준, 참여 지역과 대상 교통수단은 변경될 수 있으므로 카드 등록 전에 공식 안내를 확인하세요.",
+    "categorySlug": "transport",
+    "tags": ["K-패스", "대중교통", "교통비환급", "교통지원", "정부지원"],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://korea-pass.kr/",
+    "hours": "온라인 가입·이용내역 조회",
+    "cost": "free",
+    "badges": ["무료", "정부지원"],
+    "source": "국토교통부 대도시권광역교통위원회",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "K-Pass Public Transit Fare Benefit",
+        "summary": "Learn how to register for Korea's K-Pass public transit fare reimbursement and check eligibility.",
+        "description": "K-Pass is a public transit fare benefit program in South Korea. Get a participating K-Pass card, register on the official website, and use the registered card on eligible buses, subways, and other covered transit to receive benefits based on current usage and eligibility rules. Check the official site for enrollment steps, participating areas, covered transit, and reimbursement criteria, which may change.",
+        "hours": "Online enrollment and usage lookup",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "moel-labor-portal",
+    "slug": "moel-labor-portal",
+    "name": "고용노동부 노동포털(임금체불·노동민원)",
+    "summary": "임금체불 신고·진정서 제출, 노동 민원 처리 조회와 퇴직금 계산을 온라인으로 이용하세요.",
+    "description": "고용노동부 노동포털은 임금체불 신고와 노동 관련 민원을 온라인으로 신청하는 공식 창구입니다. 임금을 받지 못한 근로자는 임금체불 진정서를 제출하고 사건 처리 현황을 조회할 수 있으며, 퇴직금 등 각종 수당 계산과 노동 민원 안내도 확인할 수 있습니다. 신청 전 사업장 정보와 임금 자료 등 필요한 내용을 준비하고, 민원별 본인 인증·증빙 요건과 관할 절차를 공식 안내에서 확인하세요. 전화 상담은 고용노동부 고객상담센터 1350에서 받을 수 있습니다.",
+    "categorySlug": "legal-admin",
+    "tags": ["임금체불", "노동민원", "진정신청", "퇴직금", "고용노동부"],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://labor.moel.go.kr/",
+    "hours": "온라인 신청·조회(상담 1350, 평일 09:00~18:00)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "고용노동부",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Ministry of Employment and Labor Portal",
+        "summary": "File a wage nonpayment complaint, submit labor petitions, track cases, and calculate severance pay in Korea.",
+        "description": "The Ministry of Employment and Labor Portal is South Korea's official online service for labor complaints and petitions. Workers can file a wage nonpayment complaint, track a reported case, find labor guidance, and calculate payments such as severance pay. Prepare employer and wage records before filing, and check the official portal for identity verification, evidence, and jurisdiction requirements. Phone counseling is available through 1350.",
+        "hours": "Online applications and lookup; phone counseling at 1350 on weekdays 09:00–18:00",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "comwel-employment-industrial-insurance-total",
+    "slug": "comwel-employment-industrial-insurance-total",
+    "name": "고용·산재보험 토탈서비스",
+    "summary": "고용·산재보험 가입 이력 조회, 자격 신고와 보험 민원을 근로복지공단에서 처리하세요.",
+    "description": "근로복지공단 고용·산재보험 토탈서비스는 고용보험과 산재보험의 온라인 민원·신고 포털입니다. 근로자는 본인의 보험 자격과 가입 이력을 확인하고 관련 민원을 이용할 수 있으며, 사업주는 근로자 자격 취득·상실 신고와 보험 업무를 처리할 수 있습니다. 고용보험 가입 이력 조회, 산재보험 관련 신청, 사업장 신고를 위해 로그인과 본인 또는 사업장 인증이 필요할 수 있습니다. 업무별 제출 서류와 이용 조건은 공식 사이트에서 확인하세요.",
+    "categorySlug": "employment-startup",
+    "tags": [
+      "고용보험",
+      "산재보험",
+      "보험가입이력",
+      "근로복지공단",
+      "사업장신고"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://total.comwel.or.kr/",
+    "hours": "온라인 민원·신고(상담 1588-0075)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "근로복지공단",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Employment and Workers' Compensation Insurance Portal",
+        "summary": "Check Korean employment and workers' compensation insurance records and file employer reports online.",
+        "description": "The Korea Workers' Compensation and Welfare Service operates this online portal for employment insurance and workers' compensation. Workers can check insurance eligibility and coverage records and access related services. Employers can file employee enrollment and separation reports and manage other insurance matters. Login and personal or business verification may be required; review the official site for service-specific documents and requirements.",
+        "hours": "Online applications and reports; help line 1588-0075",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "nps-retirement-preparation-center",
+    "slug": "nps-retirement-preparation-center",
+    "name": "중앙노후준비지원센터(내 연금 알아보기)",
+    "summary": "국민연금 예상 수령액 모의계산과 내 연금 조회, 노후준비 진단을 한곳에서 이용하세요.",
+    "description": "국민연금공단 중앙노후준비지원센터에서 국민연금 예상 수령액을 모의계산하고, 로그인 후 개인별 예상연금과 가입 중인 공적·사적 연금 정보를 확인할 수 있습니다. 노후준비 종합진단, 재무·건강·여가 정보와 상담 안내도 제공해 은퇴 준비에 활용할 수 있습니다. 예상연금은 입력한 소득·가입 기간과 계산 시점의 제도를 바탕으로 한 추정치이며 실제 연금액과 다를 수 있습니다. 국민연금 예상연금 조회, 내 연금 알아보기, 노후준비 진단을 공식 누리집에서 확인하세요.",
+    "categorySlug": "tax-finance",
+    "tags": ["국민연금", "예상연금", "노후준비", "연금조회", "재무설계"],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://csa.nps.or.kr/main.do",
+    "hours": "온라인 정보·모의계산(상담 1355, 평일 09:00~18:00)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "국민연금공단",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "NPS Central Retirement Preparation Support Center",
+        "summary": "Calculate an estimated Korean National Pension, review your pension information, and assess retirement readiness.",
+        "description": "The National Pension Service Central Retirement Preparation Support Center helps users plan for retirement in South Korea. Use the National Pension estimate calculator, sign in to review personalized pension estimates and public or private pension information, and explore retirement readiness assessments, financial guidance, and counseling. Estimates depend on the information entered and current rules and may differ from actual benefits. Login is required for personalized records.",
+        "hours": "Online information and calculators; counseling at 1355 on weekdays 09:00–18:00",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "youth-activity-information-e-youth",
+    "slug": "youth-activity-information-e-youth",
+    "name": "청소년활동정보서비스 e청소년",
+    "summary": "청소년 수련활동·봉사활동과 인증 프로그램을 지역별로 찾아 신청하세요.",
+    "description": "e청소년은 여성가족부 정책에 따라 한국청소년활동진흥원이 운영하는 청소년활동정보서비스입니다. 전국 청소년수련시설과 체험·진로·문화 프로그램, 청소년자원봉사 활동을 검색하고 참가 정보를 확인할 수 있습니다. 안전성과 프로그램 내용을 확인할 수 있는 청소년수련활동 인증제 정보도 제공하므로, 청소년 체험활동이나 주말 활동을 찾는 청소년·학부모·지도자는 지역과 연령에 맞는 활동을 공식 사이트에서 검색하세요.",
+    "categorySlug": "family",
+    "tags": [
+      "청소년활동",
+      "청소년체험",
+      "청소년봉사",
+      "수련활동",
+      "인증프로그램"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.youth.go.kr/youth/",
+    "hours": "온라인 검색·신청(프로그램별 운영 일정 상이)",
+    "cost": "free",
+    "badges": ["공공기관"],
+    "source": "한국청소년활동진흥원",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "e-Youth Activity Information Service",
+        "summary": "Find youth camps, volunteering, and certified activities in South Korea by region.",
+        "description": "e-Youth is South Korea's youth activity information service, operated by the Korea Youth Work Agency. Search youth centers, hands-on and career programs, cultural activities, and youth volunteering by location and age. The portal also provides information on certified youth activities. Check each program's schedule, eligibility, and participation details on the official site.",
+        "hours": "Online search and applications; schedules vary by program",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "1365-volunteer-portal",
+    "slug": "1365-volunteer-portal",
+    "name": "1365 자원봉사포털",
+    "summary": "전국 자원봉사 모집을 검색하고 신청한 뒤 봉사활동 실적을 조회하세요.",
+    "description": "1365 자원봉사포털은 행정안전부와 한국중앙자원봉사센터가 운영하는 전국 자원봉사 정보·신청 서비스입니다. 지역, 날짜, 분야별 봉사 모집을 검색해 온라인으로 신청하고, 참여 내역과 승인된 봉사실적을 확인할 수 있습니다. 봉사 신청 상태와 실적 반영은 모집기관의 승인·등록 절차에 따라 달라질 수 있으므로, 활동 조건과 시간, 준비사항은 각 모집 공고에서 확인하세요.",
+    "categorySlug": "culture-leisure",
+    "tags": ["1365", "자원봉사", "봉사활동 신청", "봉사시간 조회", "봉사 모집"],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.1365.go.kr/vols/main.do",
+    "hours": "온라인 검색·신청·실적조회(상담 1522-3658)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "행정안전부·한국중앙자원봉사센터",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "1365 Volunteer Portal",
+        "summary": "Search and apply for volunteer opportunities across Korea and review approved service records.",
+        "description": "The 1365 Volunteer Portal is South Korea's nationwide volunteer opportunity and registration service. Search openings by region, date, and activity type, apply online, and review participation details and approved volunteer records. Application approval and record updates depend on the organizing institution; check each listing for eligibility, schedule, and requirements.",
+        "hours": "Online search, applications, and record lookup; help line 1522-3658",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "schoolinfo-school-disclosure",
+    "slug": "schoolinfo-school-disclosure",
+    "name": "학교알리미(초·중·고 학교정보 공시)",
+    "summary": "초·중·고 학교별 학생·급식·시설·학업 정보를 비교하고 공시자료를 확인하세요.",
+    "description": "학교알리미는 교육부의 초·중등학교 정보공시 서비스입니다. 학교 이름이나 지역으로 초등학교·중학교·고등학교 정보를 찾아 학생·교원 현황, 학교 급식, 교육활동, 시설, 예·결산, 학업성취와 학교폭력 관련 공시 항목을 확인할 수 있습니다. 학교 선택과 전학·진학 정보를 알아보는 학생·학부모가 학교별 공개자료를 비교할 때 활용할 수 있으며, 자료 기준연도와 공시 시점을 함께 확인하세요.",
+    "categorySlug": "lifelong-edu",
+    "tags": [
+      "학교알리미",
+      "학교정보",
+      "초등학교",
+      "중학교",
+      "고등학교",
+      "학교공시"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.schoolinfo.go.kr/",
+    "hours": "온라인 학교정보·공시자료 조회",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "교육부·한국교육학술정보원",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "School Info (Schoolinfo) Disclosure Portal",
+        "summary": "Compare Korean elementary, middle, and high schools using official school disclosures.",
+        "description": "Schoolinfo is South Korea's public disclosure portal for elementary, middle, and high schools. Search by school or region to review student and teacher numbers, meals, facilities, educational activities, budgets, academic outcomes, and other published information. Check the reference year and disclosure date when comparing schools.",
+        "hours": "Online school information and disclosure lookup",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "academyinfo-university-disclosure",
+    "slug": "academyinfo-university-disclosure",
+    "name": "대학알리미(대학정보공시)",
+    "summary": "대학별 등록금·장학금·취업률·학과와 교육 여건 공시정보를 비교하세요.",
+    "description": "대학알리미는 교육부의 대학정보공시 포털로, 대학과 학과를 선택할 때 필요한 공식 공개자료를 제공합니다. 대학별 등록금과 장학금, 신입생 충원율, 취업률, 학생·교원 현황, 교육·연구 여건 등 공시 항목을 검색하고 비교할 수 있습니다. 대학 진학을 준비하는 학생·학부모와 대학 정보를 확인하려는 이용자는 학교·학과별 자료와 공시 기준연도를 함께 살펴보세요.",
+    "categorySlug": "lifelong-edu",
+    "tags": [
+      "대학알리미",
+      "대학정보공시",
+      "대학 등록금",
+      "대학 취업률",
+      "학과정보"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.academyinfo.go.kr/",
+    "hours": "온라인 대학·학과 정보 조회",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "교육부·한국대학교육협의회",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Academyinfo University Disclosure Portal",
+        "summary": "Compare Korean universities by tuition, scholarships, employment rates, programs, and education conditions.",
+        "description": "Academyinfo is South Korea's official university information disclosure portal. Search and compare published data on tuition, scholarships, freshman enrollment, graduate employment, students and faculty, academic programs, and education and research conditions. Review the university, department, and reference year for each disclosure.",
+        "hours": "Online university and program information lookup",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "neis-parent-service",
+    "slug": "neis-parent-service",
+    "name": "나이스 학부모서비스",
+    "summary": "자녀의 학교생활·출결·성적·급식 정보를 확인하고 체험학습을 신청하세요.",
+    "description": "나이스 학부모서비스는 학부모가 자녀의 학교생활 정보를 온라인과 모바일에서 확인하는 교육행정 서비스입니다. 자녀를 등록하고 정보 열람 동의를 마치면 학교 정보, 식단, 출결, 성적과 학교생활기록 등 제공 항목을 조회할 수 있고, 교외체험학습이나 방과후학교 등 학교별 신청 기능을 이용할 수 있습니다. 자녀의 동의와 본인 인증이 필요한 항목이 있으므로 가입·자녀 등록 절차와 학교별 제공 기능을 공식 안내에서 확인하세요.",
+    "categorySlug": "family",
+    "tags": [
+      "나이스 학부모서비스",
+      "NEIS",
+      "자녀 출결 조회",
+      "성적 조회",
+      "학교생활기록"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://parents.neis.go.kr/",
+    "hours": "온라인·모바일 조회(학교별 기능 및 일정 상이)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "교육부·한국교육학술정보원",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "NEIS Parent Service",
+        "summary": "View a child's school life, attendance, grades, and meals through Korea's education service.",
+        "description": "The NEIS Parent Service lets parents access their child's school information online and on mobile. After registering a child and receiving the required consent, parents can view available school details, meals, attendance, grades, and school records, and use school-specific features such as field-trip or after-school applications. Identity verification and student consent may be required; available features vary by school.",
+        "hours": "Online and mobile access; features and schedules vary by school",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "job-alio-public-institution-jobs",
+    "slug": "job-alio-public-institution-jobs",
+    "name": "잡알리오 공공기관 채용정보",
+    "summary": "공기업·준정부기관·공공기관 채용공고를 직무·지역·고용형태별로 검색하세요.",
+    "description": "잡알리오는 공공기관 채용공고를 모아 제공하는 공식 채용정보 시스템입니다. 공기업·준정부기관 등 공공기관의 신입·경력 채용과 청년인턴 공고를 직무(NCS), 근무지역, 고용형태, 학력, 기관명으로 검색할 수 있습니다. 공공기관 취업을 준비하는 구직자는 지원 자격, 우대 조건과 접수 기간을 각 기관의 원문 채용공고에서 최종 확인하세요.",
+    "categorySlug": "employment-startup",
+    "tags": [
+      "잡알리오",
+      "공공기관 채용",
+      "공기업 채용",
+      "공공기관 취업",
+      "청년인턴"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://job.alio.go.kr/main.do",
+    "hours": "온라인 채용공고 검색",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "기획재정부",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "JOB-ALIO Public Institution Recruitment Portal",
+        "summary": "Search South Korean public institution jobs by occupation, location, and employment type.",
+        "description": "JOB-ALIO is South Korea's public institution recruitment information portal. Search openings at public corporations and other designated institutions by NCS occupation, location, employment type, education, and institution. Review the original recruitment notice for eligibility, preferred qualifications, and application deadlines.",
+        "hours": "Online job listing search",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "nara-iltter-public-service-jobs",
+    "slug": "nara-iltter-public-service-jobs",
+    "name": "나라일터 공직·공무원 채용정보",
+    "summary": "국가·지방 공무원과 공공부문 채용, 개방형 직위 공고를 찾아보세요.",
+    "description": "나라일터는 인사혁신처가 운영하는 공직 채용정보 포털입니다. 국가기관·지방자치단체·교육청·공공기관의 공무원과 공무직 등 채용공고, 개방형 직위, 대체인력 채용정보와 인사교류 정보를 확인할 수 있습니다. 공무원·공공부문 일자리를 찾는 구직자는 직종과 지역으로 공고를 검색하고, 응시 자격과 접수 방식은 해당 공고문에서 확인하세요.",
+    "categorySlug": "employment-startup",
+    "tags": ["나라일터", "공무원 채용", "공직 채용", "공무직", "개방형 직위"],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.gojobs.go.kr/mainIndex.do",
+    "hours": "온라인 채용공고 검색",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "인사혁신처",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Nara Iltteo Public Service Jobs Portal",
+        "summary": "Find Korean civil service, local government, education office, and public sector job postings.",
+        "description": "Nara Iltteo is a public service recruitment portal operated by Korea's Ministry of Personnel Management. It lists civil service and other public sector openings across national and local government, education offices, and public institutions, as well as open positions and substitute staffing opportunities. Check each original notice for eligibility and application details.",
+        "hours": "Online job listing search",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "cleaneye-local-public-jobs",
+    "slug": "cleaneye-local-public-jobs",
+    "name": "클린아이 잡플러스 지방공공기관 채용정보",
+    "summary": "지방공기업·지방출자기관·지방출연기관 채용공고를 지역과 직무별로 검색하세요.",
+    "description": "클린아이 잡플러스는 지방공기업과 지방 출자·출연기관의 채용정보를 제공하는 지방공공기관 채용 포털입니다. 지방공사·공단·출자기관·출연기관의 정규직, 기간제, 인턴 공고를 직무, 지역, 고용형태와 우대사항으로 찾아볼 수 있습니다. 지역제한 선발 여부와 응시 조건이 공고별로 다르므로 지원 전 원문 공고와 해당 기관 안내를 확인하세요.",
+    "categorySlug": "employment-startup",
+    "tags": [
+      "클린아이 잡플러스",
+      "지방공기업 채용",
+      "지방공공기관",
+      "지방공사 채용",
+      "지방공단 채용"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://job.cleaneye.go.kr/",
+    "hours": "온라인 채용공고 검색",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "행정안전부",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Cleaneye Job+ Local Public Institution Jobs",
+        "summary": "Search jobs at Korean local public corporations and government-funded regional institutions.",
+        "description": "Cleaneye Job+ provides recruitment information for South Korean local public institutions, including local corporations, public agencies, and government-funded foundations. Search openings by occupation, region, employment type, and preferred qualifications. Check each institution's original notice for local residency restrictions and application requirements.",
+        "hours": "Online job listing search",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "gongmuwon-national-recruitment-system",
+    "slug": "gongmuwon-national-recruitment-system",
+    "name": "국가공무원 채용시스템",
+    "summary": "국가직 공무원 시험 공고·원서접수·성적과 합격자 발표를 확인하세요.",
+    "description": "국가공무원 채용시스템은 인사혁신처가 운영하는 국가직 공무원 채용 사이트입니다. 5급·7급·9급 공개경쟁채용과 경력경쟁채용 등 국가공무원 시험의 일정과 공고를 확인하고, 온라인 원서접수, 시험 관련 안내, 성적·합격자 조회 기능을 이용할 수 있습니다. 시험별 응시 자격과 제출서류, 접수 일정은 달라질 수 있으므로 해당 연도 공고문을 반드시 확인하세요.",
+    "categorySlug": "employment-startup",
+    "tags": [
+      "국가공무원 채용시스템",
+      "국가직 공무원 시험",
+      "공무원 원서접수",
+      "9급 공무원",
+      "7급 공무원"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://gongmuwon.gosi.kr/",
+    "hours": "온라인 시험정보·원서접수·결과조회",
+    "cost": "free",
+    "badges": ["공공기관"],
+    "source": "인사혁신처",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "National Civil Service Recruitment System",
+        "summary": "View Korean national civil service exam notices, apply online, and check results.",
+        "description": "This recruitment system is operated by Korea's Ministry of Personnel Management for national civil service examinations. Find notices for open and career-track recruitment, including grade 5, 7, and 9 exams, submit applications online, and check exam information and results. Eligibility, documents, and deadlines vary by exam; consult the current official notice.",
+        "hours": "Online exam information, applications, and results",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "open-government-information-portal",
+    "slug": "open-government-information-portal",
+    "name": "정보공개포털(공공기관 정보공개청구)",
+    "summary": "정부·공공기관이 보유한 자료를 검색하고 정보공개를 온라인으로 청구하세요.",
+    "description": "정보공개포털은 중앙행정기관·지방자치단체·공공기관에 정보공개를 청구하고 처리 결과를 확인하는 행정안전부 온라인 창구입니다. 사전 공개된 정책자료와 기관 정보를 검색하거나, 공개가 필요한 문서·자료를 청구하고 진행 상태와 공개 여부 통지를 조회할 수 있습니다. 청구 대상 기관과 자료를 구체적으로 작성하면 도움이 되며, 공개·부분공개·비공개 여부는 법령과 기관의 심사에 따라 결정됩니다.",
+    "categorySlug": "legal-admin",
+    "tags": [
+      "정보공개포털",
+      "정보공개청구",
+      "공공기관 자료",
+      "정부 문서",
+      "알권리"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.open.go.kr/",
+    "hours": "온라인 정보검색·청구·처리조회(상담 1588-2572)",
+    "cost": "free",
+    "badges": ["공공기관"],
+    "source": "행정안전부",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Korea Open Government Information Portal",
+        "summary": "Search public records and submit information disclosure requests to Korean government agencies online.",
+        "description": "South Korea's Open Government Information Portal lets users search published government records and request information held by public agencies. Submit a disclosure request online and track its status and decision. Agencies determine whether information can be released, partially released, or withheld under applicable rules.",
+        "hours": "Online search, requests, and status tracking; help line 1588-2572",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "national-legislation-participation-center",
+    "slug": "national-legislation-participation-center",
+    "name": "국민참여입법센터(법령 입법예고·의견제출)",
+    "summary": "정부·지방자치단체의 법령 입법예고를 검색하고 개정안에 의견을 제출하세요.",
+    "description": "국민참여입법센터는 법제처의 법령정보 국민참여 서비스입니다. 정부의 법률·시행령·시행규칙 입법예고와 지방자치단체의 자치법규 입법예고를 검색하고, 의견 제출 기간에 개정안에 대한 의견을 온라인으로 낼 수 있습니다. 관심 있는 법령의 입법예고 내용과 마감일, 제출 방법을 확인하고, 실제 의견 접수가 가능한지 해당 공고의 안내를 함께 살펴보세요.",
+    "categorySlug": "rights-remedy",
+    "tags": [
+      "국민참여입법센터",
+      "입법예고",
+      "법령 개정 의견",
+      "자치법규",
+      "법제처"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://opinion.lawmaking.go.kr/",
+    "hours": "온라인 입법예고 검색·의견제출(공고별 기간 확인)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "법제처",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "National Legislation Participation Center",
+        "summary": "Search Korean draft legislation notices and submit public comments on proposed laws and regulations.",
+        "description": "The National Legislation Participation Center is Korea's public service for legislative notices and participation. Search proposed national laws, enforcement decrees, rules, and local ordinances, and submit comments during the notice period when available. Review the proposal, deadline, and submission instructions on each notice.",
+        "hours": "Online notice search and public comments; deadlines vary by notice",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "korean-courts-case-search",
+    "slug": "korean-courts-case-search",
+    "name": "대한민국 법원 나의 사건검색",
+    "summary": "민사·형사·가사 법원 사건번호로 재판 진행과 기일 정보를 조회하세요.",
+    "description": "대한민국 법원 나의 사건검색은 법원에 접수된 사건의 진행 정보를 온라인으로 확인하는 서비스입니다. 법원과 사건번호 등 검색 조건을 입력해 재판 진행 단계와 기일 정보를 조회할 수 있습니다. 사건 당사자 본인의 상세한 기록 열람이나 전자문서 확인에는 별도 인증 또는 전자소송포털 이용이 필요할 수 있으며, 조회 범위와 공개 시점은 사건 종류에 따라 다릅니다.",
+    "categorySlug": "legal-admin",
+    "tags": [
+      "나의 사건검색",
+      "법원 사건조회",
+      "사건번호 조회",
+      "재판기일 조회",
+      "대법원"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.scourt.go.kr/portal/information/events/search/search.jsp",
+    "hours": "온라인 사건 진행·기일 조회",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "대한민국 법원",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Korean Courts Case Search",
+        "summary": "Look up Korean court case progress and hearing dates using court and case number details.",
+        "description": "The Korean Courts Case Search service provides online case progress and hearing information. Search using the court and case number details. Access to full case records or electronic documents may require identity verification or the separate electronic litigation portal. Available information varies by case type.",
+        "hours": "Online case progress and hearing lookup",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "kics-criminal-justice-portal",
+    "slug": "kics-criminal-justice-portal",
+    "name": "형사사법포털(KICS) 사건조회",
+    "summary": "경찰·검찰·법원의 형사사건 진행상황과 통지서·벌과금 정보를 확인하세요.",
+    "description": "형사사법포털(KICS)은 경찰·검찰·법원 등 형사사법기관의 사건 정보를 온라인으로 확인하는 법무부 포털입니다. 본인 인증 후 기관별 형사사건 진행상황, 사건 관련 통지서와 재판서, 벌과금 조회 및 관련 민원 기능을 이용할 수 있습니다. 조회 가능한 정보는 본인과 사건 유형, 진행 기관에 따라 달라지므로 공식 사이트의 이용 안내와 개인정보 보호 절차를 확인하세요.",
+    "categorySlug": "legal-admin",
+    "tags": [
+      "형사사법포털",
+      "KICS",
+      "형사사건 조회",
+      "경찰 사건조회",
+      "검찰 사건조회"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.kics.go.kr/",
+    "hours": "온라인 사건·통지서 조회(본인 인증 필요)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "법무부",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Korea Criminal Justice Information Service (KICS)",
+        "summary": "Check eligible Korean police, prosecution, and court case updates and notices online.",
+        "description": "KICS is South Korea's criminal justice information portal, operated by the Ministry of Justice. After identity verification, users can access available criminal case progress information from police, prosecutors, and courts, as well as notices, court documents, and fine information. Available records depend on the person, case, and agency; consult the official privacy and access guidance.",
+        "hours": "Online case and notice lookup; identity verification required",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "juso-road-address-portal",
+    "slug": "juso-road-address-portal",
+    "name": "주소정보누리집(도로명주소 검색·변환)",
+    "summary": "도로명주소와 지번주소를 검색·변환하고 영문 주소와 주소정보를 확인하세요.",
+    "description": "주소정보누리집은 행정안전부의 도로명주소 안내 시스템입니다. 도로명주소·지번주소 찾기와 주소 변환, 영문 도로명주소 확인, 건물·도로 위치 조회를 이용할 수 있습니다. 산악·해안 등에서 긴급 신고에 활용하는 국가지점번호와 시설물 사물주소 정보도 검색할 수 있어 이사, 택배 발송, 공공기관 서류 작성에 필요한 정확한 주소를 확인할 때 유용합니다.",
+    "categorySlug": "life-admin-tips",
+    "tags": [
+      "도로명주소 검색",
+      "지번주소 변환",
+      "영문주소",
+      "주소정보누리집",
+      "국가지점번호"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.juso.go.kr/",
+    "hours": "온라인 주소 검색·변환",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "행정안전부",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Korea Road Name Address Portal",
+        "summary": "Search Korean road-name and lot-number addresses, convert address formats, and find English addresses.",
+        "description": "South Korea's Road Name Address Portal helps users find road-name and lot-number addresses, convert between formats, and look up English addresses and location information. It also provides details for national grid numbers used in emergencies and addresses assigned to facilities. Use it to confirm an accurate address for deliveries, forms, and everyday needs.",
+        "hours": "Online address search and conversion",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "koreapost-epost",
+    "slug": "koreapost-epost",
+    "name": "인터넷우체국(우편·소포·EMS 온라인 서비스)",
+    "summary": "우체국 소포 방문접수 예약, 등기·EMS 조회와 내용증명 서비스를 이용하세요.",
+    "description": "인터넷우체국은 우체국 창구를 방문하지 않고 우편·소포 업무를 온라인으로 처리하는 우정사업본부 서비스입니다. 국내 등기·소포와 국제우편 EMS를 접수하거나 방문수거를 예약하고, 우편물 배송조회, 인터넷 내용증명, 배달증명, 주거이전 우편물 전송 신청 등을 이용할 수 있습니다. 우편요금과 일부 부가서비스 비용은 유료이며, 접수 가능 품목·규격과 요금은 신청 전에 공식 안내에서 확인하세요.",
+    "categorySlug": "life-admin-tips",
+    "tags": [
+      "인터넷우체국",
+      "우체국 택배 예약",
+      "EMS 조회",
+      "등기우편 조회",
+      "인터넷 내용증명"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.epost.go.kr/",
+    "hours": "온라인 우편·소포 접수 및 조회(창구 운영시간은 우체국별 상이)",
+    "cost": "paid",
+    "badges": ["공공기관"],
+    "source": "우정사업본부",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Korea Post Internet Post Office",
+        "summary": "Book parcel pickup, track registered mail and EMS, and use online proof-of-content services.",
+        "description": "Korea Post's Internet Post Office provides postal and parcel services online. Users can arrange domestic and international shipping, book parcel pickup, track registered mail and EMS, request proof-of-content or delivery confirmation, and submit mail forwarding requests. Postage and some services have fees; check eligible items, size limits, and current rates before payment.",
+        "hours": "Online postal services and tracking; in-person hours vary by post office",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "foresttrip-national-recreation-forests",
+    "slug": "foresttrip-national-recreation-forests",
+    "name": "숲나들e 자연휴양림 통합예약",
+    "summary": "전국 자연휴양림 숙박·야영장 예약 가능 날짜와 추첨·우선예약을 확인하세요.",
+    "description": "숲나들e는 산림청 국립자연휴양림관리소가 운영하는 산림휴양 통합 예약 플랫폼입니다. 지역과 날짜를 선택해 전국 자연휴양림의 객실·야영장 등 숙박시설과 숲길·산림레포츠 정보를 찾고 예약할 수 있습니다. 휴양림마다 선착순·추첨·우선예약 방식과 이용료, 취소·환불 규정이 다를 수 있으므로 예약 전 해당 시설의 운영정책과 이용 조건을 확인하세요.",
+    "categorySlug": "culture-leisure",
+    "tags": [
+      "숲나들e",
+      "자연휴양림 예약",
+      "국립자연휴양림",
+      "숲속의집",
+      "야영장 예약"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.foresttrip.go.kr/main.do",
+    "hours": "온라인 예약·조회(시설별 예약 일정 상이)",
+    "cost": "paid",
+    "badges": ["공공기관"],
+    "source": "산림청 국립자연휴양림관리소",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Foresttrip National Recreation Forest Reservation Portal",
+        "summary": "Find and book Korean recreation forest cabins and campsites, including lottery and priority reservations.",
+        "description": "Foresttrip is South Korea's integrated reservation platform for recreation forests. Search by region and date for cabins, campsites, forest trails, and outdoor programs. Reservation methods, fees, priority eligibility, and cancellation rules vary by facility; review the selected forest's official policies before booking.",
+        "hours": "Online reservations and lookup; schedules vary by facility",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "knps-national-park-reservation",
+    "slug": "knps-national-park-reservation",
+    "name": "국립공원공단 예약시스템",
+    "summary": "국립공원 야영장·대피소·생태탐방원과 예약제 탐방로를 신청하세요.",
+    "description": "국립공원공단 예약시스템은 전국 국립공원의 숙박·야영과 탐방 프로그램을 예약하는 공식 사이트입니다. 국립공원별 야영장, 대피소, 생태탐방원, 민박촌을 날짜와 위치로 검색하고, 예약제 탐방로와 탐방 프로그램을 신청할 수 있습니다. 시설에 따라 예약 일정·추첨 방식·이용료·취소 규정이 다르며 기상이나 공사로 운영이 바뀔 수 있으므로 공지와 이용정책을 확인하세요.",
+    "categorySlug": "culture-leisure",
+    "tags": [
+      "국립공원 예약",
+      "국립공원 야영장",
+      "대피소 예약",
+      "탐방로 예약",
+      "생태탐방원"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://reservation.knps.or.kr/",
+    "hours": "온라인 예약·조회(시설별 일정 및 운영상황 확인)",
+    "cost": "paid",
+    "badges": ["공공기관"],
+    "source": "국립공원공단",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Korea National Park Reservation System",
+        "summary": "Book national park campsites, shelters, visitor centers, trails, and guided programs in Korea.",
+        "description": "The Korea National Park Service reservation system lets users search and book facilities and activities in national parks. Options include campsites, shelters, ecological visitor centers, park lodges, reservation-only trails, and guided programs. Availability, lottery schedules, fees, and cancellation rules vary; check current notices and policies before visiting.",
+        "hours": "Online reservations and lookup; schedules and operations vary by facility",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "youth-labor-rights-center",
+    "slug": "youth-labor-rights-center",
+    "name": "청소년근로권익센터(청소년·청년 노동상담)",
+    "summary": "아르바이트 임금체불·근로계약·부당대우를 무료 상담하고 권리구제를 안내받으세요.",
+    "description": "청소년근로권익센터는 아르바이트와 초기 취업 과정에서 노동 문제를 겪는 청소년·청년을 위한 상담 창구입니다. 최저임금, 근로계약서, 임금체불, 주휴수당, 부당해고 등 노동법 상담과 필요한 경우 권리구제 지원 정보를 확인할 수 있습니다. 상담 가능 연령과 지원 범위, 사건 대리 요건은 사업 안내에 따라 달라질 수 있으므로 온라인 상담 신청 전에 공식 이용 안내를 확인하세요.",
+    "categorySlug": "legal-admin",
+    "tags": [
+      "청소년근로권익센터",
+      "알바 임금체불",
+      "근로계약서 상담",
+      "주휴수당",
+      "청년 노동상담"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.youthlabor.co.kr/",
+    "hours": "온라인 상담 신청(상담 운영시간은 공식 안내 확인)",
+    "cost": "free",
+    "badges": ["무료", "취약계층지원"],
+    "source": "고용노동부·한국공인노무사회",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Youth Labor Rights Center",
+        "summary": "Get guidance on unpaid wages, work contracts, and unfair treatment for young workers in Korea.",
+        "description": "The Youth Labor Rights Center provides labor counseling for young people facing issues in part-time or early-career jobs. Topics include minimum wage, employment contracts, unpaid wages, weekly holiday allowance, and unfair dismissal, with information on rights-remedy support where eligible. Age limits and case support vary by program; check the official service guidance before applying.",
+        "hours": "Online counseling requests; check the site for service hours",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "cosmo-deposit-refund-center",
+    "slug": "cosmo-deposit-refund-center",
+    "name": "자원순환보증금관리센터(빈용기·일회용컵 보증금)",
+    "summary": "빈 소주·맥주병과 보증금 대상 컵의 반환 방법·반환 장소를 확인하세요.",
+    "description": "자원순환보증금관리센터(COSMO)는 빈용기와 일회용컵 보증금 제도 정보를 제공하고 반환·미반환 신고를 접수하는 기관입니다. 보증금 표시가 있는 빈 소주병·맥주병의 반환 방법과 무인회수기·반환수집소 이용 정보를 확인하고, 제도 대상 일회용컵의 반환 및 보증금 환급 절차를 찾아볼 수 있습니다. 제품별 보증금과 참여 매장·지역은 다를 수 있으므로 용기 라벨과 공식 안내를 확인하세요.",
+    "categorySlug": "env-energy",
+    "tags": [
+      "빈용기 보증금",
+      "빈병 반환",
+      "일회용컵 보증금",
+      "보증금 환급",
+      "자원순환"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.cosmo.or.kr/kor/",
+    "hours": "온라인 제도·반환장소 조회(반환 신고 1522-0082)",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "자원순환보증금관리센터",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "Resource Circulation Deposit Management Center",
+        "summary": "Find return guidance for deposit-bearing bottles and eligible disposable cups in Korea.",
+        "description": "COSMO provides information about South Korea's deposit systems for reusable beverage containers and eligible disposable cups. Find guidance on returning deposit-bearing soju and beer bottles, locating collection points and reverse vending machines, and claiming eligible cup deposits. Deposit amounts and participating locations vary; check product labels and current official guidance.",
+        "hours": "Online program and return-location information; reporting line 1522-0082",
+        "official": false
+      }
+    }
+  },
+  {
+    "id": "alio-public-institution-disclosure",
+    "slug": "alio-public-institution-disclosure",
+    "name": "공공기관 경영정보 공개시스템 ALIO",
+    "summary": "공공기관의 임직원·보수·재무·복리후생과 경영공시 자료를 검색·비교하세요.",
+    "description": "ALIO는 공공기관 경영정보를 공개하는 기획재정부 통합공시 시스템입니다. 기관별 임직원 현황, 임원 보수, 직원 평균보수, 신규채용, 재무·부채, 복리후생, 감사와 경영평가 등 공개된 공시자료를 검색하고 비교할 수 있습니다. 공공기관 취업을 준비하거나 기관 운영 정보를 확인하려는 국민은 자료의 공시 기준연도와 기관별 설명을 함께 확인하세요.",
+    "categorySlug": "public-data",
+    "tags": [
+      "ALIO",
+      "공공기관 경영공시",
+      "공기업 연봉",
+      "공공기관 보수",
+      "공공기관 재무정보"
+    ],
+    "thumbnail": "",
+    "images": [],
+    "url": "https://www.alio.go.kr/",
+    "hours": "온라인 기관정보·경영공시 조회",
+    "cost": "free",
+    "badges": ["무료", "공공기관"],
+    "source": "기획재정부",
+    "affiliate": false,
+    "lastVerified": "2026-10-28",
+    "i18n": {
+      "en": {
+        "name": "ALIO Public Institution Management Disclosure System",
+        "summary": "Search Korean public institution disclosures on staffing, pay, finances, benefits, and performance.",
+        "description": "ALIO is South Korea's integrated public institution disclosure system. Search published information on staffing, executive and employee compensation, recruitment, finances, debt, employee benefits, audits, and management evaluations. Check each institution's disclosure year and explanatory notes when comparing data.",
+        "hours": "Online institution information and disclosure lookup",
+        "official": false
+      }
+    }
   }
 ]
