@@ -7,7 +7,10 @@ import { AdSlot } from '@/components/AdSlot';
 import { ServiceGrid } from '@/components/ServiceGrid';
 import { DiscoverSearchBar } from '@/components/discover/SearchBar';
 import { SiteCard } from '@/components/discover/SiteCard';
-import { getDiscoverCategoryIcon } from '@/lib/discover-icons';
+import { DiscoverGuideLinks } from '@/components/discover/GuideLinks';
+import { getDiscoverGuidesForCategory } from '@/lib/discover-guides';
+import { discoverSelectionCriteria } from '@/lib/discover-selection-criteria';
+import { DiscoverCategoryIcon } from '@/lib/discover-icons';
 import { breadcrumbList, jsonLdScriptProps } from '@/lib/json-ld';
 import {
   getAllSiteCategories,
@@ -56,7 +59,6 @@ export default async function DiscoverCategoryPage({
   if (!category) notFound();
 
   const sites = await getSitesByCategory(categorySlug);
-  const Icon = getDiscoverCategoryIcon(category.slug);
 
   const siteUrl = getSiteUrl();
   const jsonLd = {
@@ -84,7 +86,7 @@ export default async function DiscoverCategoryPage({
 
       <Link
         href="/discover"
-        className="flex w-fit items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        className="text-muted-foreground hover:text-foreground flex w-fit items-center gap-1 text-sm transition-colors"
       >
         <ChevronLeft aria-hidden className="size-4" />
         전체 카테고리
@@ -99,24 +101,39 @@ export default async function DiscoverCategoryPage({
             color: category.color,
           }}
         >
-          <Icon className="size-6" strokeWidth={1.75} />
+          <DiscoverCategoryIcon
+            categorySlug={category.slug}
+            className="size-6"
+            strokeWidth={1.75}
+          />
         </div>
         <div className="flex flex-col gap-1.5">
           <h1 className="text-2xl font-bold sm:text-3xl">{category.name}</h1>
           <p className="text-muted-foreground">{category.description}</p>
-          <p className="text-sm font-medium text-muted-foreground/70">
+          <p className="text-muted-foreground/70 text-sm font-medium">
             사이트 {sites.length}개
           </p>
         </div>
       </div>
 
       {category.intro && (
-        <p className="max-w-3xl rounded-sm border bg-muted/30 p-4 text-sm leading-relaxed text-foreground/90">
+        <p className="bg-muted/30 text-foreground/90 max-w-3xl rounded-sm border p-4 text-sm leading-relaxed">
           {category.intro}
         </p>
       )}
 
       <DiscoverSearchBar sites={sites} />
+      {discoverSelectionCriteria[categorySlug] && (
+        <section className="flex max-w-3xl flex-col gap-3 border-t pt-8">
+          <h2 className="text-lg font-bold">이 카테고리에서 고를 때</h2>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed">
+            {discoverSelectionCriteria[categorySlug].map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+      <DiscoverGuideLinks guides={getDiscoverGuidesForCategory(categorySlug)} />
 
       {sites.length > 0 ? (
         <ServiceGrid
@@ -125,7 +142,7 @@ export default async function DiscoverCategoryPage({
             <Fragment key={site.id}>
               <SiteCard site={site} hideCategoryBadge />
               {(index + 1) % IN_FEED_AD_INTERVAL === 0 && (
-                <AdSlot className="min-h-[120px] rounded-sm border border-dashed border-border sm:col-span-2 lg:col-span-3" />
+                <AdSlot className="border-border min-h-[120px] rounded-sm border border-dashed sm:col-span-2 lg:col-span-3" />
               )}
             </Fragment>
           ))}

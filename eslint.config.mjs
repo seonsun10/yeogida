@@ -12,6 +12,14 @@ const eslintConfig = defineConfig([
     'out/**',
     'build/**',
     'next-env.d.ts',
+    // 앱 소스가 아닌 로컬 에이전트 도구와 생성된 상태 파일.
+    '.agents/**',
+    '.claude/**',
+    '.codex/**',
+    '.cursor/**',
+    '.omd/**',
+    '.omx/**',
+    '.serena/**',
   ]),
 ]);
 

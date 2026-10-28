@@ -2,18 +2,17 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import type { Locale } from '@/lib/i18n';
+import { localeHref, type Locale } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 
 /**
- * usePathname()은 브라우저 주소창 그대로의 경로를 반환한다(ko는 proxy.ts가
- * rewrite로만 처리해 접두사가 안 붙고, en은 실제로 /en 접두사가 붙는다).
- * 그래서 여기서 문자열 치환만으로 상대 로케일 경로를 안전하게 계산할 수 있다.
+ * rewrite된 한국어 경로가 /ko로 전달되는 경우도 있으므로 두 언어 접두사를
+ * 먼저 제거한다. 내부 경로 /ko를 /en/ko로 연결하지 않는다.
  */
 function pathForLocale(pathname: string, target: Locale): string {
-  const withoutEnPrefix = pathname.replace(/^\/en(\/|$)/, '/');
-  if (target === 'ko') return withoutEnPrefix;
-  return withoutEnPrefix === '/' ? '/en' : `/en${withoutEnPrefix}`;
+  const withoutLocalePrefix =
+    pathname.replace(/^\/(?:ko|en)(?=\/|$)/, '') || '/';
+  return localeHref(target, withoutLocalePrefix);
 }
 
 export function LangSwitcher({
@@ -29,7 +28,10 @@ export function LangSwitcher({
 
   return (
     <div
-      className={cn('flex items-center gap-1 text-xs text-muted-foreground', className)}
+      className={cn(
+        'text-muted-foreground flex items-center gap-1 text-xs',
+        className,
+      )}
       aria-label={label}
     >
       {(['ko', 'en'] as const).map((target, index) => {
@@ -39,13 +41,16 @@ export function LangSwitcher({
           <span key={target} className="flex items-center gap-1">
             {index > 0 && <span aria-hidden="true">·</span>}
             {isActive ? (
-              <span aria-current="true" className="font-semibold text-foreground">
+              <span
+                aria-current="true"
+                className="text-foreground font-semibold"
+              >
                 {targetLabel}
               </span>
             ) : (
               <Link
                 href={pathForLocale(pathname, target)}
-                className="underline underline-offset-2 hover:text-foreground"
+                className="hover:text-foreground underline underline-offset-2"
               >
                 {targetLabel}
               </Link>

@@ -24,6 +24,9 @@ import {
 } from '@/lib/services';
 import { cn } from '@/lib/utils';
 import type { Service } from '@/types/service';
+import { getGuideReview, getGuideReviewSources } from '@/lib/guide-reviews';
+import { breadcrumbList, jsonLdScriptProps } from '@/lib/json-ld';
+import { getSiteUrl } from '@/lib/site-url';
 
 type GuidePageProps = {
   params: Promise<{ lang: string; slug: string }>;
@@ -51,6 +54,12 @@ export async function generateMetadata({
   return {
     title: resolved.title,
     description: resolved.summary,
+    authors: [
+      {
+        name: lang === 'en' ? 'Yeogida editorial' : '여기다 편집',
+        url: localeHref(lang, '/about'),
+      },
+    ],
     alternates: {
       canonical: localeHref(lang, `/guides/${slug}`),
     },
@@ -73,7 +82,9 @@ export default async function GuidePage({ params }: GuidePageProps) {
   const dict = await getDictionary(lang);
 
   const rawCategory = getCategoryBySlug(guide.categorySlug);
-  const category = rawCategory ? resolveCategoryForLocale(rawCategory, lang) : undefined;
+  const category = rawCategory
+    ? resolveCategoryForLocale(rawCategory, lang)
+    : undefined;
   const style = getCategoryStyle(guide.categorySlug);
   const Icon = style.icon;
   const accentColor = category?.color ?? DEFAULT_CATEGORY_COLOR;
@@ -98,12 +109,68 @@ export default async function GuidePage({ params }: GuidePageProps) {
   );
 
   const sections = groupBlocksIntoSections(resolvedBlocks);
+  const review = lang === 'ko' ? getGuideReview(slug) : undefined;
+  const referencedServices = resolvedBlocks.flatMap((block) =>
+    block.type === 'services' ? block.services : [],
+  );
+  const sources = [
+    ...new Map(
+      [
+        ...(review ? getGuideReviewSources(review) : []),
+        ...referencedServices.map((service) => ({
+          label: `${service.source} · ${service.name}`,
+          url: service.url,
+        })),
+      ].map((source) => [source.url, source]),
+    ).values(),
+  ];
+  const relatedGuides = getAllGuides()
+    .filter(
+      (item) =>
+        item.slug !== slug &&
+        item.categorySlug === guide.categorySlug &&
+        (lang === 'ko' || getGuideTranslation(item.slug)),
+    )
+    .slice(0, 3)
+    .map((item) => resolveGuideForLocale(item, lang));
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}${localeHref(lang, `/guides/${slug}`)}`;
+  const article = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: resolvedGuide.title,
+        description: resolvedGuide.summary,
+        inLanguage: lang,
+        datePublished: guide.publishedAt,
+        dateModified:
+          review?.reviewedAt ?? guide.updatedAt ?? guide.publishedAt,
+        mainEntityOfPage: pageUrl,
+        author: {
+          '@type': 'Organization',
+          name: lang === 'en' ? 'Yeogida editorial' : '여기다 편집',
+          url: `${siteUrl}${localeHref(lang, '/about')}`,
+        },
+        citation: sources.map((source) => source.url),
+      },
+      breadcrumbList([
+        { name: dict.home, url: `${siteUrl}${localeHref(lang, '/')}` },
+        {
+          name: lang === 'en' ? 'Guides' : '이용 가이드',
+          url: `${siteUrl}${localeHref(lang, '/guides')}`,
+        },
+        { name: resolvedGuide.title, url: pageUrl },
+      ]),
+    ],
+  };
 
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-4 py-12">
+      <script {...jsonLdScriptProps(article)} />
       <Link
         href={localeHref(lang, '/guides')}
-        className="inline-flex w-fit items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        className="text-muted-foreground hover:text-foreground inline-flex w-fit items-center gap-1 text-sm transition-colors"
       >
         <ChevronLeft className="size-4" />
         {dict.guides.backToList}
@@ -118,24 +185,62 @@ export default async function GuidePage({ params }: GuidePageProps) {
             {category.name}
           </span>
         )}
-        <h1 className="text-2xl font-bold text-balance">{resolvedGuide.title}</h1>
-        <p className="text-base leading-relaxed text-muted-foreground">
+        <h1 className="text-2xl font-bold text-balance">
+          {resolvedGuide.title}
+        </h1>
+        <p className="text-muted-foreground text-base leading-relaxed">
           {resolvedGuide.summary}
         </p>
-        <p className="text-xs text-muted-foreground/70">
-          {dict.guides.publishedOnTemplate.replace('{date}', resolvedGuide.publishedAt)}
+        <p className="text-muted-foreground/70 text-xs">
+          {dict.guides.publishedOnTemplate.replace(
+            '{date}',
+            resolvedGuide.publishedAt,
+          )}
           {resolvedGuide.updatedAt && (
-            <> · {dict.guides.updatedOnTemplate.replace('{date}', resolvedGuide.updatedAt)}</>
+            <>
+              {' '}
+              ·{' '}
+              {dict.guides.updatedOnTemplate.replace(
+                '{date}',
+                resolvedGuide.updatedAt,
+              )}
+            </>
           )}
         </p>
+        <p className="text-muted-foreground text-xs">
+          {lang === 'en' ? 'Yeogida editorial' : '여기다 편집'} ·{' '}
+          <Link
+            href={localeHref(lang, '/about')}
+            className="underline underline-offset-4"
+          >
+            {lang === 'en'
+              ? 'How we prepare our guides'
+              : '콘텐츠 작성·확인 기준'}
+          </Link>
+        </p>
       </div>
+
+      {review && (
+        <section className="bg-muted/30 flex flex-col gap-3 rounded-lg border p-4">
+          <h2 className="font-bold">시작하기 전에 준비하세요</h2>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed">
+            {review.checklist.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p className="text-muted-foreground text-xs">
+            준비 목록·공식 근거 확인{' '}
+            <time dateTime={review.reviewedAt}>{review.reviewedAt}</time>
+          </p>
+        </section>
+      )}
 
       {headingIndexes.length >= 3 && (
         <nav
           aria-label={dict.guides.tableOfContents}
-          className="flex flex-col gap-2 rounded-lg border bg-muted/40 p-4"
+          className="bg-muted/40 flex flex-col gap-2 rounded-lg border p-4"
         >
-          <p className="text-xs font-semibold text-muted-foreground">
+          <p className="text-muted-foreground text-xs font-semibold">
             {dict.guides.tableOfContents}
           </p>
           <ol className="flex flex-col gap-1.5">
@@ -163,7 +268,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
         </nav>
       )}
 
-      <article className="flex flex-col text-foreground">
+      <article className="text-foreground flex flex-col">
         {sections.map((section, sectionIndex) => (
           <section
             key={sectionIndex}
@@ -174,13 +279,64 @@ export default async function GuidePage({ params }: GuidePageProps) {
           >
             {section.map(({ block, index }) => (
               <Fragment key={index}>
-                {renderBlock(block, index, headingIndexes.indexOf(index), accentColor, lang, dict.service)}
+                {renderBlock(
+                  block,
+                  index,
+                  headingIndexes.indexOf(index),
+                  accentColor,
+                  lang,
+                  dict.service,
+                )}
               </Fragment>
             ))}
           </section>
         ))}
       </article>
 
+      {sources.length > 0 && (
+        <section className="flex flex-col gap-3 border-t pt-8">
+          <h2 className="text-lg font-bold">
+            {lang === 'en'
+              ? 'Official information and further reading'
+              : '공식 안내와 관련 기관'}
+          </h2>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            {lang === 'en'
+              ? 'Check the official guidance for current eligibility, fees, documents and deadlines before applying. Automated link checks do not verify the accuracy of application requirements.'
+              : '신청 대상·수수료·구비서류·기한은 아래 공식 안내에서 최종 확인해 주세요. 자동 링크 점검은 신청 조건이나 안내 내용이 최신임을 보장하지 않아요.'}
+          </p>
+          <ul className="space-y-3 text-sm">
+            {sources.map((source) => (
+              <li key={source.url}>
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4"
+                >
+                  {source.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      {relatedGuides.length > 0 && (
+        <section className="flex flex-col gap-3 border-t pt-8">
+          <h2 className="text-lg font-bold">
+            {lang === 'en' ? 'Related guides' : '함께 읽을 가이드'}
+          </h2>
+          {relatedGuides.map((item) => (
+            <Link
+              key={item.slug}
+              href={localeHref(lang, `/guides/${item.slug}`)}
+              className="text-sm underline underline-offset-4"
+            >
+              {item.title}
+            </Link>
+          ))}
+        </section>
+      )}
       <AdSlot className="min-h-[120px] rounded-md border border-dashed" />
     </div>
   );
@@ -220,7 +376,7 @@ function renderBlock(
       return (
         <h2
           id={`section-${index}`}
-          className="flex scroll-mt-20 items-center gap-2 text-lg font-semibold text-foreground"
+          className="text-foreground flex scroll-mt-20 items-center gap-2 text-lg font-semibold"
         >
           {headingOrder >= 0 && (
             <span
@@ -248,7 +404,10 @@ function renderBlock(
       return (
         <ul className="flex flex-col gap-2.5 pl-1">
           {block.items.map((item) => (
-            <li key={item} className="flex items-start gap-2.5 leading-relaxed text-foreground/90">
+            <li
+              key={item}
+              className="text-foreground/90 flex items-start gap-2.5 leading-relaxed"
+            >
               <span
                 className="mt-2.5 size-1.5 shrink-0 rounded-full"
                 style={{ backgroundColor: accentColor }}
@@ -260,15 +419,20 @@ function renderBlock(
       );
     case 'services':
       return (
-        <div className="flex flex-col gap-3 rounded-lg border bg-muted/30 p-4">
+        <div className="bg-muted/30 flex flex-col gap-3 rounded-lg border p-4">
           {block.intro && (
-            <p className="text-sm font-semibold text-muted-foreground">
+            <p className="text-muted-foreground text-sm font-semibold">
               {block.intro}
             </p>
           )}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {block.services.map((service) => (
-              <ServiceCard key={service.id} service={service} lang={lang} dict={serviceDict} />
+              <ServiceCard
+                key={service.id}
+                service={service}
+                lang={lang}
+                dict={serviceDict}
+              />
             ))}
           </div>
         </div>

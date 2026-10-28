@@ -81,25 +81,25 @@
     "id": "moel-labor-counsel-1350",
     "slug": "moel-labor-counsel-1350",
     "name": "고용노동부 고객상담센터(1350)",
-    "summary": "임금체불·부당해고 등 노동 문제를 무료로 상담해주는 고용노동부 대표 상담창구",
-    "description": "임금체불, 부당해고, 근로계약, 4대보험 등 노동 관련 문제를 겪는 근로자와 사업주를 위한 고용노동부 공식 상담 창구다. 전화(국번 없이 1350) 연결 후 안내에 따라 번호를 누르면 노동상담 전담 상담원과 연결된다. 온라인 채팅 상담은 24시간 이용 가능하며, 전화 상담은 평일 09:00~18:00로 운영된다. 상담뿐 아니라 진정·신고 절차 안내도 받을 수 있다.",
+    "summary": "임금체불·근로조건·고용지원 제도와 민원 절차를 안내하는 고용노동부 상담창구",
+    "description": "임금체불, 근로계약, 고용지원 제도 등 고용·노동 문제의 상담 창구다. 국번 없이 1350으로 전화한 뒤 상담 분야를 선택하면 된다. 전화는 평일 09:00~18:00에 운영되며 통화요금이 부과된다. 인터넷·채팅 상담은 홈페이지에서 각 채널의 운영시간과 상담 가능 분야를 확인한다. 상담과 진정·신고 등 정식 사건 접수는 별도이므로 필요한 접수기관과 절차를 안내받는다.",
     "categorySlug": "legal-admin",
     "tags": ["노동상담", "임금체불", "부당해고", "고용노동부"],
     "thumbnail": "/uploads/moel-labor-counsel-1350/thumbnail-1785134706530-re7jxo.jpg",
     "url": "https://1350.moel.go.kr/home",
-    "hours": "전화 평일 09:00~18:00, 온라인 채팅 24시간",
-    "cost": "free",
-    "badges": ["무료"],
+    "hours": "전화 평일 09:00~18:00 · 전화요금 유료, 인터넷·채팅은 채널별 안내 확인",
+    "cost": "paid",
+    "badges": [],
     "source": "고용노동부",
     "affiliate": false,
-    "lastVerified": "2026-07-25",
+    "lastVerified": "2026-10-28",
     "images": [],
     "i18n": {
       "en": {
         "name": "Ministry of Employment and Labor Customer Counseling Center (1350)",
-        "summary": "The Ministry of Employment and Labor's main counseling line for free advice on labor issues such as unpaid wages and unfair dismissal",
-        "description": "The Ministry of Employment and Labor's official counseling channel for workers and employers dealing with labor issues such as unpaid wages, unfair dismissal, employment contracts, and the four major social insurances. Call 1350 (no area code) and follow the prompts to be connected with a labor counseling specialist. Online chat counseling is available 24 hours a day, while phone counseling runs weekdays 09:00–18:00. Besides counseling, you can also get guidance on how to file a complaint or report.",
-        "hours": "Phone weekdays 09:00–18:00, online chat 24 hours"
+        "summary": "Official guidance on employment and labor issues, including unpaid wages and complaint procedures",
+        "description": "Call 1350 without an area code and select the relevant employment or labor topic. Phone counseling operates weekdays from 09:00 to 18:00 and call charges apply. Check the official website for the operating hours and scope of internet and chat channels. Counseling is separate from formally filing a complaint; ask which office and procedure applies to your case.",
+        "hours": "Phone weekdays 09:00–18:00; call charges apply. Check each online channel for its hours."
       }
     }
   },

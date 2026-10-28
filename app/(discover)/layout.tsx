@@ -11,7 +11,8 @@ import {
 } from '@/lib/discover-constants';
 import '../globals.css';
 
-const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const GOOGLE_SITE_VERIFICATION =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export const metadata: Metadata = {
@@ -24,10 +25,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/discover',
   },
-  // 이미 잘 알려진 민간 사이트를 짧게 소개하는 섹션이라 애드센스 심사에서
-  // "가치 없는 콘텐츠"로 오인될 위험이 있어, 콘텐츠를 더 보강할 때까지 검색 노출에서 제외한다.
-  // robots.txt의 /discover disallow와 함께 이중으로 막아둔다.
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
@@ -62,14 +60,21 @@ export default function DiscoverLayout({
       <body className="flex min-h-full flex-col">
         <a
           href="#main-content"
-          className="absolute top-2 left-2 z-50 -translate-y-16 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg transition-transform focus:translate-y-0"
+          className="bg-primary text-primary-foreground absolute top-2 left-2 z-50 -translate-y-16 rounded-md px-4 py-2 text-sm font-medium shadow-lg transition-transform focus:translate-y-0"
         >
           본문으로 바로가기
         </a>
         <AnalyticsScripts />
-        <div data-theme="discover" className="flex min-h-screen flex-1 flex-col bg-background text-foreground">
+        <div
+          data-theme="discover"
+          className="bg-background text-foreground flex min-h-screen flex-1 flex-col"
+        >
           <DiscoverHeader categories={categories} />
-          <main id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
+          <main
+            id="main-content"
+            tabIndex={-1}
+            className="flex flex-1 flex-col outline-none"
+          >
             {children}
           </main>
           <DiscoverFooter />

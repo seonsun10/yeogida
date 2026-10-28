@@ -2,7 +2,12 @@ import type { Metadata } from 'next';
 import { DiscoverCategoryNav } from '@/components/discover/CategoryNav';
 import { DiscoverSearchBar } from '@/components/discover/SearchBar';
 import { SiteCard } from '@/components/discover/SiteCard';
-import { DISCOVER_SITE_NAME, DISCOVER_SITE_TAGLINE } from '@/lib/discover-constants';
+import { DiscoverGuideLinks } from '@/components/discover/GuideLinks';
+import { getDiscoverGuides } from '@/lib/discover-guides';
+import {
+  DISCOVER_SITE_NAME,
+  DISCOVER_SITE_TAGLINE,
+} from '@/lib/discover-constants';
 import { getAllSiteCategories, getAllSites } from '@/lib/sites';
 
 const FEATURED_SITE_COUNT = 6;
@@ -29,13 +34,13 @@ export default async function DiscoverHomePage() {
     <div className="flex flex-1 flex-col">
       <h1 className="sr-only">여기다 — 분야를 가리지 않는 사이트 모음</h1>
 
-      <section className="relative overflow-hidden border-b border-border">
+      <section className="border-border relative overflow-hidden border-b">
         <div
           aria-hidden
           className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,var(--primary)_0%,transparent_60%)] opacity-[0.12]"
         />
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-7 px-4 py-20 text-center sm:py-28">
-          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-semibold text-primary">
+          <span className="border-primary/20 bg-primary/5 text-primary inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-semibold">
             여기다
           </span>
           <p className="max-w-xl text-3xl leading-tight font-bold text-balance break-keep sm:text-5xl">
@@ -44,11 +49,19 @@ export default async function DiscoverHomePage() {
           <DiscoverSearchBar sites={sites} />
           {sites.length > 0 && (
             <div className="flex flex-wrap items-center justify-center gap-2">
-              <span className="rounded-full bg-muted px-3 py-1 text-sm text-muted-foreground">
-                사이트 <span className="font-semibold text-foreground">{sites.length}</span>개
+              <span className="bg-muted text-muted-foreground rounded-full px-3 py-1 text-sm">
+                사이트{' '}
+                <span className="text-foreground font-semibold">
+                  {sites.length}
+                </span>
+                개
               </span>
-              <span className="rounded-full bg-muted px-3 py-1 text-sm text-muted-foreground">
-                카테고리 <span className="font-semibold text-foreground">{categories.length}</span>개
+              <span className="bg-muted text-muted-foreground rounded-full px-3 py-1 text-sm">
+                카테고리{' '}
+                <span className="text-foreground font-semibold">
+                  {categories.length}
+                </span>
+                개
               </span>
             </div>
           )}
@@ -56,17 +69,21 @@ export default async function DiscoverHomePage() {
       </section>
 
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-16 px-4 py-16">
+        <DiscoverGuideLinks guides={getDiscoverGuides()} />
         <section className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
             <h2 className="text-xl font-semibold">카테고리별로 둘러보기</h2>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               분야별로 정리된 사이트를 한눈에 살펴보세요.
             </p>
           </div>
           {categories.length > 0 ? (
-            <DiscoverCategoryNav categories={categories} siteCounts={siteCounts} />
+            <DiscoverCategoryNav
+              categories={categories}
+              siteCounts={siteCounts}
+            />
           ) : (
-            <p className="rounded-sm border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
+            <p className="border-border text-muted-foreground rounded-sm border border-dashed p-8 text-center text-sm">
               아직 등록된 카테고리가 없어요. 곧 다양한 사이트로 채워질
               예정이에요.
             </p>
@@ -76,8 +93,10 @@ export default async function DiscoverHomePage() {
         {featuredSites.length > 0 && (
           <section className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
-              <h2 className="text-xl font-semibold">지금 둘러보기 좋은 사이트</h2>
-              <p className="text-sm text-muted-foreground">
+              <h2 className="text-xl font-semibold">
+                지금 둘러보기 좋은 사이트
+              </h2>
+              <p className="text-muted-foreground text-sm">
                 여러 카테고리에서 골라본 사이트들이에요.
               </p>
             </div>

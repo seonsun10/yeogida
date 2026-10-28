@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { getDiscoverCategoryIcon } from '@/lib/discover-icons';
+import { DiscoverCategoryIcon } from '@/lib/discover-icons';
 import { getSiteCategoryBySlug } from '@/lib/sites';
 import type { Site } from '@/types/site';
 
@@ -15,15 +15,14 @@ export function SiteCard({
   hideCategoryBadge?: boolean;
 }) {
   const category = getSiteCategoryBySlug(site.categorySlug);
-  const Icon = getDiscoverCategoryIcon(site.categorySlug);
   const accentColor = category?.color ?? 'var(--primary)';
 
   return (
     <Link
       href={`/discover/site/${site.slug}`}
-      className="group block h-full rounded-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+      className="group focus-visible:ring-ring/50 block h-full rounded-sm outline-none focus-visible:ring-3"
     >
-      <Card className="h-full py-0 transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg group-hover:ring-primary/30">
+      <Card className="group-hover:ring-primary/30 h-full py-0 transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg">
         <div
           className="relative -mt-px aspect-[2.4/1] w-full shrink-0 overflow-hidden rounded-t-sm"
           style={{
@@ -40,7 +39,8 @@ export function SiteCard({
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center">
-              <Icon
+              <DiscoverCategoryIcon
+                categorySlug={site.categorySlug}
                 aria-hidden
                 className="size-9 transition-transform duration-200 group-hover:scale-110"
                 style={{ color: accentColor }}
@@ -64,15 +64,15 @@ export function SiteCard({
             {site.name}
             <ArrowUpRight
               aria-hidden
-              className="size-4 shrink-0 text-muted-foreground/50 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary"
+              className="text-muted-foreground/50 group-hover:text-primary size-4 shrink-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
           </h3>
         </CardHeader>
         <CardContent className="pb-4">
-          <p className="line-clamp-2 text-sm text-muted-foreground">
+          <p className="text-muted-foreground line-clamp-2 text-sm">
             {site.summary}
           </p>
-          <p className="mt-2 text-xs text-muted-foreground/70">{site.source}</p>
+          <p className="text-muted-foreground/70 mt-2 text-xs">{site.source}</p>
         </CardContent>
       </Card>
     </Link>

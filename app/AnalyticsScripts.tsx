@@ -2,7 +2,7 @@ import Script from 'next/script';
 import { Suspense } from 'react';
 import { RouteChangeTracker } from '@/components/RouteChangeTracker';
 
-// 애드센스 승인 후 발급받는 게시자 ID(예: ca-pub-1234567890123456)를 설정하면
+// 애드센스 계정에서 제공하는 게시자 ID(예: ca-pub-1234567890123456)를 설정하면
 // 사이트 소유 확인 메타 태그와 광고 스크립트가 자동으로 활성화된다.
 const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 

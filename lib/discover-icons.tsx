@@ -34,6 +34,7 @@ import {
   TrendingUp,
   UtensilsCrossed,
   type LucideIcon,
+  type LucideProps,
 } from 'lucide-react';
 
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
@@ -77,6 +78,10 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
   'pet-figure': Gift,
 };
 
-export function getDiscoverCategoryIcon(categorySlug: string): LucideIcon {
-  return CATEGORY_ICONS[categorySlug] ?? Sparkles;
+export function DiscoverCategoryIcon({
+  categorySlug,
+  ...props
+}: LucideProps & { categorySlug: string }) {
+  const Icon = CATEGORY_ICONS[categorySlug] ?? Sparkles;
+  return <Icon {...props} />;
 }

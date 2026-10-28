@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 import { AdSlot } from '@/components/AdSlot';
 import { SiteCard } from '@/components/discover/SiteCard';
 import { SiteDetail } from '@/components/discover/SiteDetail';
+import { EditorialNotes } from '@/components/EditorialNotes';
+import { siteNotes } from '@/lib/editorial-notes';
+import { DiscoverGuideLinks } from '@/components/discover/GuideLinks';
+import { getDiscoverGuidesForSite } from '@/lib/discover-guides';
 import { breadcrumbList, jsonLdScriptProps } from '@/lib/json-ld';
 import {
   getAllSites,
@@ -73,7 +77,12 @@ export default async function DiscoverSitePage({
       breadcrumbList([
         { name: '여기다', url: `${siteUrl}/discover` },
         ...(category
-          ? [{ name: category.name, url: `${siteUrl}/discover/${category.slug}` }]
+          ? [
+              {
+                name: category.name,
+                url: `${siteUrl}/discover/${category.slug}`,
+              },
+            ]
           : []),
         { name: site.name, url: pageUrl },
       ]),
@@ -84,10 +93,12 @@ export default async function DiscoverSitePage({
     <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 py-12">
       <script {...jsonLdScriptProps(jsonLd)} />
       <SiteDetail site={site} category={category} />
+      {siteNotes[slug] && <EditorialNotes notes={siteNotes[slug]} />}
+      <DiscoverGuideLinks guides={getDiscoverGuidesForSite(slug)} />
 
       {relatedSites.length > 0 && (
-        <div className="flex flex-col gap-3 border-t border-border pt-6">
-          <h2 className="text-sm font-medium text-muted-foreground">
+        <div className="border-border flex flex-col gap-3 border-t pt-6">
+          <h2 className="text-muted-foreground text-sm font-medium">
             같은 카테고리의 다른 사이트
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -98,7 +109,7 @@ export default async function DiscoverSitePage({
         </div>
       )}
 
-      <AdSlot className="min-h-[120px] rounded-sm border border-dashed border-border" />
+      <AdSlot className="border-border min-h-[120px] rounded-sm border border-dashed" />
     </div>
   );
 }

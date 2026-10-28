@@ -30,11 +30,13 @@ export function ServiceDetail({
 }) {
   const style = getCategoryStyle(service.categorySlug);
   const translation = service.i18n?.en;
-  const isUnofficialTranslation = lang === 'en' && Boolean(translation) && !translation?.official;
+  const isUnofficialTranslation =
+    lang === 'en' && Boolean(translation) && !translation?.official;
   const hasConfirmedEnglishContact = service.supportLanguages?.some(
     (support) => support.language === 'en',
   );
-  const showKoreanOnlyNotice = lang === 'en' && Boolean(translation) && !hasConfirmedEnglishContact;
+  const showKoreanOnlyNotice =
+    lang === 'en' && Boolean(translation) && !hasConfirmedEnglishContact;
 
   return (
     <article className="flex flex-col gap-6">
@@ -57,7 +59,9 @@ export function ServiceDetail({
         <p className="text-muted-foreground">{service.summary}</p>
         {(isUnofficialTranslation || showKoreanOnlyNotice) && (
           <div className="flex flex-col gap-1 rounded-md border border-dashed border-amber-400/60 bg-amber-50 p-3 text-xs text-amber-800 dark:bg-amber-950/20 dark:text-amber-300">
-            {isUnofficialTranslation && <p>{dict.unofficialTranslationNotice}</p>}
+            {isUnofficialTranslation && (
+              <p>{dict.unofficialTranslationNotice}</p>
+            )}
             {showKoreanOnlyNotice && <p>{dict.koreanOnlyContactNotice}</p>}
           </div>
         )}
@@ -115,9 +119,9 @@ export function ServiceDetail({
         </div>
       )}
 
-      <p className="leading-relaxed text-foreground">{service.description}</p>
+      <p className="text-foreground leading-relaxed">{service.description}</p>
 
-      <dl className="grid grid-cols-1 gap-3 rounded-md border bg-muted/30 p-4 text-sm sm:grid-cols-2">
+      <dl className="bg-muted/30 grid grid-cols-1 gap-3 rounded-md border p-4 text-sm sm:grid-cols-2">
         <div>
           <dt className="text-muted-foreground">{dict.hours}</dt>
           <dd>{service.hours}</dd>
@@ -130,11 +134,19 @@ export function ServiceDetail({
           <dt className="text-muted-foreground">{dict.source}</dt>
           <dd>{service.source}</dd>
         </div>
+        <div>
+          <dt className="text-muted-foreground">
+            {lang === 'en' ? 'Information checked' : '등록 정보 확인일'}
+          </dt>
+          <dd>
+            <time dateTime={service.lastVerified}>{service.lastVerified}</time>
+          </dd>
+        </div>
       </dl>
 
       {service.supportLanguages && service.supportLanguages.length > 0 && (
         <div className="flex flex-col gap-1.5">
-          <span className="text-sm text-muted-foreground">
+          <span className="text-muted-foreground text-sm">
             {dict.languageSupport}
           </span>
           <div className="flex flex-wrap gap-2">
@@ -144,7 +156,7 @@ export function ServiceDetail({
                 href={support.evidenceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border px-2.5 py-0.5 text-xs font-medium text-muted-foreground outline-none transition-colors hover:border-primary/40 hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+                className="text-muted-foreground hover:border-primary/40 hover:text-foreground focus-visible:ring-ring/50 rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors outline-none focus-visible:ring-3"
               >
                 {getServiceLanguageName(support.language, lang)}
               </a>

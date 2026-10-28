@@ -2,23 +2,29 @@ import type { MetadataRoute } from 'next';
 import { getAllGuides } from '@/lib/guides';
 import { getAllCategories, getAllServices } from '@/lib/services';
 import { getSiteUrl } from '@/lib/site-url';
-import { BOARD_TYPES } from '@/lib/board-constants';
+import { getAllSiteCategories, getAllSites } from '@/lib/sites';
+import { getDiscoverGuides } from '@/lib/discover-guides';
+import { serviceNotes, siteNotes } from '@/lib/editorial-notes';
+import { getGuideReview } from '@/lib/guide-reviews';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = getSiteUrl();
 
-  // 게시글 개별 페이지는 이용자 작성 콘텐츠라 사이트맵에서 제외하고
-  // 게시판 인덱스/목록(안정적인 정적 경로)만 포함한다.
-  const boardRoutes = ['/board', ...BOARD_TYPES.map((board) => `/board/${board}`)];
-
-  // /discover(민간 사이트 소개 섹션)는 robots.ts에서 통째로 disallow하는 중이라
-  // 사이트맵에도 포함하지 않는다 — 애드센스 "가치 없는 콘텐츠" 판정 위험 때문
-  // (data/AGENTS.md, 관련 memory 참고). 콘텐츠 보강 후 재포함 검토.
-  const staticRoutes = ['', '/about', '/guides', '/submit', '/privacy', '/terms', ...boardRoutes].map(
-    (path) => ({
-      url: `${siteUrl}${path}`,
-    }),
-  );
+  // 편집 콘텐츠를 포함하고, noindex인 게시판과 제보 양식은 제외한다.
+  const staticRoutes = [
+    '',
+    '/about',
+    '/guides',
+    '/privacy',
+    '/terms',
+    '/discover',
+    '/discover/about',
+    '/discover/guides',
+    '/discover/privacy',
+    '/discover/terms',
+  ].map((path) => ({
+    url: `${siteUrl}${path}`,
+  }));
 
   const categoryRoutes = getAllCategories().map((category) => ({
     url: `${siteUrl}/category/${category.slug}`,
@@ -26,16 +32,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const guideRoutes = getAllGuides().map((guide) => ({
     url: `${siteUrl}/guides/${guide.slug}`,
-    lastModified: guide.updatedAt ?? guide.publishedAt,
+    lastModified:
+      getGuideReview(guide.slug)?.reviewedAt ??
+      guide.updatedAt ??
+      guide.publishedAt,
   }));
 
   const services = await getAllServices();
   const serviceRoutes = services.map((service) => ({
     url: `${siteUrl}/service/${service.slug}`,
-    lastModified: service.lastVerified,
+    lastModified: [
+      service.lastVerified,
+      serviceNotes[service.slug]?.reviewedAt ?? '',
+    ]
+      .sort()
+      .at(-1),
   }));
 
-  // i18n.en.official(공식 출처 번역)이라 robots.ts에서 개별 allow된 서비스만 포함(I18N-PLAN.md 참고).
+  // 영어 페이지 중 페이지별 메타데이터로 색인을 허용한 공식 출처 번역만 포함한다.
   const translatedServiceRoutes = services
     .filter((service) => service.i18n?.en?.official)
     .map((service) => ({
@@ -43,5 +57,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: service.lastVerified,
     }));
 
-  return [...staticRoutes, ...categoryRoutes, ...guideRoutes, ...serviceRoutes, ...translatedServiceRoutes];
+  const sites = await getAllSites();
+  const discoverCategories = getAllSiteCategories()
+    .filter((category) =>
+      sites.some((site) => site.categorySlug === category.slug),
+    )
+    .map((category) => ({ url: `${siteUrl}/discover/${category.slug}` }));
+  const discoverSites = sites.map((site) => ({
+    url: `${siteUrl}/discover/site/${site.slug}`,
+    lastModified: [site.lastVerified, siteNotes[site.slug]?.reviewedAt ?? '']
+      .sort()
+      .at(-1),
+  }));
+  const discoverGuides = getDiscoverGuides().map((guide) => ({
+    url: `${siteUrl}/discover/guides/${guide.slug}`,
+    lastModified: guide.publishedAt,
+  }));
+  return [
+    ...staticRoutes,
+    ...categoryRoutes,
+    ...guideRoutes,
+    ...serviceRoutes,
+    ...translatedServiceRoutes,
+    ...discoverCategories,
+    ...discoverSites,
+    ...discoverGuides,
+  ];
 }

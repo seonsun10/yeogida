@@ -6,7 +6,7 @@ export function DiscoverFooter() {
   const categories = getAllSiteCategories();
 
   return (
-    <footer className="border-t border-border bg-muted/40">
+    <footer className="border-border bg-muted/40 border-t">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10">
         {categories.length > 0 && (
           <nav aria-label="카테고리" className="flex flex-wrap gap-x-5 gap-y-2">
@@ -14,14 +14,20 @@ export function DiscoverFooter() {
               <Link
                 key={category.slug}
                 href={`/discover/${category.slug}`}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors"
               >
                 {category.name}
               </Link>
             ))}
           </nav>
         )}
-        <nav aria-label="바닥글" className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+        <nav
+          aria-label="바닥글"
+          className="text-muted-foreground flex flex-wrap gap-4 text-sm"
+        >
+          <Link href="/discover/guides" className="hover:text-foreground">
+            선택·활용 가이드
+          </Link>
           <Link href="/discover/board" className="hover:text-foreground">
             게시판
           </Link>
@@ -39,16 +45,16 @@ export function DiscoverFooter() {
           </Link>
         </nav>
 
-        <div className="flex flex-col gap-3 border-t border-border pt-6 text-sm text-muted-foreground">
+        <div className="border-border text-muted-foreground flex flex-col gap-3 border-t pt-6 text-sm">
           <p>
             이 섹션은 정보 제공을 목적으로 하며, 등록된 사이트의 실제 운영
             여부는 방문 전 다시 확인하시기 바랍니다.
           </p>
           <p>
-            사이트 카드와 상세 페이지의 이미지는 각 사이트의 og:image를
-            기준으로 가져와 사용합니다.
+            사이트 카드와 상세 페이지의 이미지는 각 사이트의 og:image를 기준으로
+            가져와 사용합니다.
           </p>
-          <p className="text-xs text-muted-foreground/70">
+          <p className="text-muted-foreground/70 text-xs">
             © {new Date().getFullYear()} {DISCOVER_SITE_NAME}
           </p>
         </div>

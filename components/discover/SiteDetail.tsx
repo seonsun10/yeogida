@@ -6,7 +6,7 @@ import { ChevronLeft } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 import { ShareButton } from '@/components/ShareButton';
-import { getDiscoverCategoryIcon } from '@/lib/discover-icons';
+import { DiscoverCategoryIcon } from '@/lib/discover-icons';
 import { trackOutboundClick } from '@/lib/track';
 import { deleteSiteThumbnail } from '@/app/[lang]/(main)/admin/sites/actions';
 import { SiteThumbnailUploadForm } from '@/app/[lang]/(main)/admin/sites/SiteThumbnailUploadForm';
@@ -21,7 +21,6 @@ export function SiteDetail({
   site: Site;
   category?: SiteCategory;
 }) {
-  const Icon = getDiscoverCategoryIcon(site.categorySlug);
   const accentColor = category?.color ?? 'var(--primary)';
 
   return (
@@ -29,7 +28,7 @@ export function SiteDetail({
       {category && (
         <Link
           href={`/discover/${category.slug}`}
-          className="flex w-fit items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          className="text-muted-foreground hover:text-foreground flex w-fit items-center gap-1 text-sm transition-colors"
         >
           <ChevronLeft aria-hidden className="size-4" />
           {category.name}
@@ -44,7 +43,12 @@ export function SiteDetail({
             backgroundImage: `linear-gradient(135deg, ${accentColor}33, ${accentColor}0d)`,
           }}
         >
-          <Icon className="size-12" style={{ color: accentColor }} strokeWidth={1.5} />
+          <DiscoverCategoryIcon
+            categorySlug={site.categorySlug}
+            className="size-12"
+            style={{ color: accentColor }}
+            strokeWidth={1.5}
+          />
         </div>
       )}
 
@@ -68,7 +72,7 @@ export function SiteDetail({
           </h2>
           {site.thumbnail && (
             <div className="flex flex-col gap-2">
-              <div className="relative aspect-video w-48 overflow-hidden rounded-sm border border-border">
+              <div className="border-border relative aspect-video w-48 overflow-hidden rounded-sm border">
                 <Image
                   src={site.thumbnail}
                   alt=""
@@ -99,7 +103,7 @@ export function SiteDetail({
           {site.images.map((image, index) => (
             <div
               key={image}
-              className="relative aspect-video w-64 shrink-0 overflow-hidden rounded-sm border border-border"
+              className="border-border relative aspect-video w-64 shrink-0 overflow-hidden rounded-sm border"
             >
               <Image
                 src={image}
@@ -113,18 +117,22 @@ export function SiteDetail({
         </div>
       )}
 
-      <p className="leading-relaxed text-foreground">{site.description}</p>
+      <p className="text-foreground leading-relaxed">{site.description}</p>
 
-      <dl className="grid grid-cols-2 gap-4 rounded-sm border border-border bg-muted/30 p-4 text-sm">
+      <dl className="border-border bg-muted/30 grid grid-cols-2 gap-4 rounded-sm border p-4 text-sm">
         <div>
           <dt className="text-muted-foreground">운영 주체</dt>
           <dd className="mt-0.5 font-medium">{site.source}</dd>
         </div>
         <div>
-          <dt className="text-muted-foreground">최근 확인</dt>
+          <dt className="text-muted-foreground">등록 정보 확인일</dt>
           <dd className="mt-0.5 font-medium">{site.lastVerified}</dd>
         </div>
       </dl>
+      <p className="text-muted-foreground text-sm leading-relaxed">
+        아래 링크는 운영 사이트로 연결돼요. 가입·결제 조건은 해당 사이트의 최신
+        안내를 확인해 주세요. 링크 점검과 실제 이용 조건 확인은 별개예요.
+      </p>
 
       <div className="flex flex-wrap items-center gap-2">
         <a

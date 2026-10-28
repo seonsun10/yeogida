@@ -6,6 +6,8 @@ import { AdSlot } from '@/components/AdSlot';
 import { Disclaimer } from '@/components/Disclaimer';
 import { ServiceCard } from '@/components/ServiceCard';
 import { ServiceDetail } from '@/components/ServiceDetail';
+import { EditorialNotes } from '@/components/EditorialNotes';
+import { serviceNotes } from '@/lib/editorial-notes';
 import { getDictionary } from '@/lib/dictionaries';
 import { getGuidesByServiceSlug, resolveGuideForLocale } from '@/lib/guides';
 import { DEFAULT_LOCALE, isLocale, localeHref } from '@/lib/i18n';
@@ -173,6 +175,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
         lang={lang}
         dict={dict.service}
       />
+      {lang === 'ko' && serviceNotes[slug] && (
+        <EditorialNotes notes={serviceNotes[slug]} />
+      )}
 
       {relatedGuides.length > 0 && (
         <div className="flex flex-col gap-3 border-t pt-6">
